@@ -5,11 +5,6 @@ import os, sys, csv
 
 def crop_cancer(fixPath, path, patientFile, roiFilePath, croppedImagesPath, imageFilePath, cropCancerBool, j):
 
-#    fixPath = "/media/hendrix/18a56f3c-a498-471a-a479-a79073a33aca/CALC/Calc-Training-ROI/CBIS-DDSM/"
-#    fixPath = "/media/hendrix/18a56f3c-a498-471a-a479-a79073a33aca/CALC/Calc-Test-ROI/CBIS-DDSM/"
-#    path = "/media/hendrix/18a56f3c-a498-471a-a479-a79073a33aca/CALC/Calc-Training-Full/CBIS-DDSM/"
-#    path = "/media/hendrix/18a56f3c-a498-471a-a479-a79073a33aca/CALC/Calc-Test-Full/CBIS-DDSM/"
-
     tempImg = fixPath + roiFilePath[j] 
     image = cv2.imread(tempImg)
     tempImg2 = path + imageFilePath[j]
@@ -38,8 +33,12 @@ def crop_cancer(fixPath, path, patientFile, roiFilePath, croppedImagesPath, imag
     temporarySmallestWhitePixelOfCoordinateY = midpointBetweenTheBiggestAndSmallestWhitePixelY - 128
     temporaryBiggestWhitePixelOfCoordinateX = midpointBetweenTheBiggestAndSmallestWhitePixelX + 128
     temporaryBiggestWhitePixelOfCoordinateY = midpointBetweenTheBiggestAndSmallestWhitePixelY + 128
+    
+    time = 300
 
-    #################################################################################
+# =============================================================================
+# PARA RECORTAR PARTES DA MAMA QUE SAO SAUDAVEIS (SEM ANOMALIAS)
+# =============================================================================
 
     if cropCancerBool == 0:
         if distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX <= 256 and distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY <= 256:
@@ -49,7 +48,14 @@ def crop_cancer(fixPath, path, patientFile, roiFilePath, croppedImagesPath, imag
                     writer = csv.writer(csvCrops)
                     writer.writerow(row)
                 csvCrops.close()
+                
                 cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                print("teste1"+ str(patientFile[j]))
+#                cv2.imshow("RECORTE", examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+#                cv2.waitKey(time)
+#                
+#                cv2.imshow("FULL-MAMMO", cv2.resize(examImage, (768, 1024)))
+#                cv2.waitKey(time)
 
             elif temporarySmallestWhitePixelOfCoordinateX < smallestBlackPixelAtCoordinateX:
                 row = [croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png', '0'] 
@@ -60,8 +66,21 @@ def crop_cancer(fixPath, path, patientFile, roiFilePath, croppedImagesPath, imag
                
                 if biggestWhitePixelOfCoordinateX - 256 < smallestBlackPixelAtCoordinateX: 
                     cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), 0:256])
+                    
+                    print("teste2"+ str(patientFile[j]))
+#                    cv2.imshow("RECORTE", examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+#                    cv2.waitKey(time)
+#
+#                    cv2.imshow("FULL-MAMMO", cv2.resize(examImage, (768, 1024)))
+#                    cv2.waitKey(time)
+                    
                 else:    
                     cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                    print("teste3"+ str(patientFile[j]))
+#                    cv2.imshow("RECORTE", examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+#                    cv2.waitKey(time)
+#                    cv2.imshow("FULL-MAMMO", cv2.resize(examImage, (768, 1024)))
+#                    cv2.waitKey(time)
                 
             else:
                 row = [croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png', '0'] 
@@ -69,7 +88,20 @@ def crop_cancer(fixPath, path, patientFile, roiFilePath, croppedImagesPath, imag
                     writer = csv.writer(csvCrops)
                     writer.writerow(row)
                 csvCrops.close()
-                cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])   
+                cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile[j]) + '_NoCancer' + '(' + str(j) + ')' + '.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                print("teste4" + str(patientFile[j]))
+#
+#                cv2.imshow("FULL-MAMMO", cv2.resize(examImage, (768, 1024)))
+#                cv2.waitKey(time)
+#                
+#                cv2.imshow("RECORTE", examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+#                cv2.waitKey(time)
+
+
+
+# =============================================================================
+# PARA RECORTAR A AREA COM CANCER, DESLOCAMENTOS DE 10PX PARA CADA DIRECAO
+# =============================================================================
 
     elif cropCancerBool == 1:
         if distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX <= 256 and distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY <= 256:
