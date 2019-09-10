@@ -1,0 +1,7 @@
+*/generate_gt
+*.o
+*.~
+.cproject
+.project
+*/original_dataset/*
+
