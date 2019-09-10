@@ -1,9 +1,9 @@
 /*******************GENERATE_GT***********************
 
  Compile:
- g++ -std=c++0x -o generate_gt2 generate_images_dataset.cpp -W -Wall `pkg-config --cflags opencv` -O4 `pkg-config --libs opencv` -Wno-unused-variable
+ g++ -std=c++0x -o generate_gt generate_images_dataset.cpp -W -Wall `pkg-config --cflags opencv` -O4 `pkg-config --libs opencv` -Wno-unused-variable
 
- ./generate_gt2 /home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_test_2019_09_04.txt /home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_test_ROI_2019_09_04.txt 
+ ./generate_gt /home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_test_2019_09_04.txt /home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_test_ROI_2019_09_04.txt 
 
  *************************************************/
 
@@ -41,27 +41,35 @@ typedef struct
 
 
 Mat image, image2;
-Mat roi_image, roi_image2;
-BBOX global_bbox;
-BBOX global_bbox2;
+Mat roi_image;
+BBOX global_bbox, global_bbox_roi;
 vector<BBOX> bbox_vector, previous_bbox_vector;
-string window_name = "<G>GOOD  <Y>BENIGN  <R>MALIGNANT  <O>Off  <N>Next  <B>Back  <ESC>Exit";
+string window_name = "<G>GOOD  <Y>BENIGN  <R>MALIGNANT  <N>Next  <B>Back  <ESC>Exit";
 string new_window_name = "SEGMENTED IMAGE - GROUND TRUTH";
 
 
 void
 drawing_current_bbox(int x0, int y0, int x1, int y1)
 {
-	Mat img;
+	Mat img, img_roi;
 
 	if (image2.empty())
+	{
 		img = image.clone();
-	else
+		img_roi = roi_image.clone();
+	}
+	else 
+	{
 		img = image2.clone();
+		img_roi = roi_image.clone();
+	}
 
 	rectangle(img, cvPoint(x0, y0), cvPoint(x1, y1), CV_RGB(0, 255, 255), 1);
 	imshow(window_name, img);
 	img.~Mat();
+	rectangle(img_roi, cvPoint(x0, y0), cvPoint(x1, y1), CV_RGB(0, 255, 255), 1);
+	imshow(new_window_name, img_roi);
+	img_roi.~Mat();
 }
 
 
@@ -94,8 +102,10 @@ drawl_all_bbox()
 			r = 200; g = 200; b = 200;
 		}
 		rectangle(image2, cvPoint(bbox_vector[i].x0, bbox_vector[i].y0), cvPoint(bbox_vector[i].x1, bbox_vector[i].y1), CV_RGB(r, g, b), 1);
+		rectangle(roi_image, cvPoint(bbox_vector[i].x0, bbox_vector[i].y0), cvPoint(bbox_vector[i].x1, bbox_vector[i].y1), CV_RGB(r, g, b), 1);
 	}
 	imshow(window_name, image2);
+	imshow(new_window_name, roi_image);
 }
 
 
@@ -167,33 +177,8 @@ on_mouse(int event, int x, int y, int, void*)
 		global_bbox.y0 = y - 128*RESIZE;
 		global_bbox.x1 = x - 128*RESIZE;
 		global_bbox.y1 = y + 128*RESIZE;
-		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
-		
-	// 	if (startDraw == true) //starDraw == true !startDraw
-	// 	{
-	// 		if (click_is_inside_bbox(x, y))
-	// 		{
-	// 			drawl_all_bbox();
-	// 			drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
-	// 		}
-	// 		else
-	// 		{
-	// 			global_bbox.x0 = x;
-	// 			global_bbox.y0 = y;
-	// 			startDraw = true;
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		global_bbox.x1 = x;
-	// 		global_bbox.y1 = y;
-	// 		startDraw = false;
-	// 	}
+		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);		
 	}
-	// if (event == EVENT_MOUSEMOVE && startDraw)
-	// {
-	// 	drawing_current_bbox(global_bbox.x0, global_bbox.y0, x, y);
-	// }
 }
 
 
@@ -305,10 +290,10 @@ open_image_label_file(string image_name)
 
 		if (line_vector[0].compare("DontCare"))      // If this is not a DontCare line
 		{
-			bbox.x0 = stoi(line_vector[4]) * RESIZE;
-			bbox.y0 = stoi(line_vector[5]) * RESIZE;
-			bbox.x1 = stoi(line_vector[6]) * RESIZE;
-			bbox.y1 = stoi(line_vector[7]) * RESIZE;
+			bbox.x0 = stoi(line_vector[1]) * RESIZE;
+			bbox.y0 = stoi(line_vector[2]) * RESIZE;
+			bbox.x1 = stoi(line_vector[3]) * RESIZE;
+			bbox.y1 = stoi(line_vector[4]) * RESIZE;
 			bbox.state = line_vector[0];
 
 			sort_coordinates(bbox.x0, bbox.y0, bbox.x1, bbox.y1);
@@ -374,8 +359,8 @@ save_to_file(string image_name)
 	{
 		sort_coordinates(bbox_vector[i].x0, bbox_vector[i].y0, bbox_vector[i].x1, bbox_vector[i].y1);
 
-		current_label_file << bbox_vector[i].state + ' ' + "0.00" + ' ' + "0" + ' ' + "0.00" + ' ' + to_string(ceil(bbox_vector[i].x0/RESIZE)) + ".00" + ' ' + to_string(ceil(bbox_vector[i].y0/RESIZE)) + ".00" + ' ' + to_string(ceil(bbox_vector[i].x1/RESIZE)) +
-				".00" + ' '	+ to_string(ceil(bbox_vector[i].y1/RESIZE)) + ".00" + ' ' + "0.00" + ' ' + "0.00" + ' ' + "0.00" + ' ' + "0.00" + ' ' + "0.00" + ' ' + "0.00" + ' ' + "0" + "\n";
+		current_label_file << bbox_vector[i].state + ' ' + to_string(ceil(bbox_vector[i].x0/RESIZE)) + ' ' + to_string(ceil(bbox_vector[i].y0/RESIZE)) + ' ' + to_string(ceil(bbox_vector[i].x1/RESIZE)) +
+				' '	+ to_string(ceil(bbox_vector[i].y1/RESIZE)) +  "\n";
 	}
 
 	previous_bbox_vector = bbox_vector;
@@ -663,7 +648,6 @@ main(int argc, char** argv)
 	image.~Mat();
 	image2.~Mat();
 	roi_image.~Mat();
-	roi_image2.~Mat();
 	destroyWindow(window_name);
 	destroyWindow(new_window_name);
 

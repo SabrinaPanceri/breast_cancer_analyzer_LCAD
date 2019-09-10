@@ -1,7 +1,7 @@
 /*******************GENERATE_GT***********************
 
  Compile:
- g++ -std=c++0x -o generate_gt generate_images_dataset.cpp -W -Wall `pkg-config --cflags opencv` -O4 `pkg-config --libs opencv` -Wno-unused-variable
+ g++ -std=c++0x -o generate_gt generate_gt_traffic_light.cpp -W -Wall `pkg-config --cflags opencv` -O4 `pkg-config --libs opencv` -Wno-unused-variable
 
  *************************************************/
 
@@ -26,7 +26,7 @@ using namespace cv;
 
 
 //#define SPECIFIC_LABEL "trafficlight"         // Uncomment to see only images that have a specific annotation, like traffic_light
-double RESIZE = 0.15;
+double RESIZE = 0.8;
 
 typedef struct
 {
@@ -157,37 +157,31 @@ on_mouse(int event, int x, int y, int, void*)
 
 	if (event == EVENT_LBUTTONDOWN)
 	{
-
-		global_bbox.x0 = x + 128*RESIZE;
-		global_bbox.y0 = y - 128*RESIZE;
-		global_bbox.x1 = x - 128*RESIZE;
-		global_bbox.y1 = y + 128*RESIZE;
-		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
-	// 	if (startDraw == true) //starDraw == true !startDraw
-	// 	{
-	// 		if (click_is_inside_bbox(x, y))
-	// 		{
-	// 			drawl_all_bbox();
-	// 			drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
-	// 		}
-	// 		else
-	// 		{
-	// 			global_bbox.x0 = x;
-	// 			global_bbox.y0 = y;
-	// 			startDraw = true;
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		global_bbox.x1 = x;
-	// 		global_bbox.y1 = y;
-	// 		startDraw = false;
-	// 	}
+		if (!startDraw)
+		{
+			if (click_is_inside_bbox(x, y))
+			{
+				drawl_all_bbox();
+				drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
+			}
+			else
+			{
+				global_bbox.x0 = x;
+				global_bbox.y0 = y;
+				startDraw = true;
+			}
+		}
+		else
+		{
+			global_bbox.x1 = x;
+			global_bbox.y1 = y;
+			startDraw = false;
+		}
 	}
-	// if (event == EVENT_MOUSEMOVE && startDraw)
-	// {
-	// 	drawing_current_bbox(global_bbox.x0, global_bbox.y0, x, y);
-	// }
+	if (event == EVENT_MOUSEMOVE && startDraw)
+	{
+		drawing_current_bbox(global_bbox.x0, global_bbox.y0, x, y);
+	}
 }
 
 
@@ -281,7 +275,7 @@ open_image_label_file(string image_name)
 	cout << "Loading label: " << image_name << endl << endl;
 
 	current_label_file.open(image_name.c_str());
-	
+
 	if (!current_label_file.is_open())
 		return label_found;
 
@@ -587,7 +581,6 @@ main(int argc, char** argv)
 	int iKey = -1;
 	unsigned int actual_image_position = 0;
 	vector<string> image_name_vector;
-	vector<string> roi_image_name_vector;
 
 
 	if (argc != 2)
@@ -598,7 +591,6 @@ main(int argc, char** argv)
 
 	//path = get_path(argv[1]);
 	image_name_vector = open_file_read_all_image_names (argv[1]);
-	roi_image_name_vector = open_file_read_all_image_names (argv[1]);
 
 	namedWindow(window_name, WINDOW_AUTOSIZE);
 	setMouseCallback(window_name, on_mouse);
@@ -607,17 +599,12 @@ main(int argc, char** argv)
 	{
 		cout << "Loading image: " << image_name_vector[actual_image_position] << endl;
 		image = imread(image_name_vector[actual_image_position], 1);
-		
-		// ler o caminho da imagem segmentada e passar apenas para exibir
-		sout << "Loading segmented image: " << roi_image_name_vector[actual_image_position] << endl;
-		roi_image = imread(roi_image_name_vector[actual_image_position], 1);
 
 		if (!image.empty())
 		{
 			resize(image, image, Size(image.cols * RESIZE, image.rows * RESIZE));
 
 			imshow(window_name, image);
-			imshow(new_window, roiImage);
 			int label_found = open_image_label_file(image_name_vector[actual_image_position]);
 
 			// Uncomment SPECIFIC_LABEL to see only images that have a specific annotation, like traffic_light
