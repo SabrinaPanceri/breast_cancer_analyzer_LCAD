@@ -41,7 +41,7 @@ typedef struct
 
 
 Mat image, image2;
-Mat roi_image;
+Mat roi_image, roi_image2;
 BBOX global_bbox, global_bbox_roi;
 vector<BBOX> bbox_vector, previous_bbox_vector;
 string window_name = "<G>GOOD  <Y>BENIGN  <R>MALIGNANT  <N>Next  <B>Back  <ESC>Exit";
@@ -172,12 +172,44 @@ on_mouse(int event, int x, int y, int, void*)
 
 	if (event == EVENT_LBUTTONDOWN)
 	{
+		if (!startDraw)
+		{
+			if (click_is_inside_bbox(x, y))
+			{
+				drawl_all_bbox();
 
+				global_bbox.x0 = x + 128*RESIZE;
+				global_bbox.y0 = y - 128*RESIZE;
+				global_bbox.x1 = x - 128*RESIZE;
+				global_bbox.y1 = y + 128*RESIZE;
+				drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
+
+			}
+			else
+			{
+				global_bbox.x0 = x + 128*RESIZE;
+				global_bbox.y0 = y - 128*RESIZE;
+
+				
+				startDraw = true;
+			}
+		}
+		else
+		{
+			global_bbox.x1 = x - 128*RESIZE;
+			global_bbox.y1 = y + 128*RESIZE;
+			
+			startDraw = false;
+		}
+	}
+	if (event == EVENT_MOUSEMOVE && startDraw)
+	{
 		global_bbox.x0 = x + 128*RESIZE;
 		global_bbox.y0 = y - 128*RESIZE;
-		global_bbox.x1 = x - 128*RESIZE;
-		global_bbox.y1 = y + 128*RESIZE;
-		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);		
+		x = x - 128*RESIZE;
+		y = y + 128*RESIZE;
+		drawing_current_bbox(global_bbox.x0, global_bbox.y0, x, y);
+
 	}
 }
 
@@ -411,6 +443,12 @@ apply_zoom()
 		drawl_all_bbox();
 		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
 
+		roi_image = roi_image.clone();
+		roi_image2.~Mat();
+
+		drawl_all_bbox();
+		drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
+
 		zoom = false;
 	}
 	else
@@ -448,11 +486,19 @@ apply_zoom()
 		resize_factor_x = (double)(x1 - x0) / image2.cols;
 		resize_factor_y = (double)(y1 - y0) / image2.rows;
 
+		resize_factor_x = (double)(x1 - x0) / roi_image2.cols;
+		resize_factor_y = (double)(y1 - y0) / roi_image2.rows;
+
 		Rect myROI(x0, y0, x1 - x0, y1 - y0);
+		Rect myROI2(x0, y0, x1 - x0, y1 - y0);
 
 		image2 = image(myROI);
 		resize(image2, image2, Size(image.cols, image.rows));
 		imshow(window_name, image2);
+
+		roi_image2 = roi_image(myROI2);
+		resize(roi_image2, roi_image2, Size(roi_image.cols, roi_image.rows));
+		imshow(new_window_name, roi_image2);
 
 		zoom = true;
 	}
@@ -648,6 +694,7 @@ main(int argc, char** argv)
 	image.~Mat();
 	image2.~Mat();
 	roi_image.~Mat();
+	roi_image2.~Mat();
 	destroyWindow(window_name);
 	destroyWindow(new_window_name);
 

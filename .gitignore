@@ -4,4 +4,6 @@
 .cproject
 .project
 */original_dataset/*
-
+*/benign/*
+*/good/*
+*/malignant/*
