@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = '/home/sabrina/Datasets/CBIS-DDSM/runsCBIS'
+RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
@@ -22,34 +22,34 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/home/sabrina/Datasets/CBIS-DDSM/cbisddsm_train_2019_08_30_png.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_11.txt',
 )
 
 TRAINING_DIR = (
-        '/home/sabrina/Datasets/CBIS-DDSM/CALC/Calc-Training-ROI/CBIS-DDSM',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
 )
 
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/Datasets/CBIS-DDSM/cbisddsm_val_2019_08_30_png.txt',
-        '/home/sabrina/Datasets/CBIS-DDSM/cbisddsm_teste_2019_08_30_png.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_11.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_11.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/Datasets/CBIS-DDSM/CALC/Calc-Training-ROI/CBIS-DDSM',
-        '/home/sabrina/Datasets/CBIS-DDSM/CALC/Calc-Training-ROI/CBIS-DDSM',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
 )
 
 TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 
-BATCH_SIZE, ACCUMULATE = 4, 1
+BATCH_SIZE, ACCUMULATE = 16, 1
 
-EPOCHS = 1000
-SAVES_PER_EPOCH = 1
+EPOCHS = 100
+SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.01
+INITIAL_LEARNING_RATE = 0.001
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 100
+DECAY_STEP_SIZE = 50
 
 NUM_WORKERS = 4
 
