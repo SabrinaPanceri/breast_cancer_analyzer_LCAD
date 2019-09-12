@@ -23,15 +23,19 @@ def image_generator(examsPath, listOfFiles, j):
                     maxX = listOfCoordinates[y][3].split(".")
                     minY = listOfCoordinates[y][2].split(".")
                     maxY = listOfCoordinates[y][4].split(".")
+                    distance_X = int(maxX[0]) - int(minX[0])
+                    distance_Y = int(maxY[0]) - int(minY[0])
+                    dif_X = (distance_X - 256)/2
+                    dif_Y = (distance_Y - 256)/2
                     if listOfCoordinates[y][0] == "MALIGNANT":
-                            cv2.imwrite(os.path.join(malignantPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(minY[0]):int(maxY[0]), int(minX[0]):int(maxX[0])])
+                            cv2.imwrite(os.path.join(malignantPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(int(minY[0]) + int(dif_Y)):int(int(maxY[0]) - int(dif_Y)),int(int(minX[0]) + int(dif_X)):int(int(maxX[0]) - int(dif_X))])
                     elif listOfCoordinates[y][0] == "GOOD":
-                            cv2.imwrite(os.path.join(goodPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(minY[0]):int(maxY[0]), int(minX[0]):int(maxX[0])])
+                            cv2.imwrite(os.path.join(goodPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(int(minY[0]) + int(dif_Y)):int(int(maxY[0]) - int(dif_Y)),int(int(minX[0]) + int(dif_X)):int(int(maxX[0]) - int(dif_X))])
                     elif listOfCoordinates[y][0] == "BENIGN":
-                            cv2.imwrite(os.path.join(benignPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(minY[0]):int(maxY[0]), int(minX[0]):int(maxX[0])])
+                            cv2.imwrite(os.path.join(benignPath + fileName[0] +'_Crop_' + str(y) + '.png'), image[int(int(minY[0]) + int(dif_Y)):int(int(maxY[0]) - int(dif_Y)),int(int(minX[0]) + int(dif_X)):int(int(maxX[0]) - int(dif_X))])
                     y+=1
         else:
-            print(img + " >>>>>>> does not exist")
+            print(">>>>>>>>>>>>>>>>>>> ERROR:" + img + " Doesn't exists!")
             exit()
     return j
 
