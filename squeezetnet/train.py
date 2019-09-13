@@ -48,8 +48,9 @@ EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
 INITIAL_LEARNING_RATE = 0.0005
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 1
+DECAY_STEP_SIZE = 2
 
 NUM_WORKERS = 4
 
@@ -284,7 +285,7 @@ def main():
                     step_i += 1
                     step_begin = time.time()
 
-        if epoch_i%DECAY_STEP_SIZE == 0:
+        if (epoch_i < LAST_EPOCH_FOR_LEARNING_RATE_DECAY) and (epoch_i%DECAY_STEP_SIZE == 0):
             for g in optimizer.param_groups:
                 g['lr'] /= DECAY_RATE
 
