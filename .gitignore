@@ -1,4 +1,4 @@
-*/generate_gt
+*/generate_gt*
 *.o
 *.~
 .cproject
@@ -6,4 +6,8 @@
 */original_dataset/*
 */benign/*
 */good/*
+*/good-11-09-2019/*
 */malignant/*
+*/malignant-11-09-2019/*
+*/runs/*
+*/labels-dataset-12-09-2019/*

@@ -170,6 +170,8 @@ on_mouse(int event, int x, int y, int, void*)
 {
 	static bool startDraw = false;
 
+	int fixBound = 128;
+
 	if (event == EVENT_LBUTTONDOWN)
 	{
 		if (!startDraw)
@@ -178,17 +180,17 @@ on_mouse(int event, int x, int y, int, void*)
 			{
 				drawl_all_bbox();
 
-				global_bbox.x0 = x + 128*RESIZE;
-				global_bbox.y0 = y - 128*RESIZE;
-				global_bbox.x1 = x - 128*RESIZE;
-				global_bbox.y1 = y + 128*RESIZE;
+				global_bbox.x0 = x + fixBound*RESIZE;
+				global_bbox.y0 = y - fixBound*RESIZE;
+				global_bbox.x1 = x - fixBound*RESIZE;
+				global_bbox.y1 = y + fixBound*RESIZE;
 				drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
 
 			}
 			else
 			{
-				global_bbox.x0 = x + 128*RESIZE;
-				global_bbox.y0 = y - 128*RESIZE;
+				global_bbox.x0 = x + fixBound*RESIZE;
+				global_bbox.y0 = y - fixBound*RESIZE;
 
 				
 				startDraw = true;
@@ -196,18 +198,18 @@ on_mouse(int event, int x, int y, int, void*)
 		}
 		else
 		{
-			global_bbox.x1 = x - 128*RESIZE;
-			global_bbox.y1 = y + 128*RESIZE;
+			global_bbox.x1 = x - fixBound*RESIZE;
+			global_bbox.y1 = y + fixBound*RESIZE;
 			
 			startDraw = false;
 		}
 	}
 	if (event == EVENT_MOUSEMOVE && startDraw)
 	{
-		global_bbox.x0 = x + 128*RESIZE;
-		global_bbox.y0 = y - 128*RESIZE;
-		x = x - 128*RESIZE;
-		y = y + 128*RESIZE;
+		global_bbox.x0 = x + fixBound*RESIZE;
+		global_bbox.y0 = y - fixBound*RESIZE;
+		x = x - fixBound*RESIZE;
+		y = y + fixBound*RESIZE;
 		drawing_current_bbox(global_bbox.x0, global_bbox.y0, x, y);
 
 	}
@@ -390,6 +392,18 @@ save_to_file(string image_name)
 	for (unsigned int i = 0; i < bbox_vector.size(); i++)
 	{
 		sort_coordinates(bbox_vector[i].x0, bbox_vector[i].y0, bbox_vector[i].x1, bbox_vector[i].y1);
+
+		cout << "bbox_vector[i] X1 - X0 " << bbox_vector[i].x1/RESIZE - bbox_vector[i].x0/RESIZE << endl;
+		cout << "bbox_vector[i].Y1 - Y0 " << bbox_vector[i].y1/RESIZE -bbox_vector[i].y0/RESIZE << endl;
+		
+		cout << "ceil- bbox_vector[i] X1 - X0 " << ceil(bbox_vector[i].x1/RESIZE - bbox_vector[i].x0/RESIZE) << endl;
+		cout << "ceil- bbox_vector[i].Y1 - Y0 " << ceil(bbox_vector[i].y1/RESIZE -bbox_vector[i].y0/RESIZE) << endl;
+
+		cout << "floor- bbox_vector[i] X1 - X0 " << floor(bbox_vector[i].x1/RESIZE - bbox_vector[i].x0/RESIZE) << endl;
+		cout << "floor- bbox_vector[i].Y1 - Y0 " << floor(bbox_vector[i].y1/RESIZE -bbox_vector[i].y0/RESIZE) << endl;
+
+		
+				
 
 		current_label_file << bbox_vector[i].state + ' ' + to_string(ceil(bbox_vector[i].x0/RESIZE)) + ' ' + to_string(ceil(bbox_vector[i].y0/RESIZE)) + ' ' + to_string(ceil(bbox_vector[i].x1/RESIZE)) +
 				' '	+ to_string(ceil(bbox_vector[i].y1/RESIZE)) +  "\n";

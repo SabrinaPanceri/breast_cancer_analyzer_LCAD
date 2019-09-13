@@ -22,7 +22,7 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_11.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
 )
 
 TRAINING_DIR = (
@@ -32,8 +32,8 @@ TRAINING_DIR = (
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_11.txt',
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_11.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_12.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_12.txt',
 )
 TEST_DIR = (
         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
@@ -42,14 +42,14 @@ TEST_DIR = (
 
 TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 
-BATCH_SIZE, ACCUMULATE = 16, 1
+BATCH_SIZE, ACCUMULATE = 32, 1
 
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.001
+INITIAL_LEARNING_RATE = 0.0005
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 50
+DECAY_STEP_SIZE = 1
 
 NUM_WORKERS = 4
 
