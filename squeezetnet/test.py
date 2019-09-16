@@ -13,40 +13,39 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = '//home/sabrina/GIT/breast_cancer_analyzer_LCAD/runsCBIS'
+RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
 
 NETWORK = 'squeezenet1_1'
-NUM_CLASSES = 3
+NUM_CLASSES = 2
 
-INITIAL_MODEL = '/home/sabrina/Datasets/CBIS-DDSM/runsCBIS/squeezenet1_1/01/models/squeezenet1_1_1000_1.pth'
+INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1/09/models/squeezenet1_1_70_7.pth'
+
 INITIAL_MODEL_TEST = True
 
-TRAINING = None #('/home/sabrina/Datasets/CBIS-DDSM/cbisddsm_train_2019_08_30_png.txt',)
+TRAINING = None
 
-TRAINING_DIR = None #('/home/sabrina/Datasets/CBIS-DDSM/CALC/Calc-Training-ROI/CBIS-DDSM',)
+TRAINING_DIR = None
 
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_test_2019_09_04.txt',
-        #'/home/sabrina/GIT/breast_cancer_analyzer_LCAD/annotationsFile/cbisddsm_validation_2019_09_04.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_12.txt',
 )
 TEST_DIR = (
-        '',
-        #'/home/sabrina/GIT/breast_cancer_analyzer_LCAD/dataset/cropImages',
-        #'/home/sabrina/GIT/breast_cancer_analyzer_LCAD/dataset/cropImages',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
 )
 
 TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 
-BATCH_SIZE, ACCUMULATE = 4, 1
+BATCH_SIZE, ACCUMULATE = 1, 1
 
-EPOCHS = 1000
-SAVES_PER_EPOCH = 1
+EPOCHS = 100
+SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.001
+INITIAL_LEARNING_RATE = 0.0005
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 100
+DECAY_STEP_SIZE = 2
 
 NUM_WORKERS = 4
 
@@ -285,7 +284,7 @@ def main():
                     step_i += 1
                     step_begin = time.time()
 
-        if epoch_i%DECAY_STEP_SIZE == 0:
+        if (epoch_i < LAST_EPOCH_FOR_LEARNING_RATE_DECAY) and (epoch_i%DECAY_STEP_SIZE == 0):
             for g in optimizer.param_groups:
                 g['lr'] /= DECAY_RATE
 
