@@ -18,8 +18,8 @@ RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
-INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1/09/models/squeezenet1_1_70_7.pth'
-INITIAL_MODEL_TEST = True
+INITIAL_MODEL = None
+INITIAL_MODEL_TEST = False
 
 TRAINING = (
         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
@@ -47,10 +47,10 @@ BATCH_SIZE, ACCUMULATE = 32, 1
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.00003125
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 100
+INITIAL_LEARNING_RATE = 0.0005
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 60
+DECAY_STEP_SIZE = 2
 
 NUM_WORKERS = 4
 
