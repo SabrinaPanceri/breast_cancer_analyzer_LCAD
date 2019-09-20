@@ -2,8 +2,8 @@
 
 import cv2
 import sys
-import numpy as np
-from numpy import dtype
+# import numpy as np
+# from numpy import dtype
 
 
 
@@ -13,17 +13,16 @@ def image_tester(imageName, imagePath, file_net):
     
     fileName = imageName.split('.')
         
-    scale_percent = 20 # percent of original size
+    scale_percent = 15 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
     height = int(imagePath.shape[0] * scale_percent / 100)
     dim = (width, height)
     resized = cv2.resize(imagePath, dim, interpolation = cv2.INTER_AREA)
-#     with open(file_net, "w") as input_net:          
+
+    
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
             cropped_img = imagePath[i:i+256, j:j+256]
-            print(cropped_img.shape)
-
 
             if ((cropped_img == 0).all() or cropped_img.shape != (256,256)):
                 break
@@ -38,19 +37,29 @@ def image_tester(imageName, imagePath, file_net):
                 with open(file_net, "a") as input_net:
                     input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
                 
-#                     input_net.write(str(i)+' '+ str(j) + '\n')
-                
                 cv2.namedWindow('resized_copy', cv2.WINDOW_AUTOSIZE)
                 cv2.imshow('resized_copy', resized_copy)
                 cv2.imshow('cropped_img', cropped_img)
                 cv2.waitKey(100)
-
+                
+        
+        
     cv2.destroyAllWindows() # close displayed windows
         
-    return input_net
 
 
 def out_network(file_net, probability_txt):
+    
+    
+#     chamar o scrip de execução da rede aqui
+#     passar para o script a imagem crooped
+#     pegar o script o valor da probalidade
+#     [probabilidade de não ser cancer][probabilidade de SER cancer]
+#     criar a nova imagem de acordo com o maior valor
+#     a nova imagem sera branca (255), se o maior valor for  [probabilidade de SER cancer]
+#     a nova imagem sera preta (0), se o maior valor for  [probabilidade de NÃO SER cancer]
+
+
     
     input_net = open(file_net)
     for line in input_net:
@@ -63,12 +72,14 @@ def main(args):
     imageName = str(args[1])
     imagePath = cv2.imread(imageName, 0)
     file_net = str(args[2])
+     
+    
 #     probability_txt = str(args[3])
     
-    input_file = image_tester(imageName, imagePath, file_net)
+    image_tester(imageName, imagePath, file_net)
     
-    with open(input_file, "r") as path_image_analised:
-        out_network(path_image_analised)
+#     with open(input_file, "r") as path_image_analised:
+#         out_network(path_image_analised)
     
     return 0
 

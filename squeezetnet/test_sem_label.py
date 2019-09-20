@@ -4,7 +4,7 @@ from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
 import pandas as pd
-import cv2
+import cv2, sys
 
 import torch
 from torch.utils.data import Dataset
@@ -28,13 +28,11 @@ TRAINING = None
 
 TRAINING_DIR = None
 
-SHUFFLE = True
-
 TEST = (
-        '/home/sabrina/GIT/eclipse-workspace/imageprocessing/src/input5.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/mammo_viewer/input.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/GIT/eclipse-workspace/imageprocessing/src',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/mammo_viewer',
 )
 
 TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
@@ -43,11 +41,6 @@ BATCH_SIZE, ACCUMULATE = 1, 1 #BATCH SEMPRE IGUAL 1
 
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
-
-INITIAL_LEARNING_RATE = 0.0005
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
-DECAY_RATE = 2
-DECAY_STEP_SIZE = 2
 
 NUM_WORKERS = 4
 
@@ -115,8 +108,6 @@ class DatasetFromCSV(Dataset):
 
 def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None):
     net.eval()
-    # str_buf = '\n\t' + dataset_name + ':\n\n\t\tConfusion Matrix\tClass Accuracy\n'
-    # print(str_buf)
     if results_file != None:
         with open(results_file, 'a') as results:
             results.write(str_buf + '\n')
@@ -138,30 +129,25 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                         with open('probalidade_test.txt', 'a') as ptest:
                             ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
                         print(s)
-                    # break
+ 
                     c = torch.max(classification, 1)[1].tolist()
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
             class_accuracy = float(line[i])/dataset.data_len
             average_class_accuracy += class_accuracy
-        # str_buf = '\t'
-        # for j in range(NUM_CLASSES):
-        #     str_buf += '\t' + str(line[j])
-        # str_buf += '\t{:.9f}'.format(class_accuracy)
-        # print(str_buf)
+ 
         if results_file != None:
             with open(results_file, 'a') as results:
                 results.write(str_buf + '\n')
     average_class_accuracy /= valid_classes
-    # str_buf = '\n\t\tAverage Class Accuracy: {:.9f}'.format(average_class_accuracy)
-    # print(str_buf)
     if results_file != None:
         with open(results_file, 'a') as results:
             results.write(str_buf + '\n')
     net.train()
 
 
-def main():
+def main(args):
+
     torch.multiprocessing.set_start_method('spawn', force=True)
 
     net = Net().to('cuda:0')
@@ -298,4 +284,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main(sys.argv))
