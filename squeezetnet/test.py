@@ -18,7 +18,7 @@ RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
-INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1/09/models/squeezenet1_1_70_7.pth'
+INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1_60_8.pth'
 
 INITIAL_MODEL_TEST = True
 
@@ -29,13 +29,13 @@ TRAINING_DIR = None
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_12.txt',
+        '/home/sabrina/GIT/eclipse-workspace/imageprocessing/src/input_label.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/sabrina/GIT/eclipse-workspace/imageprocessing/src',
 )
 
-TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
+TRANSFORMS = transforms.Normalize([0.5], [0.5])
 
 BATCH_SIZE, ACCUMULATE = 1, 1
 
@@ -92,7 +92,7 @@ class DatasetFromCSV(Dataset):
         self.transforms = transforms
 
         if dataset_file != None:
-            with open(dataset_file, 'w') as dataset:
+            with open(dataset_file, 'a') as dataset:
                 for image, label in zip(self.images, self.labels):
                     dataset.write(image + ' ' + str(label) + '\n')
 
@@ -100,7 +100,7 @@ class DatasetFromCSV(Dataset):
         return self.data_len
 
     def __getitem__(self, i):
-        image = cv2.imread(self.images[i], 3)
+        image = cv2.imread(self.images[i], 0)
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
         image = image/255
         image = torch.from_numpy(image.astype(np.float32))
@@ -128,9 +128,13 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                 for batch in dataloader:
                     classification = net(batch[0].to('cuda:0'))
                     m = nn.Softmax(dim=1)
-                    s = m(classification)
-                    s = s.tolist()
-                    print('{:.9f}'.format(s[0][1]))
+                    batch_s = m(classification)
+                    batch_s = batch_s.tolist()
+                    for s in batch_s:
+                        with open('probalidade_test.txt', 'a') as ptest:
+                            ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
+                        print(s)
+                    # break
                     c = torch.max(classification, 1)[1].tolist()
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
@@ -166,7 +170,7 @@ def main():
             print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
         tests = []
         for csv_file, root_dir in zip(TEST, TEST_DIR):
-            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS) for i in range(NUM_CLASSES)]
+            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.txt') for i in range(NUM_CLASSES)]
             dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
             tests.append((csv_file, datasets_per_label, dataloaders_per_label))
             if INITIAL_MODEL_TEST:
