@@ -13,4 +13,6 @@
 */labels-dataset-12-09-2019/*
 /mammo_viewer/cropped/*
 /mammo_viewer/test_viewer_dataset/*
+/mammo_viewer/val_viewer_dataset/*
+/mammo_viewer/train_viewer_dataset/*
 /mammo_viewer/classified/*
