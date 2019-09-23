@@ -4,7 +4,7 @@ from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
 import pandas as pd
-import cv2, sys
+import cv2
 
 import torch
 from torch.utils.data import Dataset
@@ -146,8 +146,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
     net.train()
 
 
-def main(args):
-
+def main():
     torch.multiprocessing.set_start_method('spawn', force=True)
 
     net = Net().to('cuda:0')
@@ -284,4 +283,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    main()

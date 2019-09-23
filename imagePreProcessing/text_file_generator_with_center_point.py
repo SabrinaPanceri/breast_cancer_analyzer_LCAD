@@ -30,8 +30,7 @@ def text_file_generator_with_center_point(examsPath, listOfFiles, j):
                     with open(pathNewLabels + fileName[0] + '.txt', 'a') as newLabel:
                         newLabel.write(label + ' ' + str(centralCoordinateX) + ' ' + str(centralCoordinateY) + '\n')
                     y+=1
-        else:
-            print(">>>>>>>>>>>>>>>>>>> ERROR:" + img + " Doesn't exists!")
+        
     return j
 
 def main(args):
