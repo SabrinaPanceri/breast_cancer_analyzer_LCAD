@@ -9,7 +9,7 @@ import torch.nn as nn
 
 
 
-def image_tester(imageName, imagePath, file_net, net):
+def image_tester(imageName, image_GT, imagePath, net):
            
     Y_Max, X_Max, channels = imagePath.shape
     
@@ -20,40 +20,19 @@ def image_tester(imageName, imagePath, file_net, net):
     height = int(imagePath.shape[0] * scale_percent / 100)
     dim = (width, height)
     resized = cv2.resize(imagePath, dim, interpolation = cv2.INTER_AREA)
+    
+    resized_GT = cv2.resize(image_GT, dim, interpolation = cv2.INTER_AREA)
+    
+#     classificada = np.zeros(shape = [Y_Max, X_Max, channels], dtype = np.uint8)
+    classificada = imagePath
+    classificada_resized = cv2.resize(classificada, dim, interpolation = cv2.INTER_AREA)
 
     
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
-            
             cropped_img = imagePath[i:i+256, j:j+256]
             cropped_tensor = cropped_img.copy()
-             
-#             cropped_tensor = np.transpose(cropped_tensor, [2, 0, 1])[[2, 1, 0]]
-#             cropped_tensor = cropped_tensor/255
-#             cropped_tensor = torch.from_numpy(cropped_tensor.astype(np.float32))
-#             normalize = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])            
-#             cropped_tensor = normalize(cropped_tensor)
-#             cropped_tensor_list = np.array([cropped_tensor.tolist()])
-#             cropped_tensor = torch.from_numpy(cropped_tensor_list.astype(np.float32))
-#               
-#               
-#             with torch.no_grad():
-#                 classification = net(cropped_tensor.to('cuda:0'))
-#                 m = nn.Softmax(dim=1)
-#                   
-#                 batch_s = m(classification)
-#                 batch_s = batch_s.tolist()
-#                   
-#                 for s in batch_s:
-#                     with open('probalidade_test.txt', 'a') as ptest:
-#                         ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
-#                     print(s)
-#                   
-#                 c = torch.max(classification, 1)[1].tolist()
-#                   
-#                 print(c)
             
-
             if ((cropped_img == 0).all() or cropped_img.shape != (256,256,3)):
                 break
             else:
@@ -61,38 +40,44 @@ def image_tester(imageName, imagePath, file_net, net):
                 cv2.rectangle(resized_copy, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (255,0,0), 2)
-            
                 cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
                 
-                with open(file_net, "a") as input_net:
-                    input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
-#                 print(cropped_img)
+#                 with open(file_net, "a") as input_net:
+#                     input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
 
-                
-                cv2.namedWindow('resized_copy', cv2.WINDOW_AUTOSIZE)
-                cv2.imshow('resized_copy', resized_copy)
-                cv2.imshow('cropped_img', cropped_img)
                 
                 input_class = network_classifier(cropped_tensor, net)
                 
-                if input_class == 0:
-                    print('input_class = 0')
-#                     classificada = cv2.imread()
-#                     classificada[i:i+256, j:j+256] = (0,0,0)                    
-#                     cv2.imshow('CLASSIFICADA', classificada)
-#                     cv2.waitKey(100)
-#                 elif c == 1:
-#                     branca
-#                 else:
-#                     verde
+                print(input_class[0][1])
                 
-                cv2.waitKey(100)
+                if input_class[0][1] > 0.9:
+#                     print('input_class = 0')                    
+                    cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
+                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=-1)
+                    
+                    cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
+
+                    
+                else:
+#                     print('input_class = 1')
+                    cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
+                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
+                    cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
+                    
+
+#                 cv2.namedWindow('FULL_MAMMO', cv2.WINDOW_AUTOSIZE)
+                cv2.imshow('FULL_MAMMO', resized_copy)
+                cv2.imshow('cropped_img', cropped_img)
+                cv2.imshow('GT_MAMMO', resized_GT)
+                cv2.imshow('classificada', classificada_resized)
                 
-        
-        
+                
+                cv2.waitKey(500)
+    
     cv2.destroyAllWindows() # close displayed windows
         
-
 
 def network_classifier(cropped_tensor, net):
     
@@ -108,18 +93,23 @@ def network_classifier(cropped_tensor, net):
     
     with torch.no_grad():
         classification = net(cropped_tensor.to('cuda:0'))
+#         print(classification)
         m = nn.Softmax(dim=1)
-    
+            
         batch_s = m(classification)
+#         print(batch_s)
         batch_s = batch_s.tolist()
+        print(batch_s)
+        print("aqui")
     
         for s in batch_s:
             with open('probalidade_test.txt', 'a') as ptest:
                 ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
-            print(s)
+#             print(s)
         
-        input_class = torch.max(classification, 1)[1].tolist()
-        print(input_class)
+#         input_class = torch.max(classification, 1)[1].tolist()
+        input_class = batch_s
+#         print(input_class)
         
     return input_class
      
@@ -161,7 +151,8 @@ def main(args):
     imageName = str(args[1])
     imagePath = cv2.imread(imageName, 3)
     
-    file_net = str(args[2])
+    imageGT = str(args[2])
+    image_GT = cv2.imread(imageGT, 3)
     
     torch.multiprocessing.set_start_method('spawn', force=True)
  
@@ -174,8 +165,10 @@ def main(args):
     
 #     probability_txt = str(args[3])
     
-    image_tester(imageName, imagePath, file_net, net)
+#     image_tester(imageName, imagePath, file_net, net)
 #     image_tester(imageName, imagePath, file_net, net=1)
+
+    image_tester(imageName, image_GT, imagePath, net)
     
 #     with open(input_file, "r") as path_image_analised:
 #         out_network(path_image_analised)
