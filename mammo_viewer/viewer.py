@@ -13,7 +13,9 @@ def image_tester(imageName, image_GT, imagePath, net):
            
     Y_Max, X_Max, channels = imagePath.shape
     
-    fileName = imageName.split('.')
+    aux_fileName = imageName.split('/') 
+ 
+    fileName = aux_fileName[1].split('.')
         
     scale_percent = 15 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
@@ -27,6 +29,7 @@ def image_tester(imageName, image_GT, imagePath, net):
     classificada = imagePath
     classificada_resized = cv2.resize(classificada, dim, interpolation = cv2.INTER_AREA)
 
+    print(fileName[0])
     
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
@@ -40,17 +43,18 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.rectangle(resized_copy, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (255,0,0), 2)
-                cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
+#                 cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
                 
 #                 with open(file_net, "a") as input_net:
 #                     input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
 
                 
-                input_class = network_classifier(cropped_tensor, net)
+                input_class = network_classifier(cropped_tensor, net, fileName[0])
                 
-                print(input_class[0][1])
+#                 print(input_class[0][1])
                 
-                if input_class[0][1] > 0.9:
+                
+                if input_class[0][1] > 0.93:
 #                     print('input_class = 0')                    
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
@@ -64,6 +68,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
+
                     cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
                     
 
@@ -74,14 +79,12 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.imshow('classificada', classificada_resized)
                 
                 
-                cv2.waitKey(500)
+                cv2.waitKey(200)
     
     cv2.destroyAllWindows() # close displayed windows
         
 
-def network_classifier(cropped_tensor, net):
-    
-    
+def network_classifier(cropped_tensor, net, fileName):
     cropped_tensor = np.transpose(cropped_tensor, [2, 0, 1])[[2, 1, 0]]
     cropped_tensor = cropped_tensor/255
     cropped_tensor = torch.from_numpy(cropped_tensor.astype(np.float32))
@@ -89,46 +92,21 @@ def network_classifier(cropped_tensor, net):
     cropped_tensor = normalize(cropped_tensor)
     cropped_tensor_list = np.array([cropped_tensor.tolist()])
     cropped_tensor = torch.from_numpy(cropped_tensor_list.astype(np.float32))
-    
-    
     with torch.no_grad():
         classification = net(cropped_tensor.to('cuda:0'))
-#         print(classification)
         m = nn.Softmax(dim=1)
-            
         batch_s = m(classification)
-#         print(batch_s)
         batch_s = batch_s.tolist()
-        print(batch_s)
-        print("aqui")
+#         print(batch_s)
     
         for s in batch_s:
-            with open('probalidade_test.txt', 'a') as ptest:
+            with open('probabilities/'+ fileName +'.txt', 'a') as ptest:
                 ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
-#             print(s)
         
-#         input_class = torch.max(classification, 1)[1].tolist()
         input_class = batch_s
-#         print(input_class)
         
     return input_class
      
-     
-#     chamar o scrip de execução da rede aqui
-#     passar para o script a imagem crooped
-#     pegar o script o valor da probalidade
-#     [probabilidade de não ser cancer][probabilidade de SER cancer]
-#     criar a nova imagem de acordo com o maior valor
-#     a nova imagem sera branca (255), se o maior valor for  [probabilidade de SER cancer]
-#     a nova imagem sera preta (0), se o maior valor for  [probabilidade de NÃO SER cancer]
- 
-     
-    input_net = open(file_net)
-    for line in input_net:
-        print(line)
-    input_net.close()
-
-
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
     print('\n' + new_model_name + ':')
     state_dict = net.state_dict()
@@ -148,30 +126,29 @@ def Net():
 
 
 def main(args):
-    imageName = str(args[1])
-    imagePath = cv2.imread(imageName, 3)
-    
-    imageGT = str(args[2])
-    image_GT = cv2.imread(imageGT, 3)
-    
-    torch.multiprocessing.set_start_method('spawn', force=True)
- 
- 
+    fileName = str(args[1])
     INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1_60_8.pth'
-     
+    torch.multiprocessing.set_start_method('spawn', force=True)
     net = Net().to('cuda:0')
     load_matching_name_and_shape_layers(net, INITIAL_MODEL, torch.load(INITIAL_MODEL))
-     
     
-#     probability_txt = str(args[3])
+    input_net = open(fileName)
     
-#     image_tester(imageName, imagePath, file_net, net)
-#     image_tester(imageName, imagePath, file_net, net=1)
+    for line in input_net:
+        aux = line.split(',')
+        imageName = aux[0]
+        aux_imageGT = aux[1].split('\n')
+        imageGT = aux_imageGT[0]
 
-    image_tester(imageName, image_GT, imagePath, net)
+        imagePath = cv2.imread(imageName, 3)
+        image_GT = cv2.imread(imageGT, 3)
+        
+        image_tester(imageName, image_GT, imagePath, net)
     
-#     with open(input_file, "r") as path_image_analised:
-#         out_network(path_image_analised)
+    
+    input_net.close()
+    
+
     
     return 0
 
