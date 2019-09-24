@@ -49,13 +49,13 @@ def image_tester(imageName, image_GT, imagePath, net):
                 
                 cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
                 
-#                 with open(file_net, "a") as input_net:
-#                     input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
-
-                
                 input_class = network_classifier(cropped_tensor, net, fileName[0])
                 
-                print(input_class[0][1])
+                
+                with open('cropp_prob/'+ fileName[0], "a") as input_net:
+                    input_net.write(fileName[0] +'_'+ str(i)+'_'+ str(j) +'\t'+ str(input_class[0][0]) +'\t' + str(input_class[0][1]) + '\n')
+                
+                print(input_class[0][0], input_class[0][1])
                 
                 
                 if input_class[0][1] > 0.93:
@@ -85,12 +85,12 @@ def image_tester(imageName, image_GT, imagePath, net):
                     
 
 #                 cv2.namedWindow('FULL_MAMMO', cv2.WINDOW_AUTOSIZE)
-                cv2.imshow('FULL_'+fileName[0], resized_copy)
+#                 cv2.imshow('FULL_'+fileName[0], resized_copy)
                 cv2.imshow('CROP_'+fileName[0], cropped_img)
-                cv2.imshow('GT_'+fileName[0], resized_GT)
+#                 cv2.imshow('GT_'+fileName[0], resized_GT)
                 cv2.imshow('GT_CLASSIFIED'+fileName[0], aux_resized_GT)
                 cv2.imshow('CLASSIFIED_'+fileName[0], classificada_resized)
-                cv2.waitKey(100)
+                cv2.waitKey(10)
     
     cv2.destroyAllWindows() # close displayed windows
         
@@ -99,7 +99,7 @@ def network_classifier(cropped_tensor, net, fileName):
     cropped_tensor = np.transpose(cropped_tensor, [2, 0, 1])[[2, 1, 0]]
     cropped_tensor = cropped_tensor/255
     cropped_tensor = torch.from_numpy(cropped_tensor.astype(np.float32))
-    normalize = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])            
+    normalize = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
     cropped_tensor = normalize(cropped_tensor)
     cropped_tensor_list = np.array([cropped_tensor.tolist()])
     cropped_tensor = torch.from_numpy(cropped_tensor_list.astype(np.float32))
