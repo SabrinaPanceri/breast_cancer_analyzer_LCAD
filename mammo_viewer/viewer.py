@@ -16,6 +16,8 @@ def image_tester(imageName, image_GT, imagePath, net):
     aux_fileName = imageName.split('/') 
  
     fileName = aux_fileName[1].split('.')
+    
+#     print(fileName)
         
     scale_percent = 15 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
@@ -24,6 +26,7 @@ def image_tester(imageName, image_GT, imagePath, net):
     resized = cv2.resize(imagePath, dim, interpolation = cv2.INTER_AREA)
     
     resized_GT = cv2.resize(image_GT, dim, interpolation = cv2.INTER_AREA)
+    aux_resized_GT = resized_GT.copy()
     
 #     classificada = np.zeros(shape = [Y_Max, X_Max, channels], dtype = np.uint8)
     classificada = imagePath
@@ -43,7 +46,8 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.rectangle(resized_copy, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (255,0,0), 2)
-#                 cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
+                
+                cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
                 
 #                 with open(file_net, "a") as input_net:
 #                     input_net.write('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png\n')
@@ -51,12 +55,16 @@ def image_tester(imageName, image_GT, imagePath, net):
                 
                 input_class = network_classifier(cropped_tensor, net, fileName[0])
                 
-#                 print(input_class[0][1])
+                print(input_class[0][1])
                 
                 
                 if input_class[0][1] > 0.93:
 #                     print('input_class = 0')                    
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
+                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=-1)
+                    
+                    cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,0,255), thickness=-1)
                     
@@ -68,18 +76,21 @@ def image_tester(imageName, image_GT, imagePath, net):
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
+                    
+                    cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
+                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
 
                     cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
                     
 
 #                 cv2.namedWindow('FULL_MAMMO', cv2.WINDOW_AUTOSIZE)
-                cv2.imshow('FULL_MAMMO', resized_copy)
-                cv2.imshow('cropped_img', cropped_img)
-                cv2.imshow('GT_MAMMO', resized_GT)
-                cv2.imshow('classificada', classificada_resized)
-                
-                
-                cv2.waitKey(200)
+                cv2.imshow('FULL_'+fileName[0], resized_copy)
+                cv2.imshow('CROP_'+fileName[0], cropped_img)
+                cv2.imshow('GT_'+fileName[0], resized_GT)
+                cv2.imshow('GT_CLASSIFIED'+fileName[0], aux_resized_GT)
+                cv2.imshow('CLASSIFIED_'+fileName[0], classificada_resized)
+                cv2.waitKey(100)
     
     cv2.destroyAllWindows() # close displayed windows
         
