@@ -62,11 +62,11 @@ def image_tester(imageName, image_GT, imagePath, net):
 #                     print('input_class = 0')                    
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=-1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
                     
                     cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=-1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
                     
                     cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
 
@@ -75,22 +75,34 @@ def image_tester(imageName, image_GT, imagePath, net):
 #                     print('input_class = 1')
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=1)
                     
                     cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=-1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=1)
 
                     cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
                     
 
 #                 cv2.namedWindow('FULL_MAMMO', cv2.WINDOW_AUTOSIZE)
 #                 cv2.imshow('FULL_'+fileName[0], resized_copy)
-                cv2.imshow('CROP_'+fileName[0], cropped_img)
+                window_cropped = 'CROP_'+fileName[0]
+                window_gt = 'GT_CLASSIFIED'+fileName[0]
+                window_classified = 'CLASSIFIED_'+fileName[0]
+                
+                cv2.namedWindow(window_cropped)
+                cv2.moveWindow(window_cropped, 0, 0)
+                cv2.imshow(window_cropped, cropped_img)
+                
 #                 cv2.imshow('GT_'+fileName[0], resized_GT)
-                cv2.imshow('GT_CLASSIFIED'+fileName[0], aux_resized_GT)
-                cv2.imshow('CLASSIFIED_'+fileName[0], classificada_resized)
-                cv2.waitKey(50)
+                cv2.namedWindow(window_gt)
+                cv2.moveWindow(window_gt, 380, 0)
+                cv2.imshow(window_gt, aux_resized_GT)
+                
+                cv2.namedWindow(window_classified)
+                cv2.moveWindow(window_classified, 1000, 0)
+                cv2.imshow(window_classified, classificada_resized)
+                cv2.waitKey(20)
     
     cv2.destroyAllWindows() # close displayed windows
         
@@ -141,7 +153,7 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
 def Net():
     model = getattr(models, 'squeezenet1_1')
     net = model(num_classes=2)
-    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+#     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
 
 
