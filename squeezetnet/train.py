@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
+RUNS_FOLDER = '/home/sabrina/dataset/runs'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
@@ -22,22 +22,22 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
+        '/home/sabrina/dataset/cbisddsm_train_2019_09_12.txt',
 )
 
 TRAINING_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/sabrina/dataset',
 )
 
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_12.txt',
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_test_2019_09_12.txt',
+        '/home/sabrina/dataset/cbisddsm_val_2019_09_12.txt',
+        # '/home/sabrina/dataset/cbisddsm_test_2019_09_12.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/sabrina/dataset',
+        # '/home/sabrina/dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
@@ -47,7 +47,7 @@ BATCH_SIZE, ACCUMULATE = 32, 1
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0005
+INITIAL_LEARNING_RATE = 0.0004
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
@@ -67,7 +67,7 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
-    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+    # load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
 
 class DatasetFromCSV(Dataset):

@@ -55,7 +55,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                 with open('cropp_prob/'+ fileName[0], "a") as input_net:
                     input_net.write(fileName[0] +'_'+ str(i)+'_'+ str(j) +'\t'+ str(input_class[0][0]) +'\t' + str(input_class[0][1]) + '\n')
                 
-                print(input_class[0][0], input_class[0][1])
+#                 print(input_class[0][0], input_class[0][1])
                 
                 
                 if input_class[0][1] > 0.93:
