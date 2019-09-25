@@ -90,12 +90,13 @@ def image_tester(imageName, image_GT, imagePath, net):
 #                 cv2.imshow('GT_'+fileName[0], resized_GT)
                 cv2.imshow('GT_CLASSIFIED'+fileName[0], aux_resized_GT)
                 cv2.imshow('CLASSIFIED_'+fileName[0], classificada_resized)
-                cv2.waitKey(10)
+                cv2.waitKey(50)
     
     cv2.destroyAllWindows() # close displayed windows
         
 
 def network_classifier(cropped_tensor, net, fileName):
+    net.eval()
     cropped_tensor = np.transpose(cropped_tensor, [2, 0, 1])[[2, 1, 0]]
     cropped_tensor = cropped_tensor/255
     cropped_tensor = torch.from_numpy(cropped_tensor.astype(np.float32))
@@ -103,6 +104,15 @@ def network_classifier(cropped_tensor, net, fileName):
     cropped_tensor = normalize(cropped_tensor)
     cropped_tensor_list = np.array([cropped_tensor.tolist()])
     cropped_tensor = torch.from_numpy(cropped_tensor_list.astype(np.float32))
+    
+#     print(cropped_tensor)
+    
+#     torch.set_printoptions(threshold=100000000)
+#     
+#     with open('cropped_tensor/'+ fileName, "a") as cropped_tensor_file:
+#         cropped_tensor_file.write(str(cropped_tensor) + '\n')
+
+    
     with torch.no_grad():
         classification = net(cropped_tensor.to('cuda:0'))
         m = nn.Softmax(dim=1)
