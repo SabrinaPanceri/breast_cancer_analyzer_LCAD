@@ -6,21 +6,29 @@ import numpy as np
 import torch
 from torchvision import transforms, models
 import torch.nn as nn 
+from numpy import float32, dtype
 
 
 
 def normalization(imagePath):
            
-    Y_Max, X_Max, channels = imagePath.shape
-    
-    aux_mean = np.zeros(shape = [Y_Max, X_Max, channels], dtype = np.float32)
+    Y, X = imagePath.shape
+#     acumulador = np.zeros(Y, dtype=float32)
+    acumulador = 0.0
 
-    
-    for i in range(0, Y_Max, 1):
-        for j in range(0, X_Max, 1):
-            print(imagePath[i][j])
+    for i in range(0, Y, 1):
+        for j in range(0, X, 1):
+            print(i,j)
             
-    exit()
+            media = np.mean(imagePath[i])
+            acumulador += imagePath[i]
+            
+        print(imagePath[i][j])
+        print(media)
+        print(acumulador)                
+#         print(acumulador[i]/6272)
+            
+            
 
 
 def main(args):
@@ -29,16 +37,12 @@ def main(args):
     
     for line in training_dataset_file:
         aux = line.split('\n')
-        print(aux[0])
         imageName = aux[0]
-        print(imageName)
         
-        imagePath = cv2.imread(imageName, 3)
+        imagePath = cv2.imread(imageName, 0)
+        imagePath_2 = imagePath/255
+        normalization(imagePath_2)
         
-        print(imagePath.shape)
-        
-        normalization(imagePath)
-    
     
     training_dataset_file.close()
     
