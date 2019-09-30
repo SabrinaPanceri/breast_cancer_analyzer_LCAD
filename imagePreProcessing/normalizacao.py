@@ -40,18 +40,21 @@ ACUMULATE_MEAN = 0.0
 def calculate_mean(training_dataloader):
     mean = torch.empty(3, dtype=torch.float64)
     i = 0
-#     ACUMULATE_MEAN += mean
+    global ACUMULATE_MEAN 
+    
+    
     for data in training_dataloader:
         
         data = data.type(torch.float64)
         data = data/255.0
         mean += torch.mean(data, dim=[0, 1, 2])
+        ACUMULATE_MEAN += mean
         i += 1
         if i == DATASET_SIZE:
             print(i)
 
     
-#     print(ACUMULATE_MEAN)
+        print(ACUMULATE_MEAN)
     
     return (mean/(DATASET_SIZE/BATCH_SIZE))
 
@@ -107,7 +110,7 @@ def main(args):
     
     training_dataset_file = str(args[1])
     
-    ACUMULATE_MEAN = 0.0
+#     global ACUMULATE_MEAN = 0.0
     
     with open(training_dataset_file, 'r') as DATASET_FILE:
 

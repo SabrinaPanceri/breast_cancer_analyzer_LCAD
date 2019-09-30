@@ -21,11 +21,15 @@ def normalization(imagePath):
             print(i,j)
             
             media = np.mean(imagePath[i])
-            acumulador += imagePath[i]
+            acumulador += imagePath[i][j]
             
-        print(imagePath[i][j])
-        print(media)
-        print(acumulador)                
+#     print(imagePath[i][j])
+#     print(media)
+#     print(acumulador)
+    
+    
+    return acumulador, media
+#     exit()                
 #         print(acumulador[i]/6272)
             
             
