@@ -1,9 +1,11 @@
+##    EXECUTAR NA MONSTER 10.9.8.251
+##    NECESSARIO ALOCAR TODA A BASE PARA CALCULAR O STD DA BASE
+
 from __future__ import division, print_function
-import random #os, shutil, time, 
+import random  
 import numpy as np
 import pandas as pd
 import cv2
-import sys
 
 import torch
 from torch.utils.data import Dataset
@@ -19,16 +21,16 @@ from torch.utils.data.dataloader import DataLoader
 NUM_CLASSES = 2
 
 TRAINING = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
+        '/home/lcad/sabrina/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
 )
 
 TRAINING_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/lcad/sabrina/breast_cancer_analyzer_LCAD/imagePreProcessing',
 )
 
 SHUFFLE = True
 
-BATCH_SIZE, ACCUMULATE = 1, 1
+BATCH_SIZE, ACCUMULATE = 6272, 1
 
 DATASET_SIZE = 6272
 
@@ -40,36 +42,44 @@ ACUMULATE_MEAN = 0.0
 def calculate_mean(training_dataloader):
     mean = torch.empty(3, dtype=torch.float64)
     i = 0
-    global ACUMULATE_MEAN 
-    
-    
+    print('mean') 
     for data in training_dataloader:
         
         data = data.type(torch.float64)
         data = data/255.0
-        mean += torch.mean(data, dim=[0, 1, 2])
-        ACUMULATE_MEAN += mean
+        mean = torch.mean(data, dim=[0, 1, 2])
         i += 1
         if i == DATASET_SIZE:
             print(i)
-
+            print('mean-if')            
+        else:
+            print(i)
+            print('mean-else')            
     
-        print(ACUMULATE_MEAN)
     
-    return (mean/(DATASET_SIZE/BATCH_SIZE))
+    return ( mean / (DATASET_SIZE/BATCH_SIZE) )
 
 
 def calculate_std(training_dataloader):
-    
     std_dev = torch.empty(3, dtype=torch.float64)
-    std_dev + torch.std(data, dim=[0, 1, 2])
-    
-    
+    i = 0
+    print('std')
+    for data in training_dataloader:
+        data = data.type(torch.float64)
+        data = data/255.0
+        std_dev = torch.std(data, dim=[0, 1, 2])
+        i += 1
+        if i == DATASET_SIZE:
+            print('std-if')
+            print(i)
+        else:
+            print('std-else')
+            print(i)
+     
     return std_dev
 
-
 class DatasetFromCSV(Dataset):
-    def __init__(self, csv_files, root_dirs, label=None, shuffle=False, dataset_file=None): 
+    def __init__(self, csv_files, root_dirs, label=None, shuffle=False): 
         data = []
         for csv_file, root_dir in zip(csv_files, root_dirs):
             d = pd.read_csv(csv_file, header=None, names=['images', 'labels'], delim_whitespace=True)
@@ -93,11 +103,6 @@ class DatasetFromCSV(Dataset):
         self.labels = np.asarray(data.iloc[:, 1])
 
 
-#         if dataset_file != None:
-#             with open(dataset_file, 'w') as dataset:
-#                 for image, label in zip(self.images, self.labels):
-#                     dataset.write(image + ' ' + str(label) + '\n')
-
     def __len__(self):
         return self.data_len
 
@@ -106,27 +111,16 @@ class DatasetFromCSV(Dataset):
         return image
 
 
-def main(args):
+def main():
+    training_dataset = DatasetFromCSV(TRAINING, TRAINING_DIR, shuffle=SHUFFLE)
+    training_dataloader = DataLoader(training_dataset, BATCH_SIZE, num_workers=NUM_WORKERS)
     
-    training_dataset_file = str(args[1])
-    
-#     global ACUMULATE_MEAN = 0.0
-    
-    with open(training_dataset_file, 'r') as DATASET_FILE:
+    mean = calculate_mean(training_dataloader)
+    print(mean)
+    std = calculate_std(training_dataloader)
+    print(std)
 
-        training_dataset = DatasetFromCSV(TRAINING, TRAINING_DIR, shuffle=SHUFFLE, dataset_file=DATASET_FILE)
-        training_dataloader = DataLoader(training_dataset, BATCH_SIZE, num_workers=NUM_WORKERS)    
-        
-        mean = calculate_mean(training_dataloader)
-        
-        print(mean)
-#         print(std)
-        
-    
-        
-    
-    return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv)) 
+    main() 
