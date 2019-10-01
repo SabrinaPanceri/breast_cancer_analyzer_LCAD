@@ -39,34 +39,65 @@ def rotate_image(imagePath):
     window_90 = 'ROTATED_90_'+fileName[0]
     window_180 = 'ROTATED_180_'+fileName[0]
     window_270 = 'ROTATED_270_'+fileName[0]
-    
-    
-    cv2.namedWindow(window_original)
-    cv2.moveWindow(window_original, 0, 0)
-#     cv2.imshow(window_original,img)
-#     cv2.waitKey(10) # waits until a key is pressed
-    # cv2.destroyAllWindows() # destroys the window showing image
-    
-    cv2.namedWindow(window_90)
-    cv2.moveWindow(window_90, 0, 370)
-#     cv2.imshow(window_90,rotated90)
-    cv2.imwrite(('augmented_data/rotated_90/'+ fileName[0] + '_90D_' + '.png'), rotated90)
-#     cv2.waitKey(10) # waits until a key is pressed
-    # cv2.destroyAllWindows() # destroys the window showing image
-    
-    cv2.namedWindow(window_180)
-    cv2.moveWindow(window_180, 380, 0)
-#     cv2.imshow(window_180,rotated180)
-    cv2.imwrite(('augmented_data/rotated_180/'+ fileName[0] + '_180D_' + '.png'), rotated180)
-#     cv2.waitKey(10) # waits until a key is pressed
-    # cv2.destroyAllWindows() # destroys the window showing image
-    
-    cv2.namedWindow(window_270)
-    cv2.moveWindow(window_270, 380, 370)
-#     cv2.imshow(window_270,rotated270)
-    cv2.imwrite(('augmented_data/rotated_270/'+ fileName[0] + '_270D_' + '.png'), rotated270)
-#     cv2.waitKey(1000) # waits until a key is pressed
-#     cv2.destroyAllWindows() # destroys the window showing image
+
+
+    if aux_fileName[0] == 'malignant':
+	    # cv2.namedWindow(window_original)
+	    # cv2.moveWindow(window_original, 0, 0)
+	#     cv2.imshow(window_original,img)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_90)
+	    # cv2.moveWindow(window_90, 0, 370)
+	#     cv2.imshow(window_90,rotated90)
+	    cv2.imwrite(('malignant/augmented_data/rotated_90/'+ fileName[0] + '_90D_' + '.png'), rotated90)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_180)
+	    # cv2.moveWindow(window_180, 380, 0)
+	#     cv2.imshow(window_180,rotated180)
+	    cv2.imwrite(('malignant/augmented_data/rotated_180/'+ fileName[0] + '_180D_' + '.png'), rotated180)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_270)
+	    # cv2.moveWindow(window_270, 380, 370)
+	#     cv2.imshow(window_270,rotated270)
+	    cv2.imwrite(('malignant/augmented_data/rotated_270/'+ fileName[0] + '_270D_' + '.png'), rotated270)
+	#     cv2.waitKey(1000) # waits until a key is pressed
+	#     cv2.destroyAllWindows() # destroys the window showing image
+
+    if aux_fileName[0] == 'good':
+	    # cv2.namedWindow(window_original)
+	    # cv2.moveWindow(window_original, 0, 0)
+	#     cv2.imshow(window_original,img)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_90)
+	    # cv2.moveWindow(window_90, 0, 370)
+	#     cv2.imshow(window_90,rotated90)
+	    cv2.imwrite(('good/augmented_data/rotated_90/'+ fileName[0] + '_90D_' + '.png'), rotated90)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_180)
+	    # cv2.moveWindow(window_180, 380, 0)
+	#     cv2.imshow(window_180,rotated180)
+	    cv2.imwrite(('good/augmented_data/rotated_180/'+ fileName[0] + '_180D_' + '.png'), rotated180)
+	#     cv2.waitKey(10) # waits until a key is pressed
+	    # cv2.destroyAllWindows() # destroys the window showing image
+	    
+	    # cv2.namedWindow(window_270)
+	    # cv2.moveWindow(window_270, 380, 370)
+	#     cv2.imshow(window_270,rotated270)
+	    cv2.imwrite(('good/augmented_data/rotated_270/'+ fileName[0] + '_270D_' + '.png'), rotated270)
+	#     cv2.waitKey(1000) # waits until a key is pressed
+	#     cv2.destroyAllWindows() # destroys the window showing image
+
+
 
 
 def main(args):
