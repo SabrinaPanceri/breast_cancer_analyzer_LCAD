@@ -19,4 +19,4 @@
 /mammo_viewer/test_viewer_dataset/*
 /mammo_viewer/val_viewer_dataset/*
 /mammo_viewer/train_viewer_dataset/*
-
+*/augmented_data/*
