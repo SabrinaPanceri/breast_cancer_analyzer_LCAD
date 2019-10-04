@@ -36,7 +36,7 @@ DATASET_SIZE = 6272
 
 NUM_WORKERS = 4
 
-ACUMULATE_MEAN = 0.0
+# ACUMULATE_MEAN = 0.0
 
 
 def calculate_mean(training_dataloader):

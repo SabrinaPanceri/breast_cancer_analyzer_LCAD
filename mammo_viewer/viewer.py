@@ -102,7 +102,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.namedWindow(window_classified)
                 cv2.moveWindow(window_classified, 1000, 0)
                 cv2.imshow(window_classified, classificada_resized)
-                cv2.waitKey(20)
+                cv2.waitKey(500)
     
     cv2.destroyAllWindows() # close displayed windows
         

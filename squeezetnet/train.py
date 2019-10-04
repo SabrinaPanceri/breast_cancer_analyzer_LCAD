@@ -3,7 +3,6 @@ import os, shutil, time, random
 import numpy as np
 import pandas as pd
 import cv2
-from sklearn.preprocessing import normalize
 
 import torch
 from torch.utils.data import Dataset
@@ -14,7 +13,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = '/home/sabrina/dataset/runs'
+RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
@@ -23,25 +22,25 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/home/sabrina/dataset/cbisddsm_train_2019_09_12.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
 )
 
 TRAINING_DIR = (
-        '/home/sabrina/dataset',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
 )
 
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/dataset/cbisddsm_val_2019_09_12.txt',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_12.txt',
         # '/home/sabrina/dataset/cbisddsm_test_2019_09_12.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/dataset',
+        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
         # '/home/sabrina/dataset',
 )
 
-TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
+TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
 BATCH_SIZE, ACCUMULATE = 32, 1
 
@@ -53,8 +52,9 @@ LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 
-NUM_WORKERS = 4
+NUM_WORKERS = 1
 
+POS_X, POS_Y = 0, 0
 
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
     print('\n' + new_model_name + ':')
@@ -65,11 +65,21 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
             print('\t' + key + ' loaded.')
     net.load_state_dict(state_dict)
 
+
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
-    # load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+#     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
+
+
+def click_events(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        POS_X = x
+        POS_Y = y
+        print(x,y)
+#         print(POS_X, POS_Y)
+
 
 class DatasetFromCSV(Dataset):
     def __init__(self, csv_files, root_dirs, label=None, shuffle=False, transforms=None, dataset_file=None):
@@ -107,11 +117,27 @@ class DatasetFromCSV(Dataset):
 
     def __getitem__(self, i):
         image = cv2.imread(self.images[i], 3)
+        cv2.namedWindow('ENTRADA')
+        cv2.moveWindow('ENTRADA', 500, 0)        
+        cv2.imshow('ENTRADA', image)
+
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
         image = image/255
         image = torch.from_numpy(image.astype(np.float32))
+        
         if self.transforms != None:
             image = self.transforms(image)
+            cv2.namedWindow('NORMALIZADA')
+            cv2.moveWindow('NORMALIZADA', 1000, 0)
+            cv2.imshow('NORMALIZADA', np.array(image[0]))
+            print('image')
+            print(np.array(image[0][POS_X,POS_Y]))
+            cv2.setMouseCallback('NORMALIZADA', click_events)
+            
+            
+            
+            cv2.waitKey(0)
+        cv2.destroyAllWindows()
         return (image, self.labels[i])
 
 
