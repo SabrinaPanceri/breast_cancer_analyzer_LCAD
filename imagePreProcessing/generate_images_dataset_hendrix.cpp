@@ -28,7 +28,7 @@ using namespace cv;
 
 
 //#define SPECIFIC_LABEL "trafficlight"         // Uncomment to see only images that have a specific annotation, like traffic_light
-double RESIZE = 0.15;
+double RESIZE = 0.2;
 
 typedef struct
 {
@@ -36,8 +36,6 @@ typedef struct
 	int y0;
 	int x1;
 	int y1;
-	double center_x;
-	double center_y;
 	string state;
 } BBOX;
 
@@ -152,8 +150,6 @@ click_is_inside_bbox(int x, int y)
 			global_bbox.y0 = bbox_vector[i].y0;
 			global_bbox.x1 = bbox_vector[i].x1;
 			global_bbox.y1 = bbox_vector[i].y1;
-			global_bbox.center_x = bbox_vector[i].center_x;
-			global_bbox.center_y = bbox_vector[i].center_y;
 			control = true;
 		}
 		else
@@ -188,8 +184,6 @@ on_mouse(int event, int x, int y, int, void*)
 				global_bbox.y0 = y - fixBound*RESIZE;
 				global_bbox.x1 = x - fixBound*RESIZE;
 				global_bbox.y1 = y + fixBound*RESIZE;
-				global_bbox.center_x = x/RESIZE;
-				global_bbox.center_y = y/RESIZE;
 				drawing_current_bbox(global_bbox.x0, global_bbox.y0, global_bbox.x1, global_bbox.y1);
 			}
 			else
