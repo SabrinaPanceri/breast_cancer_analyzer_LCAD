@@ -6,8 +6,8 @@ LFLAGS=`pkg-config --libs opencv`
 %.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-generate_gt: generate_images_dataset.o 
-	$(CC) -o generate_gt generate_images_dataset.o $(LFLAGS)
+mammo_marker: mammo_marker.o 
+	$(CC) -o mammo_marker mammo_marker.o $(LFLAGS)
 
 clean:
-	rm *.o generate_gt
+	rm *.o mammo_marker
