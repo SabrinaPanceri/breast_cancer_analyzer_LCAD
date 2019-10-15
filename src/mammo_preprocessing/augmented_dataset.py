@@ -161,7 +161,7 @@ def main(args):
     input_net = open(fileName)
     
     start = time.time()
-    print(start)
+#     print(start)
     for line in input_net:
         aux = line.split('\n')
         imageName = aux[0]
@@ -171,7 +171,7 @@ def main(args):
 
     input_net.close()
     finish = time.time()
-    print(finish)
+#     print(finish)
     print("Tempo de execucao = " + str(finish-start))  
     
     return 0
