@@ -20,3 +20,8 @@
 */test_viewer_dataset/*
 */val_viewer_dataset/*
 */train_viewer_dataset/*
+*dataset/augmented_good/*
+*dataset/augmented_malignant/*
+*.metadata/*
+.pydevproject
+
