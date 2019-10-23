@@ -1,4 +1,5 @@
-# python viewer.py Calc-Test_P_00127_RIGHT_CC_MALIGNANT.png input5.txt
+# python mammo_viewer.py aux_files/test_viewer_dataset.txt
+
 
 import cv2
 import sys
@@ -12,12 +13,17 @@ import torch.nn as nn
 def image_tester(imageName, image_GT, imagePath, net):
            
     Y_Max, X_Max, channels = imagePath.shape
+
+    # print(imageName)
     
-    aux_fileName = imageName.split('/') 
+    aux_fileName = imageName.split('_dataset/') 
+    # print(aux_fileName)
  
     fileName = aux_fileName[1].split('.')
     
-#     print(fileName)
+    # print(fileName)
+
+    # exit()
         
     scale_percent = 15 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
@@ -47,19 +53,18 @@ def image_tester(imageName, image_GT, imagePath, net):
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (255,0,0), 2)
                 
-                cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
+                # cv2.imwrite(('cropped/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
                 
                 input_class = network_classifier(cropped_tensor, net, fileName[0])
                 
                 
-                with open('cropp_prob/'+ fileName[0], "a") as input_net:
-                    input_net.write(fileName[0] +'_'+ str(i)+'_'+ str(j) +'\t'+ str(input_class[0][0]) +'\t' + str(input_class[0][1]) + '\n')
+                # with open('cropp_prob/'+ fileName[0], "a") as input_net:
+                #     input_net.write(fileName[0] +'_'+ str(i)+'_'+ str(j) +'\t'+ str(input_class[0][0]) +'\t' + str(input_class[0][1]) + '\n')
                 
 #                 print(input_class[0][0], input_class[0][1])
                 
                 
-                if input_class[0][1] > 0.93:
-#                     print('input_class = 0')                    
+                if input_class[0][1] > 0.93: #COM_cancer
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
@@ -68,33 +73,30 @@ def image_tester(imageName, image_GT, imagePath, net):
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
                     
-                    cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
+                    cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
 
                     
-                else:
-#                     print('input_class = 1')
+                else: #SEM_cancer
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,250,0), thickness=2)
                     
                     cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,255,0), thickness=1)
+                                                                       (int)((i+256)*scale_percent/100)), (0,250,0), thickness=2)
 
-                    cv2.imwrite(('classified/'+ fileName[0] + '.png'), classificada_resized)
+                    cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
                     
 
-#                 cv2.namedWindow('FULL_MAMMO', cv2.WINDOW_AUTOSIZE)
-#                 cv2.imshow('FULL_'+fileName[0], resized_copy)
+
                 window_cropped = 'CROP_'+fileName[0]
-                window_gt = 'GT_CLASSIFIED'+fileName[0]
+                window_gt = 'GT_CLASSIFIED_'+fileName[0]
                 window_classified = 'CLASSIFIED_'+fileName[0]
                 
                 cv2.namedWindow(window_cropped)
                 cv2.moveWindow(window_cropped, 0, 0)
                 cv2.imshow(window_cropped, cropped_img)
                 
-#                 cv2.imshow('GT_'+fileName[0], resized_GT)
                 cv2.namedWindow(window_gt)
                 cv2.moveWindow(window_gt, 380, 0)
                 cv2.imshow(window_gt, aux_resized_GT)
@@ -102,7 +104,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.namedWindow(window_classified)
                 cv2.moveWindow(window_classified, 1000, 0)
                 cv2.imshow(window_classified, classificada_resized)
-                cv2.waitKey(500)
+                cv2.waitKey(100)
     
     cv2.destroyAllWindows() # close displayed windows
         
@@ -112,7 +114,8 @@ def network_classifier(cropped_tensor, net, fileName):
     cropped_tensor = np.transpose(cropped_tensor, [2, 0, 1])[[2, 1, 0]]
     cropped_tensor = cropped_tensor/255
     cropped_tensor = torch.from_numpy(cropped_tensor.astype(np.float32))
-    normalize = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
+    normalize = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #normalização da base
+    #normalize = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) #testes antigos
     cropped_tensor = normalize(cropped_tensor)
     cropped_tensor_list = np.array([cropped_tensor.tolist()])
     cropped_tensor = torch.from_numpy(cropped_tensor_list.astype(np.float32))
@@ -132,9 +135,9 @@ def network_classifier(cropped_tensor, net, fileName):
         batch_s = batch_s.tolist()
 #         print(batch_s)
     
-        for s in batch_s:
-            with open('probabilities/'+ fileName +'.txt', 'a') as ptest:
-                ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
+        # for s in batch_s:
+        #     with open('probabilities/'+ fileName +'.txt', 'a') as ptest:
+        #         ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
         
         input_class = batch_s
         
@@ -153,14 +156,16 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
 def Net():
     model = getattr(models, 'squeezenet1_1')
     net = model(num_classes=2)
-#     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
 
 
 
 def main(args):
     fileName = str(args[1])
-    INITIAL_MODEL = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs/squeezenet1_1_60_8.pth'
+    INITIAL_MODEL = '/mnt/dadosSabrina/dataset/runs/squeezenet1_1/08/models/squeezenet1_1_60_8.pth' #Sem aumento; Acuracia media = 0.843750000
+    # INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs/squeezenet1_1/27/models/squeezenet1_1_19_2.pth' #COM aumento; Acuracia da classe 1 = 0.900390625
+
+
     torch.multiprocessing.set_start_method('spawn', force=True)
     net = Net().to('cuda:0')
     load_matching_name_and_shape_layers(net, INITIAL_MODEL, torch.load(INITIAL_MODEL))
@@ -168,10 +173,19 @@ def main(args):
     input_net = open(fileName)
     
     for line in input_net:
-        aux = line.split(',')
+        # print(line)
+        str_aux = line.split('\n')
+        # print(str_aux)
+        aux = str_aux[0].split(',')
+        # print(aux)
         imageName = aux[0]
+        # print(imageName)
         aux_imageGT = aux[1].split('\n')
+        # print(aux_imageGT)
         imageGT = aux_imageGT[0]
+        # print(imageGT)
+
+        # exit()
 
         imagePath = cv2.imread(imageName, 3)
         image_GT = cv2.imread(imageGT, 3)

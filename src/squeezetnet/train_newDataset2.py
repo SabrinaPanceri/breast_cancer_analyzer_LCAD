@@ -22,7 +22,7 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_OF10_train.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_train_2019_10_15.txt',
 )
 
 TRAINING_DIR = (
@@ -32,7 +32,7 @@ TRAINING_DIR = (
 SHUFFLE = True
 
 TEST = (
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_OF10_train.txt',
+         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_val_2019_10_15.txt',
 )
 TEST_DIR = (
          '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
@@ -40,15 +40,15 @@ TEST_DIR = (
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 10, 1
+BATCH_SIZE, ACCUMULATE = 128, 1
 
-EPOCHS = 100
-SAVES_PER_EPOCH = 10
+EPOCHS = 150
+SAVES_PER_EPOCH = 5
 
-INITIAL_LEARNING_RATE = 0.004
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
+INITIAL_LEARNING_RATE = 0.0004
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 100
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 2
+DECAY_STEP_SIZE = 10
 
 NUM_WORKERS = 4
 
@@ -104,9 +104,6 @@ class DatasetFromCSV(Dataset):
 
     def __getitem__(self, i):
         image = cv2.imread(self.images[i], 3)
-        # cv2.imshow("imagem",image)
-        # cv2.waitKey(100)
-        # cv2.destroyAllWindows()
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
         image = image/255
         image = torch.from_numpy(image.astype(np.float32))
@@ -268,6 +265,7 @@ def main():
                     save_i += 1
                     if TEST != None:
                         str_buf = '\n' + model_file + ' tests:'
+                        print('\nSave folder: ' + save_folder)
                         print(str_buf)
                         with open(results_file, 'a') as results:
                             results.write(str_buf + '\n')
