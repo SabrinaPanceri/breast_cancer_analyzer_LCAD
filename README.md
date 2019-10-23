@@ -4,7 +4,7 @@ Repositorio do projeto "Análise de Imagens Médicas Usando Aprendizado Profundo
 
 Para mais informações, envie um e-mail para sabrina.panceri@lcad.inf.ufes.br
 
-##Descrição dos módulos
+## Descrição dos módulos
 
 ### _Mammo_ _Marker_
  Para ter acesso ao Mammo Marker é necessário compilar o arquivo "mammo_marker.cpp". 
@@ -19,11 +19,10 @@ Para mais informações, envie um e-mail para sabrina.panceri@lcad.inf.ufes.br
  Para o caso da base CBIS-DDSM, são utilizadas as mamografias completas e as mamografias segmentadas.
  Os arquivos devem apresentar as imagens dos pacientes na mesma ordem.
  É necessário baixar a pasta "original_dataset" dentro da pasta "dataset". 
- As pastas com as imagens estão disponíveis em
- 	https://drive.google.com/drive/folders/1zE6C8WPYQYwQvixJ_bhkzBLocZPyeyCB?usp=sharing
+ As pastas com as imagens estão disponíveis em 
+ https://drive.google.com/drive/folders/1zE6C8WPYQYwQvixJ_bhkzBLocZPyeyCB?usp=sharing
  É necessário baixar os arquivos original_dataset.tar.gz e descompactar a pasta dentro da pasta "dataset"
  5. Para abrir o arquivo binário, digite -> ./mammo_marker mamografias_completas.txt mamografias_segmentadas.txt
- 
  
 ### _Mammo_ _Marker_
  
