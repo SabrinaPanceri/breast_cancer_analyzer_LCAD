@@ -22,14 +22,14 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False
 
 TRAINING = (
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs/squeezenet1_1/30/training_dataset.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_train_2019_10_15.txt',
 )
 
 TRAINING_DIR = (
-        '',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
 )
 
-SHUFFLE = False
+SHUFFLE = True
 
 TEST = (
          '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_val_2019_10_15.txt',
@@ -42,11 +42,11 @@ TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1
 
 BATCH_SIZE, ACCUMULATE = 32, 1
 
-EPOCHS = 500
-SAVES_PER_EPOCH = 8
+EPOCHS = 100
+SAVES_PER_EPOCH = 10
 
 INITIAL_LEARNING_RATE = 0.0004
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 16
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 
@@ -226,6 +226,8 @@ def main():
         step_i = 1
         step_begin = time.time()
         for batch_i, batch in enumerate(training_dataloader, 1):
+        	batch[0] = torch.cat((batch[0], -batch[0]), 0)
+        	batch[1] = torch.cat((batch[1], batch[1]), 0)
             classification = net(batch[0].to('cuda:0'))
             loss = criterion(classification, batch[1].to('cuda:0'))
             loss.backward()

@@ -23,4 +23,5 @@
 *dataset/augmented_malignant/*
 *.metadata/*
 .pydevproject
+dataset/rotacionadaspeloScart/
 
