@@ -25,7 +25,6 @@
 ../../dataset/original_dataset/Calc-Test_P_00344_LEFT_CC_BENIGN.png
 ../../dataset/original_dataset/Calc-Test_P_00352_LEFT_CC_BENIGN.png
 ../../dataset/original_dataset/Calc-Test_P_00353_LEFT_CC_BENIGN.png
-../../dataset/original_dataset/Calc-Test_P_00353_LEFT_CC_MALIGNANT.png
 ../../dataset/original_dataset/Calc-Test_P_00368_LEFT_CC_BENIGN.png
 ../../dataset/original_dataset/Calc-Test_P_00372_RIGHT_CC_MALIGNANT.png
 ../../dataset/original_dataset/Calc-Test_P_00390_RIGHT_CC_MALIGNANT.png

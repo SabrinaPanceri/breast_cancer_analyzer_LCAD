@@ -21,6 +21,7 @@
 */train_viewer_dataset/*
 *dataset/augmented_good/*
 *dataset/augmented_malignant/*
+*dataset/cropped_images/*
 *.metadata/*
 .pydevproject
 dataset/rotacionadaspeloScart/

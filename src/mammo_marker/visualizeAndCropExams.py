@@ -30,10 +30,11 @@ def crop_cancer(pathList, roiPathList, labelList):
         tempImg2 = pathList[j]
         examImage = cv2.imread(tempImg2) 
         filename = pathList[j].split('_dataset/')
-        croppedImagesPath = filename[0] + '_dataset/cropped_images/'
+        croppedImagesPath =  '../../dataset/cropped_images/'
         unchekPath = 'UNCHECK/'
         aux = filename[1].split('.')
         patientFile = aux[0]
+        sobrepos = 128
         
         #informations about segmentation image 
         smallestBlackPixelAtCoordinateX = 0               
@@ -47,8 +48,8 @@ def crop_cancer(pathList, roiPathList, labelList):
         distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX = biggestWhitePixelOfCoordinateX - smallestWhitePixelOfCoordinateX
         distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY = biggestWhitePixelOfCoordinateY - smallestWhitePixelOfCoordinateY 
 
-        numberOfCroppedsX = int(math.ceil(distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX/256))
-        numberOfCroppedsY = int(math.ceil(distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY/256))
+        numberOfCroppedsX = int(math.ceil(distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX/(256 - sobrepos)))
+        numberOfCroppedsY = int(math.ceil(distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY/(256 - sobrepos)))
 
         if labelList[j] == True:
             scale_percent = 15 # percent of original size
@@ -63,6 +64,8 @@ def crop_cancer(pathList, roiPathList, labelList):
             dim = (width, height)
             mammo_resized = cv2.resize(examImage, dim, interpolation = cv2.INTER_AREA) 
             mammo = patientFile
+
+            print(mammo)
 
             savesExamImageWithBoundingBoxes = False
 
@@ -120,10 +123,10 @@ def crop_cancer(pathList, roiPathList, labelList):
                                 numberOfWhitePixelsInTheRegionOfCropExamImage = (int)(np.count_nonzero(examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX]))
                                 
                                 if numberOfWhitePixelsInTheRegionOfCropRoiImage >= 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage >= 19661: #se tiver mais que 70% de pixels brancos, salva normalmente
-                                    cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                                    cv2.imwrite(os.path.join(croppedImagesPath + unchekPath +str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
                                     cv2.rectangle(mammo_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
                                     cv2.rectangle(roi_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
-                                
+                                    savesExamImageWithBoundingBoxes = True
                                 elif numberOfWhitePixelsInTheRegionOfCropRoiImage < 19661 and numberOfWhitePixelsInTheRegionOfCropRoiImage > 9831: #se tiver mais que 15% e menos de 30% de pixels brancos, salva como não checada
                                     if numberOfWhitePixelsInTheRegionOfCropExamImage < 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage > 9831:
                                         cv2.imwrite(os.path.join(croppedImagesPath + unchekPath + str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
@@ -156,7 +159,8 @@ def crop_cancer(pathList, roiPathList, labelList):
                                 cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX]) 
                                 cv2.rectangle(mammo_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
                                 cv2.rectangle(roi_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
-                            
+                                
+
                             elif numberOfWhitePixelsInTheRegionOfCropRoiImage < 19661 and numberOfWhitePixelsInTheRegionOfCropRoiImage > 9831: #se tiver mais que 15% e menos de 30% de pixels brancos, salva como não checada
                                 if numberOfWhitePixelsInTheRegionOfCropExamImage < 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage > 9831:    
                                     cv2.imwrite(os.path.join(croppedImagesPath + unchekPath + str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX]) 
@@ -168,10 +172,10 @@ def crop_cancer(pathList, roiPathList, labelList):
                         cv2.moveWindow(mammo, 200, 0)
                         cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
                         cv2.waitKey(100)                  
-                        temporarySmallestWhitePixelOfCoordinateX = temporarySmallestWhitePixelOfCoordinateX + 256 
-                        temporaryBiggestWhitePixelOfCoordinateX = temporaryBiggestWhitePixelOfCoordinateX + 256   
-                    temporarySmallestWhitePixelOfCoordinateY = temporarySmallestWhitePixelOfCoordinateY + 256
-                    temporaryBiggestWhitePixelOfCoordinateY = temporaryBiggestWhitePixelOfCoordinateY + 256  
+                        temporarySmallestWhitePixelOfCoordinateX = temporarySmallestWhitePixelOfCoordinateX + 256 - sobrepos 
+                        temporaryBiggestWhitePixelOfCoordinateX = temporaryBiggestWhitePixelOfCoordinateX + 256 - sobrepos   
+                    temporarySmallestWhitePixelOfCoordinateY = temporarySmallestWhitePixelOfCoordinateY + 256 - sobrepos
+                    temporaryBiggestWhitePixelOfCoordinateY = temporaryBiggestWhitePixelOfCoordinateY + 256 - sobrepos
                 
                 if savesExamImageWithBoundingBoxes == True:
                     cv2.imwrite(os.path.join(croppedImagesPath + unchekPath + str(patientFile) + '.png'), mammo_resized)   
@@ -196,8 +200,8 @@ def crop_cancer(pathList, roiPathList, labelList):
 
 
 def main(args):
-    examsFile = '../../input_files/mamografias_completas.txt'
-    roisFile = '../../input_files/mamografias_segmentadas.txt'
+    examsFile = 'input_files/mamografias_completas.txt'
+    roisFile = 'input_files/mamografias_segmentadas.txt'
 
     with open(examsFile) as f:
         data = f.readlines()
