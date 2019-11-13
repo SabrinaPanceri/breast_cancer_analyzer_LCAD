@@ -3,24 +3,6 @@ import numpy as np
 import cv2 as cv2
 import os, sys, csv, math
 
-
-# def single_crop(temporaryBiggestWhitePixelOfCoordinateX, temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX, temporarySmallestWhitePixelOfCoordinateY, 
-#                 distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX, distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY, smallestWhitePixelOfCoordinateX, biggestBlackPixelAtCoordinateX, sm):
-   
-
-
-#     elif labelList[j] == True:
-#         if distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX <= 256 and distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY <= 256:
-#             if temporaryBiggestWhitePixelOfCoordinateX > biggestBlackPixelAtCoordinateX:
-#                 cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])    
-#             elif temporarySmallestWhitePixelOfCoordinateX < smallestBlackPixelAtCoordinateX:
-#                 cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), smallestWhitePixelOfCoordinateX:(smallestWhitePixelOfCoordinateX + 256)])   
-#             elif temporarySmallestWhitePixelOfCoordinateX > smallestBlackPixelAtCoordinateX and temporaryBiggestWhitePixelOfCoordinateX < biggestBlackPixelAtCoordinateX:
-#                 cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) +  '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX)   
-    
-
-
-
 def crop_cancer(pathList, roiPathList, labelList):
     j = 0
     while j < len(pathList):
@@ -118,15 +100,16 @@ def crop_cancer(pathList, roiPathList, labelList):
                         
                         if (col == numberOfCroppedsX - 1) and temporaryBiggestWhitePixelOfCoordinateX >= biggestBlackPixelAtCoordinateX:
                             
-                            if (biggestWhitePixelOfCoordinateX - temporarySmallestWhitePixelOfCoordinateX) <= 192:
+                            if (biggestWhitePixelOfCoordinateX - temporarySmallestWhitePixelOfCoordinateX) <= 192 :
                                 numberOfWhitePixelsInTheRegionOfCropRoiImage = (int)(np.count_nonzero(image[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX]))
                                 numberOfWhitePixelsInTheRegionOfCropExamImage = (int)(np.count_nonzero(examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX]))
                                 
                                 if numberOfWhitePixelsInTheRegionOfCropRoiImage >= 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage >= 19661: #se tiver mais que 70% de pixels brancos, salva normalmente
-                                    cv2.imwrite(os.path.join(croppedImagesPath + unchekPath +str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
-                                    cv2.rectangle(mammo_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
-                                    cv2.rectangle(roi_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
-                                    savesExamImageWithBoundingBoxes = True
+                                    if (temporaryBiggestWhitePixelOfCoordinateX - sobrepos) > biggestBlackPixelAtCoordinateX: 
+                                        cv2.imwrite(os.path.join(croppedImagesPath + unchekPath +str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                                        cv2.rectangle(mammo_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
+                                        cv2.rectangle(roi_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 0, 255), thickness=1)
+                                        savesExamImageWithBoundingBoxes = True
                                 elif numberOfWhitePixelsInTheRegionOfCropRoiImage < 19661 and numberOfWhitePixelsInTheRegionOfCropRoiImage > 9831: #se tiver mais que 15% e menos de 30% de pixels brancos, salva como não checada
                                     if numberOfWhitePixelsInTheRegionOfCropExamImage < 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage > 9831:
                                         cv2.imwrite(os.path.join(croppedImagesPath + unchekPath + str(patientFile) + str(line) + str(col) + '(UNCHECK)' + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
@@ -139,10 +122,11 @@ def crop_cancer(pathList, roiPathList, labelList):
                                 numberOfWhitePixelsInTheRegionOfCropExamImage = np.count_nonzero(examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
                                 
                                 if numberOfWhitePixelsInTheRegionOfCropRoiImage >= 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage >= 19661:    #se tiver mais que 70% de pixels brancos, salva normalmente
-                                    cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
-                                    cv2.rectangle(mammo_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)
-                                    cv2.rectangle(roi_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)
-                                
+                                    if (temporaryBiggestWhitePixelOfCoordinateX < biggestBlackPixelAtCoordinateX): #and (biggestWhitePixelOfCoordinateX - (temporarySmallestWhitePixelOfCoordinateX + sobrepos)) > 64:
+                                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:(temporarySmallestWhitePixelOfCoordinateY + 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
+                                            cv2.rectangle(mammo_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)
+                                            cv2.rectangle(roi_resized, ((int) ((biggestWhitePixelOfCoordinateX - 256) * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) ((biggestWhitePixelOfCoordinateX) * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)
+                                        
                                 elif numberOfWhitePixelsInTheRegionOfCropRoiImage < 19661 and numberOfWhitePixelsInTheRegionOfCropRoiImage > 9831: #se tiver mais que 15% e menos de 30% de pixels brancos, salva como não checada
                                     
                                     if numberOfWhitePixelsInTheRegionOfCropExamImage < 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage > 9831:
@@ -156,10 +140,11 @@ def crop_cancer(pathList, roiPathList, labelList):
                             numberOfWhitePixelsInTheRegionOfCropExamImage = np.count_nonzero(examImage[temporarySmallestWhitePixelOfCoordinateY:temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX])
                             
                             if numberOfWhitePixelsInTheRegionOfCropRoiImage >= 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage >= 19661:    
-                                cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX]) 
-                                cv2.rectangle(mammo_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
-                                cv2.rectangle(roi_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
-                                
+                                if (temporaryBiggestWhitePixelOfCoordinateX < biggestBlackPixelAtCoordinateX): #and (biggestWhitePixelOfCoordinateX - (temporarySmallestWhitePixelOfCoordinateX + sobrepos)) > 64:
+                                        cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + str(line) + str(col) + '.png'), examImage[temporarySmallestWhitePixelOfCoordinateY:temporaryBiggestWhitePixelOfCoordinateY, temporarySmallestWhitePixelOfCoordinateX:temporaryBiggestWhitePixelOfCoordinateX]) 
+                                        cv2.rectangle(mammo_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
+                                        cv2.rectangle(roi_resized, ((int) (temporarySmallestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporarySmallestWhitePixelOfCoordinateY * scale_percent / 100)), ((int) (temporaryBiggestWhitePixelOfCoordinateX * scale_percent / 100), (int) (temporaryBiggestWhitePixelOfCoordinateY * scale_percent / 100)), (0, 255, 0), thickness=1)        
+                                        
 
                             elif numberOfWhitePixelsInTheRegionOfCropRoiImage < 19661 and numberOfWhitePixelsInTheRegionOfCropRoiImage > 9831: #se tiver mais que 15% e menos de 30% de pixels brancos, salva como não checada
                                 if numberOfWhitePixelsInTheRegionOfCropExamImage < 19661 and numberOfWhitePixelsInTheRegionOfCropExamImage > 9831:    
@@ -193,7 +178,7 @@ def crop_cancer(pathList, roiPathList, labelList):
                         break 
                     
         elif labelList[j] == False:
-            j+=1      
+        j+=1      
 
         cv2.destroyAllWindows() # close displayed windows  
     return j
@@ -224,11 +209,8 @@ def main(args):
     for row in roiReader:
         roiPathList.append((row[0]))
 
-
     crop_cancer(pathList, roiPathList, labelList)
-              
-    #crop = [crop_cancer(pathList, roiPathList, labelList, j) for j in range(len(pathList))]
-     
+    
     return 0
  
 
@@ -237,20 +219,3 @@ if __name__ == '__main__':
 
 
 
-
-    ################################################################################
-
-
-    # if labelList[j] == False:
-    #     if distanceBetweenSmallestAndBiggestWhitePixelInCoordinateX <= 256 and distanceBetweenSmallestAndBiggestWhitePixelInCoordinateY <= 256:
-    #         if temporaryBiggestWhitePixelOfCoordinateX > biggestBlackPixelAtCoordinateX:
-    #             cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + 'NoCancer.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
-            
-    #         elif temporarySmallestWhitePixelOfCoordinateX < smallestBlackPixelAtCoordinateX:
-    #             if biggestWhitePixelOfCoordinateX - 256 < smallestBlackPixelAtCoordinateX: 
-    #                 cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + 'NoCancer.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), 0:256])
-    #             else:    
-    #                 cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + 'NoCancer.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])
-           
-    #         else:
-    #             cv2.imwrite(os.path.join(croppedImagesPath + str(j) + str(patientFile) + 'NoCancer.png'), examImage[(temporarySmallestWhitePixelOfCoordinateY - 512):(temporarySmallestWhitePixelOfCoordinateY - 256), (biggestWhitePixelOfCoordinateX - 256):biggestWhitePixelOfCoordinateX])   
