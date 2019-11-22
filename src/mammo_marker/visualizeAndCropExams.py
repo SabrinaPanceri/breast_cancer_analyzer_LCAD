@@ -12,7 +12,7 @@ def crop_cancer(pathList, roiPathList, labelList):
         tempImg2 = pathList[j]
         examImage = cv2.imread(tempImg2) 
         filename = pathList[j].split('_dataset/')
-        croppedImagesPath =  '../../dataset/cropped_images/'
+        croppedImagesPath =  '/mnt/externo/new_dataset/'
         unchekPath = 'UNCHECK/'
         aux = filename[1].split('.')
         patientFile = aux[0]
@@ -178,7 +178,7 @@ def crop_cancer(pathList, roiPathList, labelList):
                         break 
                     
         elif labelList[j] == False:
-        j+=1      
+            j+=1      
 
         cv2.destroyAllWindows() # close displayed windows  
     return j

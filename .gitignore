@@ -9,7 +9,7 @@
 */good-11-09-2019/*
 */malignant/*
 */malignant-11-09-2019/*
-*src/squeezetnet/runs/*
+*src/squeezenet/runs/*
 */labels-dataset-12-09-2019/*
 */cropped/*
 */classified/*
@@ -25,4 +25,7 @@
 *.metadata/*
 .pydevproject
 dataset/rotacionadaspeloScart/
+*dataset/revisar_FP_FN/
+*dataset/sample_images_dataset/
+
 
