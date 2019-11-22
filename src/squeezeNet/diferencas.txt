@@ -1,0 +1,75 @@
+diff train.py train_newDataset2.py
+
+16c16
+< RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
+---
+> RUNS_FOLDER = '/mnt/externo/runs'
+25c25
+<         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
+---
+>         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_train_2019_10_15.txt',
+29c29
+<         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+---
+>         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+35,36c35
+<         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_12.txt',
+<         # '/home/sabrina/dataset/cbisddsm_test_2019_09_12.txt',
+---
+>          '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_val_2019_10_15.txt',
+39,40c38
+<         '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
+<         # '/home/sabrina/dataset',
+---
+>          '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+50,51c48,49
+< INITIAL_LEARNING_RATE = 0.0004
+< LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
+---
+> INITIAL_LEARNING_RATE = 0.0002
+> LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 16
+55c53
+< NUM_WORKERS = 1
+---
+> NUM_WORKERS = 4
+57d54
+< POS_X, POS_Y = 0, 0
+68d64
+< 
+72c68
+< #     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+---
+>     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+75,83d70
+< 
+< def click_events(event, x, y, flags, param):
+<     if event == cv2.EVENT_LBUTTONDOWN:
+<         POS_X = x
+<         POS_Y = y
+<         print(x,y)
+< #         print(POS_X, POS_Y)
+< 
+< 
+120,123d106
+<         cv2.namedWindow('ENTRADA')
+<         cv2.moveWindow('ENTRADA', 500, 0)        
+<         cv2.imshow('ENTRADA', image)
+< 
+127d109
+<         
+130,140d111
+<             cv2.namedWindow('NORMALIZADA')
+<             cv2.moveWindow('NORMALIZADA', 1000, 0)
+<             cv2.imshow('NORMALIZADA', np.array(image[0]))
+<             print('image')
+<             print(np.array(image[0][POS_X,POS_Y]))
+<             cv2.setMouseCallback('NORMALIZADA', click_events)
+<             
+<             
+<             
+<             cv2.waitKey(0)
+<         cv2.destroyAllWindows()
+296a268
+>                         print('\nSave folder: ' + save_folder)
+
+
