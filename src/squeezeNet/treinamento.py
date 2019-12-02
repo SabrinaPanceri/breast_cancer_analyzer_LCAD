@@ -12,45 +12,61 @@ import torch.optim as optim
 
 from torchvision import models, transforms
 
-
-RUNS_FOLDER = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs'
+## SALVAR OS TREINOS COM BONS RESULTADOS NO HD EXTERNO##
+RUNS_FOLDER = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs'
 
 NETWORK = 'squeezenet1_1'
+
 NUM_CLASSES = 2
 
+## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
 INITIAL_MODEL = None
-INITIAL_MODEL_TEST = False
+INITIAL_MODEL_TEST = False #True
 
 TRAINING = (
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs/squeezenet1_1/30/training_dataset.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt', #57344 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02OF100_OK/training_dataset.txt', #OF 200 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_09_12.txt', #6272 imagens
+        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_train.txt', #OF 10O imagens
 )
 
 TRAINING_DIR = (
-        '',
+        # '',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
 )
 
-SHUFFLE = False
+##USAR TRUE APENAS NO PRIMEIRO TREINO. USAR O MESMO ARQUIVO NOS DEMAIS TREINOS##
+SHUFFLE =  True #False
 
+##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/aux_files/cbisddsm_val_2019_10_15.txt',
+         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
+         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12.txt', #832 imagens
 )
+
 TEST_DIR = (
+        # '',    
          '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 32, 1
+BATCH_SIZE, ACCUMULATE = 64, 1
 
-EPOCHS = 500
-SAVES_PER_EPOCH = 8
+EPOCHS = 150
+SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0004
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 16
+INITIAL_LEARNING_RATE = 0.0002
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 
+##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
+# NUM_WORKERS = 1
 NUM_WORKERS = 4
+
+##DESCOMENTAR PARA USAR O CLICK_EVENTS##
+# POS_X, POS_Y = 0, 0
 
 
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
@@ -65,8 +81,17 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
-    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict()) 
     return net
+
+
+## FUNCAO PARA CAPTURAR A POSICAO DO CLICK DO MOUSE ##
+## IMPRIME A POSICAO DO CLICK NA TELA ##
+# def click_events(event, x, y, flags, param):
+#     if event == cv2.EVENT_LBUTTONDOWN:
+#         POS_X = x
+#         POS_Y = y
+#         print(x,y)
 
 class DatasetFromCSV(Dataset):
     def __init__(self, csv_files, root_dirs, label=None, shuffle=False, transforms=None, dataset_file=None):
@@ -99,9 +124,11 @@ class DatasetFromCSV(Dataset):
                 for image, label in zip(self.images, self.labels):
                     dataset.write(image + ' ' + str(label) + '\n')
 
+    ##DEFINICAO DO DATASET##
     def __len__(self):
         return self.data_len
 
+    ## COMENTAR O TRECHO ABAIXO CASO QUEIRA APRESENTAR AS IMAGENS EM TELA##
     def __getitem__(self, i):
         image = cv2.imread(self.images[i], 3)
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
@@ -109,10 +136,33 @@ class DatasetFromCSV(Dataset):
         image = torch.from_numpy(image.astype(np.float32))
         if self.transforms != None:
             image = self.transforms(image)
-        return (image, self.labels[i])
+        return (image, self.labels[i], self.images[i])
+
+    ## DESCOMENTAR O TRECHO ABAIXO PARA APRESENTAR AS IMAGENS EM TELA##
+    # def __getitem__(self, i):
+    #     image = cv2.imread(self.images[i], 3)
+    #     cv2.namedWindow('ENTRADA')
+    #     cv2.moveWindow('ENTRADA', 500, 0)        
+    #     cv2.imshow('ENTRADA', image)
+    #     image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
+    #     image = image/255
+    #     image = torch.from_numpy(image.astype(np.float32))
+    #     if self.transforms != None:
+    #         image = self.transforms(image)
+    #         cv2.namedWindow('NORMALIZADA')
+    #         cv2.moveWindow('NORMALIZADA', 1000, 0)
+    #         cv2.imshow('NORMALIZADA', np.array(image[0]))
+    #         print('Image: ', self.images[i])
+    #         # print(self.images[i])
+    #         # print(np.array(image[0][POS_X,POS_Y]))
+    #         # cv2.setMouseCallback('NORMALIZADA', click_events)
+    #         cv2.waitKey(2000) #automatico
+    #         cv2.waitKey(0) #espera tecla
+    #     cv2.destroyAllWindows()
+    #     return (image, self.labels[i])
 
 
-def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None):
+def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None, classification_error_file=None):
     net.eval()
     str_buf = '\n\t' + dataset_name + ':\n\n\t\tConfusion Matrix\tClass Accuracy\n'
     print(str_buf)
@@ -130,9 +180,46 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
             with torch.no_grad():
                 for batch in dataloader:
                     classification = net(batch[0].to('cuda:0'))
+                    # print("classification", classification)
+                    # print("Batch: {0}\n, {1}\n, {2}\n ".format(batch[0].shape, batch[1], batch[2]))
                     c = torch.max(classification, 1)[1].tolist()
+                    # print("Resultado classificacao",c)
+                    # print()
+                    
+                    for pred, lbl, filename in zip(c, batch[1], batch[2]):
+                        # print("Predicao = ", pred)
+                        # print("Label = ", lbl.item())
+                        # print("Arquivo = ", filename)
+                        # print()
+
+
+                        if (lbl.item() == 0) & (pred == 1):
+                            if classification_error_file != None:
+                                with open(classification_error_file, 'a') as classification_error:
+                                    classification_error.write("Falso NEGATIVO[0/1]" + "\n")
+                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                                    classification_error.write('\t' + str(lbl.item()) + '\t')
+                                    classification_error.write('\t' + str(pred) + '\t')
+                                    classification_error.write(filename + '\n')
+                                    # print("---------------------------")
+                                    # print("Falso NEGATIVO[0/1]", filename)
+                                    # print("---------------------------")
+
+                        elif (lbl.item() == 1) & (pred == 0):
+                            if classification_error_file != None:
+                                with open(classification_error_file, 'a') as classification_error:
+                                    classification_error.write("Falso POSITIVO[0/1]"+ "\n")
+                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                                    classification_error.write('\t' + str(lbl.item()) + '\t')
+                                    classification_error.write('\t' + str(pred) + '\t')
+                                    classification_error.write(filename + '\n')
+                                    # print("++++++++++++++++++++++++++")
+                                    # print("Falso POSITIVO[1/0]", filename)
+                                    # print("++++++++++++++++++++++++++")
+                    
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
+                        # print(line[j],c.count(j))
             class_accuracy = float(line[i])/dataset.data_len
             average_class_accuracy += class_accuracy
         str_buf = '\t'
@@ -189,6 +276,7 @@ def main():
     training_dataset_file = os.path.join(save_folder, 'training_dataset.txt')
     training_log_file = os.path.join(save_folder, 'training_log.txt')
     results_file = os.path.join(save_folder, 'results.txt')
+    classification_error_file = os.path.join(save_folder, 'classification_error.txt')
     print('\nSave folder: ' + save_folder)
 
     training_dataset = DatasetFromCSV(TRAINING, TRAINING_DIR, shuffle=SHUFFLE, transforms=TRANSFORMS, dataset_file=training_dataset_file)
@@ -214,6 +302,8 @@ def main():
             str_buf = str_buf[1:]
         with open(results_file, 'a') as results:
             results.write(str_buf + '\n')
+        with open(classification_error_file, 'a') as classification_error:
+            classification_error.write(str_buf + '\n')
         str_buf2 = '\n\tLoss\t\tErrors' + step_size*'\t' + 'Elapsed Time\tStep\n'
         print(str_buf2)
         with open(training_log_file, 'a') as training_log:
@@ -227,7 +317,9 @@ def main():
         step_begin = time.time()
         for batch_i, batch in enumerate(training_dataloader, 1):
             classification = net(batch[0].to('cuda:0'))
+            # print("CLASSIFICATION", classification)
             loss = criterion(classification, batch[1].to('cuda:0'))
+            # print("LOSS", loss)
             loss.backward()
 
             gt += batch[1].tolist()
@@ -265,16 +357,18 @@ def main():
                     save_i += 1
                     if TEST != None:
                         str_buf = '\n' + model_file + ' tests:'
-                        print('\nSave folder: ' + save_folder)
                         print(str_buf)
                         with open(results_file, 'a') as results:
                             results.write(str_buf + '\n')
+                        with open(classification_error_file, 'a') as classification_error:
+                            classification_error.write(str_buf + '\n')
                         for csv_file, datasets_per_label, dataloaders_per_label in tests:
-                            test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file)
+                            test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file, classification_error_file)
                         print()
 
                 if step_i == num_steps:
                     str_buf = '\tEpoch Steps Elapsed Time: {:.3f}s'.format(epoch_steps_elapsed)
+                    print('\nSave folder: ' + save_folder)
                     print(str_buf)
                     with open(training_log_file, 'a') as training_log:
                         training_log.write(str_buf + '\n')

@@ -13,48 +13,44 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/runs'
+RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
-INITIAL_MODEL = None
-INITIAL_MODEL_TEST = False
+INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02/squeezenet1_1_89_3.pth'
 
-TRAINING = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
-)
+INITIAL_MODEL_TEST = True
 
-TRAINING_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
-)
+TRAINING = None
+
+TRAINING_DIR = None
 
 SHUFFLE = True
 
 TEST = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_val_2019_09_12.txt',
-        # '/home/sabrina/dataset/cbisddsm_test_2019_09_12.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/good.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/malignant.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_09_12.txt',
 )
 TEST_DIR = (
-        '/home/sabrina/GIT/breast_cancer_analyzer_LCAD/imagePreProcessing',
-        # '/home/sabrina/dataset',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 32, 1
+BATCH_SIZE, ACCUMULATE = 1, 1
 
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0004
+INITIAL_LEARNING_RATE = 0.0005
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 
-NUM_WORKERS = 1
+NUM_WORKERS = 4
 
-POS_X, POS_Y = 0, 0
 
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
     print('\n' + new_model_name + ':')
@@ -65,21 +61,11 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
             print('\t' + key + ' loaded.')
     net.load_state_dict(state_dict)
 
-
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
-#     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
-
-
-def click_events(event, x, y, flags, param):
-    if event == cv2.EVENT_LBUTTONDOWN:
-        POS_X = x
-        POS_Y = y
-        print(x,y)
-#         print(POS_X, POS_Y)
-
 
 class DatasetFromCSV(Dataset):
     def __init__(self, csv_files, root_dirs, label=None, shuffle=False, transforms=None, dataset_file=None):
@@ -108,7 +94,7 @@ class DatasetFromCSV(Dataset):
         self.transforms = transforms
 
         if dataset_file != None:
-            with open(dataset_file, 'w') as dataset:
+            with open(dataset_file, 'a') as dataset:
                 for image, label in zip(self.images, self.labels):
                     dataset.write(image + ' ' + str(label) + '\n')
 
@@ -117,27 +103,12 @@ class DatasetFromCSV(Dataset):
 
     def __getitem__(self, i):
         image = cv2.imread(self.images[i], 3)
-        cv2.namedWindow('ENTRADA')
-        cv2.moveWindow('ENTRADA', 500, 0)        
-        cv2.imshow('ENTRADA', image)
-
+        # print(image.shape)
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
         image = image/255
         image = torch.from_numpy(image.astype(np.float32))
-        
         if self.transforms != None:
             image = self.transforms(image)
-            cv2.namedWindow('NORMALIZADA')
-            cv2.moveWindow('NORMALIZADA', 1000, 0)
-            cv2.imshow('NORMALIZADA', np.array(image[0]))
-            print('image')
-            print(np.array(image[0][POS_X,POS_Y]))
-            cv2.setMouseCallback('NORMALIZADA', click_events)
-            
-            
-            
-            cv2.waitKey(0)
-        cv2.destroyAllWindows()
         return (image, self.labels[i])
 
 
@@ -159,6 +130,14 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
             with torch.no_grad():
                 for batch in dataloader:
                     classification = net(batch[0].to('cuda:0'))
+                    m = nn.Softmax(dim=1)
+                    batch_s = m(classification)
+                    batch_s = batch_s.tolist()
+                    for s in batch_s:
+                        with open('probalidade_test.txt', 'a') as ptest:
+                            ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
+                        # print(s)
+                    # break
                     c = torch.max(classification, 1)[1].tolist()
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
@@ -167,7 +146,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
         str_buf = '\t'
         for j in range(NUM_CLASSES):
             str_buf += '\t' + str(line[j])
-        str_buf += '\t\t{:.9f}'.format(class_accuracy)
+        str_buf += '\t{:.9f}'.format(class_accuracy)
         print(str_buf)
         if results_file != None:
             with open(results_file, 'a') as results:
@@ -194,7 +173,7 @@ def main():
             print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
         tests = []
         for csv_file, root_dir in zip(TEST, TEST_DIR):
-            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS) for i in range(NUM_CLASSES)]
+            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.txt') for i in range(NUM_CLASSES)]
             dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
             tests.append((csv_file, datasets_per_label, dataloaders_per_label))
             if INITIAL_MODEL_TEST:

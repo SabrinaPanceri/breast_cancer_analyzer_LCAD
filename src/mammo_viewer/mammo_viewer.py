@@ -39,15 +39,20 @@ def image_tester(imageName, image_GT, imagePath, net):
     classificada_resized = cv2.resize(classificada, dim, interpolation = cv2.INTER_AREA)
 
     print(fileName[0])
-    
+
+    total_cropy, cancer_cropy, nocancer_cropy,cancer_area = 0, 0, 0, 0
+
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
             cropped_img = imagePath[i:i+256, j:j+256]
             cropped_tensor = cropped_img.copy()
+
+            cropped_GT = image_GT[i:i+256, j:j+256]           
             
             if ((cropped_img == 0).all() or cropped_img.shape != (256,256,3)):
                 break
             else:
+                total_cropy += 1
                 resized_copy = resized.copy()
                 cv2.rectangle(resized_copy, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
@@ -65,6 +70,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                 
                 
                 if input_class[0][1] > 0.93: #COM_cancer
+                    cancer_cropy += 1
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
@@ -74,9 +80,18 @@ def image_tester(imageName, image_GT, imagePath, net):
                                                                        (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
                     
                     cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
+
+                    # if (np.any(cropped_GT, ) == 255):
+                    #     print("area de segmentacao")
+                        
+                    #     cancer_area += 1
+                        # print(cancer_area)
+
 
                     
                 else: #SEM_cancer
+                    nocancer_cropy += 1
+                    
                     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (0,250,0), thickness=2)
@@ -87,7 +102,6 @@ def image_tester(imageName, image_GT, imagePath, net):
 
                     cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
                     
-
 
                 window_cropped = 'CROP_'+fileName[0]
                 window_gt = 'GT_CLASSIFIED_'+fileName[0]
@@ -96,6 +110,10 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.namedWindow(window_cropped)
                 cv2.moveWindow(window_cropped, 0, 0)
                 cv2.imshow(window_cropped, cropped_img)
+
+                # cv2.namedWindow("cropped_GT")
+                # cv2.moveWindow("cropped_GT", 0, 500)
+                # cv2.imshow("cropped_GT", cropped_GT)
                 
                 cv2.namedWindow(window_gt)
                 cv2.moveWindow(window_gt, 380, 0)
@@ -105,6 +123,11 @@ def image_tester(imageName, image_GT, imagePath, net):
                 cv2.moveWindow(window_classified, 1000, 0)
                 cv2.imshow(window_classified, classificada_resized)
                 cv2.waitKey(100)
+
+    print('total_cropy, cancer_cropy, nocancer_cropy', total_cropy, cancer_cropy, nocancer_cropy)
+    print("Accuracy [cancer_cropy] = ", ((cancer_cropy*100)/total_cropy) )
+    print("Accuracy [NOcancer_cropy] = ", ((nocancer_cropy*100)/total_cropy) )
+    # print("[Correct marker area] = ", (cancer_area) )
     
     cv2.destroyAllWindows() # close displayed windows
         
@@ -144,12 +167,12 @@ def network_classifier(cropped_tensor, net, fileName):
     return input_class
      
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
-    print('\n' + new_model_name + ':')
+    # print('\n' + new_model_name + ':')
     state_dict = net.state_dict()
     for key in state_dict:
         if key in new_state_dict and new_state_dict[key].shape == state_dict[key].shape:
             state_dict[key] = new_state_dict[key]
-            print('\t' + key + ' loaded.')
+            # print('\t' + key + ' loaded.')
     net.load_state_dict(state_dict)
 
 
@@ -162,7 +185,7 @@ def Net():
 
 def main(args):
     fileName = str(args[1])
-    INITIAL_MODEL = '/mnt/dadosSabrina/dataset/runs/squeezenet1_1/08/models/squeezenet1_1_60_8.pth' #Sem aumento; Acuracia media = 0.843750000
+    INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/squeezenet1_1_89_3.pth' #Sem aumento; Acuracia media = 0.843750000
     # INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs/squeezenet1_1/27/models/squeezenet1_1_19_2.pth' #COM aumento; Acuracia da classe 1 = 0.900390625
 
 
@@ -187,8 +210,8 @@ def main(args):
 
         # exit()
 
-        imagePath = cv2.imread(imageName, 3)
-        image_GT = cv2.imread(imageGT, 3)
+        imagePath = cv2.imread(imageName, 1)
+        image_GT = cv2.imread(imageGT, 1)
         
         image_tester(imageName, image_GT, imagePath, net)
     
@@ -204,3 +227,4 @@ if __name__ == '__main__':
     sys.exit(main(sys.argv)) 
 
 
+###python mammo_viewer.py aux_files/test_viewer_dataset.txt
