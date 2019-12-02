@@ -3,6 +3,7 @@ import numpy as np
 import cv2 as cv2
 import os, sys, csv, math
 
+
 def crop_cancer(pathList, roiPathList, labelList):
     j = 0
     while j < len(pathList):
@@ -178,7 +179,7 @@ def crop_cancer(pathList, roiPathList, labelList):
                         break 
                     
         elif labelList[j] == False:
-        j+=1      
+            j+=1      
 
         cv2.destroyAllWindows() # close displayed windows  
     return j
