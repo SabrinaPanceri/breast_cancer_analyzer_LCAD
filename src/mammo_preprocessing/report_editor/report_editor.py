@@ -21,8 +21,40 @@ def process_document (report_list, files_list, output_folder):
 			if 'Paciente:' in p.text:
 				break
 			cont=cont+1
-		doc.paragraphs[cont].text = 'Paciente: XXXXXXXXXX'
-		output = output_folder + "decharacterized_" + files_list[i]
+
+		first_two_dots = False
+		is_Data = False
+		first_two_dots_pos = 0
+		Data_pos = 0
+		#print len(doc.paragraphs[cont].text)
+		print doc.paragraphs[cont].text
+		print '\n'
+		aux = doc.paragraphs[cont].text.split("\n")
+
+		aux[0] = "Paciente: XXXXXXXXXX\n"
+		# aux2 = 
+		# print str(aux) + "aquiiii"
+		doc.paragraphs[cont].text = 
+		
+
+
+		# cont_data = 0
+		# for k in range (len(doc.paragraphs[cont].text)):
+		# 	#print (doc.paragraphs[cont].text[k])
+		# 	if doc.paragraphs[cont].text[k] == ':' and first_two_dots == False:
+		# 		first_two_dots_pos = k
+		# 		first_two_dots = True
+
+		# 	if doc.paragraphs[cont].text[k] == 'D':
+		# 		cont_data += 1
+			
+		# 	#if doc.paragraphs[cont].text[k] == 'a':
+
+
+
+		# print first_two_dots_pos
+		# doc.paragraphs[cont].text = 'Paciente: XXXXXXXXXX'
+		output = output_folder + "anon_" + files_list[i]
 
 		doc.save(output)
 
@@ -57,43 +89,3 @@ def main():
   
 if __name__== "__main__":
 	main()
-
-#document.add_heading('Document Title', 0)
-
-#p = document.add_paragraph('A plain paragraph having some ')
-#p.add_run('bold').bold = True
-#p.add_run(' and some ')
-#p.add_run('italic.').italic = True
-
-#document.add_heading('Heading, level 1', level=1)
-#document.add_paragraph('Intense quote', style='Intense Quote')
-
-#document.add_paragraph(
-#    'first item in unordered list', style='List Bullet'
-#)
-#document.add_paragraph(
-#    'first item in ordered list', style='List Number'
-#)
-
-#document.add_picture('monty-truth.png', width=Inches(1.25))
-
-#records = (
-#    (3, '101', 'Spam'),
-#    (7, '422', 'Eggs'),
-#    (4, '631', 'Spam, spam, eggs, and spam')
-#)
-
-#table = document.add_table(rows=1, cols=3)
-#hdr_cells = table.rows[0].cells
-#hdr_cells[0].text = 'Qty'
-#hdr_cells[1].text = 'Id'
-#hdr_cells[2].text = 'Desc'
-#for qty, id, desc in records:
-#    row_cells = table.add_row().cells
-#    row_cells[0].text = str(qty)
-#    row_cells[1].text = id
-#    row_cells[2].text = desc
-
-#document.add_page_break()
-
-#document.save('demo.docx')
