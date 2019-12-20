@@ -32,28 +32,7 @@ def process_document (report_list, files_list, output_folder):
 		aux = doc.paragraphs[cont].text.split("\n")
 
 		aux[0] = "Paciente: XXXXXXXXXX\n"
-		# aux2 = 
-		# print str(aux) + "aquiiii"
-		doc.paragraphs[cont].text = 
-		
-
-
-		# cont_data = 0
-		# for k in range (len(doc.paragraphs[cont].text)):
-		# 	#print (doc.paragraphs[cont].text[k])
-		# 	if doc.paragraphs[cont].text[k] == ':' and first_two_dots == False:
-		# 		first_two_dots_pos = k
-		# 		first_two_dots = True
-
-		# 	if doc.paragraphs[cont].text[k] == 'D':
-		# 		cont_data += 1
-			
-		# 	#if doc.paragraphs[cont].text[k] == 'a':
-
-
-
-		# print first_two_dots_pos
-		# doc.paragraphs[cont].text = 'Paciente: XXXXXXXXXX'
+		doc.paragraphs[cont].text = str(aux[0]) + str(aux[1])
 		output = output_folder + "anon_" + files_list[i]
 
 		doc.save(output)
