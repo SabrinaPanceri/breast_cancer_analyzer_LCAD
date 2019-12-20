@@ -27,8 +27,8 @@ def process_document (report_list, files_list, output_folder):
 		first_two_dots_pos = 0
 		Data_pos = 0
 		#print len(doc.paragraphs[cont].text)
-		print doc.paragraphs[cont].text
-		print '\n'
+		print(doc.paragraphs[cont].text + "\n")
+		
 		aux = doc.paragraphs[cont].text.split("\n")
 
 		aux[0] = "Paciente: XXXXXXXXXX\n"

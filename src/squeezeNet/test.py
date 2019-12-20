@@ -18,7 +18,7 @@ RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
-INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02/squeezenet1_1_89_3.pth'
+INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_6272_870192308/squeezenet1_1_111_7.pth'
 
 INITIAL_MODEL_TEST = True
 
@@ -31,7 +31,7 @@ SHUFFLE = True
 TEST = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/good.txt',
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/malignant.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_09_12.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt',
 )
 TEST_DIR = (
         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
@@ -41,13 +41,13 @@ TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1
 
 BATCH_SIZE, ACCUMULATE = 1, 1
 
-EPOCHS = 100
-SAVES_PER_EPOCH = 10
+# EPOCHS = 100
+# SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0005
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
-DECAY_RATE = 2
-DECAY_STEP_SIZE = 2
+# INITIAL_LEARNING_RATE = 0.0005
+# LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
+# DECAY_RATE = 2
+# DECAY_STEP_SIZE = 2
 
 NUM_WORKERS = 4
 
