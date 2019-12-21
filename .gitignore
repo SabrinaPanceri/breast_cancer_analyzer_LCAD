@@ -27,5 +27,7 @@
 dataset/rotacionadaspeloScart/
 *dataset/revisar_FP_FN/
 *dataset/sample_images_dataset/
+dataset/resized_dataset/
+src/mammo_preprocessing/report_editor/output/
 
 

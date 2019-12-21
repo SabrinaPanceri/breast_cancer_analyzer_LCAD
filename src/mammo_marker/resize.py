@@ -14,7 +14,7 @@ def resize(pathList, roiPathList):
         examImage = cv2.imread(tempImg2) 
         filename = pathList[j].split('_dataset/')
         roiFilename = roiPathList[j].split('_dataset/')
-        resizedImagesPath =  '/home/wintermute/breast_cancer_analyzer_LCAD/dataset/original_dataset/resized_dataset/'
+        resizedImagesPath =  '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/original_dataset/resized_dataset/'
         aux = filename[1].split('.')
         patientFile = aux[0]
         aux2 = roiFilename[1].split('.')
