@@ -5,6 +5,8 @@ import pydicom
 import argparse
 import matplotlib.pyplot as plt
 
+from pathlib import Path
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--dicom-dir', dest = 'dicom_dir', help = 'Directory containing DICOM images to be processed.', 
     required = True, type = str)
@@ -28,13 +30,18 @@ dicom_dir = args.dicom_dir
 if dicom_dir.endswith(os.sep):
     dicom_dir = dicom_dir[:-1]
 
-image_paths = glob.glob(os.path.join(dicom_dir, '*.dcm'))
-last_dir = dicom_dir.split(os.sep)[-1]
-out_dir = last_dir + '_anonymized'
+image_paths = Path(os.path.join(dicom_dir)).rglob('*.dcm')
+root_dir = dicom_dir.split(os.sep)[0]
+out_dir = root_dir + '_anonymized'
 os.makedirs(out_dir, exist_ok = True)
 
 for image_path in image_paths:
+    image_path = str(image_path)
     image_name = image_path.split(os.sep)[-1]
+    out_path = image_path.replace(root_dir, out_dir)
+    out_path_noimg = out_path.replace(image_name, '')
+    os.makedirs(out_path_noimg, exist_ok = True)
+    
     print(image_name)
     dcm_image = pydicom.dcmread(image_path)
     dcm_image.decompress()
@@ -48,7 +55,6 @@ for image_path in image_paths:
     pixel_data = dcm_image.pixel_array
     cv2.rectangle(pixel_data, (x0, y0), (x1, y1), 0, cv2.FILLED)
     dcm_image.PixelData = pixel_data.tobytes()
-    out_path = os.path.join(out_dir, image_name)
     dcm_image.save_as(out_path)
     print('\tSUCESS: Censure applied!')
     
