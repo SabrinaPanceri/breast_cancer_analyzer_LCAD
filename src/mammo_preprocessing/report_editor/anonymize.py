@@ -64,4 +64,3 @@ for image_path in image_paths:
         plt.title('AFTER')
         plt.imshow(out_image.pixel_array, cmap = plt.cm.bone)
         plt.show()
-    
