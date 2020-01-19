@@ -2,10 +2,10 @@
 *.~
 .cproject
 .project
-*.png*
-*.pth*
+*/*.png*
+*/*.pth*
 *.metadata/*
 .pydevproject
-*.dcm*
+*/*.dcm*
 
 

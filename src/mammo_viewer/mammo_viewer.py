@@ -25,7 +25,7 @@ def image_tester(imageName, image_GT, imagePath, net):
 
     # exit()
         
-    scale_percent = 15 # percent of original size
+    scale_percent = 10 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
     height = int(imagePath.shape[0] * scale_percent / 100)
     dim = (width, height)
@@ -89,18 +89,18 @@ def image_tester(imageName, image_GT, imagePath, net):
 
 
                     
-                else: #SEM_cancer
-                    nocancer_cropy += 1
+                # else: #SEM_cancer
+                #     nocancer_cropy += 1
                     
-                    cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
-                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,250,0), thickness=2)
+                #     cv2.rectangle(classificada_resized, ((int)(j*scale_percent/100), 
+                #                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                #                                                        (int)((i+256)*scale_percent/100)), (0,250,0), thickness=1)
                     
-                    cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
-                                         (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (0,250,0), thickness=2)
+                #     cv2.rectangle(aux_resized_GT, ((int)(j*scale_percent/100), 
+                #                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
+                #                                                        (int)((i+256)*scale_percent/100)), (0,250,0), thickness=1)
 
-                    cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
+                #     cv2.imwrite(('../../dataset/classified/'+ fileName[0] + '.png'), classificada_resized)
                     
 
                 window_cropped = 'CROP_'+fileName[0]
@@ -108,7 +108,7 @@ def image_tester(imageName, image_GT, imagePath, net):
                 window_classified = 'CLASSIFIED_'+fileName[0]
                 
                 cv2.namedWindow(window_cropped)
-                cv2.moveWindow(window_cropped, 0, 0)
+                cv2.moveWindow(window_cropped, 0, 150)
                 cv2.imshow(window_cropped, cropped_img)
 
                 # cv2.namedWindow("cropped_GT")
@@ -116,11 +116,11 @@ def image_tester(imageName, image_GT, imagePath, net):
                 # cv2.imshow("cropped_GT", cropped_GT)
                 
                 cv2.namedWindow(window_gt)
-                cv2.moveWindow(window_gt, 380, 0)
+                cv2.moveWindow(window_gt, 330, 150)
                 cv2.imshow(window_gt, aux_resized_GT)
                 
                 cv2.namedWindow(window_classified)
-                cv2.moveWindow(window_classified, 1000, 0)
+                cv2.moveWindow(window_classified, 700, 150)
                 cv2.imshow(window_classified, classificada_resized)
                 cv2.waitKey(100)
 
@@ -185,7 +185,8 @@ def Net():
 
 def main(args):
     fileName = str(args[1])
-    INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/squeezenet1_1_89_3.pth' #Sem aumento; Acuracia media = 0.843750000
+    INITIAL_MODEL = str(args[2])
+    # INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/squeezenet1_1_89_3.pth' #Sem aumento; Acuracia media = 0.843750000
     # INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezetnet/runs/squeezenet1_1/27/models/squeezenet1_1_19_2.pth' #COM aumento; Acuracia da classe 1 = 0.900390625
 
 

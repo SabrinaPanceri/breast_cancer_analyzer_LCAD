@@ -3,7 +3,7 @@ import os, shutil, time, random
 import numpy as np
 import pandas as pd
 import cv2
-
+import sys
 import torch
 from torch.utils.data import Dataset
 from torch.utils.data.dataloader import DataLoader
@@ -11,14 +11,13 @@ import torch.nn as nn
 import torch.optim as optim
 
 from torchvision import models, transforms
+from pathlib import Path
 
 
 RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
-
-INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_6272_870192308/squeezenet1_1_111_7.pth'
 
 INITIAL_MODEL_TEST = True
 
@@ -29,11 +28,11 @@ TRAINING_DIR = None
 SHUFFLE = True
 
 TEST = (
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/good.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/revisar_FP_FN/malignant.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
 )
 TEST_DIR = (
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
 )
 
@@ -41,30 +40,22 @@ TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1
 
 BATCH_SIZE, ACCUMULATE = 1, 1
 
-# EPOCHS = 100
-# SAVES_PER_EPOCH = 10
-
-# INITIAL_LEARNING_RATE = 0.0005
-# LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
-# DECAY_RATE = 2
-# DECAY_STEP_SIZE = 2
-
 NUM_WORKERS = 4
 
 
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
-    print('\n' + new_model_name + ':')
+    # print('\n' + new_model_name + ':')
     state_dict = net.state_dict()
     for key in state_dict:
         if key in new_state_dict and new_state_dict[key].shape == state_dict[key].shape:
             state_dict[key] = new_state_dict[key]
-            print('\t' + key + ' loaded.')
+            # print('\t' + key + ' loaded.')
     net.load_state_dict(state_dict)
 
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
-    load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
+    # load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict())
     return net
 
 class DatasetFromCSV(Dataset):
@@ -93,10 +84,6 @@ class DatasetFromCSV(Dataset):
 
         self.transforms = transforms
 
-        if dataset_file != None:
-            with open(dataset_file, 'a') as dataset:
-                for image, label in zip(self.images, self.labels):
-                    dataset.write(image + ' ' + str(label) + '\n')
 
     def __len__(self):
         return self.data_len
@@ -112,7 +99,7 @@ class DatasetFromCSV(Dataset):
         return (image, self.labels[i])
 
 
-def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None):
+def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file):
     net.eval()
     str_buf = '\n\t' + dataset_name + ':\n\n\t\tConfusion Matrix\tClass Accuracy\n'
     print(str_buf)
@@ -133,11 +120,6 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     m = nn.Softmax(dim=1)
                     batch_s = m(classification)
                     batch_s = batch_s.tolist()
-                    for s in batch_s:
-                        with open('probalidade_test.txt', 'a') as ptest:
-                            ptest.write(str(s[0]) + '\t' + str(s[1]) + '\n')
-                        # print(s)
-                    # break
                     c = torch.max(classification, 1)[1].tolist()
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
@@ -157,144 +139,40 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
     if results_file != None:
         with open(results_file, 'a') as results:
             results.write(str_buf + '\n')
-    net.train()
 
 
-def main():
-    torch.multiprocessing.set_start_method('spawn', force=True)
+def main(args):
 
-    net = Net().to('cuda:0')
-    if INITIAL_MODEL != None:
-        load_matching_name_and_shape_layers(net, INITIAL_MODEL, torch.load(INITIAL_MODEL))
+    model_path = Path(os.path.join(args[1])).rglob('*.pth')
+
+    results_file = args[2]#'test_results_03.txt'
+
+    for INITIAL_MODEL in model_path:
+        INITIAL_MODEL = str(INITIAL_MODEL)
+
+        torch.multiprocessing.set_start_method('spawn', force=True)
+
+        net = Net().to('cuda:0')
+        if INITIAL_MODEL != None:
+            load_matching_name_and_shape_layers(net, INITIAL_MODEL, torch.load(INITIAL_MODEL))
 
 
-    if TEST != None:
-        if INITIAL_MODEL_TEST:
-            print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
-        tests = []
-        for csv_file, root_dir in zip(TEST, TEST_DIR):
-            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.txt') for i in range(NUM_CLASSES)]
-            dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
-            tests.append((csv_file, datasets_per_label, dataloaders_per_label))
+        if TEST != None:
             if INITIAL_MODEL_TEST:
-                test(net, csv_file, datasets_per_label, dataloaders_per_label)
+                print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
+                with open(results_file, 'a') as results:
+                    results.write(INITIAL_MODEL + '\n')
+            tests = []
+            for csv_file, root_dir in zip(TEST, TEST_DIR):
+                datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.txt') for i in range(NUM_CLASSES)]
+                dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
+                tests.append((csv_file, datasets_per_label, dataloaders_per_label))
+                if INITIAL_MODEL_TEST:
+                    test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file)
 
 
-    if TRAINING == None:
-        exit()
-
-    net_folder = os.path.join(RUNS_FOLDER, NETWORK)
-    i = 1
-    while True:
-        save_folder = os.path.join(net_folder, ('0' if i < 10 else '') + str(i))
-        if os.path.exists(save_folder):
-            i += 1
-        else:
-            break
-    models_folder = os.path.join(save_folder, 'models')
-    os.makedirs(models_folder)
-    shutil.copy(__file__, save_folder)
-    training_dataset_file = os.path.join(save_folder, 'training_dataset.txt')
-    training_log_file = os.path.join(save_folder, 'training_log.txt')
-    results_file = os.path.join(save_folder, 'results.txt')
-    print('\nSave folder: ' + save_folder)
-
-    training_dataset = DatasetFromCSV(TRAINING, TRAINING_DIR, shuffle=SHUFFLE, transforms=TRANSFORMS, dataset_file=training_dataset_file)
-    training_dataloader = DataLoader(training_dataset, BATCH_SIZE, num_workers=NUM_WORKERS)
-
-    criterion = nn.CrossEntropyLoss(reduction='sum')
-    optimizer = optim.SGD(net.parameters(), INITIAL_LEARNING_RATE)
-
-    num_training_batchs = (training_dataset.data_len + BATCH_SIZE - 1)//BATCH_SIZE
-    num_steps = (num_training_batchs + ACCUMULATE - 1)//ACCUMULATE
-    step_size = BATCH_SIZE*ACCUMULATE
-    last_step_size = (training_dataset.data_len - 1)%step_size + 1
-
-    if INITIAL_MODEL == None:
-        model_file = NETWORK + '_0.pth'
-        torch.save(net.state_dict(), os.path.join(models_folder, model_file))
-    save_steps_i = [i*num_steps//SAVES_PER_EPOCH for i in range(1, SAVES_PER_EPOCH + 1)]
-
-    for epoch_i in range(1, EPOCHS + 1):
-        str_buf = '\nEpoch ' + str(epoch_i) + ':'
-        print(str_buf)
-        if epoch_i == 1:
-            str_buf = str_buf[1:]
-        with open(results_file, 'a') as results:
-            results.write(str_buf + '\n')
-        str_buf2 = '\n\tLoss\t\tErrors' + step_size*'\t' + 'Elapsed Time\tStep\n'
-        print(str_buf2)
-        with open(training_log_file, 'a') as training_log:
-            training_log.write(str_buf + '\n' + str_buf2 + '\n')
-
-        epoch_steps_elapsed = 0.0
-        gt, c = [], []
-        step_loss = 0.0
-        save_i = 1
-        step_i = 1
-        step_begin = time.time()
-        for batch_i, batch in enumerate(training_dataloader, 1):
-            classification = net(batch[0].to('cuda:0'))
-            loss = criterion(classification, batch[1].to('cuda:0'))
-            loss.backward()
-
-            gt += batch[1].tolist()
-            c += torch.max(classification, 1)[1].tolist()
-            step_loss += loss.item()
-
-            if batch_i%ACCUMULATE == 0 or batch_i == num_training_batchs:
-                current_step_size = last_step_size if batch_i == num_training_batchs else step_size
-
-                optimizer.step()
-                optimizer.zero_grad()
-
-                step_loss /= current_step_size
-                step_elapsed = time.time() - step_begin
-                epoch_steps_elapsed += step_elapsed
-
-                str_buf = '\t{:.9f}'.format(step_loss)
-                for j in range(len(gt)):
-                    str_buf += '\t'
-                    if gt[j] != c[j]:
-                        str_buf += str(gt[j]) + '->' + str(c[j])
-                str_buf += '\t{:.3f}s'.format(step_elapsed)
-                percentage = str(10000*batch_i//num_training_batchs)
-                while len(percentage) < 3:
-                    percentage = '0' + percentage
-                percentage = percentage[:-2] + '.' + percentage[-2:]
-                str_buf += '\t\t' + str(step_i) + '/' + str(num_steps) + ' (' + percentage + '%)'
-                print(str_buf)
-                with open(training_log_file, 'a') as training_log:
-                    training_log.write(str_buf + '\n')
-
-                if step_i in save_steps_i:
-                    model_file = NETWORK + '_' + str(epoch_i) + '_' + str(save_i) + '.pth'
-                    torch.save(net.state_dict(), os.path.join(models_folder, model_file))
-                    save_i += 1
-                    if TEST != None:
-                        str_buf = '\n' + model_file + ' tests:'
-                        print(str_buf)
-                        with open(results_file, 'a') as results:
-                            results.write(str_buf + '\n')
-                        for csv_file, datasets_per_label, dataloaders_per_label in tests:
-                            test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file)
-                        print()
-
-                if step_i == num_steps:
-                    str_buf = '\tEpoch Steps Elapsed Time: {:.3f}s'.format(epoch_steps_elapsed)
-                    print(str_buf)
-                    with open(training_log_file, 'a') as training_log:
-                        training_log.write(str_buf + '\n')
-                else:
-                    gt, c = [], []
-                    step_loss = 0.0
-                    step_i += 1
-                    step_begin = time.time()
-
-        if (epoch_i < LAST_EPOCH_FOR_LEARNING_RATE_DECAY) and (epoch_i%DECAY_STEP_SIZE == 0):
-            for g in optimizer.param_groups:
-                g['lr'] /= DECAY_RATE
+if __name__ == '__main__':
+    sys.exit(main(sys.argv)) 
 
 
-if __name__ == "__main__":
-    main()
+# python test.py /caminho/dos/pesos
