@@ -2,30 +2,10 @@
 *.~
 .cproject
 .project
-*/original_dataset/*
-*/newDataset/*
-*/benign/*
-*/good/*
-*/good-11-09-2019/*
-*/malignant/*
-*/malignant-11-09-2019/*
-*src/squeezeNet/runs/*
-*/labels-dataset-12-09-2019/*
-*/cropped/*
-*/classified/*
-*/cropped_tensor/*
-*/cropp_prob/*
-*/probabilities/*
-*/test_viewer_dataset/*
-*/val_viewer_dataset/*
-*/train_viewer_dataset/*
-*dataset/augmented_good/*
-*dataset/augmented_malignant/*
-*dataset/cropped_images/*
+*/*.png*
+*/*.pth*
 *.metadata/*
 .pydevproject
-dataset/rotacionadaspeloScart/
-*dataset/revisar_FP_FN/
-*dataset/sample_images_dataset/
+*/*.dcm*
 
 

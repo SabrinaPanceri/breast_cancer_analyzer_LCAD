@@ -1,5 +1,5 @@
-../../dataset/test_viewer_dataset/Calc-Training_P_02572_LEFT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02572_LEFT_CC_1_MALIGNANT.png
 ../../dataset/test_viewer_dataset/Calc-Training_P_02566_RIGHT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02566_RIGHT_CC_1_MALIGNANT.png
+../../dataset/test_viewer_dataset/Calc-Training_P_02572_LEFT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02572_LEFT_CC_1_MALIGNANT.png
 ../../dataset/test_viewer_dataset/Calc-Training_P_02559_RIGHT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02559_RIGHT_CC_1_MALIGNANT.png
 ../../dataset/test_viewer_dataset/Calc-Training_P_02522_RIGHT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02522_RIGHT_CC_1_MALIGNANT.png
 ../../dataset/test_viewer_dataset/Calc-Training_P_02518_RIGHT_CC_MALIGNANT.png,../../dataset/test_viewer_dataset/Calc-Training_P_02518_RIGHT_CC_1_MALIGNANT.png
