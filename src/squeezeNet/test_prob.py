@@ -30,7 +30,7 @@ SHUFFLE = True
 
 TEST = (
         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
+        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
 )
 TEST_DIR = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
