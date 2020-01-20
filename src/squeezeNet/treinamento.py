@@ -20,17 +20,13 @@ NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
 ## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
-INITIAL_MODEL = None
-INITIAL_MODEL_TEST = False 
+INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/runs/squeezenet1_1/02/models/squeezenet1_1_32_2.pth' #None
+INITIAL_MODEL_TEST = True
 
 TRAINING = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt', #57344 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02OF100_OK/training_dataset.txt', #OF 200 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_09_12_2.txt', #6272 imagens
-        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_train.txt', #OF 20 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_6272_870192308/training_dataset.txt', #6272 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/01/training_dataset.txt', #6272 imagens
 )
 
 TRAINING_DIR = (
@@ -43,8 +39,8 @@ SHUFFLE =  False
 
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12_1.txt', #832 imagens
-         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt', #896 imagens
+         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12_1.txt', #832 imagens
+         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt', #896 imagens
 )
 
 TEST_DIR = (
@@ -59,8 +55,8 @@ BATCH_SIZE, ACCUMULATE = 128, 1
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0003
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 21
+INITIAL_LEARNING_RATE = 0.0002
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
@@ -188,36 +184,36 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     # print("Resultado classificacao",c)
                     # print()
                     
-                    for pred, lbl, filename in zip(c, batch[1], batch[2]):
-                        # print("Predicao = ", pred)
-                        # print("Label = ", lbl.item())
-                        # print("Arquivo = ", filename)
-                        # print()
+                    # for pred, lbl, filename in zip(c, batch[1], batch[2]):
+                    #     print("Predicao = ", pred)
+                    #     print("Label = ", lbl.item())
+                    #     print("Arquivo = ", filename)
+                    #     print()
 
 
-                        if (lbl.item() == 0) & (pred == 1):
-                            if classification_error_file != None:
-                                with open(classification_error_file, 'a') as classification_error:
-                                    classification_error.write("Falso NEGATIVO[0/1]" + "\n")
-                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                                    classification_error.write('\t' + str(lbl.item()) + '\t')
-                                    classification_error.write('\t' + str(pred) + '\t')
-                                    classification_error.write(filename + '\n')
-                                    # print("---------------------------")
-                                    # print("Falso NEGATIVO[0/1]", filename)
-                                    # print("---------------------------")
+                    #     if (lbl.item() == 0) & (pred == 1):
+                    #         if classification_error_file != None:
+                    #             with open(classification_error_file, 'a') as classification_error:
+                    #                 classification_error.write("Falso NEGATIVO[0/1]" + "\n")
+                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
+                    #                 classification_error.write('\t' + str(pred) + '\t')
+                    #                 classification_error.write(filename + '\n')
+                    #                 # print("---------------------------")
+                    #                 # print("Falso NEGATIVO[0/1]", filename)
+                    #                 # print("---------------------------")
 
-                        elif (lbl.item() == 1) & (pred == 0):
-                            if classification_error_file != None:
-                                with open(classification_error_file, 'a') as classification_error:
-                                    classification_error.write("Falso POSITIVO[0/1]"+ "\n")
-                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                                    classification_error.write('\t' + str(lbl.item()) + '\t')
-                                    classification_error.write('\t' + str(pred) + '\t')
-                                    classification_error.write(filename + '\n')
-                                    # print("++++++++++++++++++++++++++")
-                                    # print("Falso POSITIVO[1/0]", filename)
-                                    # print("++++++++++++++++++++++++++")
+                    #     elif (lbl.item() == 1) & (pred == 0):
+                    #         if classification_error_file != None:
+                    #             with open(classification_error_file, 'a') as classification_error:
+                    #                 classification_error.write("Falso POSITIVO[0/1]"+ "\n")
+                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
+                    #                 classification_error.write('\t' + str(pred) + '\t')
+                    #                 classification_error.write(filename + '\n')
+                    #                 # print("++++++++++++++++++++++++++")
+                    #                 # print("Falso POSITIVO[1/0]", filename)
+                    #                 # print("++++++++++++++++++++++++++")
                     
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
