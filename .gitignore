@@ -2,10 +2,13 @@
 *.~
 .cproject
 .project
-*/*.png*
-*/*.pth*
 *.metadata/*
 .pydevproject
-*/*.dcm*
+*.png
+*.dcm
+*.pth
+dataset/augmented_malignant/*.png
+
+
 
 
