@@ -20,7 +20,7 @@ NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
 ## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
-INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/runs/squeezenet1_1/02/models/squeezenet1_1_32_2.pth' #None
+INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth' #None
 INITIAL_MODEL_TEST = True
 
 TRAINING = (
