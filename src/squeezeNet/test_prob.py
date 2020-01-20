@@ -3,7 +3,7 @@ import os, shutil, time, random
 import numpy as np
 import pandas as pd
 import cv2
-
+import sys
 import torch
 from torch.utils.data import Dataset
 from torch.utils.data.dataloader import DataLoader
@@ -102,10 +102,14 @@ class DatasetFromCSV(Dataset):
         return (image, self.labels[i])
 
 
-def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None):
+def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file, probabilidade_file):
     net.eval()
     str_buf = '\n\t' + dataset_name + ':\n\n\t\tConfusion Matrix\tClass Accuracy\n'
     print(str_buf)
+
+    if results_file != None:
+        with open(results_file, 'a') as results:
+            results.write(str_buf + '\n')
     
     average_class_accuracy = 0.0
     valid_classes = 0
@@ -127,7 +131,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     batch_s = batch_s.tolist()
                     
                     for s in batch_s:
-                        with open('probalidade_test.csv', 'a') as ptest:
+                        with open(probabilidade_file, 'a') as ptest:
                             ptest.write(str(s[0]) + ',' + str(s[1]) + '\n')
                         # print(s)
                     # exit()
@@ -153,9 +157,15 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
             results.write(str_buf + '\n')
 
 
-
-def main():
+# python test_prob.py metrics/test_dataset_squeezenet1_1_32_2.csv metrics/confusion_matrix_validation.txt metrics/probabilities_squeezenet1_1_32_2.csv
+def main(args):
     torch.multiprocessing.set_start_method('spawn', force=True)
+
+    dataset_file = args[1]
+
+    results_file = args[2]
+
+    probabilidade_file = args[3]
 
     net = Net().to('cuda:0')
     if INITIAL_MODEL != None:
@@ -167,15 +177,12 @@ def main():
             print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
         tests = []
         for csv_file, root_dir in zip(TEST, TEST_DIR):
-            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.csv') for i in range(NUM_CLASSES)]
+            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file=dataset_file) for i in range(NUM_CLASSES)]
             dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
-            # tests.append((csv_file, datasets_per_label, dataloaders_per_label))
-            # print(tests)
-            # exit()
             if INITIAL_MODEL_TEST:
-                test(net, csv_file, datasets_per_label, dataloaders_per_label)
+                test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file, probabilidade_file)
 
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    sys.exit(main(sys.argv)) 

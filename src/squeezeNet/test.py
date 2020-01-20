@@ -142,6 +142,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
 
 
 def main(args):
+    torch.multiprocessing.set_start_method('spawn', force=True)
 
     model_path = Path(os.path.join(args[1])).rglob('*.pth')
 

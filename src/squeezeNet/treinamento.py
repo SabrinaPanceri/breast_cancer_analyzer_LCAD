@@ -55,7 +55,7 @@ BATCH_SIZE, ACCUMULATE = 128, 1
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0002
+INITIAL_LEARNING_RATE = 0.0001
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
@@ -184,36 +184,36 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     # print("Resultado classificacao",c)
                     # print()
                     
-                    # for pred, lbl, filename in zip(c, batch[1], batch[2]):
-                    #     print("Predicao = ", pred)
-                    #     print("Label = ", lbl.item())
-                    #     print("Arquivo = ", filename)
-                    #     print()
+                    for pred, lbl, filename in zip(c, batch[1], batch[2]):
+                        # print("Predicao = ", pred)
+                        # print("Label = ", lbl.item())
+                        # print("Arquivo = ", filename)
+                        # print()
 
 
-                    #     if (lbl.item() == 0) & (pred == 1):
-                    #         if classification_error_file != None:
-                    #             with open(classification_error_file, 'a') as classification_error:
-                    #                 classification_error.write("Falso NEGATIVO[0/1]" + "\n")
-                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
-                    #                 classification_error.write('\t' + str(pred) + '\t')
-                    #                 classification_error.write(filename + '\n')
-                    #                 # print("---------------------------")
-                    #                 # print("Falso NEGATIVO[0/1]", filename)
-                    #                 # print("---------------------------")
+                        if (lbl.item() == 0) & (pred == 1):
+                            if classification_error_file != None:
+                                with open(classification_error_file, 'a') as classification_error:
+                                    classification_error.write("Falso NEGATIVO[0/1]" + "\n")
+                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                                    classification_error.write('\t' + str(lbl.item()) + '\t')
+                                    classification_error.write('\t' + str(pred) + '\t')
+                                    classification_error.write(filename + '\n')
+                                    # print("---------------------------")
+                                    # print("Falso NEGATIVO[0/1]", filename)
+                                    # print("---------------------------")
 
-                    #     elif (lbl.item() == 1) & (pred == 0):
-                    #         if classification_error_file != None:
-                    #             with open(classification_error_file, 'a') as classification_error:
-                    #                 classification_error.write("Falso POSITIVO[0/1]"+ "\n")
-                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
-                    #                 classification_error.write('\t' + str(pred) + '\t')
-                    #                 classification_error.write(filename + '\n')
-                    #                 # print("++++++++++++++++++++++++++")
-                    #                 # print("Falso POSITIVO[1/0]", filename)
-                    #                 # print("++++++++++++++++++++++++++")
+                        elif (lbl.item() == 1) & (pred == 0):
+                            if classification_error_file != None:
+                                with open(classification_error_file, 'a') as classification_error:
+                                    classification_error.write("Falso POSITIVO[0/1]"+ "\n")
+                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                                    classification_error.write('\t' + str(lbl.item()) + '\t')
+                                    classification_error.write('\t' + str(pred) + '\t')
+                                    classification_error.write(filename + '\n')
+                                    # print("++++++++++++++++++++++++++")
+                                    # print("Falso POSITIVO[1/0]", filename)
+                                    # print("++++++++++++++++++++++++++")
                     
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
