@@ -127,7 +127,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     batch_s = batch_s.tolist()
                     
                     for s in batch_s:
-                        with open('tests/probalidade_test.txt', 'a') as ptest:
+                        with open('probalidade_test.txt', 'a') as ptest:
                             ptest.write(str(s[0]) + ',' + str(s[1]) + '\n')
                         # print(s)
                     # exit()
@@ -167,7 +167,7 @@ def main():
             print('\n' + (INITIAL_MODEL if INITIAL_MODEL != None else 'Initial model') + ' tests:')
         tests = []
         for csv_file, root_dir in zip(TEST, TEST_DIR):
-            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='tests/test_dataset.txt') for i in range(NUM_CLASSES)]
+            datasets_per_label = [DatasetFromCSV((csv_file,), (root_dir,), label=i, transforms=TRANSFORMS, dataset_file='test_dataset.txt') for i in range(NUM_CLASSES)]
             dataloaders_per_label = [DataLoader(dataset, BATCH_SIZE, num_workers=NUM_WORKERS) for dataset in datasets_per_label]
             # tests.append((csv_file, datasets_per_label, dataloaders_per_label))
             # print(tests)
