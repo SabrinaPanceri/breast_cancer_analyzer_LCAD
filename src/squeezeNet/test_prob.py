@@ -18,7 +18,7 @@ RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
-INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_57344_853097098/models/squeezenet1_1_6_4.pth'
+INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
 
 INITIAL_MODEL_TEST = True
 
