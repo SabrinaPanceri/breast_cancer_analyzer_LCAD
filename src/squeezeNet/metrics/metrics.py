@@ -9,11 +9,11 @@ Output:
 
 import sys
 import argparse
-from parse import *
+from parse import parse
 
 ''' Global definitions '''
 valid_classes = {0: 'benign', 1: 'malignant'}
-
+    
 
 def is_int(x):
     try:
@@ -33,22 +33,46 @@ def is_float(x):
 
 def calculate_metrics(optimal_thresholds, input_data, threshold_1, threshold_2):
     true_p = true_n = false_p = false_n = 0
-    for (patient_id, crop_list) in input_data:
-        for crop_data in crop_list:
-            (crop_id, ground_truth_class, class_probs) = crop_data
-            if class_probs[1] < threshold_1:
-                continue
-            
-        
     
-    return
+    for (patient_id, gt_class, crop_list) in input_data:
+        accum_prob = sum( class_probs[1] for (crop_id, class_probs) in crop_list if class_probs[1] >= threshold_1 )
+        crop_count = sum( 1 for (crop_id, class_probs) in crop_list if class_probs[1] >= threshold_1 )
+        mean_prob = (accum_prob / crop_count) if crop_count > 0 else 0.0
+
+        if mean_prob >= threshold_2:
+            if gt_class == 1:
+                true_p += 1
+            else:
+                false_p += 1
+        else:
+            if  gt_class == 0:
+                true_n += 1
+            else:
+                false_n += 1
+
+    precision = (float(true_p) / (true_p + false_p)) if (true_p + false_p) > 0 else 0.0  
+    recall = (float(true_p) / (true_p + false_n)) if (true_p + false_n) > 0 else 0.0
+    accuracy = (float(true_p + true_n) / (true_p + true_n + false_p + false_n)) if (true_p + true_n + false_p + false_n) > 0 else 0.0
+    specificity = (float(true_n) / (true_n + false_p)) if (true_n + false_p) > 0 else 0.0
+    sensitivity = recall 
+    f_measure = (2.0 * precision * recall / (precision + recall)) if (precision + recall) > 0.0 else 0.0 
+    current_metrics = (precision, recall, accuracy, specificity, sensitivity, f_measure)
+    
+    args.outfile.write(('{:17.2f}'*2 + '{:17}'*4 + '{:17.6f}'*6 + '\n').format(threshold_1, threshold_2, true_p, true_n, false_p, false_n, *current_metrics))
+
+    for (i, label) in enumerate(metric_labels):
+        (optimal_metric, optimal_threshold_1, optimal_threshold_2) = optimal_thresholds[label]
+        if current_metrics[i] > optimal_metric:
+            metric_data = (current_metrics[i], threshold_1, threshold_2)
+            optimal_thresholds[label] = metric_data
 
 
 def read_input_file(infile):
     line_pattern = '{patient_id}_Crop_{crop_id}.png,{gt_class},{class_probs}'
     input_data = []
     linenum = errors = 0
-    previous_patient_id = None
+    previous_patient_id = previous_gt_class = None
+    print('\nProcessing file \'{}\' ...'.format(args.infile.name))
     for (linenum, line) in enumerate(infile, start=1):
         fields = parse(line_pattern, line)
         if not fields:
@@ -59,19 +83,19 @@ def read_input_file(infile):
         crop = fields['crop_id']
         crop_id = int(crop) if is_int(crop) else crop
         gt = fields['gt_class']
-        ground_truth_class = int(gt) if is_int(gt) else gt
-        if valid_classes.get(ground_truth_class) == None:
-            print('{}Error in line #{}: invalid gt_class: {}\nValid classes are: {}'.format(line, linenum, ground_truth_class, valid_classes))
+        gt_class = int(gt) if is_int(gt) else gt
+        if valid_classes.get(gt_class) == None:
+            print('{}Error in line #{}: invalid gt_class: {}\nValid classes are: {}'.format(line, linenum, gt_class, valid_classes))
             errors += 1
             continue
         class_probs = [ float(prob) if is_float(prob) else prob for prob in fields['class_probs'].split(',') ]
-        if len(class_probs) > len(valid_classes) :
+        if len(class_probs) > len(valid_classes):
             print('{}Error in line #{}: too many class probabilities: {}\nValid classes are: {}'.format(line, linenum, class_probs, valid_classes))
             errors += 1
             continue
-        class_probs_invalid_format = sum( 0 if is_float(prob) else 1 for prob in class_probs )
-        if class_probs_invalid_format > 0:
-            print('{}Error in line #{}: class probabilities must be float numbers (decimal point is dot)'.format(line, linenum))
+        class_probs_invalid = sum( 1 for prob in class_probs if not is_float(prob) or not (0.0 <= prob <= 1.0) )
+        if class_probs_invalid > 0:
+            print('{}Error in line #{}: class probabilities must be in [0.0 .. 1.0]'.format(line, linenum))
             errors += 1
             continue
         total_prob = round(sum(class_probs), 6)
@@ -82,9 +106,14 @@ def read_input_file(infile):
             continue
         if  patient_id != previous_patient_id:
             crop_list = []
-            input_data.append((patient_id, crop_list))
+            input_data.append((patient_id, gt_class, crop_list))
             previous_patient_id = patient_id
-        crop_list.append((crop_id, ground_truth_class, class_probs))
+            previous_gt_class = gt_class
+        elif previous_gt_class != gt_class:
+            print('{}Error in line #{}: patient\'s gt_class is {} but this crop\'s gt_class is {}'.format(line, linenum, previous_gt_class, gt_class))
+            errors += 1
+        else:
+            crop_list.append((crop_id, class_probs))
     print('\nRecord count:  {:7}\nError count:   {:7}\nPatient count: {:7}'.format(linenum, errors, len(input_data)))
     return input_data
     
@@ -103,22 +132,21 @@ if __name__ == "__main__":
         print('\n{} has no valid records!\n'.format(args.infile.name))
         exit()
 
-    metric_labels = ('Precision', 'Recall', 'Accuracy', 'Specificity', 'Sensitivity', 'F-measure')    
-    (optimal_value, threshold_1, threshold_2) = (0.0, 0.0, 0.0)
-    optimal_thresholds = []
-    for metric in metric_labels:
-        optimal_thresholds.append([metric, optimal_value, threshold_1, threshold_2])
+    metric_labels = ('Precision', 'Recall', 'Accuracy', 'Specificity', 'Sensitivity', 'F_measure')    
+    metric_data = (optimal_metric, optimal_threshold_1, optimal_threshold_2) = (0.0, 0.0, 0.0)
+    optimal_thresholds = {}.fromkeys(metric_labels, metric_data)
     
-    args.outfile.write('# ')
+    args.outfile.write('#')
     outfile_labels = ('Threshold', 'Threshold', 'True_P', 'True_N', 'False_P', 'False_N') + metric_labels
     for (i, label) in enumerate(outfile_labels, start=1): 
         args.outfile.write('{:2}_{:11} | '.format(i, label))
     args.outfile.write('\n')
     
-    if args.step <= 0.0 or args.step > 1.0:
+    if not 0.0 < args.step <= 1.0:
         args.step = parser.get_default('step')
         print('Threshold --step argument must be greater than 0.0 and less than 1.0 (now set to default value: {})'.format(args.step))
 
+    threshold_1 = 0.0
     while threshold_1 <= 1.0:
         threshold_2 = 0.0
         while threshold_2 <= 1.0:
@@ -127,11 +155,11 @@ if __name__ == "__main__":
         threshold_1 += args.step
     
     print('\nOptimal thresholds:')
-    for optimal in optimal_thresholds:
-        print('{:11} : {:.6f}   thresold_1: {:.6f}   threshold_2: {:.6f}'.format(*optimal))
-        
+    for label in metric_labels:
+        print('{:11} : {:.6f}   thresold_1: {:.2f}   threshold_2: {:.2f}'.format(label, *optimal_thresholds[label]))
+    
     if not args.outfile in (sys.stdout, sys.stderr):
-        print('\nPlease find all confusion matrices and performance indexes in the file: {}'.format(args.outfile.name))
+        print('\nPlease find all confusion matrices and performance indexes in file: \'{}\''.format(args.outfile.name))
         args.outfile.close()
     print
     
