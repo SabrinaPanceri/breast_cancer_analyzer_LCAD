@@ -234,3 +234,25 @@ squeezenet1_1_3_1.pth tests:
 		112	336		0.750000000
 
 		Average Class Accuracy: 0.803571429
+
+squeezenet1_1_3_2.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		376	72		0.839285714
+		73	375		0.837053571
+
+		Average Class Accuracy: 0.838169643
+
+squeezenet1_1_3_3.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		366	82		0.816964286
+		62	386		0.861607143
+
+		Average Class Accuracy: 0.839285714
