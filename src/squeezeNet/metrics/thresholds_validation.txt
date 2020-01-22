@@ -9,7 +9,7 @@ Optimal thresholds:
 Precision   : 1.000000   thresold_1: 0.00   threshold_2: 0.85
 Recall      : 1.000000   thresold_1: 0.00   threshold_2: 0.00
 Accuracy    : 0.926471   thresold_1: 0.00   threshold_2: 0.65
-Specificity : 1.000000   thresold_1: 0.00   threshold_2: 0.85
+Fall_Out    : 1.000000   thresold_1: 0.00   threshold_2: 0.00
 Sensitivity : 1.000000   thresold_1: 0.00   threshold_2: 0.00
 F_measure   : 0.901961   thresold_1: 0.00   threshold_2: 0.65
 
