@@ -1,3 +1,6 @@
+# python test_prob.py metrics/test_dataset_squeezenet1_1_32_2.csv metrics/confusion_matrix_validation.txt metrics/probabilities_squeezenet1_1_32_2.csv
+
+
 from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
@@ -31,11 +34,13 @@ SHUFFLE = True
 TEST = (
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/test_set_cropped.txt',
 )
 TEST_DIR = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
+        # '',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
@@ -158,7 +163,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
             results.write(str_buf + '\n')
 
 
-# python test_prob.py metrics/test_dataset_squeezenet1_1_32_2.csv metrics/confusion_matrix_validation.txt metrics/probabilities_squeezenet1_1_32_2.csv
+
 def main(args):
     torch.multiprocessing.set_start_method('spawn', force=True)
 
