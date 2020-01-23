@@ -23,8 +23,8 @@ def generate_dataset_with_new_names(root, pathList, subList, labelList):
                 
         elif pathName == 'Mass-Test':
             ImagesPath = root + 'CBIS-DDSM/MASS/Mass-Test-Full/CBIS-DDSM'
-            if os.path.isdir(root + 'CBIS-DDSM/new-dataset/' + 'new-dataset/Mass-Test') == False:
-                os.mkdir(root + 'CBIS-DDSM/new-dataset/' + 'new-dataset/Mass-Test')
+            if os.path.isdir(root + 'CBIS-DDSM/new-dataset/' + 'Mass-Test') == False:
+                os.mkdir(root + 'CBIS-DDSM/new-dataset/' + 'Mass-Test')
                 f = open(root + 'CBIS-DDSM/new-dataset/Mass-Test/' + 'Mass-Test.txt', 'w')
                 f.close()
                         
