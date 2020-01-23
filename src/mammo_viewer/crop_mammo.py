@@ -32,7 +32,7 @@ def image_crop_full_mammo(imageName, imagePath):
 
     print(fileName[0])
 
-    total_cropy, cancer_cropy, nocancer_cropy,cancer_area = 0, 0, 0, 0
+    total_cropy = 0
 
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
@@ -48,7 +48,7 @@ def image_crop_full_mammo(imageName, imagePath):
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
                                                                        (int)((i+256)*scale_percent/100)), (255,0,0), 2)
                 
-                cv2.imwrite(('crop_mammo_test_set/'+fileName[0] +'_'+ str(i)+'_'+ str(j) + '.png'), cropped_img)
+                cv2.imwrite(('crop_mammo/'+fileName[0] +'_'+ 'Crop_'+ str(total_cropy) + '.png'), cropped_img)
                 
                 # input_class = network_classifier(cropped_tensor, net, fileName[0])
                 

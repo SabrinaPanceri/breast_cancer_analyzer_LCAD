@@ -1,5 +1,5 @@
 
-	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/test_set_cropped.txt:
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo.txt:
 
 		Confusion Matrix	Class Accuracy
 
