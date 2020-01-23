@@ -29,12 +29,13 @@ TRAINING_DIR = None
 SHUFFLE = True
 
 TEST = (
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
+        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
 )
 TEST_DIR = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+        '',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
