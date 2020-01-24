@@ -199,7 +199,7 @@ def read_threshold_file(infile):
         threshold_data.append(thresholds)
     print('\nRecord count:    {:7}\nError count:     {:7}\n'.format(linenum, errors))
     if not threshold_data:
-        exit_msg('{} has no valid records!\n', (infile.name))
+        exit_msg('{} has no valid records!\n', [infile.name])
     return threshold_data
 
 
@@ -247,23 +247,23 @@ def read_input_file(infile, infile_name):
             crop_list.append((crop_id, class_probs))
     print('\nRecord count:    {:7}\nError count:     {:7}\nMammogram count: {:7}\n'.format(linenum, errors, len(input_data)))
     if not input_data:
-        exit_msg('{} has no valid records!\n', (infile_name))
+        exit_msg('{} has no valid records!\n', [infile_name])
     return input_data
 
 
 def get_infile(file_i, file_i1, file_i2):
     if file_i:
         if file_i1 or file_i2:
-            exit_msg('Input file arguments -i, -i1, -i2 cannot be used simultaneously!\n')
+            exit_msg('Input file arguments -i, -i1, -i2 cannot be used simultaneously!\n', [])
         infile = list(file_i)
         infile_name = file_i.name
     elif file_i1 and file_i2:
         infile = join_file_lines(file_i1, file_i2, join_char=',')
         infile_name = file_i1.name
     elif file_i1 or file_i2:
-        exit_msg('Input file arguments -i1 and -i2 should be used simultaneously!\n')
+        exit_msg('Input file arguments -i1 and -i2 should be used simultaneously!\n', [])
     else:
-        exit_msg('No input file arguments -i, -i1, -i2 used!\n')
+        exit_msg('No input file arguments -i, -i1, -i2 used!\n', [])
     return (infile, infile_name)
 
 
