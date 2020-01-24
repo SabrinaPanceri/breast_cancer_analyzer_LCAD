@@ -49,7 +49,7 @@ def compute_confusion_matrix(input_data, threshold_1, threshold_2):
     for (mammogram_id, gt_class, crop_list) in input_data:
         accum_prob = sum( class_probs[1] for (crop_id, class_probs) in crop_list if class_probs[1] >= threshold_1 )
         crop_count = sum( 1 for (crop_id, class_probs) in crop_list if class_probs[1] >= threshold_1 )
-        mean_prob = (accum_prob / crop_count) if crop_count > 0 else 0.0
+        mean_prob = (float(accum_prob) / crop_count) if crop_count > 0 else 0.0
         if mean_prob >= threshold_2:
             if gt_class == 1:
                 true_p += 1
