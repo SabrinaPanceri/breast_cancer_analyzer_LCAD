@@ -35,11 +35,11 @@ TEST = (
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set.txt',
 )
 TEST_DIR = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
         # '',
 )
 

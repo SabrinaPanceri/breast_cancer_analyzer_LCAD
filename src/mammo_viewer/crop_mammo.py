@@ -12,16 +12,16 @@ def image_crop_full_mammo(imageName, imagePath):
 
     # print(imageName)
     
-    aux_fileName = imageName.split('_dataset/') 
+    aux_fileName = imageName.split('_set/') 
     # print(aux_fileName)
  
     fileName = aux_fileName[1].split('.')
     
-    # print(fileName)
+    print(fileName)
 
     # exit()
         
-    scale_percent = 10 # percent of original size
+    scale_percent = 15 # percent of original size
     width = int(imagePath.shape[1] * scale_percent / 100)
     height = int(imagePath.shape[0] * scale_percent / 100)
     dim = (width, height)
@@ -37,7 +37,6 @@ def image_crop_full_mammo(imageName, imagePath):
     for i in range(0, Y_Max, 256):
         for j in range(0, X_Max, 256):
             cropped_img = imagePath[i:i+256, j:j+256]
-            cropped_tensor = cropped_img.copy()
             
             if ((cropped_img == 0).all() or cropped_img.shape != (256,256,3)):
                 break
@@ -46,17 +45,11 @@ def image_crop_full_mammo(imageName, imagePath):
                 resized_copy = resized.copy()
                 cv2.rectangle(resized_copy, ((int)(j*scale_percent/100), 
                                          (int)(i*scale_percent/100)), ((int)((j+256)*scale_percent/100),
-                                                                       (int)((i+256)*scale_percent/100)), (255,0,0), 2)
-                
-                cv2.imwrite(('crop_mammo/'+fileName[0] +'_'+ 'Crop_'+ str(total_cropy) + '.png'), cropped_img)
-                
-                # input_class = network_classifier(cropped_tensor, net, fileName[0])
+                                                                       (int)((i+256)*scale_percent/100)), (0,0,255), thickness=3)
                 
                 
-                # with open('full_mammo/'+ fileName[0], "a") as input_net:
-                #     input_net.write(fileName[0] +'_'+ str(i)+'_'+ str(j) +'\t'+ str(input_class[0][0]) +'\t' + str(input_class[0][1]) + '\n')
+                cv2.imwrite(('crop_mammo_test_set/'+fileName[0] +'_'+ 'Crop_'+ str(total_cropy) + '.png'), cropped_img)
                 
-                # print(input_class[0][0], input_class[0][1])                    
 
                 window_cropped = 'CROP_'+fileName[0]
                 window_classified = 'CLASSIFIED_'+fileName[0]
