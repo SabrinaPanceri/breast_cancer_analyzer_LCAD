@@ -22,6 +22,9 @@ NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
 
 INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
+#'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_57344_853097098/models/squeezenet1_1_43_4.pth'
+
+
 
 INITIAL_MODEL_TEST = True
 
@@ -33,13 +36,13 @@ SHUFFLE = True
 
 TEST = (
         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
-        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set.txt',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set.txt',
 )
 TEST_DIR = (
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
         # '',
 )
 

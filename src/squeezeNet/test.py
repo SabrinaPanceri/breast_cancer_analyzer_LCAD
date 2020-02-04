@@ -1,3 +1,4 @@
+# python test.py /caminho/dos/pesos
 from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
@@ -176,4 +177,4 @@ if __name__ == '__main__':
     sys.exit(main(sys.argv)) 
 
 
-# python test.py /caminho/dos/pesos
+

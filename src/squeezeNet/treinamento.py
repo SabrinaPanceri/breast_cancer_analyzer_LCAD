@@ -17,7 +17,7 @@ RUNS_FOLDER = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs
 
 NETWORK = 'squeezenet1_1'
 
-NUM_CLASSES = 2
+NUM_CLASSES = 6 
 
 ## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
 INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth' #None
@@ -25,13 +25,14 @@ INITIAL_MODEL_TEST = True
 
 TRAINING = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt', #57344 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
+        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_09_12_2.txt', #6272 imagens
+        '/mnt/dadosSabrina/new-dataset/treinamento.txt',
 )
 
 TRAINING_DIR = (
-        '',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+        #'',
+         '/mnt/dadosSabrina/new-dataset',
 )
 
 ##USAR TRUE APENAS NO PRIMEIRO TREINO. USAR O MESMO ARQUIVO NOS DEMAIS TREINOS##
@@ -40,17 +41,18 @@ SHUFFLE =  False
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
          # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12_1.txt', #832 imagens
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt', #896 imagens
+         #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt', #896 imagens
+         '/mnt/dadosSabrina/new-dataset/validacao.txt',
 )
 
 TEST_DIR = (
         # '',    
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+         '/mnt/dadosSabrina/new-dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 128, 1
+BATCH_SIZE, ACCUMULATE = 4, 1
 
 EPOCHS = 100
 SAVES_PER_EPOCH = 10
