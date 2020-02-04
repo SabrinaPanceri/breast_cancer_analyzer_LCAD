@@ -1,6 +1,7 @@
 import cv2, argparse
 import os, sys, csv
-
+from PIL import Image
+import subprocess
 
 def generate_dataset_with_new_names(root, pathList, subList, labelList):
     j = 0
@@ -23,7 +24,7 @@ def generate_dataset_with_new_names(root, pathList, subList, labelList):
                 
         elif pathName == 'Mass-Test':
             ImagesPath = root + 'CBIS-DDSM/MASS/Mass-Test-Full/CBIS-DDSM'
-            if os.path.isdir(root + 'CBIS-DDSM/new-dataset/' + 'Mass-Test') == False:
+            if os.path.isdir(root + 'CBIS-DDSM/new-dataset/' + 'new-dataset/Mass-Test') == False:
                 os.mkdir(root + 'CBIS-DDSM/new-dataset/' + 'Mass-Test')
                 f = open(root + 'CBIS-DDSM/new-dataset/Mass-Test/' + 'Mass-Test.txt', 'w')
                 f.close()
@@ -37,20 +38,20 @@ def generate_dataset_with_new_names(root, pathList, subList, labelList):
 
     while j < len(pathList):
         tempImg = ImagesPath + '/' + pathList[j]
-        examImage = cv2.imread(tempImg) 
+        examImageBGR = cv2.imread(tempImg)
+        examImage =cv2.cvtColor(examImageBGR, cv2.COLOR_BGR2GRAY)
         aux = pathList[j].split('/')
         fileName = aux[0]
         biRADS = labelList[j]
         difficulty = subList[j]
         biggestPixelAtCoordinateX = examImage.shape[1]            
-        biggestPixelAtCoordinateY = examImage.shape[0]  
+        biggestPixelAtCoordinateY = examImage.shape[0] 
         renamedImagesPath = root + 'CBIS-DDSM/new-dataset/' + pathName + '/'
         
         cv2.imwrite(os.path.join(renamedImagesPath + str(fileName) + '_' + 'BIRADS-' + str(biRADS) + '_' + 'sub-' + str(difficulty) + '.png'), examImage[0:biggestPixelAtCoordinateY,0:biggestPixelAtCoordinateX]) 
-        
 
         with open(renamedImagesPath + str(pathName) + '.txt', 'a+') as myfile:
-            myfile.write(renamedImagesPath + '_' + str(fileName) + '_' + 'BIRADS-' +  str(biRADS) + '_' + 'sub-' + str(difficulty) + '.png\n')
+            myfile.write(renamedImagesPath + str(fileName) + '_' + 'BIRADS-' +  str(biRADS) + '_' + 'sub-' + str(difficulty) + '.png\n')
         j+=1
     return j
 
