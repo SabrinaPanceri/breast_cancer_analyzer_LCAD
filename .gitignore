@@ -3,12 +3,10 @@
 .cproject
 .project
 *.metadata/*
-.pydevproject
+*.pydevproject*
 *.png
 *.dcm
 *.pth
 *classification_error.txt*
 *.db*
-
-
-
+*__pycache__*
