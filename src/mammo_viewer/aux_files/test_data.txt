@@ -1,0 +1,1 @@
+../../dataset/cancer_tissue_dataset/clean_test_set/Calc-Test_P_00127_RIGHT_CC_MALIGNANT.png
