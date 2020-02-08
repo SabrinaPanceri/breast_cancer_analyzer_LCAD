@@ -121,13 +121,23 @@ def main(args):
         
         imageName = aux[0]
 
+        print(pathFolder)
+        print(fileName)
+        print(step)
+        print(line)
+        print(str_aux)
+        print(aux)
         print(imageName)
+        print(type(imageName))
 
-        imagePath = cv2.imread(imageName)
+        imagePath = cv2.imread(imageName, cv2.IMREAD_GRAYSCALE)
 
-        # cv2.imshow('imagePath', imagePath)
-        # cv2.waitKey(100)
-        # cv2.destroyAllWindows()
+        print(type(imagePath))
+
+        cv2.imshow('IMAGEM', imagePath)
+        cv2.waitKey(0)
+        
+        cv2.destroyAllWindows()
 
 
         
