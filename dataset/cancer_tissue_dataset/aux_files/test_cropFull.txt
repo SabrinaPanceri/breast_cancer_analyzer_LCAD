@@ -1,0 +1,5 @@
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
