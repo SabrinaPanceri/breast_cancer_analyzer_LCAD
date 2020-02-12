@@ -44,6 +44,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
         auxRoiImage = roiPathList[j]
         imageBGR = cv2.imread(auxRoiImage)
         roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
+        current_all_roi = roiImage
+        #cv2.imwrite('roi.png', current_all_roi)
+        #current_all_roi = cv2.cvtColor(cv2.imread('roi.png'), cv2.COLOR_BGR2GRAY)
+
 
         #full mammogram
         auxExamImage = pathList[j]
@@ -75,62 +79,72 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
         biggestBlackPixelAtCoordinateX = roiImage.shape[1]            
         biggestBlackPixelAtCoordinateY = roiImage.shape[0]
 
-        # print(present,future)
-        current_all_roi = np.zeros(roiImage.shape)
-        while (present == future):
-            if((j+1) < len(pathList)):
-                nextFile = roiPathList[j+1].split('_dataset/')
-                str_aux = nextFile[2].split('.')
-                # print(str_aux)
-                patientFutureFile = str_aux[0]
-                str_aux = patientFutureFile.split('_')
-                future = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]
-            else:
-                future = ""
-            
-            str_aux = patientFile.split('_')
-            present = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]
-            
-            auxRoiImage = roiPathList[j] 
-            imageBGR = cv2.imread(auxRoiImage)
-            roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
-            auxExamImage = roiPathList[j] 
-            imageBGR2 = cv2.imread(auxExamImage)
-            image2 = cv2.cvtColor(imageBGR2, cv2.COLOR_BGR2GRAY)
+        print(patientFile + "\t" + patientFutureFile)
+
+        if present == future:
+            current_all_roi = np.zeros(roiImage.shape)
+
+        
+            while (present == future):
+                if((j+1) < len(pathList)):
+                    nextFile = roiPathList[j+1].split('_dataset/')
+                    str_aux = nextFile[2].split('.')
+                    print(str_aux)
+                    patientFutureFile = str_aux[0]
+                    str_aux = patientFutureFile.split('_')
+                    print(str_aux)
+                    future = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]
+                else:
+                    future = ""
+                
+                str_aux = patientFile.split('_')
+                present = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]
+                print(str_aux)
+                
+                auxRoiImage = roiPathList[j] 
+                imageBGR = cv2.imread(auxRoiImage)
+                roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
+                auxExamImage = roiPathList[j] 
+                imageBGR2 = cv2.imread(auxExamImage)
+                image2 = cv2.cvtColor(imageBGR2, cv2.COLOR_BGR2GRAY)
 
 
-            current_all_roi+=roiImage
-            aux = pathList[j].split('/')
-            cv2.imwrite('roi.png', current_all_roi)
-            if((j+1)<len(pathList)):
-                j+=1
-        current_all_roi = cv2.cvtColor(cv2.imread('roi.png'), cv2.COLOR_BGR2GRAY)
+                current_all_roi+=roiImage
+                aux = pathList[j].split('/')
+                cv2.imwrite('roi.png', current_all_roi)
+                if((j+1)<len(pathList)):
+                    j+=1
+            
+            current_all_roi = cv2.cvtColor(cv2.imread('roi.png'), cv2.COLOR_BGR2GRAY)
+            #print(current_all_roi.shape)
         
         
-        numberOfCroppedsX = int(math.floor(biggestBlackPixelAtCoordinateX/256))
-        numberOfCroppedsY = int(math.floor(biggestBlackPixelAtCoordinateY/256))
+        numberOfCroppedsX = int(math.floor(biggestBlackPixelAtCoordinateX/224))
+        numberOfCroppedsY = int(math.floor(biggestBlackPixelAtCoordinateY/224))
 
         if labelList[j] == True:
-            scale_percent = 15 # percent of original size
+            scale_percent = 10 # percent of original size
             width_roi = int(current_all_roi.shape[1] * scale_percent / 100)
             height_roi = int(current_all_roi.shape[0] * scale_percent / 100)
             dim_roi = (width_roi, height_roi)
+            # print(dim_roi)
             roi_resized = cv2.resize(current_all_roi, dim_roi, interpolation = cv2.INTER_AREA) 
             
             width = int(examImage.shape[1] * scale_percent / 100)
             height = int(examImage.shape[0] * scale_percent / 100)
             dim = (width, height)
+            # print(dim)
             mammo_resized = cv2.resize(examImage, dim, interpolation = cv2.INTER_AREA) 
             mammo = patientFile
 
             print("Pacient = " + mammo)
             
             temporarySmallestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY
-            temporaryBiggestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY + 256
+            temporaryBiggestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY + 224
             for line in range(int(numberOfCroppedsY)): 
                 # print(line)
                 temporarySmallestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX
-                temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 256
+                temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                
                 for col in range(int(numberOfCroppedsX)):       
                     # print(col)
@@ -143,7 +157,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                         cv2.namedWindow(mammo)
                         cv2.moveWindow(mammo, 200, 0)
                         cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                        cv2.waitKey(100)
+                        cv2.waitKey(50)
                    
                     else:
                         cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
@@ -168,10 +182,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                         cv2.moveWindow(mammo, 200, 0)
                         cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
                         cv2.waitKey(50)                  
-                    temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 256 - sobrepos 
-                    temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 256 - sobrepos   
-                temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 256 - sobrepos
-                temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 256 - sobrepos
+                    temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos 
+                    temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos   
+                temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 - sobrepos
+                temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224 - sobrepos
             j+=1
 
             # while True:
@@ -205,12 +219,12 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                 print("Pacient = " + mammo)
 
                 temporarySmallestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY
-                temporaryBiggestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY + 256
+                temporaryBiggestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY + 224
 
                             
                 for line in range(int(numberOfCroppedsY)): 
                     temporarySmallestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX
-                    temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 256
+                    temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                     
                     for col in range(int(numberOfCroppedsX)):    
                         cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
@@ -236,10 +250,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                         cv2.moveWindow(mammo, 200, 0)
                         cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
                         cv2.waitKey(50)                  
-                        temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 256 
-                        temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 256 
-                    temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 256 
-                    temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 256
+                        temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
+                        temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
+                    temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 
+                    temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224
 
                 j+=1      
             j+=1
