@@ -20,7 +20,6 @@
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00331_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00344_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00352_LEFT_CC_1_BENIGN.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00353_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00368_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00402_RIGHT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00460_LEFT_CC_1_BENIGN.png
@@ -250,7 +249,6 @@
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00585_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00593_RIGHT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00597_LEFT_CC_1_BENIGN.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00600_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00613_RIGHT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00621_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00624_LEFT_CC_1_BENIGN.png
@@ -315,7 +313,7 @@
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00854_RIGHT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00858_LEFT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00858_RIGHT_CC_1_BENIGN.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00858_RIGHT_CC_2_BENIGN_WITHOUT_CALLBACK.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00858_RIGHT_CC_2_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00866_RIGHT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00868_RIGHT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00877_LEFT_CC_1_BENIGN.png
@@ -330,7 +328,6 @@
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00924_LEFT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00924_RIGHT_CC_2_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00926_LEFT_CC_1_BENIGN.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00937_RIGHT_CC_2_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00944_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00953_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_00955_RIGHT_CC_1_BENIGN.png
@@ -528,7 +525,6 @@
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01784_LEFT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01791_LEFT_CC_1_BENIGN.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01810_LEFT_CC_1_BENIGN.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01819_LEFT_CC_2_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01823_LEFT_CC_1_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01823_LEFT_CC_2_BENIGN_WITHOUT_CALLBACK.png
 ../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_01823_RIGHT_CC_2_BENIGN_WITHOUT_CALLBACK.png

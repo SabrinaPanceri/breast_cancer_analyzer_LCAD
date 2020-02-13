@@ -10,3 +10,4 @@
 *classification_error.txt*
 *.db*
 *__pycache__*
+*.tar.gz*
