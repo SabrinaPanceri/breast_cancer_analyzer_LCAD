@@ -20,17 +20,13 @@ NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2 
 
 ## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
-# INITIAL_MODEL = None 
-# INITIAL_MODEL_TEST = False
-
-## Em 13/02 : Inicializar a rede com o melhor peso do treinamentos anteriores##
-INITIAL_MODEL = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
-INITIAL_MODEL_TEST = True
+INITIAL_MODEL = None 
+INITIAL_MODEL_TEST = False
 
 TRAINING = (
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
-        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
 )
 
@@ -45,8 +41,8 @@ SHUFFLE =  True
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #26014 imagens
-        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
 )
 
@@ -55,13 +51,11 @@ TEST_DIR = (
         '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
-# TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
-# TRANSFORMS = transforms.Normalize([0.5], [0.5])
-TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
+TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 
 BATCH_SIZE, ACCUMULATE = 128, 1
 
-EPOCHS = 1000
+EPOCHS = 100
 SAVES_PER_EPOCH = 10
 
 INITIAL_LEARNING_RATE = 0.0004

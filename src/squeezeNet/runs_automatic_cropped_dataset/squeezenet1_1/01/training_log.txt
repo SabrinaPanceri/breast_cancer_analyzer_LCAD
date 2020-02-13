@@ -1,0 +1,699 @@
+Epoch 1:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.647525597															0->1			0->1	1->0		6.354s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 6.354s
+
+Epoch 2:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.585258341							0->1				0->1				0->1			0->1			3.219s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 3.219s
+
+Epoch 3:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.537750578															0->1			0->1			1.051s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.051s
+
+Epoch 4:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.519580030															0->1			0->1			0.992s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.992s
+
+Epoch 5:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.498201418															0->1			0->1			1.003s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.003s
+
+Epoch 6:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.485575342															0->1			0->1			1.010s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.010s
+
+Epoch 7:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.485657549															0->1			0->1			0.987s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.987s
+
+Epoch 8:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.464031553															0->1			0->1			0.988s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.988s
+
+Epoch 9:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.470042801															0->1			0->1			1.014s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.014s
+
+Epoch 10:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.470193863															0->1			0->1			1.081s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.081s
+
+Epoch 11:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.460877800															0->1			0->1			0.995s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.995s
+
+Epoch 12:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.467320299															0->1			0->1			1.059s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.059s
+
+Epoch 13:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.448372459															0->1			0->1			1.134s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.134s
+
+Epoch 14:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.445499849															0->1			0->1			1.005s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.005s
+
+Epoch 15:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.437817669															0->1			0->1			1.106s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.106s
+
+Epoch 16:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.428120756															0->1			0->1			1.025s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.025s
+
+Epoch 17:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.443830872															0->1			0->1			0.991s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.991s
+
+Epoch 18:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.435841084															0->1			0->1			1.011s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.011s
+
+Epoch 19:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.428246307															0->1			0->1			1.176s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.176s
+
+Epoch 20:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.422892189															0->1			0->1			1.098s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.098s
+
+Epoch 21:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.414182186															0->1			0->1			1.103s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.103s
+
+Epoch 22:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.411353922															0->1			0->1			1.031s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.031s
+
+Epoch 23:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.412289906															0->1			0->1			1.110s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.110s
+
+Epoch 24:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.420896912															0->1			0->1			1.085s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.085s
+
+Epoch 25:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.406407928															0->1			0->1			1.202s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.202s
+
+Epoch 26:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.418534899															0->1			0->1			1.026s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.026s
+
+Epoch 27:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.394072056															0->1			0->1			0.989s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.989s
+
+Epoch 28:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.400269318															0->1			0->1			1.088s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.088s
+
+Epoch 29:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.403742075															0->1			0->1			1.001s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.001s
+
+Epoch 30:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.377959156															0->1			0->1			1.131s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.131s
+
+Epoch 31:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.392612934															0->1			0->1			1.022s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.022s
+
+Epoch 32:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.386274481															0->1			0->1			1.048s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.048s
+
+Epoch 33:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.378690290															0->1			0->1			1.120s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.120s
+
+Epoch 34:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.382501364															0->1			0->1			1.042s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.042s
+
+Epoch 35:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.376470971															0->1			0->1			1.049s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.049s
+
+Epoch 36:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.374447989															0->1			0->1			1.104s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.104s
+
+Epoch 37:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.376913309															0->1			0->1			1.029s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.029s
+
+Epoch 38:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.368079019															0->1			0->1			1.011s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.011s
+
+Epoch 39:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.362381697															0->1			0->1			1.012s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.012s
+
+Epoch 40:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.365938830															0->1			0->1			1.076s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.076s
+
+Epoch 41:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.356630468															0->1			0->1			1.173s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.173s
+
+Epoch 42:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.352522182															0->1			0->1			1.110s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.110s
+
+Epoch 43:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.354324341															0->1			0->1			1.073s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.073s
+
+Epoch 44:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.362388611															0->1			0->1			1.025s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.025s
+
+Epoch 45:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.345756340															0->1			0->1			1.029s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.029s
+
+Epoch 46:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.355668354															0->1			0->1			1.035s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.035s
+
+Epoch 47:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.352278376															0->1			0->1			1.073s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.073s
+
+Epoch 48:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.355374074															0->1			0->1			1.069s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.069s
+
+Epoch 49:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.345944834															0->1			0->1			1.043s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.043s
+
+Epoch 50:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.344380951															0->1			0->1			1.049s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.049s
+
+Epoch 51:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.344548297															0->1			0->1			1.080s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.080s
+
+Epoch 52:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.336496067															0->1			0->1			1.000s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.000s
+
+Epoch 53:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.340307903															0->1			0->1			1.047s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.047s
+
+Epoch 54:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.341034222															0->1			0->1			1.056s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.056s
+
+Epoch 55:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.329268336															0->1			0->1			1.016s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.016s
+
+Epoch 56:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.327278042															0->1			0->1			1.016s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.016s
+
+Epoch 57:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.330044651															0->1			0->1			1.089s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.089s
+
+Epoch 58:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.315397191															0->1			0->1			1.021s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.021s
+
+Epoch 59:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.328449106															0->1			0->1			1.036s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.036s
+
+Epoch 60:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.327891254															0->1			0->1			1.182s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.182s
+
+Epoch 61:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.320887136															0->1			0->1			1.042s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.042s
+
+Epoch 62:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.319603324															0->1			0->1			1.030s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.030s
+
+Epoch 63:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.314911175															0->1			0->1			1.050s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.050s
+
+Epoch 64:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.302720404															0->1			0->1			1.071s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.071s
+
+Epoch 65:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.313628769															0->1			0->1			1.016s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.016s
+
+Epoch 66:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.322918057															0->1			0->1			1.097s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.097s
+
+Epoch 67:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.333478999															0->1			0->1			1.089s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.089s
+
+Epoch 68:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.307180548															0->1			0->1			1.075s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.075s
+
+Epoch 69:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.309705377															0->1			0->1			1.043s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.043s
+
+Epoch 70:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.317912245															0->1			0->1			1.037s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.037s
+
+Epoch 71:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.309761286															0->1			0->1			1.039s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.039s
+
+Epoch 72:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.314411259															0->1			0->1			1.137s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.137s
+
+Epoch 73:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.305978537															0->1			0->1			0.970s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 0.970s
+
+Epoch 74:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.302293587															0->1			0->1			1.070s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.070s
+
+Epoch 75:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.316395903															0->1			0->1			1.148s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.148s
+
+Epoch 76:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.297519159															0->1			0->1			1.801s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.801s
+
+Epoch 77:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.302834845															0->1			0->1			2.275s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 2.275s
+
+Epoch 78:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.304014730															0->1			0->1			3.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 3.429s
+
+Epoch 79:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.303178835															0->1			0->1			1.419s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.419s
+
+Epoch 80:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.291771436															0->1			0->1			1.301s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.301s
+
+Epoch 81:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.299567795															0->1			0->1			1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+
+Epoch 82:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.297748494															0->1			0->1			1.356s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.356s
+
+Epoch 83:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.292667198															0->1			0->1			1.133s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.133s
+
+Epoch 84:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.285362387															0->1			0->1			1.351s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.351s
+
+Epoch 85:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.289649200															0->1			0->1			1.266s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.266s
+
+Epoch 86:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.299767256															0->1			0->1			1.332s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.332s
+
+Epoch 87:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.292566109															0->1			0->1			1.292s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.292s
+
+Epoch 88:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.292134714															0->1			0->1			1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+
+Epoch 89:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.293695211															0->1			0->1			1.244s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.244s
+
+Epoch 90:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.283032846															0->1			0->1			1.395s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.395s
+
+Epoch 91:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.287435246															0->1			0->1			1.247s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.247s
+
+Epoch 92:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.286780071															0->1			0->1			1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+
+Epoch 93:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.295210314															0->1			0->1			1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+
+Epoch 94:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.281699133															0->1			0->1			1.356s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.356s
+
+Epoch 95:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.296601725															0->1			0->1			1.309s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.309s
+
+Epoch 96:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.279898787															0->1			0->1			1.230s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.230s
+
+Epoch 97:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.277978945															0->1			0->1			1.621s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.621s
+
+Epoch 98:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.274992990															0->1			0->1			1.394s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.394s
+
+Epoch 99:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.276449823															0->1			0->1			1.480s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.480s
+
+Epoch 100:
+
+	Loss		Errors																																																																																																																																Elapsed Time	Step
+
+	0.272123098															0->1			0->1			1.506s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.506s

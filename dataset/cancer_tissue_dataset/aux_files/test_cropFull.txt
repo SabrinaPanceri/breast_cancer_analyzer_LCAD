@@ -1,5 +1,4 @@
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
-../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00485_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Training_P_02572_LEFT_CC_MALIGNANT.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00038_LEFT_CC_BENIGN.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00038_RIGHT_CC_BENIGN_WITHOUT_CALLBACK.png
+../../dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/Calc-Test_P_00038_RIGHT_CC_BENIGN_WITHOUT_CALLBACK.png
