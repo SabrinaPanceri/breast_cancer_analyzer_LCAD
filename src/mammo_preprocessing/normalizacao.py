@@ -12,27 +12,20 @@ from torch.utils.data import Dataset
 from torch.utils.data.dataloader import DataLoader
 
 
-# import torch.nn as nn
-# import torch.optim as optim
-
-# from torchvision import models, transforms
-
-
-NUM_CLASSES = 2
 
 TRAINING = (
-        '/home/lcad/sabrina/breast_cancer_analyzer_LCAD/squeezetnet/cbisddsm_train_2019_09_12.txt',
+        '/home/lcad/sabrina/dataset/all_automatic_cropped_dataset.txt',
 )
 
 TRAINING_DIR = (
-        '/home/lcad/sabrina/breast_cancer_analyzer_LCAD/imagePreProcessing',
+        '/home/lcad/sabrina/dataset/automatic_cropped_dataset',
 )
 
-SHUFFLE = True
+SHUFFLE = False
 
-BATCH_SIZE, ACCUMULATE = 6272, 1
+BATCH_SIZE, ACCUMULATE = 149051, 1
 
-DATASET_SIZE = 6272
+DATASET_SIZE = 149051
 
 NUM_WORKERS = 4
 
@@ -40,14 +33,16 @@ NUM_WORKERS = 4
 
 
 def calculate_mean(training_dataloader):
-    mean = torch.empty(3, dtype=torch.float64)
+    # mean = torch.empty(3, dtype=torch.float64)
+    mean = torch.empty(1, dtype=torch.float64)
     i = 0
     print('mean') 
     for data in training_dataloader:
         
         data = data.type(torch.float64)
         data = data/255.0
-        mean = torch.mean(data, dim=[0, 1, 2])
+        # mean = torch.mean(data, dim=[0, 1, 2])
+        mean = torch.mean(data, dim=[0])
         i += 1
         if i == DATASET_SIZE:
             print(i)
@@ -61,13 +56,15 @@ def calculate_mean(training_dataloader):
 
 
 def calculate_std(training_dataloader):
-    std_dev = torch.empty(3, dtype=torch.float64)
+    # std_dev = torch.empty(3, dtype=torch.float64)
+    std_dev = torch.empty(1, dtype=torch.float64)
     i = 0
     print('std')
     for data in training_dataloader:
         data = data.type(torch.float64)
         data = data/255.0
-        std_dev = torch.std(data, dim=[0, 1, 2])
+        # std_dev = torch.std(data, keepdim=[0, 1, 2])
+        std_dev = torch.std(data, dim=[0])
         i += 1
         if i == DATASET_SIZE:
             print('std-if')
@@ -107,7 +104,8 @@ class DatasetFromCSV(Dataset):
         return self.data_len
 
     def __getitem__(self, i):
-        image = cv2.imread(self.images[i], 3)
+        # image = cv2.imread(self.images[i], 3) #color image
+        image = cv2.imread(self.images[i], 0) # grayscale image
         return image
 
 
