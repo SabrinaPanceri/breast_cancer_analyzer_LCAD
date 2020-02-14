@@ -55,17 +55,16 @@ TEST_DIR = (
         '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
-# TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
-# TRANSFORMS = transforms.Normalize([0.5], [0.5])
-TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
+TRANSFORMS = transforms.Normalize([0.3332, 0.3332, 0.3332], [0.2741, 0.2741, 0.2741]) #valores automatic_cropped_dataset
+# TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
 
-BATCH_SIZE, ACCUMULATE = 128, 1
+BATCH_SIZE, ACCUMULATE = 200, 1
 
-EPOCHS = 1000
-SAVES_PER_EPOCH = 10
+EPOCHS = 500
+SAVES_PER_EPOCH = 1
 
-INITIAL_LEARNING_RATE = 0.04
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 7
+INITIAL_LEARNING_RATE = 0.8
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 500
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
@@ -160,11 +159,11 @@ class DatasetFromCSV(Dataset):
     #         cv2.moveWindow('NORMALIZADA', 1000, 0)
     #         cv2.imshow('NORMALIZADA', np.array(image[0]))
     #         print('Image: ', self.images[i])
-    #         # print(self.images[i])
-    #         # print(np.array(image[0][POS_X,POS_Y]))
-    #         # cv2.setMouseCallback('NORMALIZADA', click_events)
-    #         cv2.waitKey(2000) #automatico
-    #         cv2.waitKey(0) #espera tecla
+    #         print(self.images[i])
+    #         print(np.array(image[0][POS_X,POS_Y]))
+    #         cv2.setMouseCallback('NORMALIZADA', click_events)
+    #         cv2.waitKey(1000) #automatico
+    #         # cv2.waitKey(0) #espera tecla
     #     cv2.destroyAllWindows()
     #     return (image, self.labels[i])
 
@@ -193,36 +192,36 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
                     # print("Resultado classificacao",c)
                     # print()
                     
-                    for pred, lbl, filename in zip(c, batch[1], batch[2]):
-                        # print("Predicao = ", pred)
-                        # print("Label = ", lbl.item())
-                        # print("Arquivo = ", filename)
-                        # print()
+                    # for pred, lbl, filename in zip(c, batch[1], batch[2]):
+                    #     # print("Predicao = ", pred)
+                    #     # print("Label = ", lbl.item())
+                    #     # print("Arquivo = ", filename)
+                    #     # print()
 
 
-                        if (lbl.item() == 0) & (pred == 1):
-                            if classification_error_file != None:
-                                with open(classification_error_file, 'a') as classification_error:
-                                    classification_error.write("Falso NEGATIVO[0/1]" + "\n")
-                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                                    classification_error.write('\t' + str(lbl.item()) + '\t')
-                                    classification_error.write('\t' + str(pred) + '\t')
-                                    classification_error.write(filename + '\n')
-                                    # print("---------------------------")
-                                    # print("Falso NEGATIVO[0/1]", filename)
-                                    # print("---------------------------")
+                    #     if (lbl.item() == 0) & (pred == 1):
+                    #         if classification_error_file != None:
+                    #             with open(classification_error_file, 'a') as classification_error:
+                    #                 classification_error.write("Falso NEGATIVO[0/1]" + "\n")
+                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
+                    #                 classification_error.write('\t' + str(pred) + '\t')
+                    #                 classification_error.write(filename + '\n')
+                    #                 # print("---------------------------")
+                    #                 # print("Falso NEGATIVO[0/1]", filename)
+                    #                 # print("---------------------------")
 
-                        elif (lbl.item() == 1) & (pred == 0):
-                            if classification_error_file != None:
-                                with open(classification_error_file, 'a') as classification_error:
-                                    classification_error.write("Falso POSITIVO[0/1]"+ "\n")
-                                    classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
-                                    classification_error.write('\t' + str(lbl.item()) + '\t')
-                                    classification_error.write('\t' + str(pred) + '\t')
-                                    classification_error.write(filename + '\n')
-                                    # print("++++++++++++++++++++++++++")
-                                    # print("Falso POSITIVO[1/0]", filename)
-                                    # print("++++++++++++++++++++++++++")
+                    #     elif (lbl.item() == 1) & (pred == 0):
+                    #         if classification_error_file != None:
+                    #             with open(classification_error_file, 'a') as classification_error:
+                    #                 classification_error.write("Falso POSITIVO[0/1]"+ "\n")
+                    #                 classification_error.write("Label" + '\t' + "Pred" + '\t' + "PathFile" + "\n")
+                    #                 classification_error.write('\t' + str(lbl.item()) + '\t')
+                    #                 classification_error.write('\t' + str(pred) + '\t')
+                    #                 classification_error.write(filename + '\n')
+                    #                 # print("++++++++++++++++++++++++++")
+                    #                 # print("Falso POSITIVO[1/0]", filename)
+                    #                 # print("++++++++++++++++++++++++++")
                     
                     for j in range(NUM_CLASSES):
                         line[j] += c.count(j)
@@ -389,7 +388,7 @@ def main():
         if (epoch_i < LAST_EPOCH_FOR_LEARNING_RATE_DECAY) and (epoch_i%DECAY_STEP_SIZE == 0):
             for g in optimizer.param_groups:
                 g['lr'] /= DECAY_RATE
-                # print("LEARNING_RATE = {:.5f}".format(g['lr']))
+                print("LEARNING_RATE = {:.20f}".format(g['lr']))
 
         # if (epoch_i == EPOCHS):
         for g in optimizer.param_groups:
