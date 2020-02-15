@@ -17,37 +17,41 @@ RUNS_FOLDER = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeeze
 
 NETWORK = 'squeezenet1_1'
 
-NUM_CLASSES = 2 
+NUM_CLASSES = 2
 
 ## COLOCAR O CAMINHO DO PESO QUE SERÁ UTILIZADO PARA TESTAR ##
-# INITIAL_MODEL = None 
-# INITIAL_MODEL_TEST = False
+INITIAL_MODEL = None 
+INITIAL_MODEL_TEST = False
 
 ## Em 13/02 : Inicializar a rede com o melhor peso do treinamentos anteriores##
-INITIAL_MODEL = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
-INITIAL_MODEL_TEST = True
+# INITIAL_MODEL = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
+# INITIAL_MODEL_TEST = True
 
 TRAINING = (
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
 TRAINING_DIR = (
-        #'',
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        '',
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
 ##USAR TRUE APENAS NO PRIMEIRO TREINO. USAR O MESMO ARQUIVO NOS DEMAIS TREINOS##
-SHUFFLE =  True
+# SHUFFLE =  True
+SHUFFLE =  False
 
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
-        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #26014 imagens
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #26014 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
 TEST_DIR = (
@@ -56,17 +60,18 @@ TEST_DIR = (
 )
 
 TRANSFORMS = transforms.Normalize([0.3332, 0.3332, 0.3332], [0.2741, 0.2741, 0.2741]) #valores automatic_cropped_dataset
+# TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) #valores de teste
 # TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
 
-BATCH_SIZE, ACCUMULATE = 200, 1
+BATCH_SIZE, ACCUMULATE = 64, 1
 
-EPOCHS = 500
-SAVES_PER_EPOCH = 1
+EPOCHS = 100
+SAVES_PER_EPOCH = 5
 
-INITIAL_LEARNING_RATE = 0.8
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 500
+INITIAL_LEARNING_RATE = 0.003
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 64
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 2
+DECAY_STEP_SIZE = 8
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
 # NUM_WORKERS = 1
 NUM_WORKERS = 4
@@ -87,6 +92,11 @@ def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
 def Net():
     model = getattr(models, NETWORK)
     net = model(num_classes=NUM_CLASSES)
+    
+    #inicializar a rede de forma randomica.
+    # load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=False).state_dict()) 
+
+    #inicializa com imagenet ou peso indicado
     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict()) 
     return net
 
@@ -160,9 +170,9 @@ class DatasetFromCSV(Dataset):
     #         cv2.imshow('NORMALIZADA', np.array(image[0]))
     #         print('Image: ', self.images[i])
     #         print(self.images[i])
-    #         print(np.array(image[0][POS_X,POS_Y]))
-    #         cv2.setMouseCallback('NORMALIZADA', click_events)
-    #         cv2.waitKey(1000) #automatico
+    #         # print(np.array(image[0][POS_X,POS_Y]))
+    #         # cv2.setMouseCallback('NORMALIZADA', click_events)
+    #         cv2.waitKey(500) #automatico
     #         # cv2.waitKey(0) #espera tecla
     #     cv2.destroyAllWindows()
     #     return (image, self.labels[i])
@@ -281,6 +291,7 @@ def main():
     shutil.copy(__file__, save_folder)
     training_dataset_file = os.path.join(save_folder, 'training_dataset.txt')
     training_log_file = os.path.join(save_folder, 'training_log.txt')
+    loss_log_file = os.path.join(save_folder, 'loss_log.txt')
     results_file = os.path.join(save_folder, 'results.txt')
     classification_error_file = os.path.join(save_folder, 'classification_error.txt')
     print('\nSave folder: ' + save_folder)
@@ -311,8 +322,11 @@ def main():
             results.write(str_buf + '\n')
         with open(classification_error_file, 'a') as classification_error:
             classification_error.write(str_buf + '\n')
+        with open(loss_log_file, 'a') as loss_log:
+            loss_log.write(str_buf)
+
         str_buf2 = '\n\tLoss\t\tErrors' + step_size*'\t' + 'Elapsed Time\tStep\n'
-        print(str_buf2)
+        # print(str_buf2)
         with open(training_log_file, 'a') as training_log:
             training_log.write(str_buf + '\n' + str_buf2 + '\n')
 
@@ -344,17 +358,27 @@ def main():
                 epoch_steps_elapsed += step_elapsed
 
                 str_buf = '\t{:.9f}'.format(step_loss)
+                str_buf2 = '\n\tBatch_Loss = {:.9f}'.format(step_loss)
+                print(str_buf2)
+                with open(loss_log_file, 'a') as loss_log:
+                    loss_log.write(str_buf2)
+
                 for j in range(len(gt)):
                     str_buf += '\t'
                     if gt[j] != c[j]:
                         str_buf += str(gt[j]) + '->' + str(c[j])
                 str_buf += '\t{:.3f}s'.format(step_elapsed)
+                str_buf2 ='\n\tElapsed Time = {:.3f}s'.format(step_elapsed)
+                print(str_buf2)
                 percentage = str(10000*batch_i//num_training_batchs)
                 while len(percentage) < 3:
                     percentage = '0' + percentage
                 percentage = percentage[:-2] + '.' + percentage[-2:]
                 str_buf += '\t\t' + str(step_i) + '/' + str(num_steps) + ' (' + percentage + '%)'
-                print(str_buf)
+                str_buf2 = '\n\tStep = ' + str(step_i) + '/' + str(num_steps) + ' (' + percentage + '%)'
+                print(str_buf2)
+                with open(loss_log_file, 'a') as loss_log:
+                    loss_log.write(str_buf2)
                 with open(training_log_file, 'a') as training_log:
                     training_log.write(str_buf + '\n')
 
@@ -375,7 +399,7 @@ def main():
 
                 if step_i == num_steps:
                     str_buf = '\tEpoch Steps Elapsed Time: {:.3f}s'.format(epoch_steps_elapsed)
-                    print('\nSave folder: ' + save_folder)
+                    print('\n\tSave folder: ' + save_folder)
                     print(str_buf)
                     with open(training_log_file, 'a') as training_log:
                         training_log.write(str_buf + '\n')
@@ -388,11 +412,13 @@ def main():
         if (epoch_i < LAST_EPOCH_FOR_LEARNING_RATE_DECAY) and (epoch_i%DECAY_STEP_SIZE == 0):
             for g in optimizer.param_groups:
                 g['lr'] /= DECAY_RATE
-                print("LEARNING_RATE = {:.20f}".format(g['lr']))
+
 
         # if (epoch_i == EPOCHS):
         for g in optimizer.param_groups:
-            print("LEARNING_RATE = {:.20f}".format(g['lr']))
+            print("\tLEARNING_RATE = {:.20f}".format(g['lr']))
+            with open(loss_log_file, 'a') as loss_log:
+                    loss_log.write("\tLEARNING_RATE = {:.20f}".format(g['lr']))
 
 
 if __name__ == "__main__":
