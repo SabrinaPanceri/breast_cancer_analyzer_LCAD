@@ -13,7 +13,8 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 ## SALVAR OS TREINOS COM BONS RESULTADOS NO HD EXTERNO##
-RUNS_FOLDER = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset'
+RUNS_FOLDER = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+# RUNS_FOLDER = '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 
@@ -28,8 +29,9 @@ INITIAL_MODEL_TEST = False
 # INITIAL_MODEL_TEST = True
 
 TRAINING = (
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
@@ -47,7 +49,8 @@ SHUFFLE =  False
 
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #26014 imagens
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #25782 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
@@ -56,22 +59,23 @@ TEST = (
 
 TEST_DIR = (
         # '',    
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
-TRANSFORMS = transforms.Normalize([0.3332, 0.3332, 0.3332], [0.2741, 0.2741, 0.2741]) #valores automatic_cropped_dataset
+# TRANSFORMS = transforms.Normalize([0.3332, 0.3332, 0.3332], [0.2741, 0.2741, 0.2741]) #valores automatic_cropped_dataset
 # TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) #valores de teste
-# TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
+TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
 
-BATCH_SIZE, ACCUMULATE = 64, 1
+BATCH_SIZE, ACCUMULATE = 128, 1
 
 EPOCHS = 100
-SAVES_PER_EPOCH = 5
+SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.003
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 64
+INITIAL_LEARNING_RATE = 0.0003
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 14
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 8
+DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
 # NUM_WORKERS = 1
 NUM_WORKERS = 4

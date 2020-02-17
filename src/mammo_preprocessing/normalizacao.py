@@ -1,5 +1,8 @@
 ##    EXECUTAR NA MONSTER 10.9.8.251
 ##    NECESSARIO ALOCAR TODA A BASE PARA CALCULAR O STD DA BASE
+##    Valoares para automatic_cropped_dataset
+##    Mean = 0.3332
+##    STD  = 0.2741
 
 from __future__ import division, print_function
 import random  
@@ -14,7 +17,7 @@ from torch.utils.data.dataloader import DataLoader
 
 
 TRAINING = (
-        '/home/lcad/sabrina/dataset/all_automatic_cropped_dataset.txt',
+        '/home/lcad/sabrina/dataset/cbisddsm_train_2020_02_13.txt',
 )
 
 TRAINING_DIR = (
@@ -23,9 +26,9 @@ TRAINING_DIR = (
 
 SHUFFLE = False
 
-BATCH_SIZE, ACCUMULATE = 149051, 1
+BATCH_SIZE, ACCUMULATE = 202328, 1
 
-DATASET_SIZE = 149051
+DATASET_SIZE = 202328
 
 NUM_WORKERS = 4
 
@@ -33,45 +36,45 @@ NUM_WORKERS = 4
 
 
 def calculate_mean(training_dataloader):
-    # mean = torch.empty(3, dtype=torch.float64)
-    mean = torch.empty(1, dtype=torch.float64)
+    mean = torch.empty(3, dtype=torch.float64)
+    # mean = torch.empty(1, dtype=torch.float64)
     i = 0
     print('mean') 
     for data in training_dataloader:
         
         data = data.type(torch.float64)
         data = data/255.0
-        # mean = torch.mean(data, dim=[0, 1, 2])
-        mean = torch.mean(data, dim=[0])
+        mean = torch.mean(data, dim=[0, 1, 2])
+        # mean = torch.mean(data, dim=[0])
         i += 1
-        if i == DATASET_SIZE:
-            print(i)
-            print('mean-if')            
-        else:
-            print(i)
-            print('mean-else')            
+        # if i == DATASET_SIZE:
+        #     print(i)
+        #     print('mean-if')            
+        # else:
+        #     print(i)
+        #     print('mean-else')            
     
     
     return ( mean / (DATASET_SIZE/BATCH_SIZE) )
 
 
 def calculate_std(training_dataloader):
-    # std_dev = torch.empty(3, dtype=torch.float64)
-    std_dev = torch.empty(1, dtype=torch.float64)
+    std_dev = torch.empty(3, dtype=torch.float64)
+    # std_dev = torch.empty(1, dtype=torch.float64)
     i = 0
     print('std')
     for data in training_dataloader:
         data = data.type(torch.float64)
         data = data/255.0
-        # std_dev = torch.std(data, keepdim=[0, 1, 2])
-        std_dev = torch.std(data, dim=[0])
+        std_dev = torch.std(data, dim=[0, 1, 2])
+        # std_dev = torch.std(data, dim=[0])
         i += 1
-        if i == DATASET_SIZE:
-            print('std-if')
-            print(i)
-        else:
-            print('std-else')
-            print(i)
+        # if i == DATASET_SIZE:
+        #     print('std-if')
+        #     print(i)
+        # else:
+        #     print('std-else')
+        #     print(i)
      
     return std_dev
 
