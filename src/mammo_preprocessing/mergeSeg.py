@@ -10,37 +10,6 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
     j = 0
     while j < len(pathList):
         
-        # #full mammogram
-        # auxExamImage = pathList[j]
-        # examImageBGR = cv2.imread(auxExamImage)
-        # examImage = cv2.cvtColor(examImageBGR, cv2.COLOR_BGR2GRAY)
-
-        # #roi segmented image
-        # auxRoiImage = roiPathList[j] 
-        # imageBGR = cv2.imread(auxRoiImage)
-        # roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
-
-        # #rotate image to left orientation
-        # numberOfWhitePixelsInTheLeftRegion = (np.count_nonzero(examImage[0:examImage.shape[0], 0:int(math.floor(examImage.shape[1]/2))]))
-        # numberOfWhitePixelsInTheRightRegion = (np.count_nonzero(examImage[0:examImage.shape[0], int(math.floor(examImage.shape[1]/2)):examImage.shape[1]]))
-        
-        # if numberOfWhitePixelsInTheLeftRegion < numberOfWhitePixelsInTheRightRegion:
-        #     #exam
-        #     bgrImageFlip = cv2.imread(auxExamImage)
-        #     imageFlip = cv2.cvtColor(bgrImageFlip, cv2.COLOR_BGR2GRAY)
-        #     imageFlip = cv2.flip(imageFlip, 1)
-        #     cv2.imwrite(pathList[j], imageFlip)
-        #     del imageFlip
-            
-        #     #roi
-        #     bgrRoiImageFlip = cv2.imread(auxRoiImage)
-        #     imageFlip = cv2.cvtColor(bgrRoiImageFlip, cv2.COLOR_BGR2GRAY)
-        #     imageFlip = cv2.flip(imageFlip, 1)
-        #     cv2.imwrite(roiPathList[j], imageFlip)
-        #     del imageFlip
-        
-        #take images again
-        
         #full mammogram
         auxExamImage = pathList[j]
         # print(auxExamImage)
@@ -56,8 +25,9 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
 
         #informations about full mammogram 
         filename = pathList[j].split('_dataset/')
+        # print(filename)
         croppedImagesPath =  root + folder + '/'
-        str_aux = filename[2].split('.')
+        str_aux = filename[1].split('.')
         patientFile = str_aux[0]
         str_aux = patientFile.split('_')
         present = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]
@@ -66,7 +36,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
         #informations about segmentation image
         if (j+1) < len(pathList):
             nextFile = roiPathList[j+1].split('_dataset/')
-            str_aux = nextFile[2].split('.')
+            str_aux = nextFile[1].split('.')
             patientFutureFile = str_aux[0]
             str_aux = patientFutureFile.split('_')
             future = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]        
@@ -140,62 +110,73 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
             
             temporarySmallestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY
             temporaryBiggestBlackPixelOfCoordinateY = smallestBlackPixelAtCoordinateY + 224
+
+
             for line in range(int(numberOfCroppedsY)): 
                 # print(line)
                 temporarySmallestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX
                 temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                
-                for col in range(int(numberOfCroppedsX)):       
+                for col in range(int(numberOfCroppedsX)):
                     # print(col)
-                    if np.any(current_all_roi[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [255]):
-                        cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
-                                                    examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
-                                                    temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX])
-                        cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                    if np.any(current_all_roi[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                        temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [255]):
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
+                            break
+                        else:
+                            cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     (0), thickness=2)        
-                        cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                            cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     (0), thickness=2)
-                        # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1')
-                        with open(croppedImagesPath + '../with_cancer' + '.txt', 'a+') as myfile:
-                            myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1' + '\n')
-                        
-                        cv2.namedWindow(mammo)
-                        cv2.moveWindow(mammo, 0, 0)
-                        cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                        cv2.waitKey(20)
+                            # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1')
+        
+                                
+                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
+                                    examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
+                                    temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX])
+                            with open(croppedImagesPath + '../with_cancer' + '.txt', 'a+') as myfile:
+                                myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1' + '\n')
+                            
+                            cv2.namedWindow(mammo)
+                            cv2.moveWindow(mammo, 0, 0)
+                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            cv2.waitKey(100)
                    
                     else:
-                        cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
-                                                    examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
-                                                    temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
-                        cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                                    (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                                    ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                                    (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                                    (255), thickness=1)        
-                        cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                                    (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                                    ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                                    (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                                    (255), thickness=1)        
-                        
-                        with open(croppedImagesPath + '../no_cancer' + '.txt', 'a+') as myfile:
-                            # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0')
-                            myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
+                            break
+                        else:
+                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
+                                                        examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
+                                                        temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
+                            cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                                        (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                                        ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                                        (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                                        (255), thickness=1)        
+                            cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                                        (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                                        ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                                        (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                                        (255), thickness=1)        
+                            
+                            with open(croppedImagesPath + '../no_cancer' + '.txt', 'a+') as myfile:
+                                # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0')
+                                myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
 
-                        cv2.namedWindow(mammo)
-                        cv2.moveWindow(mammo, 0, 0)
-                        cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                        cv2.waitKey(20)                  
-                    
-                    temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos 
-                    temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos   
+                            cv2.namedWindow(mammo)
+                            cv2.moveWindow(mammo, 0, 0)
+                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            cv2.waitKey(20)                  
+                        
+                    temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos
+                    temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos
                 
                 temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 - sobrepos
                 temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224 - sobrepos
@@ -239,33 +220,38 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                     temporarySmallestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX
                     temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                     
-                    for col in range(int(numberOfCroppedsX)):    
-                        cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
-                                        examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
-                                                    temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
+                    for col in range(int(numberOfCroppedsX)):
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
+                            break
+                        else:
+                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
+                                            examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                                                        temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
 
-                        cv2.rectangle(mammo_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                        (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                        ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                        (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                        (255), thickness=1)        
+                            cv2.rectangle(mammo_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                            (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                            ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                            (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                            (255), thickness=1)        
 
-                        cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                        (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                        ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                        (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                        (255), thickness=1)        
-                        
-                        with open(croppedImagesPath + '../no_cancer' + '.txt', 'a+') as myfile:
-                            myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
-                            # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
-                
-                        cv2.namedWindow(mammo)
-                        cv2.moveWindow(mammo, 0, 0)
-                        cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                        cv2.waitKey(20)                  
-                        temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
-                        temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
+                            cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                            (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                            ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                            (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                            (255), thickness=1)        
+                            
+                            with open(croppedImagesPath + '../no_cancer' + '.txt', 'a+') as myfile:
+                                myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
+                                # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
+                    
+                            cv2.namedWindow(mammo)
+                            cv2.moveWindow(mammo, 0, 0)
+                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            cv2.waitKey(20)                  
+                            
+                            temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
+                            temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
+
                     temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 
                     temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224
 
