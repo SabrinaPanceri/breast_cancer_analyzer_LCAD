@@ -121,9 +121,8 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                     # print(col)
                     if np.any(current_all_roi[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
                         temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [255]):
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
-                            break
-                        else:
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
                             cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
@@ -136,7 +135,9 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                                                     (0), thickness=2)
                             # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1')
         
-                                
+                        
+                            
+                        
                             cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
                                     examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
                                     temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX])
@@ -149,9 +150,9 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.waitKey(100)
                    
                     else:
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
-                            break
-                        else:
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+                            
                             cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
                                                         examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
                                                         temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
@@ -173,7 +174,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.namedWindow(mammo)
                             cv2.moveWindow(mammo, 0, 0)
                             cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(20)                  
+                            cv2.waitKey(100)                  
                         
                     temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos
                     temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos
@@ -221,24 +222,26 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                     temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                     
                     for col in range(int(numberOfCroppedsX)):
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()):
-                            break
-                        else:
-                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
-                                            examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
-                                                        temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) 
+                        
+                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+
 
                             cv2.rectangle(mammo_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                            (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                            ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                            (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                            (255), thickness=1)        
+                                (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                (255), thickness=1)
 
                             cv2.rectangle(roi_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                            (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                            ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
-                                            (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
-                                            (255), thickness=1)        
+                                (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
+                                (int) (temporaryBiggestBlackPixelOfCoordinateY * scale_percent / 100)), 
+                                (255), thickness=1)
+
+                            cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
+                                examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                                temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX])
                             
                             with open(croppedImagesPath + '../no_cancer' + '.txt', 'a+') as myfile:
                                 myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
@@ -247,10 +250,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.namedWindow(mammo)
                             cv2.moveWindow(mammo, 0, 0)
                             cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(20)                  
+                            cv2.waitKey(100)                  
                             
-                            temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
-                            temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
+                        temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
+                        temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
 
                     temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 
                     temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224
