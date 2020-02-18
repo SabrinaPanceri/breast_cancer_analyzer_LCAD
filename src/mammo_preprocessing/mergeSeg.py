@@ -1,4 +1,4 @@
-# python mergeSeg.py /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/PNG_Calc_CC_renamed_dataset/ /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/mamografias_completas.txt /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/mamografias_segmentadas.txt ../all_cropped_dataset 0
+#  python mergeSeg.py /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/Calc-CC_flipped_dataset/ /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/mamografias_completas.txt /mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/mamografias_segmentadas.txt ../automatic_cropped_dataset 0
 
 import pandas as pd
 import numpy as np

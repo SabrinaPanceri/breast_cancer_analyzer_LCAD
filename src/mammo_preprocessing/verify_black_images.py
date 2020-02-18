@@ -1,3 +1,5 @@
+#  python verify_black_images.py --directory ../../dataset/cancer_tissue_dataset/automatic_cropped_dataset/ --fileblack blackList.txt --filewhite whiteList.txt
+
 import os, sys
 import cv2
 import glob
