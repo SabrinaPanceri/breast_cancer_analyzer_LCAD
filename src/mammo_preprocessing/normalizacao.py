@@ -1,8 +1,9 @@
 ##    EXECUTAR NA MONSTER 10.9.8.251
 ##    NECESSARIO ALOCAR TODA A BASE PARA CALCULAR O STD DA BASE
 ##    Valoares para automatic_cropped_dataset
-##    Mean = 0.3332
-##    STD  = 0.2741
+##    mean = tensor(0.4140, dtype=torch.float64)
+##    std = tensor(0.2399, dtype=torch.float64)
+
 
 from __future__ import division, print_function
 import random  
@@ -17,18 +18,18 @@ from torch.utils.data.dataloader import DataLoader
 
 
 TRAINING = (
-        '/home/lcad/sabrina/dataset/cbisddsm_train_2020_02_13.txt',
+        '/home/lcad/sabrina/cbisddsm_train_2020_02_18.txt',
 )
 
 TRAINING_DIR = (
-        '/home/lcad/sabrina/dataset/automatic_cropped_dataset',
+        '/home/lcad/sabrina/automatic_cropped_dataset',
 )
 
-SHUFFLE = False
+SHUFFLE = True
 
-BATCH_SIZE, ACCUMULATE = 202328, 1
+BATCH_SIZE, ACCUMULATE = 104568, 1
 
-DATASET_SIZE = 202328
+DATASET_SIZE = 104568
 
 NUM_WORKERS = 4
 
