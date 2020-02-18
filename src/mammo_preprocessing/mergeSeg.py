@@ -42,7 +42,6 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
             future = str_aux[0] + str_aux[1] + str_aux[2] + str_aux[3] + str_aux[4]        
         
 
-        matrixWithThePositionOfTheWhitePixels = np.where(roiImage == [255])
         smallestBlackPixelAtCoordinateX = 0
         smallestBlackPixelAtCoordinateY = 0               
         biggestBlackPixelAtCoordinateX = roiImage.shape[1]            
@@ -57,7 +56,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
             while (present == future):
                 if((j+1) < len(pathList)):
                     nextFile = roiPathList[j+1].split('_dataset/')
-                    str_aux = nextFile[2].split('.')
+                    str_aux = nextFile[1].split('.')
                     # print(str_aux)
                     patientFutureFile = str_aux[0]
                     str_aux = patientFutureFile.split('_')
@@ -121,8 +120,13 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                     # print(col)
                     if np.any(current_all_roi[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
                         temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [255]):
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
-                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+
+                        # if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                        #     temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+
+                        if (count_zeros(examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) == False):
+
                             cv2.rectangle(mammo_resized,((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
                                                     (int) (temporarySmallestBlackPixelOfCoordinateY * scale_percent / 100)), 
                                                     ((int) (temporaryBiggestBlackPixelOfCoordinateX * scale_percent / 100), 
@@ -147,11 +151,13 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.namedWindow(mammo)
                             cv2.moveWindow(mammo, 0, 0)
                             cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(100)
+                            cv2.waitKey(20)
                    
                     else:
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
-                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+                        # if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                        #     temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+                        if (count_zeros(examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) == False):
                             
                             cv2.imwrite(os.path.join(croppedImagesPath + str(patientFile) + '_' + str(line) + '_' + str(col) + '.png'), 
                                                         examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY,
@@ -174,7 +180,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.namedWindow(mammo)
                             cv2.moveWindow(mammo, 0, 0)
                             cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(100)                  
+                            cv2.waitKey(20)                  
                         
                     temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos
                     temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos
@@ -222,9 +228,12 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                     temporaryBiggestBlackPixelOfCoordinateX = smallestBlackPixelAtCoordinateX + 224
                     
                     for col in range(int(numberOfCroppedsX)):
+
+                        if (count_zeros(examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX]) == False):
                         
-                        if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
-                            temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
+                        # if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
+                        #     temporarySmallestBlackPixelOfCoordinateX:temporaryBiggestBlackPixelOfCoordinateX] == [0]).all()) != True:
 
 
                             cv2.rectangle(mammo_resized, ((int) (temporarySmallestBlackPixelOfCoordinateX * scale_percent / 100), 
@@ -250,7 +259,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             cv2.namedWindow(mammo)
                             cv2.moveWindow(mammo, 0, 0)
                             cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(100)                  
+                            cv2.waitKey(20)                  
                             
                         temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
                         temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
@@ -262,6 +271,30 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
             j+=1
         cv2.destroyAllWindows() # close displayed windows  
     return j
+
+def count_zeros(image):
+    h = image.shape[0]
+    w = image.shape[1]
+
+    total = h * w
+
+    black = 0
+    others = 0
+
+    for y in range(0, h):
+        for x in range(0, w):
+            if (image[y,x] == 0):
+                black +=1
+            else:
+                others += 1
+
+    # print("black = " + str(black))
+    # print("others = " + str(others))
+
+    if black > (total * 0.98):
+        return True
+    else:
+        return False
 
 
 def main(args):
