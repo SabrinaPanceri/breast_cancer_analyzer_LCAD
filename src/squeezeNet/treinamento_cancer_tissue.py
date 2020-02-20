@@ -39,8 +39,8 @@ TRAINING = (
 )
 
 TRAINING_DIR = (
-        '',
-        # '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        # '',
+        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
 ##USAR TRUE APENAS NO PRIMEIRO TREINO. USAR O MESMO ARQUIVO NOS DEMAIS TREINOS##
@@ -80,11 +80,11 @@ LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 14
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
-# NUM_WORKERS = 1
-NUM_WORKERS = 4
+NUM_WORKERS = 1
+# NUM_WORKERS = 4
 
 ##DESCOMENTAR PARA USAR O CLICK_EVENTS##
-# POS_X, POS_Y = 0, 0
+POS_X, POS_Y = 0, 0
 
 
 def load_matching_name_and_shape_layers(net, new_model_name, new_state_dict):
@@ -108,16 +108,11 @@ def Net():
     return net
 
 
-## FUNCAO PARA CAPTURAR A POSICAO DO CLICK DO MOUSE ##
-## IMPRIME A POSICAO DO CLICK NA TELA ##
-# def click_events(event, x, y, flags, param):
-#     if event == cv2.EVENT_LBUTTONDOWN:
-#         POS_X = x
-#         POS_Y = y
-#         print(x,y)
-
 class DatasetFromCSV(Dataset):
     def __init__(self, csv_files, root_dirs, label=None, shuffle=False, transforms=None, dataset_file=None):
+        temp_image = np.zeros((224,224))
+        self.norm_image = None
+
         data = []
         for csv_file, root_dir in zip(csv_files, root_dirs):
             d = pd.read_csv(csv_file, header=None, names=['images', 'labels'], delim_whitespace=True)
@@ -161,28 +156,72 @@ class DatasetFromCSV(Dataset):
             image = self.transforms(image)
         return (image, self.labels[i], self.images[i])
 
+    
+#######################################################################################
     ## DESCOMENTAR O TRECHO ABAIXO PARA APRESENTAR AS IMAGENS EM TELA##
-    # def __getitem__(self, i):
-    #     image = cv2.imread(self.images[i], 3)
-    #     cv2.namedWindow('ENTRADA')
-    #     cv2.moveWindow('ENTRADA', 500, 0)        
-    #     cv2.imshow('ENTRADA', image)
-    #     image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
-    #     image = image/255
-    #     image = torch.from_numpy(image.astype(np.float32))
-    #     if self.transforms != None:
-    #         image = self.transforms(image)
-    #         cv2.namedWindow('NORMALIZADA')
-    #         cv2.moveWindow('NORMALIZADA', 1000, 0)
-    #         cv2.imshow('NORMALIZADA', np.array(image[0]))
-    #         print('Image: ', self.images[i])
-    #         print(self.images[i])
-    #         # print(np.array(image[0][POS_X,POS_Y]))
-    #         # cv2.setMouseCallback('NORMALIZADA', click_events)
-    #         cv2.waitKey(500) #automatico
-    #         # cv2.waitKey(0) #espera tecla
-    #     cv2.destroyAllWindows()
-    #     return (image, self.labels[i])
+    
+    # FUNCAO PARA CAPTURAR A POSICAO DO CLICK DO MOUSE ##
+    # IMPRIME A POSICAO DO CLICK NA TELA ##
+    def click_events(self, event, x, y, flags, param):
+        global POS_X
+        global POS_Y
+
+        if event == cv2.EVENT_LBUTTONDOWN:
+            colors = self.temp_image[y,x]
+            norm_colors = self.norm_image[:,y,x].cpu().tolist()
+            print()
+            print("Coordinates of pixel: Y = ", y, "X = ", x)
+            print("Pixel value = ", colors)
+            print("Tensor value = ", norm_colors)           
+            
+            
+        elif event == cv2.EVENT_MOUSEMOVE:
+            colors = self.temp_image[y,x]
+            norm_colors = self.norm_image[:,y,x].cpu().tolist()
+            print()
+            print("Coordinates of pixel: Y = ", y, "X = ", x)
+            print("Pixel value = ", colors)
+            print("Tensor value = ", norm_colors)
+
+            # print(image.dtype)
+
+
+    def __getitem__(self, i):
+        global POS_X
+        global POS_Y
+        
+        image = cv2.imread(self.images[i], 3)
+        
+        cv2.namedWindow('ENTRADA')
+        cv2.moveWindow('ENTRADA', 300, 0)        
+        cv2.imshow('ENTRADA', image)
+        
+        self.temp_image = image
+        image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
+        image = image/255
+        image = torch.from_numpy(image.astype(np.float32))
+
+        if self.transforms != None:
+            print('Image: ', self.images[i])
+
+            image = self.transforms(image)
+
+            self.norm_image = image
+
+            cv2.namedWindow('NORMALIZADA')
+            cv2.moveWindow('NORMALIZADA', 800, 0)
+            cv2.setMouseCallback('NORMALIZADA', self.click_events)
+            cv2.imshow('NORMALIZADA', np.array(self.norm_image[0]))
+
+            
+            # cv2.waitKey(500) #automatico
+            cv2.waitKey(0) #espera tecla
+
+        cv2.destroyAllWindows()
+
+        return (image, self.labels[i], self.images[i])
+
+#######################################################################################
 
 
 def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None, classification_error_file=None):
