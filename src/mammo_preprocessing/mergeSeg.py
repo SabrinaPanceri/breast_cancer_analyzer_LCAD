@@ -13,14 +13,14 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
         #full mammogram
         auxExamImage = pathList[j]
         # print(auxExamImage)
-        examImageBGR = cv2.imread(auxExamImage)
-        examImage = cv2.cvtColor(examImageBGR, cv2.COLOR_BGR2GRAY)
+        examImage = cv2.imread(auxExamImage, 0)
+        print(examImage.shape, examImage.max(), examImage.min())
 
         #roi segmented image
         auxRoiImage = roiPathList[j]
-        imageBGR = cv2.imread(auxRoiImage)
-        roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
+        roiImage = cv2.imread(auxRoiImage, 0)
         current_all_roi = roiImage
+        print(roiImage.shape, roiImage.max(), roiImage.min())
         
 
         #informations about full mammogram 
@@ -70,12 +70,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                 # print(str_aux)
 
                 auxRoiImage = roiPathList[j] 
-                imageBGR = cv2.imread(auxRoiImage)
-                roiImage = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2GRAY)
-                auxExamImage = roiPathList[j] 
-                imageBGR2 = cv2.imread(auxExamImage)
-                image2 = cv2.cvtColor(imageBGR2, cv2.COLOR_BGR2GRAY)
-
+                roiImage = cv2.imread(auxRoiImage, 0)
 
                 current_all_roi+=roiImage
                 aux = pathList[j].split('/')
@@ -83,7 +78,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                 if((j+1)<len(pathList)):
                     j+=1
             
-            current_all_roi = cv2.cvtColor(cv2.imread('roi.png'), cv2.COLOR_BGR2GRAY)
+            current_all_roi = cv2.imread('roi.png', 0)
             #print(current_all_roi.shape)
         
         
@@ -148,10 +143,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                             with open(croppedImagesPath + '../with_cancer' + '.txt', 'a+') as myfile:
                                 myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '1' + '\n')
                             
-                            cv2.namedWindow(mammo)
-                            cv2.moveWindow(mammo, 0, 0)
-                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(20)
+                            # cv2.namedWindow(mammo)
+                            # cv2.moveWindow(mammo, 0, 0)
+                            # cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            # cv2.waitKey(20)
                    
                     else:
                         # if ((examImage[temporarySmallestBlackPixelOfCoordinateY:temporaryBiggestBlackPixelOfCoordinateY, 
@@ -177,10 +172,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                                 # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0')
                                 myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
 
-                            cv2.namedWindow(mammo)
-                            cv2.moveWindow(mammo, 0, 0)
-                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(20)                  
+                            # cv2.namedWindow(mammo)
+                            # cv2.moveWindow(mammo, 0, 0)
+                            # cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            # cv2.waitKey(20)                  
                         
                     temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 - sobrepos
                     temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 - sobrepos
@@ -188,18 +183,6 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                 temporarySmallestBlackPixelOfCoordinateY = temporarySmallestBlackPixelOfCoordinateY + 224 - sobrepos
                 temporaryBiggestBlackPixelOfCoordinateY = temporaryBiggestBlackPixelOfCoordinateY + 224 - sobrepos
             j+=1
-
-            # while True:
-            #     key = cv2.waitKey(1)
-            #     if key == 110: # N to next
-            #         j+=1
-            #         break
-            #     elif key == 98: # B to back
-            #         j-=1
-            #         while labelList[j] == False:
-            #             if labelList[j] == False:
-            #                 j-=1
-            #         break Test_P_01004_LEFT_CC_2_BENIGN
                  
         
                     
@@ -256,10 +239,10 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
                                 myfile.write(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
                                 # print(str(patientFile) + '_' + str(line) + '_' + str(col) + '.png' + ' ' + '0' + '\n')
                     
-                            cv2.namedWindow(mammo)
-                            cv2.moveWindow(mammo, 0, 0)
-                            cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
-                            cv2.waitKey(20)                  
+                            # cv2.namedWindow(mammo)
+                            # cv2.moveWindow(mammo, 0, 0)
+                            # cv2.imshow(mammo, np.hstack([mammo_resized, roi_resized]))
+                            # cv2.waitKey(20)                  
                             
                         temporarySmallestBlackPixelOfCoordinateX = temporarySmallestBlackPixelOfCoordinateX + 224 
                         temporaryBiggestBlackPixelOfCoordinateX = temporaryBiggestBlackPixelOfCoordinateX + 224 
@@ -269,7 +252,7 @@ def crop_cancer(pathList, roiPathList, labelList, root, folder, sobrepos):
 
                 j+=1      
             j+=1
-        cv2.destroyAllWindows() # close displayed windows  
+        # cv2.destroyAllWindows() # close displayed windows  
     return j
 
 def count_zeros(image):
@@ -292,8 +275,11 @@ def count_zeros(image):
     # print("others = " + str(others))
 
     if black > (total * 0.98):
+        # print(black, others)
         return True
     else:
+        # print('false')
+        # print(black, others)
         return False
 
 
