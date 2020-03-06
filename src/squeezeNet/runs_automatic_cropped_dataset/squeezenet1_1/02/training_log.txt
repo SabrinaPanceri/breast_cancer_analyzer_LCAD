@@ -1,0 +1,7000 @@
+Epoch 1:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	1.299518299	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	0->1	1.499s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.499s
+	LEARNING_RATE = 0.00029999999999999997
+Epoch 2:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.010157311																					1.417s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.417s
+	LEARNING_RATE = 0.00014999999999999999
+Epoch 3:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.007389498																					1.452s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.452s
+	LEARNING_RATE = 0.00014999999999999999
+Epoch 4:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.006330657																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00007499999999999999
+Epoch 5:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.005431867																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00007499999999999999
+Epoch 6:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.005112886																					1.220s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.220s
+	LEARNING_RATE = 0.00003750000000000000
+Epoch 7:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.005010247																					1.498s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.498s
+	LEARNING_RATE = 0.00003750000000000000
+Epoch 8:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004852200																					1.482s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.482s
+	LEARNING_RATE = 0.00001875000000000000
+Epoch 9:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.005056429																					1.313s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.313s
+	LEARNING_RATE = 0.00001875000000000000
+Epoch 10:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004672384																					1.243s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.243s
+	LEARNING_RATE = 0.00000937500000000000
+Epoch 11:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004554820																					1.521s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.521s
+	LEARNING_RATE = 0.00000937500000000000
+Epoch 12:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004726791																					1.461s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.461s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 13:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004608035																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 14:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004475141																					1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 15:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.005133867																					1.334s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.334s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 16:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004703355																					1.446s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.446s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 17:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004354286																					1.330s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.330s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 18:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004004264																					1.322s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.322s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 19:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004427195																					1.442s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.442s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 20:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004306889																					1.366s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.366s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 21:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004102206																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 22:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004775643																					1.145s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.145s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 23:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004231596																					1.540s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.540s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 24:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003778934																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 25:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004434824																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 26:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004557800																					1.345s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.345s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 27:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004078770																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 28:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004513049																					1.359s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.359s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 29:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004134178																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 30:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004996276																					1.249s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.249s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 31:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004282141																					1.359s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.359s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 32:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004538488																					1.486s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.486s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 33:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004103327																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 34:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004483891																					1.346s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.346s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 35:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004657841																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 36:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004532456																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 37:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003996658																					1.409s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.409s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 38:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004205894																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 39:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004091907																					1.487s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.487s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 40:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004005504																					1.540s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.540s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 41:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004371524																					1.438s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.438s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 42:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003611088																					1.334s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.334s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 43:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004347682																					1.301s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.301s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 44:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003636956																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 45:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004305339																					1.356s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.356s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 46:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004117680																					1.352s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.352s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 47:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004435754																					1.248s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.248s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 48:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004038715																					1.516s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.516s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 49:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003990507																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 50:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003549886																					1.292s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.292s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 51:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003958797																					1.356s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.356s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 52:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004033971																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 53:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004262471																					1.323s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.323s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 54:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003664279																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 55:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003745270																					1.507s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.507s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 56:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004744720																					1.466s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.466s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 57:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003928614																					1.516s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.516s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 58:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003589964																					1.435s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.435s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 59:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003992009																					1.179s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.179s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 60:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003967190																					1.435s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.435s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 61:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003476810																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 62:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003988647																					1.316s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.316s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 63:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003839922																					1.319s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.319s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 64:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003968215																					1.396s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.396s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 65:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003851056																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 66:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004139161																					1.230s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.230s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 67:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004098153																					1.369s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.369s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 68:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003793550																					1.403s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.403s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 69:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003791690																					1.327s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.327s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 70:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.004128003																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 71:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003754544																					1.409s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.409s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 72:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003790140																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 73:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003428698																					1.305s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.305s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 74:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003849792																					1.568s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.568s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 75:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003467011																					1.366s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.366s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 76:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003708458																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 77:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003680468																					1.331s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.331s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 78:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003577232																					1.280s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.280s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 79:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003875327																					1.345s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.345s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 80:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003822160																					1.493s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.493s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 81:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003637481																					1.419s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.419s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 82:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003714585																					1.261s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.261s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 83:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003635931																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 84:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003609395																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 85:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003783417																					1.312s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.312s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 86:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003642774																					1.236s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.236s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 87:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003891683																					1.282s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.282s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 88:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003544426																					1.424s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.424s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 89:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003315759																					1.418s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.418s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 90:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003746533																					1.476s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.476s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 91:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003537774																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 92:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003996658																					1.318s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.318s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 93:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003239202																					1.378s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.378s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 94:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003124857																					1.494s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.494s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 95:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003473210																					1.344s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.344s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 96:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003600883																					1.542s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.542s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 97:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003348207																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 98:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003243089																					1.381s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.381s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 99:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003650737																					1.291s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.291s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 100:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003594351																					1.293s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.293s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 101:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003660274																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 102:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003882742																					1.550s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.550s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 103:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003786206																					1.437s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.437s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 104:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003373528																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 105:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003779745																					1.267s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.267s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 106:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003026175																					1.417s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.417s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 107:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003238130																					1.452s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.452s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 108:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003681183																					1.532s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.532s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 109:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003447819																					1.471s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.471s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 110:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003680396																					1.265s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.265s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 111:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003312445																					1.593s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.593s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 112:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003285074																					1.415s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.415s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 113:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003333068																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 114:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003864264																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 115:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003372931																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 116:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003125954																					1.549s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.549s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 117:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002752733																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 118:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003761578																					1.251s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.251s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 119:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002992797																					1.319s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.319s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 120:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003346324																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 121:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003100061																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 122:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003589153																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 123:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003629637																					1.181s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.181s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 124:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003420091																					1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 125:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003125930																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 126:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003104210																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 127:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003195310																					1.363s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.363s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 128:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003584599																					1.447s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.447s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 129:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003368378																					1.553s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.553s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 130:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003327870																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 131:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003308630																					1.474s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.474s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 132:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003346705																					1.376s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.376s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 133:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002935386																					1.397s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.397s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 134:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003529930																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 135:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003121448																					1.434s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.434s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 136:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002785754																					1.489s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.489s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 137:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003143191																					1.448s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.448s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 138:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003122663																					1.371s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.371s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 139:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003319883																					1.138s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.138s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 140:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003439760																					1.489s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.489s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 141:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003507876																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 142:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003389478																					1.453s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.453s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 143:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003092456																					1.286s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.286s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 144:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003035879																					1.293s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.293s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 145:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003282118																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 146:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003092432																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 147:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002898431																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 148:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003182936																					1.337s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.337s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 149:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003018093																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 150:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003319597																					1.476s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.476s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 151:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003038621																					1.415s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.415s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 152:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003141093																					1.268s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.268s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 153:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003194141																					1.619s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.619s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 154:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003043103																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 155:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003404713																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 156:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003018117																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 157:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003191757																					1.298s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.298s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 158:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002894163																					1.373s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.373s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 159:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003159952																					1.556s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.556s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 160:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003064680																					1.289s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.289s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 161:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002949929																					1.292s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.292s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 162:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002975488																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 163:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002856970																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 164:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002850986																					1.303s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.303s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 165:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002950740																					1.363s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.363s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 166:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003076100																					1.372s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.372s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 167:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002789021																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 168:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003097844																					1.283s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.283s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 169:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002914762																					1.303s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.303s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 170:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003019285																					1.451s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.451s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 171:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002554250																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 172:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002830100																					1.310s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.310s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 173:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002671313																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 174:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003155684																					1.372s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.372s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 175:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002909327																					1.472s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.472s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 176:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002907228																					1.196s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.196s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 177:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003253555																					1.423s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.423s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 178:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002903819																					1.518s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.518s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 179:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002984166																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 180:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003293395																					1.288s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.288s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 181:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002855778																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 182:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002988338																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 183:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003132749																					1.444s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.444s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 184:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003152966																					1.408s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.408s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 185:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003014088																					1.303s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.303s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 186:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003090310																					1.537s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.537s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 187:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002804971																					1.423s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.423s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 188:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003265524																					1.455s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.455s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 189:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002446485																					1.373s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.373s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 190:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002974415																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 191:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002496576																					1.453s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.453s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 192:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003042006																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 193:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003038836																					1.508s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.508s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 194:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002572751																					1.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.429s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 195:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002761793																					1.243s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.243s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 196:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002863503																					1.470s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.470s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 197:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002822948																					1.434s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.434s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 198:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003005886																					1.399s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.399s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 199:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002835083																					1.251s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.251s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 200:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002722549																					1.227s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.227s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 201:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003334308																					1.343s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.343s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 202:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003075385																					1.409s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.409s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 203:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002593803																					1.407s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.407s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 204:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002507639																					1.461s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.461s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 205:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003083920																					1.405s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.405s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 206:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002584767																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 207:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002507091																					1.251s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.251s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 208:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003064036																					1.267s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.267s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 209:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002731586																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 210:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002561307																					1.306s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.306s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 211:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002710438																					1.258s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.258s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 212:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002543783																					1.284s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.284s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 213:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002484417																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 214:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002646732																					1.449s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.449s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 215:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002740407																					1.446s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.446s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 216:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002613425																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 217:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002576089																					1.328s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.328s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 218:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002744007																					1.396s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.396s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 219:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002890110																					1.286s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.286s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 220:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002799988																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 221:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002626467																					1.471s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.471s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 222:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002646804																					1.289s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.289s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 223:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002550054																					1.296s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.296s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 224:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002749586																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 225:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002778625																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 226:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002406693																					1.426s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.426s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 227:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002695394																					1.289s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.289s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 228:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002614570																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 229:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002462673																					1.267s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.267s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 230:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002646708																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 231:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002306795																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 232:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002301979																					1.332s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.332s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 233:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002563453																					1.495s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.495s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 234:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002507353																					1.533s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.533s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 235:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002449203																					1.351s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.351s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 236:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002417564																					1.449s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.449s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 237:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002418208																					1.271s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.271s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 238:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002700830																					1.626s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.626s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 239:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002577853																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 240:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.003190589																					1.311s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.311s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 241:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002626467																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 242:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002860546																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 243:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002261472																					1.426s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.426s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 244:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002584958																					1.473s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.473s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 245:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002706289																					1.329s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.329s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 246:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002520561																					1.247s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.247s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 247:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002883148																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 248:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002876997																					1.450s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.450s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 249:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002578592																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 250:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002777004																					1.376s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.376s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 251:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002440548																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 252:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002352619																					1.451s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.451s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 253:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002471876																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 254:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002335715																					1.294s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.294s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 255:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002446651																					1.417s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.417s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 256:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002730060																					1.415s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.415s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 257:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002552414																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 258:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002525115																					1.239s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.239s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 259:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002656984																					1.236s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.236s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 260:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002602053																					1.478s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.478s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 261:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002288723																					1.423s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.423s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 262:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002779937																					1.466s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.466s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 263:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002489614																					1.202s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.202s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 264:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002637267																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 265:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002738070																					1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 266:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002611780																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 267:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002640653																					1.530s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.530s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 268:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002709293																					1.487s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.487s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 269:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002477098																					1.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.429s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 270:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002327943																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 271:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002809000																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 272:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002255869																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 273:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002346849																					1.415s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.415s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 274:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002615047																					1.323s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.323s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 275:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002313876																					1.344s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.344s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 276:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002632093																					1.315s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.315s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 277:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002413273																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 278:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002353024																					1.407s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.407s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 279:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002416611																					1.419s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.419s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 280:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002230501																					1.273s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.273s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 281:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002750349																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 282:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002429986																					1.406s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.406s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 283:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002462244																					1.562s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.562s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 284:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002663684																					1.363s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.363s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 285:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002426410																					1.300s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.300s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 286:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002547693																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 287:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002894592																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 288:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002664757																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 289:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002189445																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 290:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002459621																					1.242s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.242s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 291:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002540565																					1.464s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.464s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 292:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002343321																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 293:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002423620																					1.320s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.320s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 294:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002250457																					1.443s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.443s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 295:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002433944																					1.467s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.467s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 296:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002307105																					1.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.429s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 297:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002355409																					1.259s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.259s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 298:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002109718																					1.247s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.247s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 299:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002275658																					1.496s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.496s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 300:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002111840																					1.312s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.312s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 301:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002329922																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 302:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002248526																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 303:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002377796																					1.388s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.388s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 304:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002206779																					1.286s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.286s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 305:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002621055																					1.241s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.241s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 306:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002213454																					1.452s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.452s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 307:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002268028																					1.550s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.550s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 308:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002343869																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 309:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002534652																					1.448s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.448s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 310:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002264953																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 311:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002358842																					1.391s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.391s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 312:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002407050																					1.327s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.327s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 313:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002044010																					1.358s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.358s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 314:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002265143																					1.240s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.240s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 315:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002197456																					1.463s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.463s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 316:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002255321																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 317:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002026772																					1.407s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.407s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 318:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001926470																					1.200s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.200s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 319:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002626348																					1.255s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.255s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 320:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001981139																					1.454s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.454s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 321:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002509165																					1.507s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.507s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 322:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002078772																					1.452s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.452s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 323:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002102709																					1.369s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.369s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 324:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002073407																					1.237s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.237s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 325:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002015448																					1.375s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.375s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 326:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002308035																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 327:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002200127																					1.245s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.245s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 328:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002325988																					1.506s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.506s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 329:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002573800																					1.505s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.505s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 330:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002267766																					1.417s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.417s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 331:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001995277																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 332:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002367616																					1.223s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.223s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 333:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002230191																					1.470s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.470s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 334:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002122092																					1.497s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.497s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 335:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002269697																					1.452s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.452s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 336:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002298069																					1.263s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.263s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 337:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002278948																					1.236s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.236s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 338:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002153301																					1.455s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.455s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 339:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002460003																					1.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.429s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 340:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002432418																					1.395s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.395s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 341:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002246237																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 342:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002244639																					1.514s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.514s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 343:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002404714																					1.546s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.546s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 344:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002106333																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 345:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002081132																					1.301s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.301s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 346:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001934361																					1.305s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.305s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 347:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002085781																					1.429s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.429s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 348:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001921415																					1.483s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.483s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 349:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002228403																					1.335s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.335s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 350:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001872873																					2.131s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 2.131s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 351:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002171350																					1.397s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.397s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 352:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002123761																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 353:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001890659																					1.319s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.319s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 354:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002020955																					1.354s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.354s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 355:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002162004																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 356:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002078915																					1.241s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.241s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 357:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002234793																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 358:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001732016																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 359:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002096868																					1.303s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.303s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 360:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002468228																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 361:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002159905																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 362:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002336407																					1.207s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.207s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 363:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002086234																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 364:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002153230																					1.459s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.459s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 365:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002187848																					1.238s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.238s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 366:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002203202																					1.375s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.375s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 367:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002213693																					1.495s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.495s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 368:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002087092																					1.531s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.531s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 369:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002185655																					1.390s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.390s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 370:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002155304																					1.260s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.260s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 371:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001996803																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 372:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001955771																					1.505s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.505s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 373:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002188873																					1.584s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.584s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 374:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001950407																					1.480s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.480s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 375:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001872039																					1.346s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.346s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 376:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002056241																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 377:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001907921																					1.435s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.435s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 378:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001969361																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 379:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002183723																					1.226s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.226s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 380:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002010512																					1.269s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.269s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 381:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002012372																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 382:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001942015																					1.489s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.489s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 383:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001891780																					1.410s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.410s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 384:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001858020																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 385:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001958323																					1.275s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.275s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 386:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001948023																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 387:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001786160																					1.229s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.229s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 388:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001986432																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 389:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002112222																					1.513s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.513s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 390:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001836038																					1.506s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.506s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 391:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002185917																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 392:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002144051																					1.454s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.454s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 393:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002027845																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 394:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002156949																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 395:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001844001																					1.399s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.399s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 396:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001954103																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 397:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001915002																					1.291s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.291s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 398:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001903963																					1.300s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.300s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 399:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001847649																					2.534s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 2.534s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 400:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002209496																					1.525s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.525s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 401:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001840973																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 402:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002032280																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 403:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002100801																					1.250s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.250s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 404:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002025723																					1.488s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.488s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 405:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002119470																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 406:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002076125																					1.226s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.226s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 407:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002006269																					1.341s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.341s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 408:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002043939																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 409:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001964736																					1.493s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.493s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 410:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002066541																					1.349s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.349s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 411:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001901317																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 412:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001870823																					1.419s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.419s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 413:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002073979																					1.466s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.466s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 414:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001882815																					1.298s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.298s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 415:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001985240																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 416:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001929545																					1.558s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.558s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 417:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002007890																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 418:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001788282																					1.363s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.363s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 419:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001799107																					1.263s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.263s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 420:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002148461																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 421:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001938415																					1.337s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.337s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 422:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002125144																					1.517s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.517s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 423:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001690793																					1.451s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.451s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 424:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001922822																					1.493s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.493s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 425:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001842451																					1.572s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.572s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 426:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002020669																					1.409s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.409s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 427:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001703787																					1.301s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.301s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 428:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001802921																					1.467s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.467s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 429:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001869345																					1.423s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.423s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 430:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001807523																					1.312s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.312s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 431:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001746607																					1.276s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.276s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 432:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001835895																					1.375s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.375s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 433:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001626801																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 434:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001535892																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 435:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001913881																					1.516s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.516s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 436:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001691556																					1.335s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.335s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 437:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002000451																					1.481s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.481s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 438:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001707482																					1.215s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.215s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 439:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001663065																					1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 440:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001871872																					1.448s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.448s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 441:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001755452																					1.457s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.457s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 442:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001760077																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 443:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001738787																					1.345s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.345s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 444:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001553535																					1.313s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.313s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 445:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001739192																					1.556s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.556s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 446:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001554918																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 447:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001829791																					1.412s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.412s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 448:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001708078																					1.271s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.271s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 449:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002006984																					1.332s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.332s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 450:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001576734																					1.386s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.386s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 451:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001814294																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 452:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001701117																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 453:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001925516																					1.238s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.238s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 454:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001737642																					1.464s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.464s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 455:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001966810																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 456:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001732540																					1.314s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.314s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 457:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001973057																					1.269s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.269s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 458:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001923370																					1.358s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.358s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 459:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001779127																					1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 460:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001720023																					1.254s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.254s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 461:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001801896																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 462:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001754022																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 463:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001817131																					1.526s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.526s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 464:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002117610																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 465:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001640677																					1.476s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.476s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 466:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001564097																					1.325s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.325s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 467:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001939011																					1.565s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.565s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 468:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001810741																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 469:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001746845																					1.497s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.497s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 470:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001587176																					1.246s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.246s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 471:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001790547																					1.306s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.306s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 472:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001911044																					1.492s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.492s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 473:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001478624																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 474:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001527286																					1.233s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.233s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 475:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001696181																					1.284s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.284s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 476:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001609945																					1.326s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.326s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 477:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001712227																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 478:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001682258																					1.243s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.243s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 479:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.002009892																					1.378s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.378s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 480:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001834440																					1.442s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.442s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 481:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001533890																					1.230s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.230s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 482:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001623583																					1.314s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.314s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 483:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001708937																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 484:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001616549																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 485:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001463008																					1.325s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.325s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 486:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001791334																					1.316s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.316s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 487:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001505184																					1.454s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.454s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 488:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001599550																					1.417s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.417s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 489:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001791811																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 490:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001593065																					1.420s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.420s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 491:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001763153																					1.519s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.519s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 492:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001749134																					1.488s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.488s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 493:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001679373																					1.349s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.349s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 494:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001672554																					1.259s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.259s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 495:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001799560																					1.571s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.571s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 496:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001442575																					1.453s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.453s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 497:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001658034																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 498:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001686978																					1.392s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.392s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 499:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001681447																					1.162s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.162s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 500:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001938629																					1.335s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.335s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 501:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001600909																					1.329s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.329s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 502:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001852965																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 503:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001843596																					1.482s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.482s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 504:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001794529																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 505:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001698565																					1.468s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.468s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 506:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001766706																					1.392s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.392s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 507:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001595187																					1.276s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.276s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 508:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001605463																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 509:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001813865																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 510:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001650119																					1.341s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.341s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 511:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001432705																					1.321s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.321s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 512:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001661325																					1.292s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.292s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 513:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001844144																					1.290s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.290s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 514:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001638246																					1.323s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.323s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 515:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001583767																					1.515s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.515s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 516:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001764584																					1.372s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.372s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 517:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001575208																					1.412s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.412s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 518:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001558447																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 519:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001470375																					1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 520:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001659799																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 521:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001486158																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 522:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001444530																					1.240s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.240s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 523:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001580358																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 524:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001668286																					1.350s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.350s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 525:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001463866																					1.388s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.388s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 526:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001644635																					1.455s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.455s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 527:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001509070																					1.402s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.402s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 528:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001580453																					1.378s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.378s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 529:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001699758																					1.375s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.375s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 530:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001727605																					1.265s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.265s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 531:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001807117																					1.447s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.447s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 532:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001670098																					1.433s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.433s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 533:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001607442																					1.310s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.310s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 534:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001466107																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 535:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001591158																					1.321s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.321s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 536:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001762152																					1.410s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.410s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 537:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001635432																					1.201s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.201s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 538:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001575089																					1.262s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.262s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 539:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001558757																					1.563s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.563s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 540:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001710582																					1.541s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.541s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 541:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001497817																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 542:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001572728																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 543:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001662803																					1.287s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.287s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 544:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001541233																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 545:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001842332																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 546:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001509976																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 547:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001308799																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 548:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001681924																					1.290s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.290s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 549:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001677227																					1.299s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.299s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 550:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001850462																					1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 551:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001529860																					1.309s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.309s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 552:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001496959																					1.349s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.349s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 553:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001683259																					1.359s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.359s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 554:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001545286																					1.590s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.590s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 555:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001535559																					1.349s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.349s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 556:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001408339																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 557:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001544857																					1.250s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.250s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 558:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001570082																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 559:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001568270																					1.346s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.346s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 560:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001797581																					1.325s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.325s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 561:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001571822																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 562:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001901627																					1.282s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.282s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 563:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001729465																					1.313s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.313s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 564:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001671720																					1.311s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.311s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 565:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001630211																					1.467s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.467s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 566:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001453495																					1.508s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.508s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 567:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001698804																					1.435s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.435s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 568:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001326609																					1.219s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.219s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 569:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001487708																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 570:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001388955																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 571:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001258039																					1.525s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.525s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 572:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001479220																					1.350s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.350s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 573:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001516056																					1.388s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.388s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 574:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001412201																					1.336s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.336s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 575:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001479936																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 576:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001676917																					1.318s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.318s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 577:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001358962																					1.273s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.273s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 578:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001596904																					1.250s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.250s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 579:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001285529																					1.582s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.582s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 580:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001506305																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 581:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001477265																					1.371s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.371s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 582:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001364446																					1.289s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.289s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 583:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001633930																					1.537s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.537s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 584:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001479721																					1.456s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.456s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 585:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001742625																					1.555s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.555s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 586:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001610661																					1.378s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.378s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 587:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001705813																					1.252s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.252s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 588:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001681542																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 589:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001389456																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 590:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001445484																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 591:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001473451																					1.262s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.262s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 592:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001611090																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 593:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001608849																					1.361s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.361s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 594:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001565266																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 595:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001371598																					1.489s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.489s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 596:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001398039																					1.304s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.304s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 597:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001645827																					1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 598:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001521420																					1.373s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.373s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 599:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001575518																					1.180s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.180s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 600:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001251197																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 601:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001522636																					1.411s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.411s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 602:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001521826																					1.392s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.392s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 603:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001481080																					1.216s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.216s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 604:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001331234																					1.394s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.394s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 605:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001275110																					1.457s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.457s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 606:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001452708																					1.418s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.418s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 607:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001408195																					1.263s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.263s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 608:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001610208																					1.365s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.365s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 609:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001571321																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 610:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001391244																					1.434s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.434s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 611:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001451850																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 612:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001493168																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 613:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001426959																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 614:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001605082																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 615:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001560092																					1.273s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.273s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 616:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001619244																					1.298s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.298s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 617:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001630211																					1.388s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.388s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 618:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001208830																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 619:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001581049																					1.418s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.418s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 620:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001535153																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 621:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001496243																					1.446s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.446s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 622:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001484990																					1.516s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.516s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 623:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001440024																					1.288s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.288s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 624:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001602316																					1.419s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.419s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 625:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001314306																					1.462s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.462s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 626:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001487947																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 627:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001478386																					1.404s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.404s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 628:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001206160																					1.251s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.251s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 629:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001516175																					1.550s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.550s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 630:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001592660																					1.391s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.391s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 631:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001315784																					1.221s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.221s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 632:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001511884																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 633:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001497340																					1.479s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.479s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 634:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001408124																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 635:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001388836																					1.498s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.498s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 636:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001450300																					1.259s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.259s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 637:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001453805																					1.524s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.524s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 638:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001222467																					1.391s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.391s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 639:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001539254																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 640:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001276755																					1.238s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.238s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 641:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001330280																					1.590s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.590s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 642:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001409221																					1.361s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.361s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 643:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001402664																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 644:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001364899																					1.527s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.527s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 645:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001338601																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 646:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001361942																					1.467s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.467s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 647:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001336217																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 648:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001390958																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 649:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001660872																					1.214s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.214s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 650:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001356125																					1.288s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.288s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 651:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001402807																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 652:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001443195																					1.405s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.405s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 653:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001310492																					1.396s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.396s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 654:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001483226																					1.261s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.261s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 655:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001239514																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 656:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001381254																					1.246s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.246s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 657:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001227927																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 658:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001405811																					1.404s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.404s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 659:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001376677																					1.445s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.445s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 660:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001443982																					1.185s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.185s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 661:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001441407																					1.470s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.470s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 662:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001473832																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 663:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001402855																					1.482s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.482s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 664:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001377559																					1.330s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.330s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 665:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001408219																					1.412s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.412s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 666:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001342297																					1.403s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.403s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 667:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001406813																					1.461s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.461s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 668:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001473618																					1.376s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.376s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 669:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001348901																					1.558s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.558s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 670:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001360106																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 671:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001292372																					1.446s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.446s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 672:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001076770																					1.371s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.371s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 673:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001394796																					1.294s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.294s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 674:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001445055																					1.196s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.196s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 675:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001410961																					1.414s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.414s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 676:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001246881																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 677:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001486087																					1.319s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.319s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 678:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001531553																					1.371s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.371s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 679:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001407790																					1.397s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.397s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 680:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001191068																					1.253s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.253s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 681:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001263595																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 682:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001428127																					1.317s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.317s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 683:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001590443																					1.277s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.277s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 684:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001475811																					1.433s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.433s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 685:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001294184																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 686:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001418328																					1.359s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.359s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 687:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001232386																					1.525s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.525s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 688:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001348114																					1.285s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.285s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 689:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001485515																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 690:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001321793																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 691:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001252675																					1.404s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.404s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 692:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001297307																					1.298s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.298s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 693:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001157022																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 694:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001299787																					1.526s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.526s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 695:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001430321																					1.373s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.373s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 696:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001429200																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 697:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001445341																					1.237s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.237s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 698:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001321077																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 699:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001322818																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 700:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001314712																					1.365s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.365s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 701:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001396847																					1.257s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.257s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 702:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001316953																					1.307s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.307s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 703:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001260400																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 704:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001311421																					1.294s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.294s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 705:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001317501																					1.265s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.265s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 706:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001348186																					1.442s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.442s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 707:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001182723																					1.343s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.343s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 708:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001266432																					1.282s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.282s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 709:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001455045																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 710:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001274824																					1.556s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.556s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 711:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001210570																					1.465s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.465s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 712:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001370549																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 713:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001092243																					1.426s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.426s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 714:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001357937																					1.335s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.335s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 715:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001179171																					1.509s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.509s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 716:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001372790																					1.237s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.237s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 717:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001282525																					1.259s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.259s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 718:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001199031																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 719:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001339197																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 720:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001226330																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 721:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001166415																					1.268s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.268s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 722:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001239586																					1.372s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.372s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 723:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001233339																					1.514s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.514s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 724:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001248932																					1.285s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.285s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 725:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001285887																					1.478s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.478s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 726:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001312804																					1.439s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.439s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 727:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001309204																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 728:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001219368																					1.349s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.349s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 729:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001306939																					1.216s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.216s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 730:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001384568																					1.447s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.447s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 731:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001371646																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 732:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001454830																					1.432s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.432s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 733:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001302099																					1.343s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.343s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 734:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001287770																					1.399s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.399s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 735:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001323867																					1.469s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.469s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 736:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001197100																					1.544s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.544s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 737:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001121092																					1.440s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.440s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 738:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001318216																					1.225s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.225s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 739:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001100612																					1.318s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.318s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 740:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001285124																					1.391s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.391s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 741:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001210928																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 742:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001244593																					1.464s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.464s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 743:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001234555																					1.362s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.362s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 744:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001273298																					1.373s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.373s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 745:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001301885																					1.525s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.525s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 746:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001217937																					1.524s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.524s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 747:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001170230																					1.314s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.314s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 748:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001177120																					1.395s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.395s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 749:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001197505																					1.378s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.378s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 750:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001219964																					1.486s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.486s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 751:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001353717																					1.292s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.292s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 752:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001242447																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 753:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001259899																					1.281s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.281s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 754:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001222634																					1.442s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.442s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 755:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001058507																					1.484s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.484s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 756:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001103067																					1.457s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.457s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 757:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001277804																					1.345s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.345s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 758:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001263618																					1.344s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.344s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 759:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001313567																					1.413s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.413s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 760:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001158381																					1.535s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.535s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 761:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001515627																					1.437s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.437s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 762:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001080775																					1.338s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.338s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 763:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001261425																					1.328s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.328s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 764:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001283121																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 765:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001252174																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 766:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001293063																					1.365s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.365s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 767:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001237965																					1.399s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.399s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 768:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001319456																					1.382s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.382s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 769:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001398611																					1.228s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.228s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 770:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001296449																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 771:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001250958																					1.414s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.414s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 772:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001374435																					1.327s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.327s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 773:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001307726																					1.271s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.271s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 774:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001429391																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 775:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001202035																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 776:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001298451																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 777:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001230192																					1.289s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.289s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 778:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001302123																					1.298s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.298s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 779:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001458073																					1.406s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.406s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 780:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001218176																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 781:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001203823																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 782:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001327324																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 783:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001507688																					1.444s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.444s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 784:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001105499																					1.369s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.369s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 785:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001069212																					1.357s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.357s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 786:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001338816																					1.502s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.502s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 787:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001186991																					1.439s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.439s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 788:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001221871																					1.408s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.408s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 789:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001162887																					1.245s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.245s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 790:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001137328																					1.514s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.514s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 791:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001071787																					1.451s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.451s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 792:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001269794																					1.447s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.447s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 793:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001098990																					1.285s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.285s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 794:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001165795																					1.216s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.216s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 795:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001273298																					1.511s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.511s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 796:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001053619																					1.443s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.443s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 797:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001049614																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 798:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001165676																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 799:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001240087																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 800:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001161981																					1.517s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.517s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 801:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001055527																					1.488s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.488s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 802:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001093578																					1.480s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.480s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 803:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001247978																					1.440s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.440s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 804:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001183629																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 805:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001081443																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 806:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001065183																					1.466s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.466s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 807:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001123786																					1.500s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.500s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 808:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001114726																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 809:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001161027																					1.344s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.344s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 810:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001137328																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 811:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001214409																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 812:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001129913																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 813:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001248837																					1.323s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.323s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 814:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001166821																					1.308s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.308s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 815:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001305008																					1.300s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.300s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 816:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001203871																					1.414s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.414s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 817:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001102781																					1.455s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.455s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 818:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001055312																					1.442s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.442s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 819:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001238585																					1.324s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.324s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 820:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001038432																					1.430s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.430s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 821:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001124263																					1.514s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.514s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 822:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001029587																					1.478s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.478s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 823:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001318288																					1.458s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.458s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 824:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001155233																					1.262s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.262s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 825:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001124024																					1.456s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.456s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 826:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001135564																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 827:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001155996																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 828:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001270270																					1.290s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.290s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 829:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001029897																					1.462s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.462s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 830:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001094627																					1.535s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.535s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 831:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001123548																					1.483s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.483s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 832:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001150560																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 833:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001269937																					1.234s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.234s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 834:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001214576																					1.272s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.272s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 835:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001168585																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 836:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001187277																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 837:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001170063																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 838:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001258183																					1.406s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.406s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 839:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000909209																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 840:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001230383																					1.489s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.489s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 841:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001246667																					1.316s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.316s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 842:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001119947																					1.267s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.267s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 843:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001134968																					1.464s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.464s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 844:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001099133																					1.340s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.340s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 845:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001078463																					1.215s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.215s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 846:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001082444																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 847:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001076508																					1.514s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.514s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 848:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001130509																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 849:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001107144																					1.302s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.302s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 850:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000981498																					1.456s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.456s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 851:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001124096																					1.358s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.358s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 852:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001129007																					1.320s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.320s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 853:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001144552																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 854:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001100230																					1.327s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.327s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 855:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001198602																					1.432s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.432s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 856:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001102471																					1.497s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.497s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 857:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001185608																					1.409s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.409s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 858:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001225042																					1.313s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.313s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 859:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001055288																					1.311s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.311s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 860:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001068807																					1.547s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.547s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 861:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001121211																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 862:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001032948																					1.287s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.287s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 863:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001088953																					1.265s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.265s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 864:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001167417																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 865:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001081729																					1.162s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.162s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 866:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001107669																					1.239s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.239s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 867:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001040554																					1.266s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.266s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 868:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001172233																					1.400s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.400s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 869:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001067448																					1.423s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.423s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 870:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001076436																					1.318s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.318s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 871:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001062131																					1.279s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.279s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 872:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000963473																					1.342s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.342s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 873:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001058364																					1.393s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.393s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 874:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000939798																					1.401s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.401s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 875:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001105928																					1.268s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.268s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 876:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000973511																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 877:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001178885																					1.446s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.446s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 878:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001047659																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 879:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000995421																					1.195s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.195s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 880:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001065087																					1.347s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.347s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 881:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001274347																					1.392s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.392s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 882:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001136327																					1.239s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.239s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 883:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000957108																					1.483s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.483s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 884:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000986862																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 885:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001179552																					1.408s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.408s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 886:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001190448																					1.178s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.178s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 887:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001107740																					1.359s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.359s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 888:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001120877																					1.425s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.425s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 889:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001090646																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 890:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000992274																					1.261s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.261s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 891:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001125288																					1.374s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.374s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 892:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001018310																					1.468s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.468s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 893:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001089597																					1.355s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.355s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 894:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001102138																					1.403s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.403s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 895:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000972104																					1.229s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.229s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 896:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001044059																					1.431s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.431s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 897:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001018000																					1.427s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.427s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 898:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001102328																					1.531s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.531s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 899:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000974250																					1.426s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.426s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 900:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001064181																					1.314s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.314s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 901:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001046300																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 902:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001066422																					1.415s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.415s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 903:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001161170																					1.380s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.380s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 904:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001203966																					1.284s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.284s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 905:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001023030																					1.287s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.287s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 906:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001005697																					1.395s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.395s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 907:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000987220																					1.273s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.273s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 908:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001068616																					1.403s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.403s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 909:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001095700																					1.376s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.376s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 910:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001378083																					1.418s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.418s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 911:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001029038																					1.168s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.168s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 912:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001154089																					1.353s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.353s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 913:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001067567																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 914:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001171660																					1.505s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.505s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 915:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001034904																					1.404s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.404s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 916:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001090050																					1.360s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.360s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 917:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001109481																					1.317s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.317s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 918:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000947714																					1.397s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.397s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 919:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001125860																					1.405s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.405s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 920:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001123881																					1.238s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.238s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 921:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000955820																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 922:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001036954																					1.332s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.332s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 923:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001051545																					1.441s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.441s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 924:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001103640																					1.246s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.246s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 925:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001116705																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 926:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001053476																					1.399s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.399s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 927:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001004505																					1.239s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.239s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 928:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001009727																					1.247s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.247s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 929:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001132894																					1.285s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.285s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 930:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001110172																					1.320s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.320s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 931:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001109409																					1.277s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.277s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 932:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001065278																					1.333s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.333s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 933:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001021218																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 934:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001049733																					1.383s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.383s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 935:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001091027																					1.293s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.293s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 936:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000982928																					1.313s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.313s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 937:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000979543																					1.428s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.428s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 938:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001144648																					1.437s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.437s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 939:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001096296																					1.501s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.501s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 940:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001207447																					1.367s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.367s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 941:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000971150																					1.351s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.351s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 942:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000996280																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 943:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001156449																					1.389s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.389s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 944:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001066208																					1.312s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.312s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 945:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001004672																					1.236s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.236s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 946:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001093006																					1.445s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.445s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 947:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001045156																					1.443s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.443s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 948:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001068306																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 949:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001038694																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 950:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000865817																					1.281s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.281s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 951:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001055455																					1.512s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.512s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 952:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001182270																					1.375s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.375s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 953:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000981259																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 954:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001047969																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 955:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001100659																					1.339s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.339s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 956:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001089072																					1.467s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.467s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 957:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000950837																					1.218s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.218s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 958:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001040721																					1.436s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.436s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 959:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001018143																					1.398s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.398s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 960:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000894070																					1.422s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.422s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 961:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000973201																					1.301s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.301s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 962:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000912309																					1.271s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.271s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 963:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001136112																					1.356s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.356s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 964:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001075530																					1.384s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.384s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 965:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001108837																					1.238s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.238s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 966:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001002955																					1.595s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.595s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 967:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000981879																					1.233s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.233s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 968:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000809956																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 969:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001028585																					1.317s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.317s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 970:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000937963																					1.243s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.243s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 971:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001098347																					1.396s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.396s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 972:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000940681																					1.416s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.416s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 973:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001010656																					1.264s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.264s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 974:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000938630																					1.445s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.445s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 975:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001079893																					1.370s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.370s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 976:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001038146																					1.379s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.379s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 977:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001021075																					1.255s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.255s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 978:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001021051																					1.480s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.480s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 979:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000993061																					1.464s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.464s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 980:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000933123																					1.450s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.450s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 981:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001056576																					1.266s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.266s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 982:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001016569																					1.385s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.385s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 983:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000967145																					1.448s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.448s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 984:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000927401																					1.372s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.372s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 985:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000935292																					1.368s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.368s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 986:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001058507																					1.488s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.488s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 987:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001042986																					1.387s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.387s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 988:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001089120																					1.316s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.316s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 989:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000996113																					1.264s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.264s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 990:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000963116																					1.404s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.404s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 991:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000953889																					1.460s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.460s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 992:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000897336																					1.320s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.320s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 993:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001135206																					1.285s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.285s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 994:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001012492																					1.332s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.332s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 995:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000952625																					1.334s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.334s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 996:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001027846																					1.260s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.260s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 997:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001029539																					1.421s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.421s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 998:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000891113																					1.458s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.458s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 999:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.000989699																					1.341s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.341s
+	LEARNING_RATE = 0.00000468750000000000
+Epoch 1000:
+
+	Loss		Errors																				Elapsed Time	Step
+
+	0.001101518																					1.345s		1/1 (100.00%)
+	Epoch Steps Elapsed Time: 1.345s
+	LEARNING_RATE = 0.00000468750000000000

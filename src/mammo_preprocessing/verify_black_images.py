@@ -43,7 +43,7 @@ for image_path in image_paths:
 		# print(image_path)
 		# print("100% black")
 		fileB.write(str(image_path) + '\n')
-	elif ((image == 1).all()):
+	elif ((image == 1).all() or (image == 255).all()):
 		white += 1
 		# print(image_path)
 		# print("100% black")
