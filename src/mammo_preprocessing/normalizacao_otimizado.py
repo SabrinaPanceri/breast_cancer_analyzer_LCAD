@@ -25,12 +25,12 @@ from tqdm import tqdm
 
 TRAINING = (
         # '/home/lcad/sabrina/cbisddsm_train_2020_02_18.txt',
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', 
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', 
 )
 
 TRAINING_DIR = (
         # '/home/lcad/sabrina/automatic_cropped_dataset',
-        '/mnt/dadosSabrina/MyDrive/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
 )
 
 SHUFFLE = False
@@ -92,12 +92,18 @@ def main():
     ##mean image e std image
     std = dataset.std(dim=0)
     save_image(std, "std.png")
+    # arq.write("\nTensor STD")
+    # arq.write(str(std.data))
+    torch.save(std, 'std_automatic_cropped_dataset.pth')
     texto = ("\nDataset Standard Deviation Image: " + str(std.shape))
     print(texto)
     arq.write(texto)
 
     mean = dataset.mean(dim=0)
     save_image(mean, "mean.png")
+    # arq.write("\nTensor MEAN")
+    # arq.write(str(mean.data))
+    torch.save(mean, '_automatic_cropped_dataset.pth')
     texto = ("\nDataset Mean Image: "  + str(mean.shape))
     print(texto)
     arq.write(texto) 
