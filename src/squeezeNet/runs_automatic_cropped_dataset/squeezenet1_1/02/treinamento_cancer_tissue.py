@@ -31,8 +31,9 @@ INITIAL_MODEL_TEST = False
 TRAINING = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', #104568 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
@@ -52,7 +53,8 @@ SHUFFLE =  True
 TEST = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #25782 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_18.txt', #13436 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
@@ -66,16 +68,16 @@ TEST_DIR = (
         
 )
 
-
-TRANSFORMS = transforms.Normalize([0.4107, 0.4107, 0.4107], [0.2371, 0.2371, 0.2371]) #valores automatic_cropped_dataset
+# TRANSFORMS = None #valores automatic_cropped_dataset
+TRANSFORMS = transforms.Normalize(mean=[0.4107, 0.4107, 0.4107], std=[0.2371, 0.2371, 0.2371]) #valores automatic_cropped_dataset
 # TRANSFORMS = transforms.Normalize([0.3332, 0.3332, 0.3332], [0.2741, 0.2741, 0.2741]) #valores automatic_cropped_with_black_images_dataset
 # TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) #valores de teste
 # TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
 
-BATCH_SIZE, ACCUMULATE = 20, 1
+BATCH_SIZE, ACCUMULATE = 64, 1
 
 EPOCHS = 1000
-SAVES_PER_EPOCH = 1
+SAVES_PER_EPOCH = 10
 
 INITIAL_LEARNING_RATE = 0.0003
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 14
@@ -83,7 +85,7 @@ DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
 # NUM_WORKERS = 1
-NUM_WORKERS = 4
+NUM_WORKERS = 6
 
 ##DESCOMENTAR PARA USAR O CLICK_EVENTS##
 # POS_X, POS_Y = 0, 0
@@ -109,7 +111,7 @@ def Net():
     load_matching_name_and_shape_layers(net, 'Torchvision pretrained model', model(pretrained=True).state_dict()) 
     return net
 
-
+##DEFINICAO DO DATASET##
 class DatasetFromCSV(Dataset):
     def __init__(self, csv_files, root_dirs, label=None, shuffle=False, transforms=None, dataset_file=None):
         temp_image = np.zeros((224,224))
@@ -136,32 +138,34 @@ class DatasetFromCSV(Dataset):
 
         self.images = np.asarray(data.iloc[:, 0])
         self.labels = np.asarray(data.iloc[:, 1])
-
+        # print('TRANSFORMS = ', transforms)
         self.transforms = transforms
+        # print('TRANSFORMS = ', transforms)
 
         if dataset_file != None:
             with open(dataset_file, 'w') as dataset:
                 for image, label in zip(self.images, self.labels):
                     dataset.write(image + ' ' + str(label) + '\n')
 
-    ##DEFINICAO DO DATASET##
     def __len__(self):
         return self.data_len
 
     ## COMENTAR O TRECHO ABAIXO CASO QUEIRA APRESENTAR AS IMAGENS EM TELA##
     def __getitem__(self, i):
         image = cv2.imread(self.images[i], 3)
-        # print(image)
+        # print('NOME DA IMAGEM: ', self.images[i])
+        # print("\nMATRIZ DA IMAGEM REAL= ", image)
         image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
-        # print(image)
+        # print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
         image = image/255
-        # print(image)
+        # print("\nMATRIZ DA IMAGEM REAL/255 [RANGE 0-1]  = ", image)
         image = torch.from_numpy(image.astype(np.float32))
-        # print(image)
+        # print("\nTENSOR DA IMAGEM REAL [RANGE 0-1] = ", image)
         if self.transforms != None:
+            # print('TRANSFORMS = ', transforms)
+            # print("\nTENSOR DA IMAGEM REAL ANTES DE NORMALIZAR = ", image)
             image = self.transforms(image)
-            # print(image)
-        # exit()
+            # print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image)
         return (image, self.labels[i], self.images[i])
 
     
@@ -199,7 +203,10 @@ class DatasetFromCSV(Dataset):
     #     global POS_Y
         
     #     image = cv2.imread(self.images[i], 3)
-    #     print(image)
+    #     print('NOME DA IMAGEM: ', self.images[i])
+    #     print('LABEL IMAGEM: ', self.labels[i])
+
+    #     # print("\nMATRIZ DA IMAGEM REAL= ", image)
         
     #     cv2.namedWindow('ENTRADA')
     #     cv2.moveWindow('ENTRADA', 300, 0)        
@@ -207,32 +214,33 @@ class DatasetFromCSV(Dataset):
         
     #     self.temp_image = image
     #     image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
-    #     print(image)
+    #     # print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
     #     image = image/255
-    #     print(image)
+    #     # print("\nMATRIZ DA IMAGEM REAL/255 [RANGE 0-1] = ", image)
     #     image = torch.from_numpy(image.astype(np.float32))
-    #     print(image)
+    #     # print("\nTENSOR DA IMAGEM REAL [RANGE 0-1] = ", image)
 
     #     if self.transforms != None:
-    #         print('Image: ', self.images[i])
+    #         # print("\n\n NORMALIZATION \n")
 
     #         image = self.transforms(image)
-    #         print(image)
+    #         # print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image)
 
     #         self.norm_image = image
-    #         print(self.norm_image)
+    #         #print(self.norm_image)
 
     #         cv2.namedWindow('NORMALIZADA')
     #         cv2.moveWindow('NORMALIZADA', 800, 0)
     #         cv2.setMouseCallback('NORMALIZADA', self.click_events)
-    #         print(self.norm_image[0])
+    #         #print(self.norm_image[0])
     #         cv2.imshow('NORMALIZADA', np.array(self.norm_image[0]))
 
             
-    #         # cv2.waitKey(500) #automatico
-    #         cv2.waitKey(0) #espera tecla
+    #         cv2.waitKey(500) #automatico
+    #         # cv2.waitKey(0) #espera tecla
 
     #     cv2.destroyAllWindows()
+    #     # exit()
 
     #     return (image, self.labels[i], self.images[i])
 
