@@ -31,11 +31,11 @@ INITIAL_MODEL_TEST = False
 TRAINING = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/02_57344_864955357/training_dataset.txt', #57344 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', #104568 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', #104568 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
@@ -53,10 +53,10 @@ SHUFFLE =  True
 TEST = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #25782 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_18.txt', #13436 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_18.txt', #13436 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
@@ -76,16 +76,16 @@ TRANSFORMS = transforms.Normalize(mean=[0.4107, 0.4107, 0.4107], std=[0.2371, 0.
 
 BATCH_SIZE, ACCUMULATE = 64, 1
 
-EPOCHS = 1000
+EPOCHS = 200
 SAVES_PER_EPOCH = 10
 
-INITIAL_LEARNING_RATE = 0.0003
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 14
-DECAY_RATE = 2
+INITIAL_LEARNING_RATE = 0.005
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 100
+DECAY_RATE = 3
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
 # NUM_WORKERS = 1
-NUM_WORKERS = 6
+NUM_WORKERS = 4
 
 ##DESCOMENTAR PARA USAR O CLICK_EVENTS##
 # POS_X, POS_Y = 0, 0
