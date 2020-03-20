@@ -33,9 +33,9 @@ TRAINING = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_13.txt', #202328 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', #104568 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_automatic_cropped_dataset/squeezenet1_1/01/training_dataset.txt', #202328 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
@@ -54,9 +54,9 @@ TEST = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_13.txt', #25782 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2020_02_18.txt', #13436 imagens
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF10_automatic_cropped_dataset.txt', #20 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF100_automatic_cropped_dataset.txt', #200 imagens
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
+        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_OF1000_automatic_cropped_dataset.txt', #2000 imagens
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/aux_files/automatic_cropped_with_cancer.txt', #4530 imagens
 )
 
@@ -74,18 +74,18 @@ TRANSFORMS = transforms.Normalize(mean=[0.4107, 0.4107, 0.4107], std=[0.2371, 0.
 # TRANSFORMS = transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) #valores de teste
 # TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752]) #valores manual_cropped_dataset
 
-BATCH_SIZE, ACCUMULATE = 64, 1
+BATCH_SIZE, ACCUMULATE = 24, 1
 
-EPOCHS = 200
-SAVES_PER_EPOCH = 10
+EPOCHS = 300
+SAVES_PER_EPOCH = 5
 
-INITIAL_LEARNING_RATE = 0.005
+INITIAL_LEARNING_RATE = 0.0004
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 100
-DECAY_RATE = 3
-DECAY_STEP_SIZE = 2
+DECAY_RATE = 2
+DECAY_STEP_SIZE = 5
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
-# NUM_WORKERS = 1
-NUM_WORKERS = 4
+NUM_WORKERS = 1
+# NUM_WORKERS = 4
 
 ##DESCOMENTAR PARA USAR O CLICK_EVENTS##
 # POS_X, POS_Y = 0, 0
@@ -151,22 +151,22 @@ class DatasetFromCSV(Dataset):
         return self.data_len
 
     ## COMENTAR O TRECHO ABAIXO CASO QUEIRA APRESENTAR AS IMAGENS EM TELA##
-    def __getitem__(self, i):
-        image = cv2.imread(self.images[i], 3)
-        # print('NOME DA IMAGEM: ', self.images[i])
-        # print("\nMATRIZ DA IMAGEM REAL= ", image)
-        image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
-        # print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
-        image = image/255
-        # print("\nMATRIZ DA IMAGEM REAL/255 [RANGE 0-1]  = ", image)
-        image = torch.from_numpy(image.astype(np.float32))
-        # print("\nTENSOR DA IMAGEM REAL [RANGE 0-1] = ", image)
-        if self.transforms != None:
-            # print('TRANSFORMS = ', transforms)
-            # print("\nTENSOR DA IMAGEM REAL ANTES DE NORMALIZAR = ", image)
-            image = self.transforms(image)
-            # print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image)
-        return (image, self.labels[i], self.images[i])
+    # def __getitem__(self, i):
+    #     image = cv2.imread(self.images[i], 3)
+    #     # print('NOME DA IMAGEM: ', self.images[i])
+    #     # print("\nMATRIZ DA IMAGEM REAL= ", image)
+    #     image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
+    #     # print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
+    #     image = image/255
+    #     # print("\nMATRIZ DA IMAGEM REAL/255 [RANGE 0-1]  = ", image)
+    #     image = torch.from_numpy(image.astype(np.float32))
+    #     # print("\nTENSOR DA IMAGEM REAL [RANGE 0-1] = ", image)
+    #     if self.transforms != None:
+    #         # print('TRANSFORMS = ', transforms)
+    #         # print("\nTENSOR DA IMAGEM REAL ANTES DE NORMALIZAR = ", image)
+    #         image = self.transforms(image)
+    #         # print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image)
+    #     return (image, self.labels[i], self.images[i])
 
     
 #######################################################################################
@@ -174,75 +174,86 @@ class DatasetFromCSV(Dataset):
     
     # FUNCAO PARA CAPTURAR A POSICAO DO CLICK DO MOUSE ##
     # IMPRIME A POSICAO DO CLICK NA TELA ##
-    # def click_events(self, event, x, y, flags, param):
-    #     global POS_X
-    #     global POS_Y
+    def click_events(self, event, x, y, flags, param):
+        global POS_X
+        global POS_Y
 
-    #     if event == cv2.EVENT_LBUTTONDOWN:
-    #         colors = self.temp_image[y,x]
-    #         norm_colors = self.norm_image[:,y,x].cpu().tolist()
-    #         print()
-    #         print("Coordinates of pixel: Y = ", y, "X = ", x)
-    #         print("Pixel value = ", colors)
-    #         print("Tensor value = ", norm_colors)           
+        if event == cv2.EVENT_LBUTTONDOWN:
+            colors = self.temp_image[y,x]
+            norm_colors = self.norm_image[y,x]
+            print()
+            print("Coordinates of pixel: Y = ", y, "X = ", x)
+            print("Pixel value = ", colors)
+            print("Tensor value = ", norm_colors)           
             
             
-    #     elif event == cv2.EVENT_MOUSEMOVE:
-    #         colors = self.temp_image[y,x]
-    #         norm_colors = self.norm_image[:,y,x].cpu().tolist()
-    #         print()
-    #         print("Coordinates of pixel: Y = ", y, "X = ", x)
-    #         print("Pixel value = ", colors)
-    #         print("Tensor value = ", norm_colors)
+        elif event == cv2.EVENT_MOUSEMOVE:
+            colors = self.temp_image[y,x]
+            norm_colors = self.norm_image[y,x]
+            print()
+            print("Coordinates of pixel: Y = ", y, "X = ", x)
+            print("Pixel value = ", colors)
+            print("Tensor value = ", norm_colors)
 
-    #         # print(image.dtype)
+            # print(image.dtype)
 
 
-    # def __getitem__(self, i):
-    #     global POS_X
-    #     global POS_Y
+    def __getitem__(self, i):
+        global POS_X
+        global POS_Y
         
-    #     image = cv2.imread(self.images[i], 3)
-    #     print('NOME DA IMAGEM: ', self.images[i])
-    #     print('LABEL IMAGEM: ', self.labels[i])
+        image = cv2.imread(self.images[i], 3)
+        #print('NOME DA IMAGEM: ', self.images[i])
+        #print('LABEL IMAGEM: ', self.labels[i])
 
-    #     # print("\nMATRIZ DA IMAGEM REAL= ", image)
+        #print("\nMATRIZ DA IMAGEM REAL= ", image)
         
-    #     cv2.namedWindow('ENTRADA')
-    #     cv2.moveWindow('ENTRADA', 300, 0)        
-    #     cv2.imshow('ENTRADA', image)
+        cv2.namedWindow('ENTRADA')
+        cv2.moveWindow('ENTRADA', 300, 0)
+        cv2.imshow('ENTRADA', image)
         
-    #     self.temp_image = image
-    #     image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
-    #     # print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
-    #     image = image/255
-    #     # print("\nMATRIZ DA IMAGEM REAL/255 [RANGE 0-1] = ", image)
-    #     image = torch.from_numpy(image.astype(np.float32))
-    #     # print("\nTENSOR DA IMAGEM REAL [RANGE 0-1] = ", image)
+        self.temp_image = image
+        
+        image = np.transpose(image, [2, 0, 1])[[2, 1, 0]]
+        #print("\nMATRIZ TRANSPOSTA DA IMAGEM REAL= ", image)
+        
+        image = image/255
+        #print("\nMATRIZ DA IMAGEM REAL/255 = ", image)
+        
+        image = torch.from_numpy(image.astype(np.float32))
+        #print("\nTENSOR DA IMAGEM REAL = ", image)
 
-    #     if self.transforms != None:
-    #         # print("\n\n NORMALIZATION \n")
+        if self.transforms != None:
+            #print("\n\n NORMALIZATION \n")
 
-    #         image = self.transforms(image)
-    #         # print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image)
+            image = self.transforms(image)
+            #print('TENSOR DA IMAGEM DEPOIS DE NORMALIZAR: ', image) 
 
-    #         self.norm_image = image
-    #         #print(self.norm_image)
+            self.norm_image = np.moveaxis(image.numpy(), 0, 2)
 
-    #         cv2.namedWindow('NORMALIZADA')
-    #         cv2.moveWindow('NORMALIZADA', 800, 0)
-    #         cv2.setMouseCallback('NORMALIZADA', self.click_events)
-    #         #print(self.norm_image[0])
-    #         cv2.imshow('NORMALIZADA', np.array(self.norm_image[0]))
+            cpy = image.numpy().copy()            
+            cpy -= np.min(cpy)
+            cpy /= np.max(cpy)
+            cpy = np.moveaxis(cpy, 0, 2)
+
+            #print(cpy.shape)
+            #print(cpy.dtype)             
+
+            cv2.namedWindow('NORMALIZADA')
+            cv2.moveWindow('NORMALIZADA', 800, 0)
+            cv2.setMouseCallback('NORMALIZADA', self.click_events)
+        
+
+            cv2.imshow('NORMALIZADA', cpy)
 
             
-    #         cv2.waitKey(500) #automatico
-    #         # cv2.waitKey(0) #espera tecla
+            # cv2.waitKey(500) #automatico
+            cv2.waitKey(0) #espera tecla
 
-    #     cv2.destroyAllWindows()
-    #     # exit()
+        cv2.destroyAllWindows()
+        #exit()
 
-    #     return (image, self.labels[i], self.images[i])
+        return (image, self.labels[i], self.images[i])
 
 #######################################################################################
 
