@@ -45,12 +45,12 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
    ```bash
    $ pip install --no-cache -r requirements.txt
    ```
-4. 
+4. Acesse o README do módulo ou rede que deseja utilizar.
+
+---
 
 
-
-
-### Módulos e Redes (Readme's em construção)
+# Módulos e Redes (Readme's em construção)
 
 #### _Mammo_ _Marker_
 
