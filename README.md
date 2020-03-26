@@ -4,26 +4,58 @@ Repositorio do projeto "Análise de Imagens Médicas Usando Aprendizado Profundo
 
 Para mais informações, envie um e-mail para sabrina.panceri@lcad.inf.ufes.br
 
+
+Repository of the project "Analysis of Medical Images Using Deep Learning" which can be accessed at http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678.
+
+For more information, send an email to sabrina.panceri@lcad.inf.ufes.br
+
+Access the english readme here (page under construction)
+
+## Requisitos necessários para utilização de todos os módulos
+
+Após clonar esse repositório, acesse a pasta breast_cancer_analyzer_LCAD.
+*Aconselhamos a criação de um ambiente virtual para instalação das bibliotecas.*
+
+Para
+
 ## Descrição dos módulos
 
 ### _Mammo_ _Marker_
- Para ter acesso ao Mammo Marker é necessário compilar o arquivo "mammo_marker.cpp". 
- Para isso, siga os passos abaixo:
- 1. Abra o terminal na pasta do projeto
- 2. Entre na pasta -> cd src/mammo_marker
- 3. Compile o arquivo -> make
- 	Será gerado um arquivo binário chamado "mammo_marker"
- 4. Crie uma pasta com nome labels -> mkdir labels
+
+Módulo criado para fazer a marcação manual das áreas de interesse. 
+
+Acesse o readme do módulo em /src/mammo_marker/README.md [em contrução]
  
- Para iniciar a marcação das imagens, é necessário gerar o arquivo de entrada com o caminho absoluto das mamografias. 
- Para o caso da base CBIS-DDSM, são utilizadas as mamografias completas e as mamografias segmentadas.
- Os arquivos devem apresentar as imagens dos pacientes na mesma ordem.
- É necessário baixar a pasta "original_dataset" dentro da pasta "dataset". 
- As pastas com as imagens estão disponíveis em 
- https://drive.google.com/drive/folders/1zE6C8WPYQYwQvixJ_bhkzBLocZPyeyCB?usp=sharing
- É necessário baixar os arquivos original_dataset.tar.gz e descompactar a pasta dentro da pasta "dataset"
- 5. Para abrir o arquivo binário, digite -> ./mammo_marker mamografias_completas.txt mamografias_segmentadas.txt
- 
-### _Mammo_ _Marker_
+### _Mammo_ _PreProcessing_
+
+Módulo que contém os códigos criados para realizar diversos tipos de pré-processamentos nas imagens, antes delas serem analisadas pelas redes neurais. 
+
+Acesse o readme do módulo em /src/mammo_preprocessing/README.md [em contrução]
+
+### _Mammo_ _Viewer_
+
+Módulo de visualização simples, criado para apresentar os resultados iniciais obtidos através dos diversos treinos e ajustes feitos na redes neurais. 
+
+Acesse o readme do módulo em /src/mammo_viewer/README.md [em contrução]
+
+### _resNet_
+
+Contém os scripts utilizados para treinar, validar e testar a rede neural resNet.
+
+Acesse o readme em /src/resNet/README.md [em contrução]
+
+
+### _SqueezeNet_
+
+Contém os scripts utilizados para treinar, validar e testar a rede neural SqueezeNet.
+
+Acesse o readme em /src/squeezeNet/README.md
+
+
+
+
+
+
+
  
  
