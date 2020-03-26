@@ -16,14 +16,12 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 - Ubuntu 16.04 LTS 64bits
 - Python 3.5.2
 - Pip3
+  - Mais informações sobre o Pip - https://pypi.org/project/pip/
 - VirtualEnv
+  - Aconselhamos que utilize o VirtualEnv e crie um ambiente virtual específico para rodar esse projeto.
+    - Aqui tem um tutorial bem legal sobre [Como instalar o VirtualEnv](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b) e criar uma pasta para o projeto.
+    - Mais informações sobre o VirtualEnv - https://pypi.org/project/virtualenv/
 - Git
-
-- Aconselhamos que utilize o VirtualEnv e crie um ambiente virtual específico para rodar esse projeto.
-  - Aqui tem um tutorial bem legal sobre [Como instalar o VirtualEnv](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b) e criar uma pasta para o projeto.
-
-- Mais informações sobre o VirtualEnv - https://pypi.org/project/virtualenv/
-- Mais informações sobre o Pip - https://pypi.org/project/pip/
 
 ---
 
