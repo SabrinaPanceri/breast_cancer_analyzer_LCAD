@@ -33,7 +33,8 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
  $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
 ```
 
-2. Faça dowload do arquivo CALC_CC_flipped_dataset.zip. Extraia a pasta PNG_CALC_CC_renamed_dataset que está dentro do arquivo .zip para *breast_cancer_analyzer_LCAD/dataset/*
+2. Faça dowload do arquivo [CALC_CC_flipped_dataset.zip](https://drive.google.com/drive/folders/1zE6C8WPYQYwQvixJ_bhkzBLocZPyeyCB?usp=sharing). 
+   - Extraia a pasta PNG_CALC_CC_renamed_dataset que está dentro do arquivo .zip para *breast_cancer_analyzer_LCAD/dataset/*
 
 3. Via terminal, ative o ambiente virtual criado e acesse na pasta do projeto.
    ```bash
