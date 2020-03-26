@@ -1,7 +1,7 @@
 # Breast Cancer Analyzer LCAD
 
 ### Versão em Português
-- Repositório do projeto ####"Análise de Imagens Médicas Usando Aprendizado Profundo"#### que pode ser acessado em http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678.
+- Repositório do projeto "Análise de Imagens Médicas Usando Aprendizado Profundo" que pode ser acessado em http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678.
 
 Para mais informações envie um e-mail para sabrina.panceri@lcad.inf.ufes.br ou sabrinapanceri@gmail.com
 
