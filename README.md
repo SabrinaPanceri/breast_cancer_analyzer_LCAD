@@ -10,14 +10,30 @@ Para mais informações envie um e-mail para sabrina.panceri@lcad.inf.ufes.br ou
 
 For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabrinapanceri@gmail.com
 
-### - Como utilizar este repositório:
-- Faça o download da base CBIS-DDSM em: 
-https://wiki.cancerimagingarchive.net/display/Public/CBIS-DDSM#5a55b0d337d048c486e460857f1ce58a 
+---
 
-- Clo esse repositório, acesse a pasta breast_cancer_analyzer_LCAD.
-*Aconselhamos a criação de um ambiente virtual para instalação das bibliotecas.*
+## Pré-requisitos
+- Ubuntu 16.04 LTS 64bits
+- Python 3.5.2
+- Pip3
+- VirtualEnv
 
-Para
+- Aconselhamos que utilize o VirtualEnv e crie um ambiente virtual específico para rodar esse projeto.
+  - Aqui tem um tutorial bem legal sobre [Como instalar o VirtualEnv](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b) e criar uma pasta para o projeto.
+  - Mais informações sobre o VirtualEnv - https://pypi.org/project/virtualenv/
+  - Mais informações sobre o Pip - https://pypi.org/project/pip/
+
+---
+
+1. Clone esse repositório para seu computador. É necessário ter o GIT instalado em sua máquina. 
+```bash
+ $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
+```
+
+2. Faça dowload do arquivo CALC_CC_flipped_dataset.zip. Extraia a pasta PNG_CALC_CC_renamed_dataset que está dentro do arquivo .zip para *breast_cancer_analyzer_LCAD/dataset/*
+
+
+
 
 ### Módulos e Redes (Readme's em construção)
 
