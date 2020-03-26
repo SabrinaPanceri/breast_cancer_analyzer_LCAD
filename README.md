@@ -18,13 +18,15 @@ Após clonar esse repositório, acesse a pasta breast_cancer_analyzer_LCAD.
 
 Para
 
-## Descrição dos módulos
+## Módulos e Redes
 
 ### _Mammo_ _Marker_
 
 Módulo criado para fazer a marcação manual das áreas de interesse. 
 
-Acesse o readme do módulo em /src/mammo_marker/README.md [em contrução]
+- [Install for Ubuntu 12.04](http://www.lcad.inf.ufes.br/wiki/index.php/Instala%C3%A7%C3%A3o_Carmen_para_Ubuntu_12.04.3)
+Acesse o readme do módulo em /src/mammo_marker/README.md
+- [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_marker/README.md)
  
 ### _Mammo_ _PreProcessing_
 
@@ -49,7 +51,7 @@ Acesse o readme em /src/resNet/README.md [em contrução]
 
 Contém os scripts utilizados para treinar, validar e testar a rede neural SqueezeNet.
 
-Acesse o readme em /src/squeezeNet/README.md
+Acesse o readme em /src/squeezeNet/README.md [em contrução]
 
 
 
