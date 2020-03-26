@@ -2,9 +2,9 @@
 
 ### Versão em Português
 
-- Repositorio do projeto "Análise de Imagens Médicas Usando Aprendizado Profundo" que pode ser acessado em http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678.
+- Repositório do projeto ####"Análise de Imagens Médicas Usando Aprendizado Profundo"#### que pode ser acessado em http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678.
 
-- Para mais informações, envie um e-mail para sabrina.panceri@lcad.inf.ufes.br
+-- Para mais informações envie um e-mail para sabrina.panceri@lcad.inf.ufes.br ou sabrinapanceri@gmail.com
 
 ### English version (Versão em Inglês)
 - *Repository of the project "Analysis of Medical Images Using Deep Learning" which can be accessed at http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678. For more information, send an email to sabrina.panceri@lcad.inf.ufes.br. Page under construction*
