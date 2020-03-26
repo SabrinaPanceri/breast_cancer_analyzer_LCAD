@@ -19,18 +19,32 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
   - Mais informações sobre o Pip - https://pypi.org/project/pip/
 - VirtualEnv
   - Aconselhamos que utilize o VirtualEnv e crie um ambiente virtual específico para rodar esse projeto.
+    - Utilize o python3 para criar o ambiente virtual. 
+    ```bash
+    $ virtualenv -p /usr/bin/python3.5 ~/breast_cancer 
+    ```
     - Aqui tem um tutorial bem legal sobre [Como instalar o VirtualEnv](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b) e criar uma pasta para o projeto.
     - Mais informações sobre o VirtualEnv - https://pypi.org/project/virtualenv/
 - Git
 
 ---
-
-1. Clone esse repositório para seu computador. É necessário ter o GIT instalado em sua máquina. 
+1. Clone esse repositório para seu computador.
 ```bash
  $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
 ```
 
 2. Faça dowload do arquivo CALC_CC_flipped_dataset.zip. Extraia a pasta PNG_CALC_CC_renamed_dataset que está dentro do arquivo .zip para *breast_cancer_analyzer_LCAD/dataset/*
+
+3. Via terminal, ative o ambiente virtual criado e acesse na pasta do projeto.
+   ```bash
+   $ source ~/breast_cancer/bin/activate
+   $ cd breast_cancer_analyzer_LCAD
+   ```
+   - Utilize o pip para instalar o requisitos necessários para rodar o projeto
+   ```bash
+   $ pip install --no-cache -r requirements.txt
+   ```
+
 
 
 
