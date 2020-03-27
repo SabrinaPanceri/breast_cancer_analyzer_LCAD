@@ -1,0 +1,91 @@
+Epoch 1:
+
+squeezenet1_1_1_1.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2452	1132		0.684151786
+		1781	1803		0.503069196
+
+		Average Class Accuracy: 0.593610491
+
+squeezenet1_1_1_2.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		1833	1751		0.511439732
+		1024	2560		0.714285714
+
+		Average Class Accuracy: 0.612862723
+
+squeezenet1_1_1_3.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2727	857		0.760881696
+		1386	2198		0.613281250
+
+		Average Class Accuracy: 0.687081473
+
+squeezenet1_1_1_4.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2312	1272		0.645089286
+		937	2647		0.738560268
+
+		Average Class Accuracy: 0.691824777
+
+squeezenet1_1_1_5.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2444	1140		0.681919643
+		899	2685		0.749162946
+
+		Average Class Accuracy: 0.715541295
+
+Epoch 2:
+
+squeezenet1_1_2_1.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2218	1366		0.618861607
+		766	2818		0.786272321
+
+		Average Class Accuracy: 0.702566964
+
+squeezenet1_1_2_2.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		1999	1585		0.557756696
+		621	2963		0.826729911
+
+		Average Class Accuracy: 0.692243304
+
+squeezenet1_1_2_3.pth tests:
+
+	/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		1808	1776		0.504464286
+		627	2957		0.825055804
+
+		Average Class Accuracy: 0.664760045
