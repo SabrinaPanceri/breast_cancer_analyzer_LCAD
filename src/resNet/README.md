@@ -3,7 +3,7 @@
 
 * Get the PyTorch Source
 
-  * git clone --recursive https://github.com/pytorch/pytorch
+  ** git clone --recursive https://github.com/pytorch/pytorch
   * cd pytorch
   //if you are updating an existing checkout
   $ git submodule sync
