@@ -59,5 +59,6 @@ TorchVision also offers a C++ API that contains C++ equivalent of python models.
   $ cmake ..
   
   $ make
+  
   $ make install
 
