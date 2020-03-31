@@ -1,0 +1,17 @@
+runs_manual_cropped_dataset/squeezenet1_1/03/models/squeezenet1_1_32_6.pth
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2931	653	0.817801339
+		569	3015	0.841238839
+
+		Average Class Accuracy: 0.829520089
+runs_manual_cropped_dataset/squeezenet1_1/03/models/squeezenet1_1_55_4.pth
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2991	593	0.834542411
