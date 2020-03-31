@@ -16,7 +16,7 @@ from torchvision import models, transforms
 from pathlib import Path
 
 
-RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+RUNS_FOLDER = 'mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
@@ -30,12 +30,13 @@ TRAINING_DIR = None
 SHUFFLE = True
 
 TEST = (
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
+        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt', #896 crops / sem aumento
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt', #7168 crops / com aumento
 )
 TEST_DIR = (
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset',
+        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
