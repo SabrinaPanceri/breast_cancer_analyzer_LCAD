@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 ## SALVAR OS TREINOS COM BONS RESULTADOS NO HD EXTERNO##
-RUNS_FOLDER = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs'
+RUNS_FOLDER = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 
@@ -42,18 +42,18 @@ TEST = (
 
 TEST_DIR = (
         # '',    
-         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+         '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
 BATCH_SIZE, ACCUMULATE = 128, 1
 
-EPOCHS = 100
-SAVES_PER_EPOCH = 10
+EPOCHS = 1000
+SAVES_PER_EPOCH = 5
 
 INITIAL_LEARNING_RATE = 0.0003
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 14
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 21
 DECAY_RATE = 2
 DECAY_STEP_SIZE = 2
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
