@@ -38,16 +38,14 @@ TorchVision requires PyTorch 1.4 or newer.
 
 # Install C++ API
 
-* TorchVision also offers a C++ API that contains C++ equivalent of python models.
+TorchVision also offers a C++ API that contains C++ equivalent of python models.
 
-Installation From source:
+* Installation From source:
 
-mkdir build
-cd build
-
-// Add -DWITH_CUDA=on support for the CUDA if needed
-
-cmake ..
-make
-make install
+  mkdir build
+  cd build
+  // Add -DWITH_CUDA=on support for the CUDA if needed
+  cmake ..
+  make
+  make install
 
