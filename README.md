@@ -5,7 +5,7 @@
 
 Para mais informações envie um e-mail para sabrina.panceri@lcad.inf.ufes.br ou sabrinapanceri@gmail.com
 
-### English version (Page under construction)
+### [English version](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/english_README.md) (Page under construction)
 - Repository of the project "Analysis of Medical Images Using Deep Learning" which can be accessed at http://www.informatica.ufes.br/pt-br/pos-graduacao/PPGI/detalhes-do-projeto?id=9678. 
 
 For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabrinapanceri@gmail.com
