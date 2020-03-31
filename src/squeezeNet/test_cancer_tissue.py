@@ -1,4 +1,5 @@
-# python test.py /caminho/dos/pesos
+# python test_cancer_tissue.py runs_manual_cropped_dataset/squeezenet1_1/01/models/ runs_manual_cropped_dataset/squeezenet1_1/01/all_confusion_matrix_with_testSet.txt
+
 from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
@@ -15,7 +16,7 @@ from torchvision import models, transforms
 from pathlib import Path
 
 
-RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/'
+RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 NUM_CLASSES = 2
@@ -34,7 +35,7 @@ TEST = (
 )
 TEST_DIR = (
         # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
+        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
