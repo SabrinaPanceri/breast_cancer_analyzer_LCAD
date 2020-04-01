@@ -34,21 +34,24 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
    ```
 
 2. Faça o download dos arquivos abaixo:
-   - Base convertida em PNG (Arquivo [CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/open?id=1Q3WGOcVmnrY21_Pf7RckzSZSfr3nqsPh))
+   - Base CBIS-DDSM convertida em PNG (Arquivo [CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/open?id=1Q3WGOcVmnrY21_Pf7RckzSZSfr3nqsPh))
    - Base gerada manualmente (Arquivo [manual_cropped_dataset.tar.gz](https://drive.google.com/open?id=1X6eZ8hrxsR7oPwYK5iiHx_21aPIRQv77))
 
    - Descompactar os arquivos para *breast_cancer_analyzer_LCAD/dataset/*
-     - Você pode usar a interface para fazer a descompactação dos arquivos. Ou, pelo terminal:
-      - Acesse via terminal a pasta aonde você salvou os arquivos e copie e cole o comando abaixo.
-      *Comando em uma linha*
-      ```bash
-      $ tar -zxvf CALC_CC_flipped_dataset.tar.gz && tar -zxvf manual_cropped_dataset.tar.gz
-      ```
-      Ou
-      ```bash
-      $ tar -zxvf CALC_CC_flipped_dataset.tar.gz 
-      $ tar -zxvf manual_cropped_dataset.tar.gz
-      ```
+     - Você pode usar a interface para fazer a descompactação dos arquivos. 
+
+     - Ou, pelo terminal:
+       - Acesse via terminal a pasta aonde você salvou os arquivos e copie e cole o comando abaixo.
+
+       *Comando em uma linha*
+       ```bash
+       $ tar -zxvf CALC_CC_flipped_dataset.tar.gz && tar -zxvf manual_cropped_dataset.tar.gz
+       ```
+       *Ou*
+       ```bash
+       $ tar -zxvf CALC_CC_flipped_dataset.tar.gz 
+       $ tar -zxvf manual_cropped_dataset.tar.gz
+       ```
 
 3. Via terminal, ative o ambiente virtual criado e acesse na pasta do projeto.
    ```bash
