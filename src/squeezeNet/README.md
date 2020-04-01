@@ -4,10 +4,10 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 
 ## Estrutura de arquivo dessa pasta
 1. Pasta *aux_files*
-   - Contém todos os arquivos auxiliares utilizados como inputs da rede.
-   - Estes arquivos representam os conjuntos de treino, validação e teste.
-   - O nome dos arquivos seguem as lógicas abaixo:
-     - *cbisddsm_OF10_automatic_cropped_dataset.txt* => contém o nome das imagens que foram aleatoriamente escolhidas para compor o conjunto de treino e validação para o teste de OverFitting (OF). 
+- Contém todos os arquivos auxiliares utilizados como inputs para a rede.
+- Estes arquivos representam os conjuntos de treino, validação e teste.
+- O nome dos arquivos seguem as lógicas abaixo:
+- *cbisddsm_OF10_automatic_cropped_dataset.txt* => contém o nome das imagens que foram aleatoriamente escolhidas para compor o conjunto de treino e validação para o teste de OverFitting (OF). 
        - *cbisddsm* - nome da base originária
        - *OF* - objetivo do conjunto 
        - *10* - quantidade de imagens de cada classe (OBS: Este número consta apenas nos arquivos de OF)
