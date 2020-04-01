@@ -1273,3 +1273,198 @@ squeezenet1_1_98_1.pth tests:
 		Average Class Accuracy: 0.813616071
 
 Epoch 99:
+
+squeezenet1_1_99_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2927	657		0.816685268
+		673	2911		0.812220982
+
+		Average Class Accuracy: 0.814453125
+
+Epoch 100:
+
+squeezenet1_1_100_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2919	665		0.814453125
+		674	2910		0.811941964
+
+		Average Class Accuracy: 0.813197545
+
+Epoch 101:
+
+squeezenet1_1_101_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2924	660		0.815848214
+		675	2909		0.811662946
+
+		Average Class Accuracy: 0.813755580
+
+Epoch 102:
+
+squeezenet1_1_102_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2923	661		0.815569196
+		672	2912		0.812500000
+
+		Average Class Accuracy: 0.814034598
+
+Epoch 103:
+
+squeezenet1_1_103_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2920	664		0.814732143
+		677	2907		0.811104911
+
+		Average Class Accuracy: 0.812918527
+
+Epoch 104:
+
+squeezenet1_1_104_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2924	660		0.815848214
+		677	2907		0.811104911
+
+		Average Class Accuracy: 0.813476562
+
+Epoch 105:
+
+squeezenet1_1_105_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2921	663		0.815011161
+		670	2914		0.813058036
+
+		Average Class Accuracy: 0.814034598
+
+Epoch 106:
+
+squeezenet1_1_106_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2921	663		0.815011161
+		673	2911		0.812220982
+
+		Average Class Accuracy: 0.813616071
+
+Epoch 107:
+
+squeezenet1_1_107_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2922	662		0.815290179
+		676	2908		0.811383929
+
+		Average Class Accuracy: 0.813337054
+
+Epoch 108:
+
+squeezenet1_1_108_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2920	664		0.814732143
+		674	2910		0.811941964
+
+		Average Class Accuracy: 0.813337054
+
+Epoch 109:
+
+squeezenet1_1_109_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2920	664		0.814732143
+		673	2911		0.812220982
+
+		Average Class Accuracy: 0.813476562
+
+Epoch 110:
+
+squeezenet1_1_110_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2920	664		0.814732143
+		671	2913		0.812779018
+
+		Average Class Accuracy: 0.813755580
+
+Epoch 111:
+
+squeezenet1_1_111_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2919	665		0.814453125
+		675	2909		0.811662946
+
+		Average Class Accuracy: 0.813058036
+
+Epoch 112:
+
+squeezenet1_1_112_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2920	664		0.814732143
+		673	2911		0.812220982
+
+		Average Class Accuracy: 0.813476562
+
+Epoch 113:
+
+squeezenet1_1_113_1.pth tests:
+
+	/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt:
+
+		Confusion Matrix	Class Accuracy
+
+		2919	665		0.814453125
+		672	2912		0.812500000
+
+		Average Class Accuracy: 0.813476562
+
+Epoch 114:
