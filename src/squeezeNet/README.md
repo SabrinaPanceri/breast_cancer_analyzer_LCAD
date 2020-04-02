@@ -255,7 +255,7 @@ TEST_DIR = (
    - Considerando que você está na pasta src/squeezeNet
      - O primeiro argumento refere-se a parte restante do caminho até a pasta models onde estão os pesos salvos durante o treinamento.
      - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
-       - Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
+       Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
 
 
 
