@@ -65,10 +65,11 @@ Exemplo:
 RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 ```
 
-**TRAINING** = (
+**TRAINING** = ```(
         'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas', 
-)
-```bash
+)```
+
+```
 Exemplo: 
 TRAINING = (
         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt',
@@ -78,7 +79,7 @@ TRAINING = (
 **TRAINING_DIR** = (
         'colocar, entre aspas simples, o complemento do caminho das imagens para treino. não esquecer a vírgula após a aspas',
 )
-```bash
+```
 Exemplo:
 TRAINING_DIR = (
         '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
