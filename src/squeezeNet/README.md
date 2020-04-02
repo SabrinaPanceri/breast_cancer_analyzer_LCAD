@@ -95,7 +95,7 @@ TRAINING_DIR = (
 )
 ```
 - Cada linha do arquivo *cbisddsm_train_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas no treino separadas por um espaço da classe daquela imagem. 
-  - *Ex: ```"augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1".```*
+  - *Ex: ``` augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1 ```*
   - Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de teste. 
   - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
   ```bash
@@ -130,40 +130,53 @@ TEST_DIR = (
          '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 ```
-	- O arquivo *cbisddsm_val_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para validação separadas por um espaço da classe da imagem. 
-	*Ex: "good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png 0".*
-	Atente-se que o valor de TEST_DIR + a parte do caminho da imagem devem estar corretos. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
-    ```bash
-    $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png
-    ```
-	- Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
-	- Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
+
+- Cada linha do arquivo *cbisddsm_val_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para validação separadas por um espaço da classe daquela imagem. 
+  - *Ex: ``` good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png 0 ```*
+  - Atente-se que o valor de TEST_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de validação. 
+  - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
+  ```bash
+  $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png
+  ```
+  - Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
+     - Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
+
+**Hiperparâmetros da rede**
 
 ```
 BATCH_SIZE, ACCUMULATE = 128, 1
 ```
-- 
+- BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
+- ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
+
 ```
-EPOCHS = 500
+EPOCHS = 100
 ```
+- EPOCHS representa a quantidade de épocas para análise do conjunto de treino. 
+
 ```
-SAVES_PER_EPOCH = 1
+SAVES_PER_EPOCH = 10
 ```
+- SAVES_PER_EPOCH representa a quantidade de check points que você deseja salvar a cada época. 
+
 ```
 INITIAL_LEARNING_RATE = 0.0003
 ```
+- INITIAL_LEARNING_RATE representa a taxa de aprendizado inicial da rede. Este valor é utilizado para atualizar o valor das sinapses e dos neurônios da rede.
+
 ```
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 28
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 80
 ```
+- LAST_EPOCH_FOR_LEARNING_RATE_DECAY representa em qual época será finalizada a diminuição do valor da taxa de aprendizado
+
 ```
 DECAY_RATE = 2
 ```
-```
-DECAY_STEP_SIZE = 3
-```
-```
-NUM_WORKERS = 4
-```
+- DECAY_RATE representa o valor pelo qual a taxa de aprendizado será dividida a cada decaimento. 
 
+```
+DECAY_STEP_SIZE = 11
+```
+- DECAY_STEP_SIZE representa a quantidade de épocas necessárias para fazer a atualização da taxa de aprendizado
 
 ## Testando 
