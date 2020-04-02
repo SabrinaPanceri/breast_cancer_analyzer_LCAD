@@ -143,39 +143,39 @@ TEST_DIR = (
 
   - BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
   - ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
-  ```
-  BATCH_SIZE, ACCUMULATE = 128, 1
-  ```
+		```
+		BATCH_SIZE, ACCUMULATE = 128, 1
+		```
 
-- EPOCHS representa a quantidade de épocas para análise do conjunto de treino. 
-```
-EPOCHS = 100
-```
+  - EPOCHS representa a quantidade de épocas para análise do conjunto de treino. 
+		```
+		EPOCHS = 100
+		```
 
-- SAVES_PER_EPOCH representa a quantidade de check points que você deseja salvar a cada época. 
-```
-SAVES_PER_EPOCH = 10
-```
+  - SAVES_PER_EPOCH representa a quantidade de check points que você deseja salvar a cada época. 
+		```
+		SAVES_PER_EPOCH = 10
+		```
 
-- INITIAL_LEARNING_RATE representa a taxa de aprendizado inicial da rede. Este valor é utilizado para atualizar o valor das sinapses e dos neurônios da rede.
-```
-INITIAL_LEARNING_RATE = 0.0003
-```
+  - INITIAL_LEARNING_RATE representa a taxa de aprendizado inicial da rede. Este valor é utilizado para atualizar o valor das sinapses e dos neurônios da rede.
+		```
+		INITIAL_LEARNING_RATE = 0.0003
+		```
 
-- LAST_EPOCH_FOR_LEARNING_RATE_DECAY representa em qual época será finalizada a diminuição do valor da taxa de aprendizado
-```
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 80
-```
+  - LAST_EPOCH_FOR_LEARNING_RATE_DECAY representa em qual época será finalizada a diminuição do valor da taxa de aprendizado
+		```
+		LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 80
+		```
 
-- DECAY_RATE representa o valor pelo qual a taxa de aprendizado será dividida a cada decaimento. 
-```
-DECAY_RATE = 2
-```
+  - DECAY_RATE representa o valor pelo qual a taxa de aprendizado será dividida a cada decaimento. 
+		```
+		DECAY_RATE = 2
+		```
 
-- DECAY_STEP_SIZE representa a quantidade de épocas necessárias para fazer a atualização da taxa de aprendizado
-```
-DECAY_STEP_SIZE = 11
-```
+  - DECAY_STEP_SIZE representa a quantidade de épocas necessárias para fazer a atualização da taxa de aprendizado
+		```
+		DECAY_STEP_SIZE = 11
+		```
 
 - O ajuste destes hiperparâmetros são essenciais para melhorar o aprendizado da rede.
 
