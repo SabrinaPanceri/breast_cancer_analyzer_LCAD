@@ -51,13 +51,11 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 ## Treinando a SqueezeNet
 Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede. 
 
-- Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa:
-
-  - Entrar na pasta
+- Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa acessar a pasta: 
    ```bash
    $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
    ```
-- Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
+- Com seu editor de preferência, abra o script ***treinamento_cancer_tissue.py*** e altere as seguintes variáveis globais:
 
 ```
 RUNS_FOLDER = 'colocar, entre aspas simples, o caminho absoluto da pasta onde
@@ -95,7 +93,7 @@ TRAINING_DIR = (
 )
 ```
 - Cada linha do arquivo *cbisddsm_train_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas no treino separadas por um espaço da classe daquela imagem. 
-  - *Ex: ``` augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1 ```*
+  - Exemplo: ``` augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1 ```
   - Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de teste. 
   - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
   ```bash
@@ -132,7 +130,7 @@ TEST_DIR = (
 ```
 
 - Cada linha do arquivo *cbisddsm_val_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para validação separadas por um espaço da classe daquela imagem. 
-  - *Ex: ``` good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png 0 ```*
+  - Exemplo: ``` good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png 0 ```
   - Atente-se que o valor de TEST_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de validação. 
   - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
   ```bash
@@ -143,11 +141,11 @@ TEST_DIR = (
 
 - **Hiperparâmetros da rede**
 
-- BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
-- ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
-```
-BATCH_SIZE, ACCUMULATE = 128, 1
-```
+  - BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
+  - ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
+  ```
+  BATCH_SIZE, ACCUMULATE = 128, 1
+  ```
 
 - EPOCHS representa a quantidade de épocas para análise do conjunto de treino. 
 ```
