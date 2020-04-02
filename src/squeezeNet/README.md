@@ -26,27 +26,24 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 *Obs: Descrição em construção*
 
 #### Pastas *runs_.../*
-1. Todos treinamento cria uma pasta *squeezenet1_1* dentro da pasta *runs_...* indicada no script de treino.
-2. Dentro da pasta *squeezenet1_1*, são criadas pasta para cada treino realizado. Essas pastas são criadas em ordem numérica e crescente. Logo, caso você apague algum pasta já criada e esta não seja a última pasta, a próxima pasta de treino a ser criada receberá o número da pasta que você apagou. 
+1. Todo treinamento cria uma pasta *squeezenet1_1/{number}* dentro da caminho indicado *na variável global RUNS_FOLDER* que está script de treino.
+2. Dentro da pasta *squeezenet1_1*, são criadas pasta para cada treino realizado. Essas pastas são criadas em ordem numérica e crescente. Logo, caso você apague algum pasta já criada e esta não seja a última, a próxima pasta de treino a ser criada receberá o número da que você apagou. 
 3. A pasta de cada treino contém:
    - training_dataset.txt - Contém o caminho absoluto das imagens na ordem em que elas foram inseridas na rede. 
    - training_log.txt - Contém todas as informações de acerto ou erro para cada imagem que compõe o batch. Essa informação é calculada com base na classe de cada imagem e na inferência a rede fez sobre cada imagem.
    - loss_log.txt - Contém a informação, da "loss do batch" e o "step" a que ela se refere. Ao final de cada época está o valor da *Learning_Rate* impresso.
    - results.txt = Contém todas as matrizes de confusão calculas sobre o conjunto de validação completo. As matrizes de confusão calculas ao salvar cada modelo da rede, ou seja, a cada check point e ao final de cada época. 
    - classification_error.txt = Este arquivo contém o nome de todas as imagens que não foram classificadas corretamente pela rede durante o cálculo das matrizes de confusão. *É um arquivo pesado, portanto, não sincronizado para o git.*
-   - treinamento_... .py = É a cópia fiel do script que foi executado para realizar o treinamento.
+   - treinamento_... .py = É a cópia fiel do script que foi executado para realizar o treinamento. Dessa forma, os valores dos hiperparâmetros e demais configurações ficam salvas.
+   - pasta *models* = contém todos os pesos salvos durante o treinamento. Subir para o git o peso que tiver a maior acurácia média no conjunto de validação. Este será o peso utilizado para fazer as inferências no conjunto de teste.
 
+---
 
+### Lembre-se, para utilizar o script é necessário:
 
-
-
-
-## Importante - É necessário:
-
-1. Ter feito a configuração indicada no ReadMe principal do projeto [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
+1. Ter feito a configuração indicada no ReadMe principal do repositório [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
 2. Acessar o ambiente virtual criado (Passo a passo [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD))
-3. Baixar os arquivos indicados no ReadMe principal [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
-
+3. Baixar os arquivos indicados no ReadMe principal do repositório[aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
 
 ## Treinando a SqueezeNet
 
