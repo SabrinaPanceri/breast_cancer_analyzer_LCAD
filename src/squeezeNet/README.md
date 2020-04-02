@@ -59,28 +59,31 @@ Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede
    ```
 2. Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
 
-**RUNS_FOLDER** = 'colocar, entre aspas simples, o caminho absoluto da pasta onde você quer salvar a pasta do treino'
+```
+RUNS_FOLDER = 'colocar, entre aspas simples, o caminho absoluto da pasta onde você quer salvar a pasta do treino'
 ```
 Exemplo: 
+```
 RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 ```
-
-**TRAINING** = ```(
+```
+TRAINING = (
 	'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas',
-	)```
-
+	)
 ```
 Exemplo: 
+```
 TRAINING = (
         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt',
 )
 ```
-
-**TRAINING_DIR** = (
+```
+TRAINING_DIR = (
         'colocar, entre aspas simples, o complemento do caminho das imagens para treino. não esquecer a vírgula após a aspas',
 )
 ```
 Exemplo:
+```
 TRAINING_DIR = (
         '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
@@ -92,49 +95,62 @@ $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cro
 - Caso o caminho seja inválido, ajuste o valor de TRAINING_DIR.
 - Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
 
-**TEST** = (
-         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
-)
-```bash
-Exemplo:
-*TEST = (
-         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
-)*
 ```
-
-
+TEST = (
+         'Colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para validação. Não esquecer a vírgula após a aspas.',
+)
+```
+Exemplo:
+```
+TEST = (
+         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
+)
+```
+```
 TEST_DIR = (
-        # '',    
+        'Colocar, entre aspas simples, o complemento do caminho das imagens para validação. Não esquecer a vírgula após a aspas',
+)
+```
+Exemplo:
+```
+TEST_DIR = (
          '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
+```
+- O arquivo *cbisddsm_val_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para validação separadas por um espaço da classe da imagem. 
+Ex: "good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png 0". 
+Atente-se que o valor de TEST_DIR + a parte do caminho da imagem devem estar corretos. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
+```bash
+$ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/good/Calc-Training_P_00991_LEFT_CC_BENIGN_WITHOUT_CALLBACK_Crop_0.png
+```
+- Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
+- Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
 
-TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
-
+```
 BATCH_SIZE, ACCUMULATE = 128, 1
-
+```
+- 
+```
 EPOCHS = 500
+```
+```
 SAVES_PER_EPOCH = 1
-
+```
+```
 INITIAL_LEARNING_RATE = 0.0003
+```
+```
 LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 28
+```
+```
 DECAY_RATE = 2
+```
+```
 DECAY_STEP_SIZE = 3
-##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
-# NUM_WORKERS = 1
+```
+```
 NUM_WORKERS = 4
-
-##DESCOMENTAR PARA USAR O CLICK_EVENTS##
-# POS_X, POS_Y = 0, 0
-
-
-
-	 
-
-
-
-
-
-
+```
 
 
 ## Testando 
