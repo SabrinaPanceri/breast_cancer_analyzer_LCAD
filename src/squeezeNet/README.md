@@ -44,29 +44,88 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 
 1. Ter feito a configuração indicada no ReadMe principal do repositório [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
 2. Acessar o ambiente virtual criado (Passo a passo [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD))
-3. Baixar os arquivos indicados no ReadMe principal do repositório[aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
+3. Baixar o arquivo manual_cropeed_dataset indicado no ReadMe principal do repositório [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
 
 ---
 
 ## Treinando a SqueezeNet
+Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede. 
 
-
-
-### Para utilizar o script de treinamento da SqueezeNet, você precisa:
+### Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa:
 
 1. Entrar na pasta
    ```bash
    $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
    ```
-   - Nesta pasta estão todos os scripts utilizados para fazer os diversos experimentos realizados neste projeto.
-     - Todos os scripts tem uma breve explicação nas primeiras linhas do arquivo e o nome dos arquivos são autoexplicativos
+2. Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
 
-4. Para executar um treino utilizando a base marcada manualmente e disponibilizada [aqui](https://drive.google.com/open?id=1X6eZ8hrxsR7oPwYK5iiHx_21aPIRQv77)
-   - Faça o download do arquivo manual_cropped_dataset.tar.gz e descompacte-o na pasta breast_cancer_analyzer_LCAD/dataset/
+**RUNS_FOLDER** = 'colocar, entre aspas simples, o caminho absoluto da pasta onde você quer salvar a pasta do treino'
+```bash
+Exemplo: 
+RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+```
 
-     ```bash
-     $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
-     ```
+**TRAINING ** = (
+        'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas', 
+)
+```bash
+Exemplo: 
+TRAINING = (
+        '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2019_10_15.txt',
+)
+```
+
+**TRAINING_DIR** = (
+        'colocar, entre aspas simples, o complemento do caminho das imagens para treino. não esquecer a vírgula após a aspas',
+)
+```bash
+Exemplo:
+TRAINING_DIR = (
+        '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+)
+```
+- O arquivo *cbisddsm_train_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas no treino separado por um espaço da classe da imagem. Ex: "augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1". Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem devem estar corretas. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
+```bash
+$ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png
+```
+- Caso o caminho seja inválido, ajuste o valor de TRAINING_DIR.
+- Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
+
+**TEST** = (
+         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
+)
+```bash
+Exemplo:
+*TEST = (
+         '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
+)*
+```
+
+
+TEST_DIR = (
+        # '',    
+         '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+)
+
+TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
+
+BATCH_SIZE, ACCUMULATE = 128, 1
+
+EPOCHS = 500
+SAVES_PER_EPOCH = 1
+
+INITIAL_LEARNING_RATE = 0.0003
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 28
+DECAY_RATE = 2
+DECAY_STEP_SIZE = 3
+##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
+# NUM_WORKERS = 1
+NUM_WORKERS = 4
+
+##DESCOMENTAR PARA USAR O CLICK_EVENTS##
+# POS_X, POS_Y = 0, 0
+
+
 
 	 
 
