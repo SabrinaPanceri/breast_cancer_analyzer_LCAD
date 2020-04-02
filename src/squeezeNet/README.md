@@ -236,10 +236,10 @@ TEST_DIR = (
         '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
    )
    ```
-   - Cada linha do arquivo *cbisddsm_test_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para validação separadas por um espaço da classe daquela imagem. 
+   - Cada linha do arquivo *cbisddsm_test_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para o teste separadas por um espaço da classe daquela imagem. 
      - Exemplo: ``` good/Calc-Training_P_00937_RIGHT_CC_BENIGN_Crop_0.png 0 ```
-     - Atente-se que o valor de TEST_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de validação.
-     - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
+     - Atente-se que o valor de TEST_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de teste.
+     - Verifique se o caminho está correto, tente abrir a imagem via terminal utilizando o *eog*.
      ```bash
      $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/good/Calc-Training_P_00937_RIGHT_CC_BENIGN_Crop_0.png
      ```
@@ -248,11 +248,14 @@ TEST_DIR = (
 
 3. Salve o arquivo. É uma boa prática salvar o arquivo sempre que fizer alguma alteração. =D
 
-4. Considerando que o ambiente virtual já está ativado, basta digitar o comando:
+4. Considerando que o ambiente virtual já está ativado, faça as adaptações necessárias no comando abaixo:
    ```bash
-   $ python test_cancer_tissue.py runs_manual_cropped_dataset/squeezenet1_1/01/models/ runs_manual_cropped_dataset/squeezenet1_1/01/all_confusion_matrix_with_testSet.txt
+   $ python test_cancer_tissue.py caminho/para/pasta/do/treino/models/ caminho/para/pasta/do/treino/all_confusion_matrix_with_testSet.txt
    ```
-   - O primeiro argumento refere-se a parte do caminho até a pasta models, onde estão os pesos salvos durante o treinamento. 
-   - O segundo argumento refere-se ao nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
-   
+   - Considerando que você está na pasta src/squeezeNet
+     - O primeiro argumento refere-se a parte restante do caminho até a pasta models onde estão os pesos salvos durante o treinamento.
+     - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
+       - Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
+
+
 
