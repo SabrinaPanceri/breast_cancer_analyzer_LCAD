@@ -94,15 +94,14 @@ TRAINING_DIR = (
         '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 ```
-
 - O arquivo *cbisddsm_train_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas no treino separado por um espaço da classe da imagem. 
-*Ex: "augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1".*
-Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem devem estar corretas. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
+  - *Ex: "augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1".*
+  - Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem devem estar corretas. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
 ```bash
 $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png
 ```
-- Caso o caminho seja inválido, ajuste o valor de TRAINING_DIR.
-- Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
+  - Caso o caminho seja inválido, ajuste o valor de TRAINING_DIR.
+  - Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
 
 ```
 TEST = (
