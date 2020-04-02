@@ -60,12 +60,12 @@ Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede
 2. Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
 
 **RUNS_FOLDER** = 'colocar, entre aspas simples, o caminho absoluto da pasta onde você quer salvar a pasta do treino'
-```bash
+```
 Exemplo: 
 RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 ```
 
-**TRAINING ** = (
+**TRAINING** = (
         'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas', 
 )
 ```bash
