@@ -191,5 +191,10 @@ TEST_DIR = (
 
 5. Os scripts de treinamento tem vários comentários, veja-os caso deseje fazer um uso diferenciado do mesmo.
 
-## Testando 
+## Teste
+
+### Os arquivos .py iniciados com *test_* são os scripts para teste de todos os pesos salvos durante o treinamento.
+### Os arquivos .py iniciados com *test_prob* são os scripts para teste apenas do peso que obteve a melhor acurácia no conjunto de validação.
+
+
 
