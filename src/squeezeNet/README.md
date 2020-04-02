@@ -96,13 +96,13 @@ TRAINING_DIR = (
 ```
 - Cada linha do arquivo *cbisddsm_train_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas no treino separadas por um espaço da classe daquela imagem. 
   - *Ex: ```"augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png 1".```*
-  - Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem são equivalentes ao caminho absoluto para cada imagem. Para testar, tente abrir a imagem via terminal utilizando o *eog*.
-  - Exemplo:
+  - Atente-se que o valor de TRAINING_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de teste. 
+  - Para testar, tente abrir a imagem via terminal utilizando o *eog*.
   ```bash
   $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/augmented_malignant/Calc-Test_P_01471_RIGHT_CC_MALIGNANT_Crop_0_180D.png
   ```
   - Caso o caminho seja inválido, ajuste o valor de TRAINING_DIR.
-    - Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
+     - Não é necessário colocar a / no final do caminho indicado em TRAINING_DIR. 
 
 ```
 TEST = (
