@@ -194,6 +194,7 @@ TEST_DIR = (
 ## Teste
 
 **Os arquivos .py iniciados com *test_* são os scripts para teste de todos os pesos salvos durante o treinamento.**
+
 **Os arquivos .py iniciados com *test_prob* são os scripts para teste apenas do peso que obteve a melhor acurácia no conjunto de validação.**
 
 ---
@@ -255,7 +256,67 @@ TEST_DIR = (
    - Considerando que você está na pasta src/squeezeNet
      - O primeiro argumento refere-se a parte restante do caminho até a pasta models onde estão os pesos salvos durante o treinamento.
      - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
-       Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
+       - Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
 
+---
 
+### Utilizando o script *test_prob_cancer_tissue.py*
+
+1. Acesse a pasta: 
+     ```bash
+     $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
+     ```
+2. Com seu editor de preferência, abra o script ***test_cancer_tissue.py*** e altere as seguintes variáveis globais:
+
+   ```
+   RUNS_FOLDER = 'colocar o caminho relativo para a pasta do treino'
+   ```
+   ```
+   Exemplo: 
+   RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+   ```
+   ```
+   TEST = (
+   		 'Colocar, entre aspas simples, o caminho absoluto do arquivo com o
+         nome das imagens para teste. Não esquecer a vírgula após a aspas',
+   	)
+   ```
+   ```
+   Exemplo:
+   TEST = (
+   	'   /home/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt',
+   	)
+   ```
+   ```   
+   TEST_DIR = (
+        'Colocar, entre aspas simples, o complemento do caminho das imagens
+         para teste. Não esquecer a vírgula após a aspas',
+   )
+   ```
+   ```   
+   Exemplo:
+   TEST_DIR = (
+        '/home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+   )
+   ```
+   - Cada linha do arquivo *cbisddsm_test_2019_10_15.txt* contém parte do caminho para as imagens que serão utilizadas para o teste separadas por um espaço da classe daquela imagem. 
+     - Exemplo: ``` good/Calc-Training_P_00937_RIGHT_CC_BENIGN_Crop_0.png 0 ```
+     - Atente-se que o valor de TEST_DIR + a parte do caminho da imagem representam o caminho absoluto para cada imagem do conjunto de teste.
+     - Verifique se o caminho está correto, tente abrir a imagem via terminal utilizando o *eog*.
+     ```bash
+     $ eog /home/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset/good/Calc-Training_P_00937_RIGHT_CC_BENIGN_Crop_0.png
+     ```
+     - Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
+       - Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
+
+3. Salve o arquivo. É uma boa prática salvar o arquivo sempre que fizer alguma alteração. =D
+
+4. Considerando que o ambiente virtual já está ativado, faça as adaptações necessárias no comando abaixo:
+   ```bash
+   $ python test_cancer_tissue.py caminho/para/pasta/do/treino/models/ caminho/para/pasta/do/treino/all_confusion_matrix_with_testSet.txt
+   ```
+   - Considerando que você está na pasta src/squeezeNet
+     - O primeiro argumento refere-se a parte restante do caminho até a pasta models onde estão os pesos salvos durante o treinamento.
+     - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
+       - Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
 
