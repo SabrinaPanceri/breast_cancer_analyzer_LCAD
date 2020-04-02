@@ -13,7 +13,7 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 ---
 
 ## Requisitos
-- Ubuntu 16.04 LTS 64bits
+- Ubuntu 16.04 LTS / 64bits
 - Python 3.5.2
 - Pip3
   - Página oficial do Pip - https://pypi.org/project/pip/
@@ -31,7 +31,8 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 
 ## Passo a passo
 
-1. Clone esse repositório para seu computador.
+1. Clone esse repositório para seu computador
+   - Escolha o diretório onde deseja colocar o projeto e acesso o mesmo via terminal
    ```bash
    $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
    ```
@@ -39,13 +40,10 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 2. Faça o download dos arquivos abaixo:
    - Base CBIS-DDSM convertida em PNG (Arquivo [CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/open?id=1Q3WGOcVmnrY21_Pf7RckzSZSfr3nqsPh))
    - Base gerada manualmente (Arquivo [manual_cropped_dataset.tar.gz](https://drive.google.com/open?id=1X6eZ8hrxsR7oPwYK5iiHx_21aPIRQv77))
-
    - Descompactar os arquivos para *breast_cancer_analyzer_LCAD/dataset/*
      - Você pode usar a interface para fazer a descompactação dos arquivos. 
-
      - Ou, pelo terminal:
-       - Acesse via terminal a pasta aonde você salvou os arquivos e copie e cole o comando abaixo.
-
+       Acesse via terminal a pasta aonde você salvou os arquivos e execute o comando abaixo.
        *Comando em uma linha*
        ```bash
        $ tar -zxvf CALC_CC_flipped_dataset.tar.gz && tar -zxvf manual_cropped_dataset.tar.gz

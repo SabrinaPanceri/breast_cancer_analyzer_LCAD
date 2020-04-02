@@ -5,7 +5,6 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 - [Treinamento e Validação](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#treinando-a-squeezenet)
 - [Teste](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#testando)
 - [Estrutura de arquivos](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#estrutura-de-arquivos)
-- [L]
 
 --- 
 
@@ -48,9 +47,7 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 
 ## Treinando a SqueezeNet
 
-### Lembre-se, para utilizar o script é necessário ter seguido todos os passos descritos no ReadMe principal do repositório 
-
-[Acesse aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD#pr%C3%A9-requisitos)
+### Para utilizar o script é necessário seguir todas as orientações contidas no ReadMe principal do repositório [Acesse aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD#requisitos)
 
 --- 
 
