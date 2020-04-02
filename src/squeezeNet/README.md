@@ -141,7 +141,7 @@ TEST_DIR = (
   - Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
      - Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
 
-**Hiperparâmetros da rede**
+ - **Hiperparâmetros da rede**
 
 ```
 BATCH_SIZE, ACCUMULATE = 128, 1
