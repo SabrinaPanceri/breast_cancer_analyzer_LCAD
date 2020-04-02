@@ -1,9 +1,10 @@
 # _CNN SqueezeNet_
-
 Esta pasta contém todos os scripts utilizados para treinar, validar e testar a rede neural SqueezeNet, bem como os arquivos auxiliares destes processos. 
 
-## Estrutura de arquivo dessa pasta
-### Pasta *aux_files*
+--- 
+
+### Estrutura de arquivos
+#### Pasta *aux_files*
 - Contém todos os arquivos auxiliares utilizados como inputs para a rede.
 - Estes arquivos representam os conjuntos de treino, validação e teste.
 - O nome dos arquivos seguem as lógicas abaixo:
@@ -16,11 +17,24 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
     - *cbisddsm* - nome da base originária
     - *train* ou *test* ou *val* - objetivo do conjunto 
     - *2020_02_13* - data que o arquivo foi criado
-       
+    - OBS: Alguns arquivos podem ter observações após a data.
+- O arquivo *training_dataset_ijcnn.txt* contém a lista de imagens na ordem que as mesmas foram lidas pela rede para gerar os resultados descritos no artigo submetido ao IJCNN.
 
+#### Pasta *metrics*
+- Contém os scripts escritos pelo Me. [Raphael Carneiro](carneiro.raphael@lcad.inf.ufes.br), sob a orientação do Prof. Dr. [Alberto F. De Souza](alberto@lcad.inf.ufes.br), para filtrar as inferência feitas pela rede e indicar um diagnóstico de "câncer" ou "não câncer" para cada "Paciente" que está no conjunto de teste.
 
-    
+*Obs: Descrição em construção*
 
+#### Pastas *runs_.../*
+1. Todos treinamento cria uma pasta *squeezenet1_1* dentro da pasta *runs_...* indicada no script de treino.
+2. Dentro da pasta *squeezenet1_1*, são criadas pasta para cada treino realizado. Essas pastas são criadas em ordem numérica e crescente. Logo, caso você apague algum pasta já criada e esta não seja a última pasta, a próxima pasta de treino a ser criada receberá o número da pasta que você apagou. 
+3. A pasta de cada treino contém:
+   - training_dataset.txt - Contém o caminho absoluto das imagens na ordem em que elas foram inseridas na rede. 
+   - training_log.txt - Contém todas as informações de acerto ou erro para cada imagem que compõe o batch. Essa informação é calculada com base na classe de cada imagem e na inferência a rede fez sobre cada imagem.
+   - loss_log.txt - Contém a informação, da "loss do batch" e o "step" a que ela se refere. Ao final de cada época está o valor da *Learning_Rate* impresso.
+   - results.txt = Contém todas as matrizes de confusão calculas sobre o conjunto de validação completo. As matrizes de confusão calculas ao salvar cada modelo da rede, ou seja, a cada check point e ao final de cada época. 
+   - classification_error.txt = Este arquivo contém o nome de todas as imagens que não foram classificadas corretamente pela rede durante o cálculo das matrizes de confusão. *É um arquivo pesado, portanto, não sincronizado para o git.*
+   - treinamento_... .py = É a cópia fiel do script que foi executado para realizar o treinamento.
 
 
 
