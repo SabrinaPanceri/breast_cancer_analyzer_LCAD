@@ -1,6 +1,11 @@
 # _CNN SqueezeNet_
 Esta pasta contém todos os scripts utilizados para treinar, validar e testar a rede neural SqueezeNet, bem como os arquivos auxiliares destes processos. 
 
+*Acesso rápido*
+- [Treinamento e Validação](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#treinando-a-squeezenet)
+- [Teste](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#testando)
+- [Estrutura de arquivos](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#estrutura-de-arquivos)
+
 --- 
 
 ### Estrutura de arquivos
@@ -139,7 +144,7 @@ TEST_DIR = (
   - Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
      - Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
 
-- **Hiperparâmetros da rede**
+- **As variáveis globais abaixo, representam alguns dos hiperparâmetros da rede**
 
   - BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
   - ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
@@ -180,3 +185,4 @@ TEST_DIR = (
   - O ajuste destes hiperparâmetros são essenciais para melhorar o aprendizado da rede.
 
 ## Testando 
+
