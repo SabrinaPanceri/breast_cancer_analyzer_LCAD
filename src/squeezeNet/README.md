@@ -51,13 +51,13 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 ## Treinando a SqueezeNet
 Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede. 
 
-### Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa:
+- Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa:
 
--  Entrar na pasta
+  - Entrar na pasta
    ```bash
    $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
    ```
--  Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
+- Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
 
 ```
 RUNS_FOLDER = 'colocar, entre aspas simples, o caminho absoluto da pasta onde
@@ -141,7 +141,7 @@ TEST_DIR = (
   - Caso o caminho seja inválido, ajuste o valor de TEST_DIR.
      - Não é necessário colocar a / no final do caminho indicado em TEST_DIR. 
 
- - **Hiperparâmetros da rede**
+- **Hiperparâmetros da rede**
 
 - BATCH_SIZE representa a quantidade de imagens que serão analisadas juntas. 
 - ACCUMULATE representa quantas vezes você deseja acumular os valores resultantes da análise do BATCH_SIZE. Se ACCUMULATE = 2, significa que o valor resultante da análise será o equivalente a BATCH_SIZE x 2.  
