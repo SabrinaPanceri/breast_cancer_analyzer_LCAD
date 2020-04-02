@@ -53,17 +53,19 @@ Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede
 
 ### Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa:
 
-1. Entrar na pasta
+-  Entrar na pasta
    ```bash
    $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
    ```
-2. Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
+-  Com seu editor de preferência, abra o script *treinamento_cancer_tissue.py* e altere as seguintes variáveis globais:
 
 ```
-RUNS_FOLDER = 'colocar, entre aspas simples, o caminho absoluto da pasta onde você quer salvar a pasta do treino'
+RUNS_FOLDER = 'colocar, entre aspas simples, o caminho absoluto da pasta onde 
+			   você quer salvar a pasta do treino'
+```
+
 ```
 Exemplo: 
-```
 RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 ```
 ```
