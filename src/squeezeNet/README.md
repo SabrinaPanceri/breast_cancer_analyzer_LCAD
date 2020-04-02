@@ -66,8 +66,8 @@ RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_crop
 ```
 
 **TRAINING** = ```(
-        'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas', 
-)```
+	'colocar, entre aspas simples, o caminho absoluto do arquivo com o nome das imagens para treino. não esquecer a vírgula após a aspas',
+	)```
 
 ```
 Exemplo: 
