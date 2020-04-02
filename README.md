@@ -12,7 +12,7 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 
 ---
 
-## Pré-requisitos
+## Requisitos
 - Ubuntu 16.04 LTS 64bits
 - Python 3.5.2
 - Pip3
@@ -28,6 +28,9 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 - Git
 
 ---
+
+## Passo a passo
+
 1. Clone esse repositório para seu computador.
    ```bash
    $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
