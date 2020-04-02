@@ -207,13 +207,6 @@ TEST_DIR = (
 2. Com seu editor de preferência, abra o script ***test_cancer_tissue.py*** e altere as seguintes variáveis globais:
 
    ```
-   RUNS_FOLDER = 'colocar o caminho relativo para a pasta do treino'
-   ```
-   ```
-   Exemplo: 
-   RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
-   ```
-   ```
    TEST = (
    		 'Colocar, entre aspas simples, o caminho absoluto do arquivo com o
          nome das imagens para teste. Não esquecer a vírgula após a aspas',
@@ -266,14 +259,14 @@ TEST_DIR = (
      ```bash
      $ cd breast_cancer_analyzer_LCAD/src/squeezeNet
      ```
-2. Com seu editor de preferência, abra o script ***test_cancer_tissue.py*** e altere as seguintes variáveis globais:
+2. Com seu editor de preferência, abra o script ***test_prob_cancer_tissue.py*** e altere as seguintes variáveis globais:
 
    ```
-   RUNS_FOLDER = 'colocar o caminho relativo para a pasta do treino'
+   INITIAL_MODEL = 'colocar o caminho absoluto para o peso que obteve a maior acurácia no conjunto de validação.'
    ```
    ```
    Exemplo: 
-   RUNS_FOLDER = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+   INITIAL_MODEL = '/home/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset/squeezenet1_1/03/models/squeezenet1_1_94_9.pth'
    ```
    ```
    TEST = (
@@ -313,10 +306,15 @@ TEST_DIR = (
 
 4. Considerando que o ambiente virtual já está ativado, faça as adaptações necessárias no comando abaixo:
    ```bash
-   $ python test_cancer_tissue.py caminho/para/pasta/do/treino/models/ caminho/para/pasta/do/treino/all_confusion_matrix_with_testSet.txt
+   $ python test_prob_cancer_tissue.py metrics/manual_cropped_dataset/test_set_03/test_2019_10_15.csv metrics/manual_cropped_dataset/test_set_03/confusion_matrix.txt metrics/manual_cropped_dataset/test_set_03/probabilities_test_2019_10_15.csv
    ```
-   - Considerando que você está na pasta src/squeezeNet
-     - O primeiro argumento refere-se a parte restante do caminho até a pasta models onde estão os pesos salvos durante o treinamento.
-     - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar as matrizes de confusão do conjunto de teste.
-       - Se você tiver acesso a este projeto, favor utilizar o nome "all_confusion_matrix_with_testSet.txt". Assim, mantemos um padrão para todas as pastas com todos os treinos. =)
-
+   - Considerando que você está na pasta src/squeezeNet:
+     - O primeiro argumento refere-se ao caminho e nome do arquivo que será criado para armazenar o caminho absoluto das imagens do conjunto de teste com suas respectivas classificações. 
+     - O segundo argumento refere-se ao caminho e nome do arquivo que será criado para armazenar a matriz de confusão do teste. 
+     - O terceiro argumento refere-se ao caminho e nome do arquivo que será criado para armazenar todas as probabilidades geradas durante a análise do conjunto de teste. 
+   - Se você tiver acesso a este projeto, favor utilizar os nomes de arquivos sugeridos acima.
+     - O _03_ é refente ao número da pasta do treinamento que está sendo testado.
+     - Por enquanto é necessário criar manualmente esta pasta antes de executar este script. Vamos automatizar isso.
+     ```bash
+     $ mkdir metrics/manual_cropped_dataset/test_set_03
+     ```
