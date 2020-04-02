@@ -262,7 +262,8 @@ TEST_DIR = (
 2. Com seu editor de preferência, abra o script ***test_prob_cancer_tissue.py*** e altere as seguintes variáveis globais:
 
    ```
-   INITIAL_MODEL = 'colocar o caminho absoluto para o peso que obteve a maior acurácia no conjunto de validação.'
+   INITIAL_MODEL = 'colocar o caminho absoluto para o peso que obteve 
+   					a maior acurácia no conjunto de validação.'
    ```
    ```
    Exemplo: 
