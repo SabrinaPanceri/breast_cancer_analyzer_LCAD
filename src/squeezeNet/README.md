@@ -5,6 +5,7 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 - [Treinamento e Validação](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#treinando-a-squeezenet)
 - [Teste](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#testando)
 - [Estrutura de arquivos](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#estrutura-de-arquivos)
+- [L]
 
 --- 
 
@@ -45,16 +46,16 @@ Esta pasta contém todos os scripts utilizados para treinar, validar e testar a 
 
 ---
 
+## Treinando a SqueezeNet
+
 ### Lembre-se, para utilizar o script é necessário:
 
 1. Ter feito a configuração indicada no ReadMe principal do repositório [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
 2. Acessar o ambiente virtual criado (Passo a passo [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD))
 3. Baixar o arquivo manual_cropeed_dataset indicado no ReadMe principal do repositório [aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD)
+--- 
 
----
-
-## Treinando a SqueezeNet
-Os arquivos .py iniciados com *treinamento_* são os scripts para treino da rede. 
+### Os arquivos .py iniciados com *treinamento_* são os scripts para treinamento da rede.
 
 - Para utilizar o script de treinamento da SqueezeNet para analisar o manual_cropped_dataset, você precisa acessar a pasta: 
    ```bash
@@ -183,6 +184,15 @@ TEST_DIR = (
     ```
 
   - O ajuste destes hiperparâmetros são essenciais para melhorar o aprendizado da rede.
+
+- Salve o arquivo. É uma boa prática salvar o arquivo sempre que fizer alguma alteração. =D
+
+- Considerando que o ambiente virtual já está ativado, basta digitar o comando
+  ```bash
+  breast_cancer_analyzer_LCAD/src/squeezeNet$ python treinamento_cancer_tissue.py
+  ```
+  - Todas as informações que serão apresentadas em sua tela durante o treinamento estarão salvas nos arquivos da pasta do treino. (Dúvidas? [Leia aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/squeezeNet#pastas-runs_))
+
 
 ## Testando 
 
