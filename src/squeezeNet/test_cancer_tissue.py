@@ -16,18 +16,19 @@ from torchvision import models, transforms
 from pathlib import Path
 
 
-RUNS_FOLDER = 'mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+#RUNS_FOLDER = 'mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
+
 NUM_CLASSES = 2
 
 INITIAL_MODEL_TEST = True
 
-TRAINING = None
+#TRAINING = None
 
-TRAINING_DIR = None
+#TRAINING_DIR = None
 
-SHUFFLE = True
+#SHUFFLE = True
 
 TEST = (
         # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
@@ -41,7 +42,7 @@ TEST_DIR = (
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 1, 1
+BATCH_SIZE = 1
 
 NUM_WORKERS = 4
 
