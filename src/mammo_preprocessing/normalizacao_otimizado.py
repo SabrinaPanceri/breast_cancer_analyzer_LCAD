@@ -25,12 +25,14 @@ from tqdm import tqdm
 
 TRAINING = (
         # '/home/lcad/sabrina/cbisddsm_train_2020_02_18.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', 
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_train_2020_02_18.txt', 
+        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/training_dataset_ijcnn.txt', #57344 imagens
 )
 
 TRAINING_DIR = (
         # '/home/lcad/sabrina/automatic_cropped_dataset',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/automatic_cropped_dataset',
+        '',
 )
 
 SHUFFLE = False
@@ -83,8 +85,8 @@ def main():
     arq = open('dataset_mean_std_otim.txt', 'a')
 
     for i, image in enumerate(tqdm(training_dataset)):
-        if i >= 50:
-            break
+        #if i >= 50:
+        #    break
         dataset.append(image)
         
     dataset = torch.cat(dataset).to(dtype=torch.float32)
