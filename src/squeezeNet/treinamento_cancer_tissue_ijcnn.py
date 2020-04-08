@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 
 ## SALVAR OS TREINOS COM BONS RESULTADOS NO HD EXTERNO##
-RUNS_FOLDER = '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+RUNS_FOLDER = '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 
@@ -24,7 +24,7 @@ INITIAL_MODEL = None
 INITIAL_MODEL_TEST = False 
 
 TRAINING = (
-        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/training_dataset_ijcnn.txt', #57344 imagens
+        '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/training_dataset_ijcnn.txt', #57344 imagens
 )
 
 TRAINING_DIR = (
@@ -36,26 +36,26 @@ SHUFFLE =  False
 
 ##USAR APENAS O CONJUNTO DE VALIDACAO DURANTE O TREINO. USAR CONJUNTO DE TESTE NO SCRIPT TEST.PY##
 TEST = (
-         # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12_1.txt', #832 imagens
-         '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
+         # '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_09_12_1.txt', #832 imagens
+         '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt', #7168 imagens
 )
 
 TEST_DIR = (
         # '',    
-         '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+         '/home/sabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
 BATCH_SIZE, ACCUMULATE = 128, 1
 
-EPOCHS = 500
-SAVES_PER_EPOCH = 1
+EPOCHS = 100
+SAVES_PER_EPOCH = 10
 
 INITIAL_LEARNING_RATE = 0.0003
-LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 28
+LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 80
 DECAY_RATE = 2
-DECAY_STEP_SIZE = 3
+DECAY_STEP_SIZE = 11
 ##UTILIZAR VALOR 1 QUANDO USAR UTILIZAR APRESENTACAO DAS IMAGENS##
 # NUM_WORKERS = 1
 NUM_WORKERS = 4
