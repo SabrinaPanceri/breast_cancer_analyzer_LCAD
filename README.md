@@ -12,8 +12,8 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 
 ---
 
-## Pré-requisitos
-- Ubuntu 16.04 LTS 64bits
+## Requisitos
+- Ubuntu 16.04 LTS / 64bits
 - Python 3.5.2
 - Pip3
   - Página oficial do Pip - https://pypi.org/project/pip/
@@ -28,13 +28,31 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 - Git
 
 ---
-1. Clone esse repositório para seu computador.
+
+## Passo a passo
+
+1. Clone esse repositório para seu computador
+   - Escolha o diretório onde deseja colocar o projeto e acesso o mesmo via terminal
    ```bash
    $ git clone https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD.git
    ```
 
-2. Faça o download do arquivo [CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/drive/folders/1zE6C8WPYQYwQvixJ_bhkzBLocZPyeyCB?usp=sharing). 
-   - Extrair a pasta PNG_CALC_CC_renamed_dataset para *breast_cancer_analyzer_LCAD/dataset/*
+2. Faça o download dos arquivos abaixo:
+   - Base CBIS-DDSM convertida em PNG (Arquivo [CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/open?id=1Q3WGOcVmnrY21_Pf7RckzSZSfr3nqsPh))
+   - Base gerada manualmente (Arquivo [manual_cropped_dataset.tar.gz](https://drive.google.com/open?id=1X6eZ8hrxsR7oPwYK5iiHx_21aPIRQv77))
+   - Descompactar os arquivos para *breast_cancer_analyzer_LCAD/dataset/*
+     - Você pode usar a interface para fazer a descompactação dos arquivos. 
+     - Ou, pelo terminal:
+       Acesse via terminal a pasta aonde você salvou os arquivos e execute o comando abaixo.
+       *Comando em uma linha*
+       ```bash
+       $ tar -zxvf CALC_CC_flipped_dataset.tar.gz && tar -zxvf manual_cropped_dataset.tar.gz
+       ```
+       *Ou*
+       ```bash
+       $ tar -zxvf CALC_CC_flipped_dataset.tar.gz 
+       $ tar -zxvf manual_cropped_dataset.tar.gz
+       ```
 
 3. Via terminal, ative o ambiente virtual criado e acesse na pasta do projeto.
    ```bash
@@ -50,36 +68,42 @@ For more information, send an email to sabrina.panceri@lcad.inf.ufes.br or sabri
 ---
 
 
-# Módulos e Redes (Readme's em construção)
-
-#### _Mammo_ _Marker_
-
-Módulo criado para fazer a marcação manual das áreas de interesse. 
-
-Acesse o readme do módulo em /src/mammo_marker/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_marker/README.md)
- 
-#### _Mammo_ _PreProcessing_
-
-Módulo que contém os códigos criados para realizar diversos tipos de pré-processamentos nas imagens, antes delas serem analisadas pelas redes neurais. 
-
-Acesse o readme do módulo em /src/mammo_preprocessing/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_preprocessing/README.md)
-
-#### _Mammo_ _Viewer_
-
-Módulo de visualização simples, criado para apresentar os resultados iniciais obtidos através dos diversos treinos e ajustes feitos na redes neurais. 
-
-Acesse o readme do módulo em /src/mammo_viewer/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_viewer/README.md)
-
-#### _resNet_
-
-Contém os scripts utilizados para treinar, validar e testar a rede neural resNet.
-
-Acesse o readme em /src/resNet/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/resNet/README.md) 
-
+# Módulos e Redes
 
 #### _SqueezeNet_
 
 Contém os scripts utilizados para treinar, validar e testar a rede neural SqueezeNet.
 
 Acesse o readme em /src/squeezeNet/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/squeezeNet/README.md)
+
+#### _Mammo Marker_
+_ReadMe em contrução_
+
+Módulo criado para fazer a marcação manual das áreas de interesse. 
+
+Acesse o readme do módulo em /src/mammo_marker/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_marker/README.md)
+ 
+#### _Mammo PreProcessing_
+_ReadMe em contrução_
+
+Módulo que contém os códigos criados para realizar diversos tipos de pré-processamentos nas imagens, antes delas serem analisadas pelas redes neurais. 
+
+Acesse o readme do módulo em /src/mammo_preprocessing/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_preprocessing/README.md)
+
+#### _Mammo Viewer_
+_ReadMe em contrução_
+
+Módulo de visualização simples, criado para apresentar os resultados iniciais obtidos através dos diversos treinos e ajustes feitos na redes neurais. 
+
+Acesse o readme do módulo em /src/mammo_viewer/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/mammo_viewer/README.md)
+
+#### _resNet_
+_ReadMe em contrução_
+
+Contém os scripts utilizados para treinar, validar e testar a rede neural resNet.
+
+Acesse o readme em /src/resNet/README.md ou [clique aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/blob/master/src/resNet/README.md) 
+
+
+
 

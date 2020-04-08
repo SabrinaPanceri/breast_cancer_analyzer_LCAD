@@ -471,11 +471,11 @@ def main():
 
         # if (epoch_i == EPOCHS):
         for g in optimizer.param_groups:
-            print("\tLEARNING_RATE = {:.20f}".format(g['lr']))
+            print("\nLEARNING_RATE = {:.20f}".format(g['lr']))
             with open(loss_log_file, 'a') as loss_log:
-                    loss_log.write("\tLEARNING_RATE = {:.20f}".format(g['lr']))
+                    loss_log.write("\nLEARNING_RATE = {:.20f}".format(g['lr']))
             with open(training_log_file, 'a') as training_log:
-                    training_log.write("\tLEARNING_RATE = {:.20f}".format(g['lr']))
+                    training_log.write("\nLEARNING_RATE = {:.20f}".format(g['lr']))
 
 
 if __name__ == "__main__":

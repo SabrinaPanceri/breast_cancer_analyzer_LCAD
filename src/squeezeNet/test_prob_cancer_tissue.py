@@ -1,6 +1,5 @@
 # python test_prob_cancer_tissue.py metrics/test_dataset_32.csv metrics/confusion_matrix_validation.txt metrics/probabilities.csv
 
-
 from __future__ import division, print_function
 import os, shutil, time, random
 import numpy as np
@@ -12,45 +11,35 @@ from torch.utils.data import Dataset
 from torch.utils.data.dataloader import DataLoader
 import torch.nn as nn
 import torch.optim as optim
-
 from torchvision import models, transforms
 
 
-RUNS_FOLDER = 'mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/'
-
 NETWORK = 'squeezenet1_1'
+
 NUM_CLASSES = 2
 
-INITIAL_MODEL = '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_cancer_tissue/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
-#'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_57344_853097098/models/squeezenet1_1_43_4.pth'
-
-
+INITIAL_MODEL = '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_cancer_tissue/squeezenet1_1/02_57344_864955357/models/squeezenet1_1_32_2.pth'
+#'/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/05_57344_853097098/models/squeezenet1_1_43_4.pth'
 
 INITIAL_MODEL_TEST = True
 
-TRAINING = None
-
-TRAINING_DIR = None
-
-SHUFFLE = True
-
 TEST = (
-        #'/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set.txt',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/crop_mammo_test_32.txt',
-        '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/crop_mammo_test_64.txt',
+        #'/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15_2.txt',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs/squeezenet1_1/02_57344_864955357/training_dataset.txt',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set.txt',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/crop_mammo_test_32.txt',
+        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/crop_mammo_test_64.txt',
 )
 TEST_DIR = (
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/dataset',
-        # '/mnt/dadosSabrina/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset',
+        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/mammo_viewer/crop_mammo_test_set',
         '',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
 
-BATCH_SIZE, ACCUMULATE = 1, 1
+BATCH_SIZE = 1
 
 NUM_WORKERS = 4
 
@@ -177,6 +166,8 @@ def main(args):
     results_file = args[2]
 
     probabilidade_file = args[3]
+
+    ##ajustar o código para criar a pasta e os arquivos
 
     net = Net().to('cuda:0')
     if INITIAL_MODEL != None:
