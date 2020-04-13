@@ -3,8 +3,8 @@
 Esta pasta contém todos os scripts utilizados para treinar, validar e testar a rede neural contendo a arquitetura ResNet, bem como os arquivos auxiliares destes processos. 
 
 *Acesso rápido*
-- [Treinamento e Validação](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/ResNet#treinando-a-resnet)
-- [Estrutura de arquivos](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/ResNet#requerimentos-mínimos-para-rodar-o-script)
+- [Treinamento e Validação](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/resNet#treinando-a-resnet)
+- [Requerimentos Mínimos para Rodar o Script](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/resNet#requerimentos-mínimos-para-rodar-o-script)
 
 --- 
 
