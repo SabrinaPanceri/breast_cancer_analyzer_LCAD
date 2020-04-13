@@ -72,7 +72,7 @@ sudo apt-get -y install cuda
 
 --- 
 
-### Os arquivos .py iniciados com *treinamento_* são os scripts para treinamento da rede.
+### Detalhamento:
 
 1. Para treinar a SqueezeNet com o manual_cropped_dataset, acesse a pasta: 
    ```bash
@@ -81,8 +81,8 @@ sudo apt-get -y install cuda
 2. Com seu editor de preferência, abra o script ***finetuning_torchvision_models.py*** e altere as seguintes variáveis globais:
 
 ```
-TRAINING = (
-	'colocar, entre aspas simples, o caminho absoluto da pasta aonde se encontra o dataset. A pasta deve conter duas pastas nomeadas por 'train' e 'val', dentro de cada pasta dessa devem conter outros diretórios com as imagens, onde o nome desses diretórios são os nomes das classes das imagens. n
+data_dir = (
+	'colocar, entre aspas simples, o caminho absoluto da pasta aonde se encontra o dataset. A pasta deve conter duas pastas nomeadas por 'train' e 'val', dentro de cada uma dessas pastas devem conter outros diretórios com as imagens, onde o nome desses diretórios são os nomes das classes das imagens.
 	)
 ```
 
