@@ -64,8 +64,11 @@ sudo apt-get update
 sudo apt-get -y install cuda
 ```
 
+### Bibliotecas Python
 
-
+```
+pip install pyyaml pandas matplotlib numpy
+```
 ## Treinando a ResNet
 
 ### Para utilizar o script é necessário seguir todas as orientações contidas no ReadMe principal do repositório [Acesse aqui](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD#requisitos)
