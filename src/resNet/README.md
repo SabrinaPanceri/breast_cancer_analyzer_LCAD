@@ -74,7 +74,7 @@ sudo apt-get -y install cuda
 
 ### Detalhamento:
 
-1. Para treinar a SqueezeNet com o manual_cropped_dataset, acesse a pasta: 
+1. Acesse a pasta: 
    ```bash
    cd breast_cancer_analyzer_LCAD/src/resNet/
    ```
