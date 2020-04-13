@@ -76,7 +76,7 @@ sudo apt-get -y install cuda
 
 1. Para treinar a SqueezeNet com o manual_cropped_dataset, acesse a pasta: 
    ```bash
-   $ cd breast_cancer_analyzer_LCAD/src/resNet/
+   cd breast_cancer_analyzer_LCAD/src/resNet/
    ```
 2. Com seu editor de preferência, abra o script ***finetuning_torchvision_models.py*** e altere as seguintes variáveis globais:
 
