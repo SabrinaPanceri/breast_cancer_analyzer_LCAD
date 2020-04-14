@@ -49,7 +49,7 @@ TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1
 
 BATCH_SIZE, ACCUMULATE = 128, 1
 
-EPOCHS = 40
+EPOCHS = 100
 SAVES_PER_EPOCH = 1
 
 INITIAL_LEARNING_RATE = 0.0003
@@ -231,7 +231,7 @@ class DatasetFromCSV(Dataset):
 #######################################################################################
 
 
-def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None, classification_error_file=None, final_epoch=None):
+def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_file=None, classification_error_file=None):
     net.eval()
     str_buf = '\n\t' + dataset_name + ':\n\n\t\tConfusion Matrix\tClass Accuracy\n'
     print(str_buf)
@@ -442,8 +442,6 @@ def main():
                     torch.save(net.state_dict(), os.path.join(models_folder, model_file))
                     save_i += 1
                     if TEST != None:
-                        if save_i == 10:
-                            final_epoch = True 
                         str_buf = '\n' + model_file + ' tests:'
                         print(str_buf)
                         with open(results_file, 'a') as results:
@@ -451,7 +449,7 @@ def main():
                         with open(classification_error_file, 'a') as classification_error:
                             classification_error.write(str_buf + '\n')
                         for csv_file, datasets_per_label, dataloaders_per_label in tests:
-                            test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file, classification_error_file, final_epoch)
+                            test(net, csv_file, datasets_per_label, dataloaders_per_label, results_file, classification_error_file)
                         print()
 
                 if step_i == num_steps:
