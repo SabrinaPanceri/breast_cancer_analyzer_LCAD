@@ -148,7 +148,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
 def main(args):
     torch.multiprocessing.set_start_method('spawn', force=True)
 
-    model_path = Path(os.path.join(args[1])).rglob('*.pth')
+    model_path = sorted(Path(os.path.join(args[1])).rglob('*.pth'))
 
     results_file = args[2]#'test_results_03.txt'
 

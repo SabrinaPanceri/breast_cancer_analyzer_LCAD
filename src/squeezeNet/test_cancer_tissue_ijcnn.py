@@ -1,4 +1,4 @@
-# python test_cancer_tissue.py runs_manual_cropped_dataset/squeezenet1_1/01/models/ runs_manual_cropped_dataset/squeezenet1_1/01/all_confusion_matrix_with_testSet.txt
+# python test_cancer_tissue_ijcnn.py runs_manual_cropped_dataset/squeezenet1_1/01/models/ runs_manual_cropped_dataset/squeezenet1_1/01/all_confusion_matrix_with_testSet_organized.txt
 
 from __future__ import division, print_function
 import os, shutil, time, random
@@ -16,7 +16,7 @@ from torchvision import models, transforms
 from pathlib import Path
 
 
-RUNS_FOLDER = 'mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
+RUNS_FOLDER = 'home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/runs_manual_cropped_dataset'
 
 NETWORK = 'squeezenet1_1'
 
@@ -31,13 +31,13 @@ TRAINING_DIR = None
 SHUFFLE = True
 
 TEST = (
-        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
-        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt', #896 crops / sem aumento
-        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt', #7168 crops / com aumento
+        # '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_val_2019_10_15.txt',
+        # '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15_2.txt', #896 crops / sem aumento
+        '/home/sabrina/breast_cancer_analyzer_LCAD/src/squeezeNet/aux_files/cbisddsm_test_2019_10_15.txt', #7168 crops / com aumento
 )
 TEST_DIR = (
-        # '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset',
-        '/mnt/digital_mammos/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
+        # '/home/sabrina/breast_cancer_analyzer_LCAD/dataset',
+        '/home/sabrina/breast_cancer_analyzer_LCAD/dataset/cancer_tissue_dataset/manual_cropped_dataset',
 )
 
 TRANSFORMS = transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
@@ -148,7 +148,7 @@ def test(net, dataset_name, datasets_per_label, dataloaders_per_label, results_f
 def main(args):
     torch.multiprocessing.set_start_method('spawn', force=True)
 
-    model_path = Path(os.path.join(args[1])).rglob('*.pth')
+    model_path = sorted(Path(os.path.join(args[1])).rglob('*.pth'))
 
     results_file = args[2]#'test_results_03.txt'
 
