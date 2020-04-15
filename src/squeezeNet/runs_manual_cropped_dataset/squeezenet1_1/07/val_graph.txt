@@ -673,6 +673,3 @@ Average Class Accuracy: 0.798409598
 Average Class Accuracy: 0.797991071
 Average Class Accuracy: 0.797572545
 Average Class Accuracy: 0.796456473
-Average Class Accuracy: 0.797572545
-Average Class Accuracy: 0.798688616
-Average Class Accuracy: 0.798130580
