@@ -15,3 +15,6 @@
 *.db*
 *__pycache__*
 *.tar.gz*
+*.xml*
+*.idea/*
+*.iml*
