@@ -7,7 +7,9 @@ Módulo que contém os códigos criados para realizar diversos tipos de pré-pro
 
 --- 
 
-## Base de Dados Binária 
+## Base de Dados Binária
+
+Este dataset é gerado através do original fazendo um aumento de dados através do recorte de cada imagem, dada como entrada, em outras imagens menores de 224x224.   
 
 ### Criando o dataset
 
