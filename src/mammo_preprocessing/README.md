@@ -3,7 +3,7 @@
 Módulo que contém os códigos criados para realizar diversos tipos de pré-processamentos nas imagens, antes de elas serem analisadas pelas redes neurais.
 
 *Acesso rápido*
-- [Base de Dados Binária](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/mammo_preprocessing##Base de Dados Binária)
+- [Base de Dados Binária](https://github.com/LCAD-UFES/breast_cancer_analyzer_LCAD/tree/master/src/mammo_preprocessing#Base-de-Dados-Binária)
 
 --- 
 
