@@ -31,7 +31,7 @@ Este dataset é gerado através do original_renamed fazendo um aumento de dados 
 
 ### Criando o dataset
 
-Para criar o dataset devemos rodar o script mergeSegBirads.py juntamente com a Base CBIS-DDSM convertida em PNG e renomeada (Arquivo [BIRADS_CALC_CC_flipped_dataset.tar.gz]()) (Atenção: extraia a base no diretório '/seu_caminho_até_este_diretório/breast_cancer_analyzer_LCAD/src/mammo_preprocessing/dataset') , também devemos incluir alguns parâmetros necessários para a sua execução, da seguinte forma:
+Para criar o dataset devemos rodar o script mergeSegBirads.py juntamente com a Base CBIS-DDSM convertida em PNG e renomeada (Arquivo [BIRADS_CALC_CC_flipped_dataset.tar.gz](https://drive.google.com/open?id=13CVQu9kr74-OLVkO_gP7xKHGn-fFUVPc)) (Atenção: extraia a base no diretório '/seu_caminho_até_este_diretório/breast_cancer_analyzer_LCAD/src/mammo_preprocessing/dataset') , também devemos incluir alguns parâmetros necessários para a sua execução, da seguinte forma:
 
 ```
 cd /seu_caminho_até_este_diretório/breast_cancer_analyzer_LCAD/src/mammo_preprocessing/
