@@ -22,7 +22,7 @@ python mergeSeg.py /seu_caminho_até_este_diretório/breast_cancer_analyzer_LCAD
 ```  
 Onde o primeiro parâmetro é o caminho até o dataset original com as imagens já rotacionadas para a mesma direção. O segundo e terceiro são, respectivamente, as localizações dos arquivos de textos que contém os caminhos das imagens dos exames e de suas imagens segmentadas. O quarto parâmetro serve para definir o caminho e o nome do diretório onde as imagens e os arquivos de textos referentes a elas serão armazenados na máquina. O quinto parâmetro é para definir a porcentagem de sobreposição de uma imagem recortada sobre outra. 
 
-Após o término do processamento, vá até a pasta 'automatic_cropped_dataset' onde estão as imagens geradas. Lá você encontrará os arquivos de textos 'no_cancer.txt' e 'with_cancer.txt que servem de entrada para o script da Squeezenet, ambos contendo os caminhos para as imagens do novo dataset e as labels.  
+Após o término do processamento, vá até a pasta 'automatic_cropped_dataset' onde estão as imagens geradas. Lá você encontrará os arquivos de textos 'no_cancer.txt' e 'with_cancer.txt' que servem de entrada para o script da Squeezenet, ambos contendo os caminhos para as imagens do novo dataset e as labels.  
 
 
 ## Base de Dados - BIRADS 
@@ -39,7 +39,7 @@ python mergeSegBirads.py /seu_caminho_até_este_diretório/breast_cancer_analyze
 ```  
 Onde o primeiro parâmetro é o caminho até o dataset original com as imagens já rotacionadas para a mesma direção. O segundo e terceiro são, respectivamente, as localizações dos arquivos de textos que contém os caminhos das imagens dos exames e de suas imagens segmentadas. O quarto parâmetro serve para definir o caminho e o nome do diretório onde as imagens e os arquivos de textos referentes a elas serão armazenados na máquina. O quinto parâmetro é para definir a porcentagem de sobreposição de uma imagem recortada sobre outra. 
 
-Após o término do processamento, vá até a pasta automatic_cropped_birads_dataset' onde estão as imagens geradas. Lá você encontrará os arquivos de textos 'no_cancer.txt' e 'with_cancer.txt que servem de entrada para o script da Squeezenet, ambos contendo os caminhos para as imagens do novo dataset e as labels.  
+Após o término do processamento, vá até a pasta automatic_cropped_birads_dataset' onde estão as imagens geradas. Lá você encontrará os arquivos de textos 'no_cancer.txt' e 'with_cancer.txt' que servem de entrada para o script da Squeezenet, ambos contendo os caminhos para as imagens do novo dataset e as labels.  
 
 
 
