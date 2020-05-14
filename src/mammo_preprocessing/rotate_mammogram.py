@@ -1,7 +1,7 @@
 import cv2
 import os
 
-for root, dirs, files in os.walk('original_dataset'):
+for root, dirs, files in os.walk('/home/wintermute/breast_cancer_analyzer_LCAD/dataset/new-dataset/Calc-Test'):
 	f_spl = {}
 
 	mrg = lambda p, k: p + 'CC_' + k
