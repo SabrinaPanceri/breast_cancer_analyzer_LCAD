@@ -12,8 +12,7 @@ import os
 import copy
 
 
-data_dir = "./data/overfitting100"
-
+data_dir = "/home/wintermute/Documents/data/overfitting100"
 
 model_name = "resnet"
 
@@ -24,7 +23,7 @@ num_classes = 2
 batch_size = 4
 
 
-num_epochs = 500
+num_epochs = 400
 
 
 feature_extract = True
@@ -33,9 +32,10 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs, is_incepti
     since = time.time()
 
     val_acc_history = []
-    LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 9
-    DECAY_RATE = 1.2
-    DECAY_STEP_SIZE = 1
+    LAST_EPOCH_FOR_LEARNING_RATE_DECAY = 56
+    DECAY_RATE = 1.1
+    DECAY_STEP_SIZE = 5
+    #best_model_wts = torch.load('./binCancer_net.pth')
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
 
@@ -123,7 +123,7 @@ def initialize_model(model_name, num_classes, feature_extract, use_pretrained=Tr
     if model_name == "resnet":
         """ Resnet18
         """
-        model_ft = models.resnet152(pretrained=use_pretrained)
+        model_ft = models.resnet50(pretrained=use_pretrained)
         set_parameter_requires_grad(model_ft, feature_extract)
         num_ftrs = model_ft.fc.in_features
         model_ft.fc = nn.Linear(num_ftrs, num_classes)
@@ -216,7 +216,7 @@ image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transf
 dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size, shuffle=True, num_workers=4) for x in ['train', 'val']}
 
 
-device = "cuda:0"
+device = "cpu" #"cuda:0"
 
 model_ft = model_ft.to(device)
 
@@ -235,7 +235,7 @@ else:
             print("\t",name)
 
 # Observe that all parameters are being optimized
-optimizer_ft = optim.SGD(params_to_update, lr=0.001)
+optimizer_ft = optim.SGD(params_to_update, lr=0.003)
 
 # Setup the loss fxn
 criterion = nn.CrossEntropyLoss()
