@@ -9,4 +9,4 @@ for root, dirs, files in os.walk('/Users/nove/breast_cancer_analyzer_LCAD/src/ma
         if ((imgAux == 0).sum() >= 50160):
             cv2.imwrite(root + '/' +  'trash' + str(it), imgAux)
             it+=1
-        del imgAux
+        del img
