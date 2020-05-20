@@ -7,10 +7,7 @@ for root, dirs, files in os.walk('/Users/nove/breast_cancer_analyzer_LCAD/src/ma
         img = cv2.imread(root + '/' + f)
         imgAux = img[:, :img.shape[1], :]
 
-        if ((imgAux == 0).sum() > 9):
-            fname = root + '/' + f
-            imgRename = cv2.imread(fname)
-            cv2.imwrite('trash' + it, imgRename)
+        if ((imgAux == 0).sum() >= 50160):
+            cv2.imwrite('trash' + it, imgAux)
             it+=1
-            del imgRename
-        del img
+        del imgAux
