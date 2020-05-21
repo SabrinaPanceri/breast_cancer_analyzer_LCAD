@@ -32,12 +32,16 @@ def data_augmentation(path):
 
             #flip vertically
             verticallyFlipped = cv2.flip(img, 0)
+            horizontallyFlipped = cv2.flip(img, 1)
+            horizontallyAndVerticallyFlipped = cv2.flip(img, -1)
 
             # create new files
-            cv2.imwrite(root + '/augmented_images/' + '90' + '_' + exams, rotated90)
-            cv2.imwrite(root + '/augmented_images/' + '180' + '_' +  exams, rotated180)
-            cv2.imwrite(root + '/augmented_images/' + '270' + '_' + exams, rotated270)
-            cv2.imwrite(root + '/augmented_images/' + 'verticallyFlipped' + '_' + exams, verticallyFlipped)
+            # cv2.imwrite(root + '/augmented_images/' + '90' + '_' + exams, rotated90)
+            # cv2.imwrite(root + '/augmented_images/' + '180' + '_' +  exams, rotated180)
+            # cv2.imwrite(root + '/augmented_images/' + '270' + '_' + exams, rotated270)
+            # cv2.imwrite(root + '/augmented_images/' + 'verticallyFlipped' + '_' + exams, verticallyFlipped)
+            cv2.imwrite(root + '/augmented_images/' + 'horizontallyFlipped' + '_' + exams, horizontallyFlipped)
+            cv2.imwrite(root + '/augmented_images/' + 'horizontallyAndVerticallyFlipped' + '_' + exams, horizontallyAndVerticallyFlipped)
 
     return i
 
