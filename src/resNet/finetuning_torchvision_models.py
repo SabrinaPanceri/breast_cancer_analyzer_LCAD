@@ -25,7 +25,7 @@ num_classes = 2
 batch_size = 128
 
 
-num_epochs = 563
+num_epochs = 500
 
 feature_extract = True
 
@@ -132,7 +132,7 @@ def initialize_model(model_name, num_classes, feature_extract, use_pretrained=Tr
     if model_name == "resnet":
         """ Resnet18
         """
-        model_ft = models.resnet50(pretrained=use_pretrained)
+        model_ft = models.resnet18(pretrained=use_pretrained)
         set_parameter_requires_grad(model_ft, feature_extract)
         num_ftrs = model_ft.fc.in_features
         model_ft.fc = nn.Linear(num_ftrs, num_classes)
@@ -281,20 +281,23 @@ else:
             print("\t",name)
 
 # Observe that all parameters are being optimized
-optimizer_ft = optim.SGD(params_to_update, lr=0.0003) 
+optimizer_ft = optim.SGD(params_to_update, lr=0.00001) 
 
 # Setup the loss fxn
 criterion = nn.CrossEntropyLoss() #(reduction='sum')
 
 # Decay LR by a factor of 0.1 every 7 epochs
-# exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=18, gamma=0.1)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=49, gamma=0.7)
 #exp_lr_scheduler = lr_scheduler.ReduceLROnPlateau(optimizer_ft, mode='max', factor=0.7, patience=36, verbose=False, threshold=0.0001, threshold_mode='rel', cooldown=0, min_lr=0.00003, eps=1e-08)
-#exp_lr_scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer_ft, T_0=60, T_mult=1, eta_min=0, last_epoch=-1)
-exp_lr_scheduler = lr_scheduler.MultiStepLR(optimizer_ft, milestones=[40,80,120,160,240,340,440], gamma=0.1)
-#lr_scheduler.CosineAnnealingLR(optimizer_ft, T_max=90, eta_min=0.0, last_epoch=-1)
+#exp_lr_scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer_ft, T_0=36, T_mult=1, eta_min=0.0, last_epoch=-1)
+#exp_lr_scheduler = lr_scheduler.MultiStepLR(optimizer_ft, milestones=[80,160,250,360,400], gamma=0.7)
+#exp_lr_scheduler = lr_scheduler.CosineAnnealingLR(optimizer_ft, T_max=90, eta_min=0.0, last_epoch=-1)
+
+#exp_lr_scheduler = lr_scheduler.ExponentialLR(optimizer_ft, gamma=0.9, last_epoch=-1)
+
 # Train and evaluate
 model_ft, hist = train_model(model_ft, dataloaders_dict, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=num_epochs, is_inception=(model_name=="inception"))
-visualize_model(model_ft, dataloaders_dict, 10, class_names)
+# visualize_model(model_ft, dataloaders_dict, 10, class_names)
 
 ohist = []
 
