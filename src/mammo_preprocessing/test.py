@@ -101,7 +101,8 @@ def main(args):
             #         )
             #     )
 
-    print(f"mean={running_mean}, std={running_std}")
+    # print(f"mean={running_mean}, std={running_std}")
+    print ("mean={}, std={}".format(running_mean, running_std))
 
     return running_mean.tolist(), running_std.tolist()
 
