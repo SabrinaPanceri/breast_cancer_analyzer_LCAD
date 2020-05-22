@@ -93,7 +93,9 @@ def main(args):
             std = torch.std(images_flat, dim=2)
             running_std.update(std)
 
-            # if not args.quiet and batch % args.print_freq == 0:
+            if not args.quiet and batch % args.print_freq == 0:
+                print ("{:6d}".format((batch)/num_batches))
+                print ("mean={}, std={}".format(running_mean, running_std))
             #     print(
             #         (
             #             f"[{batch:6d}/{num_batches}]"
@@ -169,7 +171,7 @@ def parse_input():
         args.batch_size = args.num_workers
 
     if args.device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+        device = "cuda:0" if torch.cuda.is_available() else "cpu"
     args.device = torch.device(device)
 
     return args
