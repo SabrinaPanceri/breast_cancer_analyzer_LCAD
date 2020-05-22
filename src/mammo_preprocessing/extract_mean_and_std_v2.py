@@ -8,9 +8,11 @@ def extract_mean_and_std(root):
 
     means = []
     stds = []
+    i = 0
     for img, target in dataset:
         means.append(torch.mean(img))
         stds.append(torch.std(img))
+        i+=1
 
     mean = torch.mean(torch.tensor(means))
     std = torch.mean(torch.tensor(stds))
