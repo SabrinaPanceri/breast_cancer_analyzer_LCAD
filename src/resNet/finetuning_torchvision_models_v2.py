@@ -22,10 +22,10 @@ model_name = "resnet"
 num_classes = 2
 
 
-batch_size = 256
+batch_size = 8
 
 
-num_epochs = 563
+num_epochs = 512
 
 feature_extract = True
 
@@ -194,42 +194,6 @@ def initialize_model(model_name, num_classes, feature_extract, use_pretrained=Tr
 
     return model_ft, input_size
 
-def imshow(inp, title=None):
-    """Imshow for Tensor."""
-    inp = inp.numpy().transpose((1, 2, 0))
-    mean = np.array([0.485, 0.456, 0.406])
-    std = np.array([0.229, 0.224, 0.225])
-    inp = std * inp + mean
-    inp = np.clip(inp, 0, 1)
-    plt.imsave(str(title) + '.png', inp)
-    if title is not None:
-        plt.title(title)
-    plt.pause(0.001)  # pause a bit so that plots are updated
-
-    model.eval()
-    images_so_far = 0
-    fig = plt.figure()
-
-    with torch.no_grad():
-        for i, (inputs, labels) in enumerate(dataloaders['val']):
-            inputs = inputs.to(device)
-            labels = labels.to(device)
-
-            outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
-
-            for j in range(inputs.size()[0]):
-                images_so_far += 1
-                ax = plt.subplot(num_images//2, 2, images_so_far)
-                ax.axis('off')
-                ax.set_title('predicted: {}'.format(class_names[preds[j]]))
-                imshow(inputs.cpu().data[j])
-
-                if images_so_far == num_images:
-                    model.train(mode=was_training)
-                    return
-        model.train(mode=was_training)
-
 model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=True)
 
 print(model_ft)
@@ -241,15 +205,13 @@ data_transforms = {
         transforms.RandomResizedCrop(input_size),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        #transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Normalize([0.440, 0.440, 0.440], [0.053, 0.053, 0.053])
     ]),
     'val': transforms.Compose([
         transforms.Resize(input_size),
         transforms.CenterCrop(input_size),
         transforms.ToTensor(),
-        #transforms.Normalize([0.4818, 0.4818, 0.4818], [0.1752, 0.1752, 0.1752])
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Normalize([0.440, 0.440, 0.440], [0.053, 0.053, 0.053])
     ]),
 }
 
@@ -265,7 +227,6 @@ class_names = image_datasets['train'].classes
 device = "cuda:0"
 
 model_ft = model_ft.to(device)
-
 
 params_to_update = model_ft.parameters()
 print("Params to learn:")
@@ -284,17 +245,16 @@ else:
 optimizer_ft = optim.SGD(params_to_update, lr=0.0003) 
 
 # Setup the loss fxn
-criterion = nn.CrossEntropyLoss() #(reduction='sum')
+criterion = nn.CrossEntropyLoss() 
 
 # Decay LR by a factor of 0.1 every 7 epochs
-# exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=18, gamma=0.1)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=18, gamma=0.9)
 #exp_lr_scheduler = lr_scheduler.ReduceLROnPlateau(optimizer_ft, mode='max', factor=0.7, patience=36, verbose=False, threshold=0.0001, threshold_mode='rel', cooldown=0, min_lr=0.00003, eps=1e-08)
 #exp_lr_scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer_ft, T_0=60, T_mult=1, eta_min=0, last_epoch=-1)
-exp_lr_scheduler = lr_scheduler.MultiStepLR(optimizer_ft, milestones=[40,80,120,160,240,340,440], gamma=0.1)
+# exp_lr_scheduler = lr_scheduler.MultiStepLR(optimizer_ft, milestones=[40,80,120,160,240,340,440], gamma=0.1)
 #lr_scheduler.CosineAnnealingLR(optimizer_ft, T_max=90, eta_min=0.0, last_epoch=-1)
 # Train and evaluate
 model_ft, hist = train_model(model_ft, dataloaders_dict, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=num_epochs, is_inception=(model_name=="inception"))
-visualize_model(model_ft, dataloaders_dict, 10, class_names)
 
 ohist = []
 
