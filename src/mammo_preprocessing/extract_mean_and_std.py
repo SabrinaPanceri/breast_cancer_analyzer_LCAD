@@ -1,22 +1,30 @@
 import torch
 from torchvision import datasets, transforms as T
 import os, sys, argparse
+from sklearn.preprocessing import MinMaxScaler
+from PIL import Image
+from numpy import np
+
+scaler = MinMaxScaler() 
 
 def extract_mean_and_std(root):
-    transform = T.Compose([T.ToTensor()])
-    dataset = datasets.ImageFolder(root, transform=transform)
+    it = 0
+    for root, dirs, files in os.walk(root):
+        for i, imgs in enumerate(files):
+            # load the image
+            image = Image.open(root + '/' + imgs)
+            # convert image to numpy array
+            data = np(image)
+            if it == 0:
+                dataset = np(image)
+            if it > 0:
+                dataset.append(data)
+            it+=1
+    data_scaled = scaler.fit_transform(dataset)
 
-    means = []
-    stds = []
-    for img in dataset:
-        means.append(torch.mean(img))
-        stds.append(torch.std(img))
+    print('means (Loan Amount, Int rate and Installment): ', data_scaled.mean(axis=0))
+    print('std (Loan Amount, Int rate and Installment): ', data_scaled.std(axis=0))
 
-    mean = torch.mean(torch.tensor(means))
-    std = torch.mean(torch.tensor(stds))
-
-    print('mean: ', mean)
-    print('std: ', std)
 
 
 
