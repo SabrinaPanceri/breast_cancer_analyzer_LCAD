@@ -45,7 +45,7 @@ class RunningAverage:
         return self.avg.detach().cpu().tolist()
 
     def __str__(self):
-        return "[" + ", ".join([f"{val:.3f}" for val in self.tolist()]) + "]"
+        return "[" + ", ".join([f'{val:.3f}' for val in self.tolist()]) + "]"
 
 
 def make_reproducible(seed):
@@ -96,12 +96,12 @@ def main(args):
             if not args.quiet and batch % args.print_freq == 0:
                 print(
                     (
-                        f"[{batch:6d}/{num_batches}] "
-                        f"mean={running_mean}, std={running_std}"
+                        f'[{batch:6d}/{num_batches}]'
+                        f'mean={running_mean}, std={running_std}'
                     )
                 )
 
-    print(f"mean={running_mean}, std={running_std}")
+    print(f'mean={running_mean}, std={running_std}')
 
     return running_mean.tolist(), running_std.tolist()
 
