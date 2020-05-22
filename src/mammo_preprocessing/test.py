@@ -44,8 +44,8 @@ class RunningAverage:
     def tolist(self):
         return self.avg.detach().cpu().tolist()
 
-    # def __str__(self):
-    #     return "[" + ", ".join([f"{val:.3f}" for val in self.tolist()]) + "]"
+    def __str__(self):
+        return "[" + ", ".join(["{:.3f}".format(val) for val in self.tolist()]) + "]"
 
 
 def make_reproducible(seed):
