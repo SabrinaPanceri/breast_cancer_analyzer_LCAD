@@ -1,0 +1,28 @@
+from PIL import Image
+import cv2
+from numpy import asarray
+# load the image
+# image = Image.open('canvas.png')
+# image = cv2.imread('IMG_3202.JPG')
+from keras.preprocessing import image
+
+X_test=image.load_img('canvas.png'); #loading image and then convert it into grayscale and with it's target size 
+X_test=image.img_to_array(X_test); #convert image into array
+# convert image to numpy array
+# data = asarray(image)
+# print(type(data))
+# # summarize shape
+# print(data.shape)
+
+# # create Pillow image
+# image2 = Image.fromarray(data)
+# print(type(image2))
+
+# # summarize image details
+# print(image2.mode)
+# print(image2.size)
+# print (data) 
+print(X_test)
+
+with open('data' + '.txt', 'a+') as myfile:
+    myfile.write(str(X_test))
