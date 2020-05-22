@@ -6,7 +6,7 @@ from numpy import asarray
 # image = cv2.imread('IMG_3202.JPG')
 from keras.preprocessing import image
 
-X_test=image.load_img('canvas.png'); #loading image and then convert it into grayscale and with it's target size 
+X_test=image.load_img('roi.png'); #loading image and then convert it into grayscale and with it's target size 
 X_test=image.img_to_array(X_test); #convert image into array
 # convert image to numpy array
 # data = asarray(image)
