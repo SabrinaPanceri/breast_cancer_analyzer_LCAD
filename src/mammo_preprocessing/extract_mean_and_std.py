@@ -8,7 +8,7 @@ def extract_mean_and_std(root):
 
     means = []
     stds = []
-    for img in subset(dataset):
+    for img in dataset:
         means.append(torch.mean(img))
         stds.append(torch.std(img))
 
