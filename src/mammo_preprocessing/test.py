@@ -61,7 +61,7 @@ def main(args):
     transform = transforms.Compose(
         [transforms.Resize(256), transforms.CenterCrop(224), transforms.ToTensor()]
     )
-    dataset = datasets.ImageFolder("/home/ghendrix/data/binCancer/train/", transform=transform)
+    dataset = datasets.ImageFolder(args.root, transform=transform)
 
     num_samples = args.num_samples
     if num_samples is None:
