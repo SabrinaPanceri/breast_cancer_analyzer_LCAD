@@ -94,7 +94,7 @@ def main(args):
             running_std.update(std)
 
             if not args.quiet and batch % args.print_freq == 0:
-                print ("{:6d}".format((batch)/num_batches))
+                #print ("{:6d}".format((batch)/num_batches))
                 print ("mean={}, std={}".format(running_mean, running_std))
             #     print(
             #         (
