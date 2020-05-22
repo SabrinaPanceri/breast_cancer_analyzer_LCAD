@@ -93,13 +93,13 @@ def main(args):
             std = torch.std(images_flat, dim=2)
             running_std.update(std)
 
-            if not args.quiet and batch % args.print_freq == 0:
-                print(
-                    (
-                        f"[{batch:6d}/{num_batches}]"
-                        f"mean={running_mean}, std={running_std}"
-                    )
-                )
+            # if not args.quiet and batch % args.print_freq == 0:
+            #     print(
+            #         (
+            #             f"[{batch:6d}/{num_batches}]"
+            #             f"mean={running_mean}, std={running_std}"
+            #         )
+            #     )
 
     print(f"mean={running_mean}, std={running_std}")
 
