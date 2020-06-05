@@ -13,7 +13,7 @@ import os
 import copy
 
 
-data_dir = "/home/ghendrix/data/binCancer"
+data_dir = "/home/ghendrix/binCancerExperimentOne"
 
 
 model_name = "resnet"
@@ -22,10 +22,10 @@ model_name = "resnet"
 num_classes = 2
 
 
-batch_size = 8
+batch_size = 16
 
 
-num_epochs = 512
+num_epochs = 128
 
 feature_extract = True
 
